@@ -5,13 +5,7 @@ var express = require('express');
  */
 var app = express();
 
-if ('development' == app.get('env')) {
-    exports.index = function(req, res){        
-        res.render('index', { title: 'Stashy' });
-    };
-} else {
-    exports.index = function(req, res){        
-        res.render('index-optimize', { title: 'Stashy' });
-    };
-}
+exports.index = function(req, res){        
+    res.render('index', { title: 'Stashy' });
+};
 

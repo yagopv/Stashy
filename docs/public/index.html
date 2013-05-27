@@ -9,31 +9,9 @@
         <link rel="apple-touch-startup-image" href="Content/images/ios-startup-image-portrait.png" media="(orientation:portrait)" />
         <link rel="apple-touch-icon" href="Content/images/icon.png"/>
 
-        <!--Stashy.-->                
-        <link rel="stylesheet" href="Content/Stashy.OffCanvas.css" type="text/css"/>
-        <link rel="stylesheet" href="Content/Stashy.Flyout.css" type="text/css"/>
-        <link rel="stylesheet" href="Content/Stashy.FocalPoint.css" type="text/css"/>
-        <link rel="stylesheet" href="Content/Stashy.Loader.css" type="text/css"/>
-        <link rel="stylesheet" href="Content/Stashy.Toggle.css" type="text/css"/>        
-        <link rel="stylesheet" href="Content/Stashy.Sticky.css" type="text/css"/>                           
-                
-        <!--Bootstrap & Font Awesome.-->
-        <link rel="stylesheet" href="Content/bootstrap.css" type="text/css"/>
-        <link rel="stylesheet" href="Content/bootstrap-responsive.css" type="text/css"/>
-        <link rel="stylesheet" href="Content/font-awesome.css" type="text/css"/>
-        <link rel="stylesheet" href="Content/font-awesome-ie7.css" type="text/css"/>
+        <!--Stashy.-->
         
-        <!--Make the code pretty.-->
-        <link rel="stylesheet" href="Content/prettify.css" type="text/css"/>
-        
-        <!--The css in this file makes the modal dialogs work right.-->
-        <link rel="stylesheet" href="Content/durandal.css" type="text/css"/>
-
-        <!--Site Css.-->
-        <link rel="stylesheet" href="Content/app.css" type="text/css"/>
-
-        <!--Theme at bottom for avoid bootstrap styles.-->
-        <link rel="stylesheet" href="Content/Stashy.Theme.css" type="text/css"/>
+        <link rel="stylesheet" href="Content/styles.css" type="text/css"/>        
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -44,9 +22,10 @@
 		<!-- IE Explorer -->
 		<!--[if lt IE 9]>
 		<script src="Scripts/html5shiv.js"></script>
-		<script src="Scripts/respond.min.js"></script>
+		<script src="Scripts/respond.js"></script>
 		<![endif]-->	
-        <script type="text/javascript" src="Scripts/analytics.js"></script>
+        
+        <script type="text/javascript" src="Scripts/analytics.min.js"></script>
     </head>
     <body>
         <div class="st-sticky-wrap" id="applicationHost">
@@ -84,9 +63,7 @@
 		
 		<!-- Scripts. -->
 		
-        <script type="text/javascript" src="Scripts/jquery.js"></script>
-        <script type="text/javascript" src="Scripts/knockout.js"></script>                  
-        <script type="text/javascript" src="Scripts/sammy.js"></script>
-        <script type="text/javascript" src="app/durandal/amd/require.js" data-main="app/main"></script>                
+        <script type="text/javascript" src="Scripts/vendor.js"></script>
+        <script type="text/javascript" src="App/main-built.js"></script>
     </body>
 </html>
