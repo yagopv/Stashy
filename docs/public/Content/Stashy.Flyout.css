@@ -1,0 +1,106 @@
+.st-flyout {
+	overflow: hidden;
+	width : 100%;
+}
+
+.st-flyout-container * { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+	padding: 0; 
+	margin: 0;     
+}
+
+	.st-flyout-container .st-flyout-menu {
+		clear: both;
+		overflow: hidden;
+		z-index:0;
+	}
+	
+	.st-flyout-container .st-flyout-menu a {
+		clear: both;
+	}
+		
+	.st-flyout-container.st-push {
+		 position: relative; 
+		 background: #FFF;
+		 -webkit-transition: all 0.2s ease-out;  
+		 -moz-transition: all 0.2s ease-out;
+		 -ms-transition: all 0.2s ease-out;
+		 -o-transition: all 0.2s ease-out;
+		 transition: all 0.2s ease-out;		       
+	}
+	
+		.st-flyout-container.st-push.active-menu {
+            left: 75%;            
+		}	
+
+	.st-flyout-container.st-reveal {
+		 position: relative; 
+	}
+
+		.st-flyout-container.st-reveal .st-flyout-menu {
+			 -webkit-transition: all 0.2s ease-out;  
+			 -moz-transition: all 0.2s ease-out;
+			 -ms-transition: all 0.2s ease-out;
+			 -o-transition: all 0.2s ease-out;
+			 transition: all 0.2s ease-out;		       
+		}
+
+		.st-flyout-container.st-reveal .st-flyout-main {
+			 -webkit-transition: all 0.2s ease-out;  
+			 -moz-transition: all 0.2s ease-out;
+			 -ms-transition: all 0.2s ease-out;
+			 -o-transition: all 0.2s ease-out;
+			 transition: all 0.2s ease-out;		       
+		}
+
+		.st-flyout-container.st-reveal.active-menu .st-flyout-main {
+			  left: 75%;           
+		}
+
+
+	.st-flyout-container .st-flyout-main {
+		background : #FFF;
+		position:relative;
+		clear: both;
+		overflow: hidden;
+		z-index:1;
+	}
+
+	.js .st-flyout-container .st-flyout-menu {
+		  position:relative;
+		  width: 75%;
+		  height: 100%;
+		  position: absolute;
+		  top: 0;
+		  z-index: 0;
+	}
+	
+	.js .st-flyout-container.st-push .st-flyout-menu {
+		  left: -75%;
+	}
+
+	.js .st-flyout-container.st-reveal .st-flyout-menu {
+
+	}
+
+
+@media all and (min-width: 768px) {
+    .st-flyout-container.st-push.active-menu {
+	  left: 40%;
+    }
+	
+    .js .st-flyout-container.st-push .st-flyout-menu {
+	  width: 40%;
+	  left: -40%;
+    }
+	
+    .st-flyout-container.st-reveal.active-menu .st-flyout-main {
+	  left: 40%;           
+    }
+
+    .js .st-flyout-container.st-reveal .st-flyout-menu {
+	  width: 40%;
+    }	    
+}

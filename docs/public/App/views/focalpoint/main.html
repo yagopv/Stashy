@@ -1,0 +1,194 @@
+<div id="offcanvas-navigation">
+    <a href="#" class="showmenubutton btn btn-warning h-add-padding"><i class="icon-reorder icon-large no-ajaxy"></i></a>
+    <a href="#" class="showadditionalbutton btn btn-warning h-add-padding" style="float:right;"><i class="icon-reorder icon-large"></i></a>
+    <div class="h-clear"></div>
+</div>
+    
+<div>	
+    <div class="hero-unit badge-orange h-big-top-margin h-inverse-color">
+        <h1>FocalPoint</h1>
+        <p class="lead h-big-top-margin">Beautiful responsive images</p>
+        <a class="btn btn-large badge-orange-dark h-top-margin" href="https://github.com/yagopv/Stashy/archive/master.zip"  target="_blank"><i class="icon-download icon-2x"></i>&nbsp; Download</a>							
+         <a class="btn btn-large badge-orange-dark h-top-margin" href="https://github.com/yagopv/Stashy"  target="_blank"><i class="icon-github icon-2x"></i>&nbsp; View project on Github</a>                                  
+    </div>
+    
+    <section id="description">
+        <div class="page-header">
+            <h1>Description</h1>
+        </div>                        
+        <p>The FocalPoint component acts like a helper for displaying responsive images.</p>
+        <p>FocalPoint is inspired in this <a href="https://github.com/adamdbradley/focal-point" target="_blank">awesome project</a> on Github from <a href="https://twitter.com/adamdbradley" target="_blank">Adam Bradley</a>. You can read more about focal points <a href="http://www.cdnconnect.com/docs/focal-point-css/pure-html-css-responsive-high-resolution-images-solution" target="_blank">in the project docs</a> or <a href="http://designshack.net/articles/css/focal-point-intelligent-cropping-of-responsive-images/" target="_blank">in this article</a>. I think reading these links give an overview of what this technique is for.</p>
+        <p>In general, when we use this component, we divide the image in a virtual grid of 12x12 as shown below.</p>
+        <img id="sample-1" class="h-top-margin" src="http://www.finditshareit.com/wp-content/uploads/2012/12/focalpoint-5.jpg" alt="the focal point grid"/>
+        <p>In the picture, you can see that the image is focusing 3-cell up and 3 to the right. The focal point emphasize the man's face when the image is displayed on small screen sizes and as we increase the size of the image will be displayed complete.</p>							
+        <p>When using this component, you have to specify the offset defining the focal point on the image always starting from the middle of the grid. For example, you can set the offset using <span class="badge badge-orange">top-6</span> and <span class="badge badge-orange">right-6</span> CSS classes in order to crop the image to the top-right corner. Same using <span class="badge badge-orange">down-6</span>  <span class="badge badge-orange">left-6</span> for the bottom-left corner. It's really easy to use.</p>
+        <p>The following image represents how to set the focal point to <span class="badge badge-orange">top-2</span> <span class="badge badge-orange">right-2</span> focusing in the important part of it ;)</p>
+        <img id="sample-2" class="h-top-margin" src="http://designshack.net/wp-content/uploads/focalpoint-8.jpg" alt="focal point working"/>
+        <p>Now, resize your browser window to see how the image above set it's focus at the specified point on smaller screen sizes.</p>
+        <p>And now, being in a smaller screen size under 768px, click the following button to set the focal point off and see the difference.</p>
+        <a id="samples-off" class="btn btn-warning" href="#" data-bind="click : samplesOff">Set focal points on images above to off</a>
+        <p>You can play with this component in the <a href="#playground">playground</a> below using the provided images or your own ones.</p>
+        <div class="alert alert-block alert-warning h-top-margin">
+           <h2 class="reset-margin">Hey !!</h2>
+            <p class="reset-margin">This is not server-side technology!! ... so the image sizes on page load will be the same as the original ones. If your problem is bandwidth and serving responsive images in differents sizes then this is not your component. The only way for doing that is using server side technology, multiple images with a plugin or any specialized cloud service.</p>
+            <br/>
+            <p class="reset-margin">Said that, you can use this component in a lot of places for displaying your images pretty, because i'm sure you are not using several different sized images in all your sites ;)</p>
+        </div>                                                                        							
+    </section>
+    
+    <section id="html">
+        <div class="page-header">
+            <h1>HTML</h1>                                             </div>
+        <p>Pretty easy ... you are going to need the image tag (With id or class if you want to select it using css selectors) and it's done.</p>                            
+<pre class="prettyprint linenums">
+&ltimg id="optional id" class="optional class" src="yourImage" alt="your image description" /&gt
+</pre>	
+    </section>
+
+   <section id="javascript">
+    <div class="page-header">                        
+       <h1>Javascript</h1>						
+    </div>			
+    <h2>Constructor</h2>
+<pre class="prettyprint linenums">
+Stashy.FocalPoint(selector)</pre>							
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Parameter</strong></th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>selector</strong></td>
+                    <td>string</td>
+                    <td>CSS selector. Select images for being cropped on smaller screen sizes. If you leave the selector blank, by default FocalPoint is going to take all &ltimg /&gt tags in the page.</td>
+                </tr>
+            </tbody>
+        </table>    					
+        <h2>Methods</h2>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Name</strong></th>
+                    <th>Description</th>
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>on(pointA,pointB)</strong></td>
+                    <td>Initializes FocalPoint. Using the selector passed in the constructor, this method will crop all the images matching it with the points specified in the parameters</td>
+                </tr>
+                <tr>                                        
+                    <td colspan="2">
+                        <p><em>pointA</em> and <em>pointB</em> may be set up with these class names:</p>											
+                        <p>&nbsp;&nbsp;<strong>"up-1" to "up-6"</strong>. Up offset from center virtual grid</p>
+                        <p>&nbsp;&nbsp;<strong>"down-1" to "down-6"</strong>. Down offset from center virtual grid</p>
+                        <p>&nbsp;&nbsp;<strong>"left-1" to "left-6"</strong>. Left offset from center virtual grid</p>
+                        <p>&nbsp;&nbsp;<strong>"right-1" to "right-6"</strong>. Right offset from center virtual grid</p>
+                    </td>
+                </tr>									
+                <tr>
+                    <td><strong>update(pointA,pointB)</strong></td>
+                    <td>Update FocalPoint images with new points specified in the parameters</td>
+                </tr>
+                <tr>                                        
+                    <td colspan="2">
+                        <p><em>pointA</em> and <em>pointB</em> may be setted up with these values:</p>											
+                        <p>&nbsp;&nbsp;<strong>"up-1" to "up-6"</strong>. Up offset from center virtual grid</p>
+                        <p>&nbsp;&nbsp;<strong>"down-1" to "down-6"</strong>. Down offset from center virtual grid</p>
+                        <p>&nbsp;&nbsp;<strong>"left-1" to "left-6"</strong>. Left offset from center virtual grid</p>
+                        <p>&nbsp;&nbsp;<strong>"right-1" to "right-6"</strong>. Right offset from center virtual grid</p>
+                    </td>
+                </tr>																		
+                <tr>
+                    <td><strong>off()</strong></td>
+                    <td>Restarts image to the original state.</td>
+                </tr>									
+            </tbody>
+        </table> 	
+        <div class="alert alert-block alert-warning h-top-margin">
+           <h2 class="reset-margin">Hey !!</h2>
+            <p class="reset-margin">If you don't set the points, then the image will be cropped using the center point of the grid.</p>																
+        </div>
+        <h2>Sample</h2>
+<pre class="prettyprint linenums">
+var fp = Stashy.FocalPoint("selector");
+fp.on("up-3","right-3");
+fp.update("down-3","left-3");
+fp.off();</pre>
+    </section>
+    
+    <section id="playground">
+        <div class="page-header">                        
+           <h1>Playground</h1>						
+        </div>
+        <p>Select different focal points for the images</p>							
+        <div data-bind="with : sample1">
+            <form class="well form-inline h-top-margin">
+                <div class="alert alert-warning">									
+                    <strong class="lead">Play!!</strong> with this dangerous tiger by trying to focus his head
+                </div>
+                <input type="text" class="pointA input-small" placeholder="pointA" data-bind="value : pointA" style="height:30px;"/>
+                <input type="text" class="pointB input-small" placeholder="pointB" data-bind="value : pointB" style="height:30px;"/>
+                <a class="playground-on btn btn-warning reset-margin" data-bind="click : $parent.sampleOn">on</a>
+                <a class="playground-update btn btn-warning reset-margin" data-bind="click : $parent.sampleUpdate">update</a>
+                <a  class="playground-off btn btn-warning reset-margin" data-bind="click : $parent.sampleOff">off</a>
+            </form>                                 
+            <img id="image-1" src="http://3.bp.blogspot.com/-7Ax-QneMofY/TwwhpyyNazI/AAAAAAAAAdA/Ms_lJ9kkeKo/s1600/Tiger.jpg" alt="image-1" />
+        </div>
+        
+        <div data-bind="with : sample2">
+            <form class="well form-inline h-top-margin">								
+                <div class="alert alert-warning">									
+                    <strong class="lead">Play!!</strong> with this lot of people. When setting the focal point and resizing, you will see a couple of them dissapear
+                </div>								
+                <input type="text" class="pointA input-small" placeholder="pointA" data-bind="value : pointA" style="height:30px;"/>
+                <input type="text" class="pointB input-small" placeholder="pointB" data-bind="value : pointB" style="height:30px;"/>
+                <a class="playground-on btn btn-warning reset-margin" data-bind="click : $root.sampleOn">on</a>
+                <a class="playground-update btn btn-warning reset-margin" data-bind="click : $parent.sampleUpdate">update</a>
+                <a  class="playground-off btn btn-warning reset-margin" data-bind="click : $parent.sampleOff">off</a>
+            </form>                                           
+            <img id="image-2" src="http://www.against-the-grain.com/wp-content/uploads/2013/03/people-crowds-webpages.scu_.edu_.jpg" alt="image" />
+        </div>
+        
+        <div data-bind="with : sample3">														
+            <form class="well form-inline h-top-margin">								
+                <div class="alert alert-warning">									
+                    <strong class="lead">Portrait!!</strong> images will be detected and different set of CSS classes will be applied
+                </div>	                
+                <input type="text" class="pointA input-small" placeholder="pointA" data-bind="value : pointA" style="height:30px;"/>
+                <input type="text" class="pointB input-small" placeholder="pointB" data-bind="value : pointB" style="height:30px;"/>
+                <a class="playground-on btn btn-warning reset-margin" data-bind="click : $parent.sampleOn">on</a>
+                <a class="playground-update btn btn-warning reset-margin" data-bind="click : $parent.sampleUpdate">update</a>
+                <a  class="playground-off btn btn-warning reset-margin" data-bind="click : $parent.sampleOff">off</a>
+            </form>
+            <img id="image-3" src="http://hulubei.net/tudor/photography/photos/E/i/Eiffel-Tower-2-1000x1500.jpg" alt="image" />
+        </div>
+        
+        <div data-bind="with : sample4">
+            <form class="well form-inline h-top-margin">								
+                <div class="alert alert-warning">
+                    <strong class="lead">Custom!!</strong> image. Enter any url representing an image and play with it
+                </div>																						                
+                <input type="text" class="custom-image-input input-xlarge h-top-margin" placeholder="enter your custom image url" data-bind="value : customimage"/>                
+                <input type="text" class="pointA input-small h-top-margin" placeholder="pointA" data-bind="value : pointA"/>
+                <input type="text" class="pointB input-small h-top-margin" placeholder="pointB" data-bind="value : pointB"/>
+                <a class="playground-on btn btn-warning h-top-margin" style="margin-top:30px !important;" data-bind="click : $parent.sampleOn">on</a>
+                <a class="playground-update btn btn-warning h-top-margin" style="margin-top:30px !important;" data-bind="click : $parent.sampleUpdate">update</a>
+                <a  class="playground-off btn btn-warning h-top-margin" style="margin-top:30px !important;" data-bind="click : $parent.sampleOff" >off</a>
+            </form>                                          
+            <img id="image-4" class="custom-image-img" data-bind="attr : {src : customimage }" alt="custom image" />            
+        </div>							
+    </section>
+    
+    <section id="dependencies">
+        <div class="page-header">                        
+           <h1>Dependencies</h1>						
+        </div>				
+        <p class="lead">JS</p>
+        <span class="badge badge-info">jQuery.js</span> <span class="badge badge-warning">Stashy.Showmemore.js</span>
+    </section>										                            
+</div>

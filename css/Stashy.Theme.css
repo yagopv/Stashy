@@ -1,0 +1,64 @@
+/* Flyout */
+
+.st-flyout .st-flyout-menu {
+	padding: 3% 2%;
+    background:rgb(194,194,194);
+}
+
+.st-flyout .st-flyout-main {
+    box-shadow: 0px 0px 8px  #999;
+}
+
+.st-flyout .st-flyout-toggle {
+    font-size:1.3em;
+}
+
+.st-flyout #content {
+    padding: 0 3%;
+}
+
+/* Toggle default */
+
+.st-toggle {
+    background: #000;    
+}
+
+.st-toggle a {
+    color : #999;
+    text-decoration:none; 
+}
+
+.st-toggle a:hover {
+    color : #FFF;
+}
+
+/* Offcanvas */
+.st-offcanvas .st-offcanvas-menu a,
+.st-offcanvas .st-offcanvas-additional a {
+
+    font-size:1.2em;    
+}
+
+.st-offcanvas .st-offcanvas-menu,
+.st-offcanvas .st-offcanvas-main,
+.st-offcanvas .st-offcanvas-additional {
+	padding: 3%;
+}
+
+.st-offcanvas .st-offcanvas-main {
+    background-color: #fff;
+}
+
+.st-offcanvas .st-offcanvas-main:before,
+.st-offcanvas .st-offcanvas-main:after {
+    background-color: #cbcbcb;    
+}
+
+.st-offcanvas .st-offcanvas-main:before {
+        box-shadow: 0px 0px 8px  #999 inset;
+}
+
+.st-offcanvas .st-offcanvas-main:after {
+        box-shadow: 0px 0px 8px  #999 inset;
+}
+

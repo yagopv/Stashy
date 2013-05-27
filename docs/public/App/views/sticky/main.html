@@ -1,0 +1,57 @@
+<div id="offcanvas-navigation">
+    <a href="#" class="showmenubutton btn badge-strawberry h-add-padding"><i class="icon-reorder icon-large no-ajaxy"></i></a>
+    <a href="#" class="showadditionalbutton btn badge-strawberry h-add-padding" style="float:right;"><i class="icon-reorder icon-large"></i></a>
+    <div class="h-clear"></div>
+</div>
+
+<div>	
+    <div class="hero-unit badge-strawberry h-big-top-margin h-inverse-color">
+        <h1>Sticky</h1>
+        <p class="lead h-big-top-margin">Structure your content to ensure footer at bottom</p>
+        <a class="btn badge-strawberry-light btn-large h-top-margin" href="https://github.com/yagopv/Stashy/archive/master.zip"  target="_blank"><i class="icon-download icon-2x"></i>&nbsp; Download</a>							
+        <a class="btn badge-strawberry-light btn-large h-top-margin" href="https://github.com/yagopv/Stashy"  target="_blank"><i class="icon-github icon-2x"></i>&nbsp; View project on Github</a>                                
+    </div>
+    
+    <section id="description">
+        <div class="page-header">
+            <h1>Description</h1>
+        </div>                        
+        <p>I read about this technique CSS for the first time in <a href="http://ryanfait.com/resources/footer-stick-to-bottom-of-page/" target="_blank">this post from Ryan Fait</a>.</p>
+        <p>Subsequently I have seen has been used in many places and has even been included in <a href="http://twitter.github.io/bootstrap/examples/sticky-footer.html" target="_blank">major frameworks</a>.</p>
+    </section>
+    
+    <section id="html">
+        <div class="page-header">
+            <h1>HTML</h1>                        
+        </div>
+        <p>You only need to structure you page as follow</p>
+<pre class="prettyprint linenums">
+&lthtml&gt
+    &ltbody&gt
+        &ltdiv class="st-sticky-wrap"&gt
+            // You content here
+            &ltdiv class="st-sticky-push"&gt&lt/div&gt
+        &lt/div&gt
+        &ltdiv class="st-sticky-footer"&gt&lt/div&gt
+    &lt/body&gt
+&lt/html&gt</pre>
+        <p>You can give to the sticky footer the height you need. This height can be expressed in px, ems or% as convenience. For doing that, you need to edit the <span class="badge badge-strawberry">Stasht.Sticky.css</span> file and change the height in the right places.</p>
+        <p>A media-query is included for change the height in tablet and desktop devices.</p>
+        <p>The defaults included are <span class="badge badge-strawberry">20em</span> for mobile devices (&lt768px) and <span class="badge badge-strawberry">10em</span> for tablet and desktop (&gt=768).</p>
+    </section>
+    
+    <section id="javascript">
+        <div class="page-header">                        
+           <h1>Javascript</h1>						
+        </div>			
+        <p>No necessary any Javascript</p>
+    </section>
+    
+    <section id="dependencies">
+        <div class="page-header">                        
+           <h1>Dependencies</h1>						
+        </div>
+        <p class="lead">CSS</p>
+        <span class="badge badge-strawberry">Stashy.Sticky.css</span>
+    </section>										                            
+</div>

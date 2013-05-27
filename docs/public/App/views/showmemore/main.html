@@ -1,0 +1,212 @@
+<div id="offcanvas-navigation">
+    <a href="#" class="showmenubutton btn btn-inverse h-add-padding"><i class="icon-reorder icon-large no-ajaxy"></i></a>
+    <a href="#" class="showadditionalbutton btn btn-inverse h-add-padding" style="float:right;"><i class="icon-reorder icon-large"></i></a>
+    <div class="h-clear"></div>
+</div>
+    
+<div>	
+    <div class="hero-unit badge-inverse h-big-top-margin h-inverse-color">
+        <h1>ShowMeMore</h1>
+        <p class="lead h-big-top-margin">Hide items ... and show a button for showing more of them</p>
+        <a class="btn btn-large badge-grey h-top-margin" href="https://github.com/yagopv/Stashy/archive/master.zip"  target="_blank"><i class="icon-download icon-2x"></i>&nbsp; Download</a>							
+         <a class="btn btn-large badge-grey h-top-margin" href="https://github.com/yagopv/Stashy"  target="_blank"><i class="icon-github icon-2x"></i>&nbsp; View project on Github</a>   	                            
+    </div>
+    
+    <section id="description">
+        <div class="page-header">
+            <h1>Description</h1>
+        </div>                        
+        <p>Using this component you can avoid the show long lists of items.</p>
+        <p>Instead you can display the number of them you choose, hiding the rest and showing a button "Show more".</p>
+        <p>This utility uses jQuery <span class="badge badge-inverse">:gt()</span> selector behind the scenes.</p>
+    </section>
+    
+    <section id="html">
+        <div class="page-header">
+            <h1>HTML</h1>                        
+        </div>
+<pre class="prettyprint linenums">
+//you can use simple divs ...
+&ltdiv id="yourId"&gt
+    &ltdiv class="yourClass"&gt...&lt/div&gt	
+    &ltdiv class="yourClass"&gt...&lt/div&gt	
+    &ltdiv class="yourClass"&gt...&lt/div&gt		
+&lt/div&gt
+
+//... or you can do it with lists (ul, ol ...) for example 
+
+&ltul id="yourId"&gt
+    &ltli class="yourClass"&gt...&lt/li&gt	
+    &ltli class="yourClass"&gt...&lt/li&gt	
+    &ltli class="yourClass"&gt...&lt/li&gt		
+&lt/ul&gt</pre>	
+    </section>
+    <section id="javascript">
+        <div class="page-header">                        
+           <h1>Javascript</h1>						
+        </div>			
+        <h2>Constructor</h2>
+<pre class="prettyprint linenums">
+Stashy.Showmemore(selector, options)</pre>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Parameter</strong></th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>selector</strong></td>
+                    <td>string</td>
+                    <td>empty string</td>
+                    <td>CSS selector for the items collection. It can be a class, data attibuttes ...etc</td>
+                </tr>
+                <tr>
+                    <td><strong>options</strong></td>
+                    <td>object</td>
+                    <td>See options</td>
+                    <td>Options for the showmemore instance</td>
+                </tr>
+            </tbody>
+        </table>    
+        <h2 id="options">Options</h2>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Option</strong></th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>										
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>linkClass</strong></td>
+                    <td>string</td>
+                    <td>empty string</td>
+                    <td>Provide the class or classes to style the automatically generated "Show more" button</td>
+                </tr>
+                <tr>
+                    <td><strong>linkText</strong></td>
+                    <td>string</td>
+                    <td>"Show more"</td>
+                    <td>Text for the show me more button</td>
+                </tr>
+                <tr>
+                    <td><strong>howMany</strong></td>
+                    <td>integer</td>
+                    <td>1</td>
+                    <td>How many items you want to show?</td>
+                </tr>                                 
+            </tbody>
+        </table>   							
+        <h2>Methods</h2>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Name</strong></th>                                            
+                    <th>Description</th>
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>on</strong></td>
+                    <td>Start hiding elements</td>
+                </tr>
+                <tr>
+                    <td><strong>off</strong></td>
+                    <td>End hiding elements. Show all elements again</td>
+                </tr>
+                
+            </tbody>
+        </table> 							
+        <h2>Sample</h2>
+<pre class="prettyprint linenums">
+var smm = Stashy.Showmemore("#id .item", {
+linkClass : "myClass",
+linkText : "myText",
+howMany : 5
+});
+// Start hiding items
+smm.on();
+// End  hiding items
+smm.off();
+
+... or you can chain methods ...
+
+// Start hiding items
+Stashy.Showmemore("#id .item", {
+linkClass : "myClass",
+linkText : "myText",
+howMany : 5
+}).on();
+
+// End  hiding items
+Stashy.Showmemore("#id .item", {
+linkClass : "myClass",
+linkText : "myText",
+howMany : 5
+}).off();</pre>
+    </section>
+    
+    <section id="playground">
+        <div class="page-header">                        
+           <h1>Playground</h1>						
+        </div>
+        <p>Select how many items you want to display from the list below.</p>
+        <p>This example list is built using <span class="badge badge-inverse">&ltdiv&gt</span> boxes.</p>
+        
+        
+        <form class="well form-inline h-top-margin">								
+            <input type="text" class="input-small" placeholder="How many?" data-bind="value : sectionhowmany"  style="height:30px;"/>
+            <a id="sections-sample-on" data-bind="click : showmemoreOn, attr : { 'data-target' : '#sections-sample .item'}" class="btn btn-inverse reset-margin">on</a>
+            <a id="sections-sample-off" data-bind="click : showmemoreOff, attr : { 'data-target' : '#sections-sample .item'}" class="btn btn-inverse reset-margin">off</a>
+        </form>
+        
+        <div id="sections-sample" data-bind="foreach : items1">
+            <div class="media item">
+              <a class="pull-left" href="#">
+                <span class="media-object label label-inverse" style="width:64px; height:64px;"></span>
+              </a>
+              <div class="media-body">
+                <h2 class="media-heading" data-bind="text : title"></h2>
+                <div class="media">
+                    <p data-bind="text : description"></p>
+                </div>
+              </div>
+            </div>				
+        </div>
+        
+        <p>You can do the same as above but using an unordered list <span class="badge badge-inverse">&ltul&gt</span></p>
+        
+        <form class="well form-inline h-top-margin">								
+            <input type="text" class="input-small" placeholder="How many?" data-bind="value : listhowmany"  style="height:30px;"/>
+            <a id="list-sample-on" data-bind="click : showmemoreOn, attr : { 'data-target' : '#list-sample .item'}" class="btn btn-inverse reset-margin">on</a>
+            <a id="list-sample-off" data-bind="click : showmemoreOff, attr : { 'data-target' : '#list-sample .item'}" class="btn btn-inverse reset-margin">off</a>
+        </form>
+        <ul id="list-sample" class="media-list" data-bind="foreach : items2">
+          <li class="media item">
+            <a class="pull-left" href="#">
+                <span class="media-object label label-inverse" style="width:64px; height:64px;"></span>
+            </a>
+            <div class="media-body">
+                <h2 class="media-heading" data-bind="text : title"></h2>
+                <div class="media">
+                    <p data-bind="text : description"></p>
+                </div>
+            </div>
+            </li>						
+        </ul>													
+    </section>
+    
+    <section id="dependencies">
+        <div class="page-header">                        
+           <h1>Dependencies</h1>						
+        </div>				
+        <p class="lead">JS</p>
+        <span class="badge badge-info">jQuery.js</span> <span class="badge badge-inverse">Stashy.Showmemore.js</span>
+    </section>
+</div>

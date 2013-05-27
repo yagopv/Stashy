@@ -1,0 +1,255 @@
+/* Docs styles */
+
+html, body {
+	height:100%;
+}
+
+      
+p {
+    font-size : 1.2em;
+    line-height:1.5em;    
+}
+
+section p, section h1, section h2, section h4, section a, section .component, section pre, section table {
+    margin-top:1.5em !important;    
+}
+
+.media  * {
+	margin-top:0em !important;    
+}    
+
+.badge {
+    padding : .3em;
+    font-size : 1em;
+}
+
+#dependencies .badge{
+    padding : .5em;
+    font-size : 1.5em;
+}
+
+.reset-margin {
+    margin-top : 0 !important;
+}
+
+.label:empty {
+    display:block;
+}
+
+.badge-strawberry, .badge-strawberry:hover {
+    background-color : rgb(158, 40, 101);
+    color : #FFF;
+    border-color:transparent;
+}
+
+.badge-strawberry-light, .badge-strawberry-light:hover {
+    background-color : rgb(179, 72, 127);
+    color : #FFF;
+    border-color:transparent;
+}
+
+.badge-primary, .badge-primary:hover {
+    background-color : #0072e6;
+    color : #FFF;
+    border-color:transparent;
+}
+
+.badge-banana, .badge-banana:hover {
+    background-color : #f5f55f;
+    color : #3c3c31;
+    border-color:transparent;
+}
+
+.badge-banana-dark, .badge-banana-dark:hover {
+    background-color : rgb(235, 218, 24);
+    color : #3c3c31;
+    border-color:transparent;
+}
+
+.badge-danger-dark, .badge-danger-dark:hover {
+    background-color : rgba(145, 9, 25, 0.44);
+    color : #FFF;
+    border-color:transparent;
+}
+
+.badge-info-light, .badge-info-light:hover {
+    background-color : rgb(184, 121, 214);
+    color : #FFF;
+    border-color:transparent;
+}
+
+.badge-white {
+    background-color : #FFF;
+    color : #000;
+    border-color: #000;
+}
+
+.badge-white:hover {
+    color : #FFF;
+}
+
+.badge-grey {
+    background-color : #ccc;
+    color : #000;
+    border-color: #ccc;
+}
+
+.badge-grey:hover {
+    background-color : #FFF !important;
+    border-color: #FFF !important;
+}
+
+.badge-orange, .badge-orange:hover {
+    background-color : #fe6600;
+    color : #FFF;
+    border-color:transparent;
+}
+
+.badge-orange-dark, .badge-orange-dark:hover {
+    background-color : rgb(199, 80, 0);
+    color : #FFF;
+    border-color:transparent;
+}
+
+.badge-success-light, .badge-success-light:hover {
+    background-color : rgb(93, 204, 57);
+    color : #FFF;
+    border-color:transparent;
+}
+
+
+
+.hero-unit a {
+    width:100%;
+}
+
+.hero-unit a:hover {
+    background-color: #000;
+}
+
+.subnav {
+    margin-top: 3% !important;
+}
+
+#offcanvas-navigation a:hover {
+    transform: scale(1.2,1.2);
+    -ms-transform: scale(1.2,1.2);
+    -webkit-transform: scale(1.2,1.2);
+	-webkit-transition: .2s all ease;
+	-moz-transition: .2s all ease;
+	-o-transition: .2s all ease;		
+	-ms-transition: .2s all ease;
+	transition: .2s all ease;    
+} 
+
+footer {
+    background-color:#000;
+    color : #999;    
+}
+
+/* Helpers */
+.h-inverse-color {
+	color : #FFF;
+}
+
+.h-big-top-margin {
+	margin-top : 30px;
+}
+
+.h-top-margin {
+	margin-top : 5%;
+}
+
+.h-add-padding {
+	padding : 12px;
+}
+
+.h-clear {
+    clear:both;
+}
+
+.h-align-inline {
+    text-align: center;
+}
+
+td p {
+    font-size : 1em;    
+}
+
+form input {
+    height : 30px !important;   
+}
+
+#about {
+    padding : 4%;    
+}
+
+#about h1 {
+  color : #FFF;
+}
+
+.about-content {    
+    padding : 4%;
+    color : #FFF;
+    min-height : 250px;
+    margin-top : 10px;
+}
+
+.about-content p {
+    margin-top : 5%
+}
+
+.about-content li {
+    margin-top:2%;
+}
+
+.about-content a {
+    font-size : 1.5em;
+    color:#FFF;
+}
+
+.about-mars {
+    text-align : center;    
+    font-size : 10em;
+}
+
+.footer-content {
+    padding : 3%;
+    color : #FFF;
+}
+      
+footer li {
+    line-height : 2em
+}
+
+footer li a {
+    font-size : 1.5em;    
+}
+
+footer a {
+    color : #ccc;    
+}
+
+
+@media (max-width: 400px) {
+    .about-content {
+        min-height : 350px;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        padding-right: 0px;
+        padding-left: 0px;
+    }  
+}
+
+@media (min-width: 979px) {
+    #offcanvas-navigation {
+        display:none;
+    }
+    
+    .hero-unit.h-big-top-margin {
+        margin-top : 0;
+    }    
+}
