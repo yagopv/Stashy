@@ -10,6 +10,7 @@
   "baseUrl": "D:\\Proyectos .NET\\Stashy\\docs\\public\\App",
   "mainConfigFile": "D:\\Proyectos .NET\\Stashy\\docs\\public\\App\\main.js",
   "include": [
+    "main-built",
     "main",
     "durandal/app",
     "durandal/composition",
