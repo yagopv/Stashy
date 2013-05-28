@@ -208,11 +208,6 @@ form input {
     color:#FFF;
 }
 
-.about-mars {
-    text-align : center;    
-    font-size : 10em;
-}
-
 footer {
     display : none;    
 }
@@ -232,6 +227,10 @@ footer li a {
 
 footer a {
     color : #ccc;    
+}
+
+footer a:hover {
+    color : #FFF;        
 }
 
 .splash {

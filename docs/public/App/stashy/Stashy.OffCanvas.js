@@ -48,7 +48,7 @@
             if (width < 768) {
                 onmobilelayout(self);
                 self.options.onMobileLayout();
-            } else if (width > 768 && width < 979) {
+            } else if (width >= 768 && width < 978) {
                 ontabletlayout(self);
                 self.options.onTabletLayout();
             } else {
