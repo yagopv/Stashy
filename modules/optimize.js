@@ -73,17 +73,7 @@ exports.optimizeDocsAssets = function() {
         }
     });
         
-    //JS
-
-    new compressor.minify({
-        type: 'gcc',
-        fileIn: 'docs/public/Scripts/analytics.js',
-        fileOut: 'docs/public/Scripts/analytics.min.js',
-        callback: function(err){
-            console.log('DOCS - JS :  Analytics');
-            if (err != null) console.log(err);            
-        }
-    });      
+    //JS      
 
     new compressor.minify({
         type: 'gcc',

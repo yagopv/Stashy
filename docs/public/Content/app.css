@@ -235,7 +235,9 @@ footer a:hover {
 
 .splash {
     text-align: center;
-    margin: 10% 0 0 0;
+    padding: 10% 0 0 0;
+    height : 1000px;
+    color : #ccc;
 }
 
 .splash .message {
@@ -244,6 +246,7 @@ footer a:hover {
     -webkit-text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px;
     text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px;
     text-transform: uppercase;
+    color:#000;
 }
 
 .splash .icon-spinner {
@@ -251,6 +254,7 @@ footer a:hover {
     display: inline-block;
     font-size: 5em;
     margin-top: 50px;
+    color:#000;
 }
 
 @media (max-width: 400px) {
