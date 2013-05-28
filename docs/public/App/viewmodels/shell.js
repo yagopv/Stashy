@@ -1,6 +1,11 @@
 define(['durandal/plugins/router'], function (router) {
     
     return {
+        viewAttached : function() {
+            setTimeout(function() {
+                $("footer").css("display","block");
+            },1000);            
+        },
         router: router,
         activate: function () {
             router.map([
@@ -28,7 +33,7 @@ define(['durandal/plugins/router'], function (router) {
                 router.navigateTo("#/error");
             };
 
-            return router.activate('home');
+            return router.activate('home');                        
         }
     };
 });

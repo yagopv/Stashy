@@ -20,7 +20,7 @@ app.engine('.html', require('ejs').__express);
 app.set('port', process.env.PORT || 3000);
 
 // Set views path and engine
-app.set('views', __dirname + '/docs/public');
+app.set('views', __dirname + '/docs/views');
 app.set('view engine', 'html');
 
 // Set favicon

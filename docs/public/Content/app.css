@@ -213,6 +213,10 @@ form input {
     font-size : 10em;
 }
 
+footer {
+    display : none;    
+}
+
 .footer-content {
     padding : 3%;
     color : #FFF;
