@@ -131,8 +131,8 @@ fp.off();</pre>
                 <div class="alert alert-warning">									
                     <strong class="lead">Play!!</strong> with this dangerous tiger by trying to focus his head
                 </div>
-                <input type="text" class="pointA input-small" placeholder="pointA" data-bind="value : pointA" style="height:30px;"/>
-                <input type="text" class="pointB input-small" placeholder="pointB" data-bind="value : pointB" style="height:30px;"/>
+                <select class="pointA input-small" placeholder="pointA" data-bind="value : pointA, options : $parent.availablePoints" style="height:30px;"></select>
+                <select class="pointB input-small" placeholder="pointB" data-bind="value : pointB, options : $parent.availablePoints" style="height:30px;"></select>
                 <a class="playground-on btn btn-warning reset-margin" data-bind="click : $parent.sampleOn">on</a>
                 <a class="playground-update btn btn-warning reset-margin" data-bind="click : $parent.sampleUpdate">update</a>
                 <a  class="playground-off btn btn-warning reset-margin" data-bind="click : $parent.sampleOff">off</a>
@@ -145,8 +145,8 @@ fp.off();</pre>
                 <div class="alert alert-warning">									
                     <strong class="lead">Play!!</strong> with this lot of people. When setting the focal point and resizing, you will see a couple of them dissapear
                 </div>								
-                <input type="text" class="pointA input-small" placeholder="pointA" data-bind="value : pointA" style="height:30px;"/>
-                <input type="text" class="pointB input-small" placeholder="pointB" data-bind="value : pointB" style="height:30px;"/>
+                <select class="pointA input-small" placeholder="pointA" data-bind="value : pointA, options : $parent.availablePoints" style="height:30px;"></select>
+                <select class="pointB input-small" placeholder="pointB" data-bind="value : pointB, options : $parent.availablePoints" style="height:30px;"></select>
                 <a class="playground-on btn btn-warning reset-margin" data-bind="click : $root.sampleOn">on</a>
                 <a class="playground-update btn btn-warning reset-margin" data-bind="click : $parent.sampleUpdate">update</a>
                 <a  class="playground-off btn btn-warning reset-margin" data-bind="click : $parent.sampleOff">off</a>
@@ -159,8 +159,8 @@ fp.off();</pre>
                 <div class="alert alert-warning">									
                     <strong class="lead">Portrait!!</strong> images will be detected and different set of CSS classes will be applied
                 </div>	                
-                <input type="text" class="pointA input-small" placeholder="pointA" data-bind="value : pointA" style="height:30px;"/>
-                <input type="text" class="pointB input-small" placeholder="pointB" data-bind="value : pointB" style="height:30px;"/>
+                <select class="pointA input-small" placeholder="pointA" data-bind="value : pointA, options : $parent.availablePoints" style="height:30px;"></select>
+                <select class="pointB input-small" placeholder="pointB" data-bind="value : pointB, options : $parent.availablePoints" style="height:30px;"></select>
                 <a class="playground-on btn btn-warning reset-margin" data-bind="click : $parent.sampleOn">on</a>
                 <a class="playground-update btn btn-warning reset-margin" data-bind="click : $parent.sampleUpdate">update</a>
                 <a  class="playground-off btn btn-warning reset-margin" data-bind="click : $parent.sampleOff">off</a>
@@ -174,8 +174,8 @@ fp.off();</pre>
                     <strong class="lead">Custom!!</strong> image. Enter any url representing an image and play with it
                 </div>																						                
                 <input type="text" class="custom-image-input input-xlarge h-top-margin" placeholder="enter your custom image url" data-bind="value : customimage"/>                
-                <input type="text" class="pointA input-small h-top-margin" placeholder="pointA" data-bind="value : pointA"/>
-                <input type="text" class="pointB input-small h-top-margin" placeholder="pointB" data-bind="value : pointB"/>
+                <select class="pointA input-small h-top-margin" placeholder="pointA" data-bind="value : pointA, options : $parent.availablePoints" style="height:30px;"></select>
+                <select class="pointB input-small h-top-margin" placeholder="pointB" data-bind="value : pointB, options : $parent.availablePoints"></select>
                 <a class="playground-on btn btn-warning h-top-margin" style="margin-top:30px !important;" data-bind="click : $parent.sampleOn">on</a>
                 <a class="playground-update btn btn-warning h-top-margin" style="margin-top:30px !important;" data-bind="click : $parent.sampleUpdate">update</a>
                 <a  class="playground-off btn btn-warning h-top-margin" style="margin-top:30px !important;" data-bind="click : $parent.sampleOff" >off</a>

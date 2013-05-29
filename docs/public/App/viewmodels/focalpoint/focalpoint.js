@@ -3,6 +3,13 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Foc
     hash = "",
     oc;
     
+    var availablePoints = ko.observableArray([
+        'up-1', 'up-2', 'up-3','up-4','up-5','up-6',
+        'down-1', 'down-2', 'down-3','down-4','down-5','down-6',
+        'right-1', 'right-2', 'right-3','right-4','right-5','right-6',
+        'left-1', 'left-2', 'left-3','left-4','left-5','left-6'
+    ]);
+    
     var sample1 = ko.observable({
         pointA : "",
         pointB : "",
@@ -76,6 +83,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Foc
         sampleOn : sampleOn,
         sampleOff : sampleOff,
         sampleUpdate : sampleUpdate,
-        samplesOff : samplesOff
+        samplesOff : samplesOff,
+        availablePoints : availablePoints
     };
 });
