@@ -1,7 +1,9 @@
 /* Togglemenu styles */
 
 .st-toggle {
+    width : 100%;
     min-height: 50px;
+    z-index : 999;
 }
 
 .st-toggle .st-toggle-menu-link {
@@ -58,11 +60,19 @@
 	display: block;
 }
 
+.st-toggle.st-toggle-fixed {    
+    position : relative;        
+}
+
 @media screen and (min-width: 768px) {
 	.st-toggle .st-toggle-menu-link {
 	   visibility: collapse;
 	}
 
+	.st-toggle.st-toggle-fixed {    
+        position : fixed;        
+    }
+	
 	.js .st-toggle .st-toggle-navigation {
 		max-height: none;		
 		visibility: visible;
