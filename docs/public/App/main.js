@@ -39,7 +39,9 @@ requirejs.config({
 define(['durandal/app', 'durandal/system', 'durandal/viewLocator'],
   function (app, system, viewLocator) {
     
+    //>>excludeStart("build", true);
     system.debug(true);
+    //>>excludeEnd("build");
     
     app.title = 'Stashy, responsive components';
     app.start().then(function () {
