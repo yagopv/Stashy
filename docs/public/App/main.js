@@ -1,3 +1,4 @@
+// Config require paths
 requirejs.config({
     paths: {
         'text': 'durandal/amd/text',
@@ -34,6 +35,7 @@ requirejs.config({
     }
 });
 
+// Config application
 define(['durandal/app', 'durandal/system', 'durandal/viewLocator'],
   function (app, system, viewLocator) {
     
@@ -46,6 +48,8 @@ define(['durandal/app', 'durandal/system', 'durandal/viewLocator'],
         viewLocator.useConvention();
 
         //app.adaptToDevice();
+        
+        // set root to shell
         app.setRoot('viewmodels/shell');
     });
 });
