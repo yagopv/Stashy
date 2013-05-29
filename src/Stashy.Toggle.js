@@ -18,7 +18,8 @@
             this.enabled = false;
             
             this.options = {
-
+                closeOnClickOutside : true,
+                closeOnClick : true
             };
             $.extend(this.options || {}, useropt);
         }
@@ -30,11 +31,29 @@
                 
             $("html").addClass("js");
             
-            this.menulink.click(function () {
+            this.menulink.click(function(event) {
                 self.menulink.toggleClass('active');
                 self.menu.toggleClass('active');
+                event.stopPropagation();
                 return false;
             });
+
+            if (this.options.closeOnClickOutside) {
+                var self = this;
+                self.element.on("click", function(event) {
+                    event.stopPropagation();
+                });
+                $("html").on("click", function() {
+                    self.close();                    
+                });            
+            }
+            
+            if (this.options.closeOnClick) {
+                this.element.find("a:not('.st-toggle-menu-link')")
+                    .on("click", function() {
+                    self.close();
+                });
+            }
             
             this.enabled = true;
             

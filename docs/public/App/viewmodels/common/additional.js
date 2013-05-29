@@ -26,12 +26,6 @@ define(['durandal/app', 'durandal/system','lib/pagelayout','durandal/plugins/rou
     }]
     
     return {
-        closeLayout : function() {
-            system.acquire(router.activeRoute().moduleId).then(function (module) {
-            module.closeLayout();            
-            });
-            return true;
-        },
         layouts : layouts,
         utilities : utilities
     };

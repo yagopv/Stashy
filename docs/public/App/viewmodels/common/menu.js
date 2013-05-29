@@ -49,12 +49,6 @@ define(['durandal/app','durandal/system','lib/pagelayout','durandal/plugins/rout
         menulinks = null;
         
     return {
-        closeLayout : function() {
-            system.acquire(router.activeRoute().moduleId).then(function (module) {
-            module.closeLayout();            
-            });
-            return true;
-        },
         beforeBind : function(element, view, settings) {
             this.menulinks = alllinks[router.activeRoute().settings.activemenu];            
         },

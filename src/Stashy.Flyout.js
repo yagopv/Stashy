@@ -16,7 +16,8 @@
             this.element.data("st-flyout", true);
             this.enabled = false;
             this.options = {     
-                slideType : "push" 
+                slideType : "push",
+                closeOnClickOutside : true 
             };               
             $.extend(this.options || {}, useropt);
         }
@@ -24,8 +25,9 @@
         flyout.prototype.layout = function() {
             if (this.element ==  null) return;
             
-            this.element.find(".st-flyout-toggle").on("click", function() {
+            this.element.find(".st-flyout-toggle").on("click", function(event) {
                 $(this).closest(".st-flyout-container").toggleClass("active-menu");
+                event.stopPropagation();
                 return false;
             });
             if (this.options.slideType == "reveal") {
@@ -34,6 +36,14 @@
             else {
                 this.element.find(".st-flyout-container").addClass("st-push");
             }
+
+            if (this.options.closeOnClickOutside) {
+                var self = this;
+                this.element.on("click", function() {
+                    self.close();                    
+                });
+            }
+
             this.enabled = true;
             return this;
         }

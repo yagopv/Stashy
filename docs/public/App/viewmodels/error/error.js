@@ -7,10 +7,6 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Off
             oc = offcanvas("#error");
             pagelayout.offcanvasLayout(oc);            
         },
-        closeLayout : function() {
-            pagelayout.closeOffcanvas(oc);
-            return true;
-        },
         activate: function (args) {        
             ga('send', 'pageview');
         }

@@ -9,11 +9,7 @@ define(['durandal/app','lib/pagelayout', 'stashy/Stashy.OffCanvas','stashy/Stash
             oc = offcanvas("#home");
             pagelayout.offcanvasLayout(oc);
             utils.ScrollTo('#' + that.hash);
-        },   
-        closeLayout : function() {
-            pagelayout.closeOffcanvas(oc);
-            return true;
-        },                  
+        },              
         activePage : activePage,  
         activate: function (args) {
             var that = this;

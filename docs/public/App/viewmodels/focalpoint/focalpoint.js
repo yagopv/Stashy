@@ -61,11 +61,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Foc
             focalpoint("#sample-1").on("top-3", "right-3");        
             focalpoint("#sample-2").on("top-2", "right-2");            
             utils.ScrollTo('#' + that.hash);
-        },
-        closeLayout : function() {
-            pagelayout.closeOffcanvas(oc);
-            return true;
-        },                     
+        },                    
         activePage : activePage,  
         activate: function (args) {
             var that = this;

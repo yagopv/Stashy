@@ -10,10 +10,6 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Off
             pagelayout.offcanvasLayout(oc);
             prettyPrint();          
             utils.ScrollTo('#' + that.hash);
-        },
-        closeLayout : function() {
-            pagelayout.closeOffcanvas(oc);
-            return true;
         },                   
         activePage : activePage,
         activate: function (args) {

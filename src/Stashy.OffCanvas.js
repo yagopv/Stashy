@@ -23,7 +23,9 @@
                 onMobileLayout : $.noop,
                 onTabletLayout : $.noop,
                 onDesktopLayout : $.noop,
-				useTransitions : true
+				useTransitions : true,
+                closeOnClickOutside : true 
+            
             };
             $.extend(this.options || {}, useropt);			
         }
@@ -64,12 +66,14 @@
 			
             $("html").addClass("js");
             
-            this.showmenuselector.on("click", function() {                
+            this.showmenuselector.on("click", function(event) {                
                self.element.toggleClass("active-menu");
+               event.stopPropagation();
                return false;
             });
-            this.showadditionalselector.on("click", function() {
+            this.showadditionalselector.on("click", function(event) {
                 self.element.toggleClass("active-additional");                
+                event.stopPropagation();
                 return false;
             });
             if (this.element.find(".st-offcanvas-additional").length == 0) {
@@ -79,6 +83,13 @@
                 this.element.addClass("no-menu");
             } 
             
+            if (this.options.closeOnClickOutside) {
+                var self = this;
+                this.element.on("click", function() {
+                    self.close();                    
+                });
+            }
+                        
             $(window).on("debouncedresize", function() {
                 bindResize(self);
                 return false;

@@ -12,11 +12,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Fly
             fladdvisible(true);
             prettyPrint();
             utils.ScrollTo('#' + that.hash);
-        },
-        closeLayout : function() {
-            pagelayout.closeFlyout(fl);
-            return true;
-        },        
+        },     
         activePage : activePage,  
         activate: function (args) {
             var that = this;
