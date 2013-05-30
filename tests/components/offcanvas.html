@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OffCanvas</title>               
+
+        <!--Stashy.-->                
+        <link rel="stylesheet" href="../../css/Stashy.OffCanvas.css" type="text/css"/>                        
+        <link rel="stylesheet" href="../../css/Stashy.Theme.css" type="text/css"/>
+		
+        <meta name="viewport" content="width=device-width" />
+    </head>
+    <body>		
+        <h2>OffCanvas with menu and additional</h2>
+		<div id="stashy1" class="st-offcanvas">
+			<div class="st-offcanvas-menu">
+				<p>Menu</p>
+			</div>
+			<div class="st-offcanvas-main">
+                <div>
+        			<a href="#" class="showmenubutton" style="float:left;">Menu</a>
+	    			<a href="#" class="showadditionalbutton" style="float:right;">Additional</a>                    
+                    <div style="clear:both;"></div>
+                </div>
+				<div>
+					<p>Curabitur lacinia magna vitae nulla vestibulum quis tempor lacus lobortis. Curabitur a lectus lectus, vitae imperdiet justo. Praesent congue tortor neque. Duis cursus tortor rutrum dolor ultricies et aliquam purus sodales. Maecenas metus quam, tempus ut congue nec, feugiat faucibus neque. Phasellus quis libero velit, id auctor nulla. Aliquam erat volutpat. Aenean magna risus, fermentum a porta quis, tempus sed risus.</p>
+				</div>
+			</div>		
+			<div  class="st-offcanvas-additional">
+				<p>Additional</p>
+			</div>	                        
+		</div>
+        <h2>No Additional</h2>
+    	<div id="stashy2" class="st-offcanvas">
+			<div class="st-offcanvas-menu">
+				<p>Menu</p>
+			</div>
+			<div class="st-offcanvas-main">
+                <div>
+                    <a href="#" class="showmenubutton" style="float:left;">Menu</a>    			                    
+                    <div style="clear:both;"></div>
+                </div>				
+				<div>
+					<p>Curabitur lacinia magna vitae nulla vestibulum quis tempor lacus lobortis. Curabitur a lectus lectus, vitae imperdiet justo. Praesent congue tortor neque. Duis cursus tortor rutrum dolor ultricies et aliquam purus sodales. Maecenas metus quam, tempus ut congue nec, feugiat faucibus neque. Phasellus quis libero velit, id auctor nulla. Aliquam erat volutpat. Aenean magna risus, fermentum a porta quis, tempus sed risus.</p>
+				</div>
+			</div>		
+		</div>	
+        <h2>No Menu</h2>
+    	<div id="stashy3" class="st-offcanvas">
+			<div class="st-offcanvas-main">				
+                <div>            
+				    <a href="#" class="showadditionalbutton" style="float:right;">Additional</a>
+                    <div style="clear:both;"></div>
+                </div>
+				<div>
+					<p>Curabitur lacinia magna vitae nulla vestibulum quis tempor lacus lobortis. Curabitur a lectus lectus, vitae imperdiet justo. Praesent congue tortor neque. Duis cursus tortor rutrum dolor ultricies et aliquam purus sodales. Maecenas metus quam, tempus ut congue nec, feugiat faucibus neque. Phasellus quis libero velit, id auctor nulla. Aliquam erat volutpat. Aenean magna risus, fermentum a porta quis, tempus sed risus.</p>
+				</div>
+			</div>		
+			<div  class="st-offcanvas-additional">
+				<p>Additional</p>
+			</div>	                        
+		</div>	        
+        <script type="text/javascript" src="../qunit/jquery.js"></script>
+		<script type="text/javascript" src="../../src/Stashy.OffCanvas.js"></script>
+		<script>
+			$(function() {
+				var stashy1 = Stashy.OffCanvas("#stashy1").layout();
+                var stashy2 = Stashy.OffCanvas("#stashy2").layout();
+                var stashy3 = Stashy.OffCanvas("#stashy3").layout();
+			});
+		</script>
+    </body>
+</html>

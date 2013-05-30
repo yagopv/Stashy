@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flyout</title>               
+
+        <!--Stashy.-->                
+        <link rel="stylesheet" href="../../css/Stashy.Flyout.css" type="text/css"/>                        
+        <link rel="stylesheet" href="../../css/Stashy.Theme.css" type="text/css"/>
+    	
+        <meta name="viewport" content="width=device-width" />
+    </head>
+    <body>		
+        <h2>Flyout push</h2>
+        <div id="flyout1" class="st-flyout">
+            <div class="st-flyout-container">
+                <div class="st-flyout-menu">
+                    <p>This panel is using a push effect</p>
+                </div>
+                <div class="st-flyout-main">
+                    <a href="#" class="st-flyout-toggle">Toggle Menu</a>
+                    <p>Curabitur lacinia magna vitae nulla vestibulum quis tempor lacus lobortis. Curabitur a lectus lectus, vitae imperdiet justo. Praesent congue tortor neque. Duis cursus tortor rutrum dolor ultricies et aliquam purus sodales. Maecenas metus quam, tempus ut congue nec, feugiat faucibus neque. Phasellus quis libero velit, id auctor nulla. Aliquam erat volutpat. Aenean magna risus, fermentum a porta quis, tempus sed risus.</p>
+                </div>
+            </div>            
+        </div>
+        <h2>Flyout reveal</h2>
+        <div id="flyout2" class="st-flyout">
+            <div class="st-flyout-container">
+                <div class="st-flyout-menu">
+                    <p>This panel is using a reveal effect</p>
+                </div>
+                <div class="st-flyout-main">
+                    <a href="#" class="st-flyout-toggle">Toggle Menu</a>
+                    <p>Curabitur lacinia magna vitae nulla vestibulum quis tempor lacus lobortis. Curabitur a lectus lectus, vitae imperdiet justo. Praesent congue tortor neque. Duis cursus tortor rutrum dolor ultricies et aliquam purus sodales. Maecenas metus quam, tempus ut congue nec, feugiat faucibus neque. Phasellus quis libero velit, id auctor nulla. Aliquam erat volutpat. Aenean magna risus, fermentum a porta quis, tempus sed risus.</p>
+                </div>
+            </div>                
+        </div>
+        <script type="text/javascript" src="../qunit/jquery.js"></script>
+		<script type="text/javascript" src="../../src/Stashy.Flyout.js"></script>
+		<script>
+			$(function() {
+				var flyout1 = Stashy.Flyout("#flyout1", { slideType : "push" }).layout();
+                var flyout2 = Stashy.Flyout("#flyout2", { slideType : "reveal" }).layout();                
+			});
+		</script>
+    </body>
+</html>
