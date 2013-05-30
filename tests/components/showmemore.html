@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flyout</title>               
+
+        <!--Stashy.-->                        
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            h2, ul {
+                margin-top : 50px;
+                list-style: none;
+                padding-left : 0;
+            }
+            
+            ul > li, div > div {
+                margin-top : 10px;
+            }
+            
+            .buttonClass {
+                display : inline-block;
+                margin-top : 10px;
+                padding : 5px;
+                background : #ccc;
+                color : #000;                 
+                text-decoration : none;
+            }
+            
+        </style>
+    </head>
+    <body>		        
+        <h2>List 1</h2>
+        <ul id="list1">
+            <li class="item">Item1</li>
+            <li class="item">Item2</li>
+            <li class="item">Item3</li>
+            <li class="item">Item4</li>
+            <li class="item">Item5</li>
+            <li class="item">Item6</li>
+            <li class="item">Item7</li>
+            <li class="item">Item8</li>
+            <li class="item">Item9</li>
+            <li class="item">Item10</li>
+            <li class="item">Item11</li>
+            <li class="item">Item12</li>
+            <li class="item">Item13</li>
+            <li class="item">Item14</li>
+            <li class="item">Item15</li>                                                
+        </ul>
+        
+        <h2>List 2</h2>
+        
+        <div id="list2">
+            <div class="item">Item1</div>
+            <div class="item">Item2</div>
+            <div class="item">Item3</div>
+            <div class="item">Item4</div>
+            <div class="item">Item5</div>
+            <div class="item">Item6</div>
+            <div class="item">Item7</div>
+            <div class="item">Item8</div>
+            <div class="item">Item9</div>
+            <div class="item">Item10</div>
+            <div class="item">Item11</div>
+            <div class="item">Item12</div>
+            <div class="item">Item13</div>
+            <div class="item">Item14</div>
+            <div class="item">Item15</div>
+        </div>
+
+        <script type="text/javascript" src="../qunit/jquery.js"></script>
+		<script type="text/javascript" src="../../src/Stashy.ShowMeMore.js"></script>
+		<script>
+			$(function() {
+                var showmemore1 = Stashy.ShowMeMore("#list1 .item", {
+                    linkClass : "buttonClass",
+                    linkText : "Show me more on list1",
+                    howMany : 5
+                });                
+                showmemore1.on();
+                var showmemore2 = Stashy.ShowMeMore("#list2 div", {
+                    linkClass : "buttonClass",
+                    linkText : "Show  me more on list 2",
+                    howMany : 5
+                });                
+                showmemore2.on();
+			});
+		</script>
+    </body>
+</html>

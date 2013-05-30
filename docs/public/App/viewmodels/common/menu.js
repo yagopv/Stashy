@@ -43,7 +43,8 @@ define(['durandal/app','durandal/system','lib/pagelayout','durandal/plugins/rout
         'home' :    [
                     { name : "What is this?", hash : "#/home/whatisthis" },
                     { name : "Components inside this library", hash : "#/home/components" },
-                    { name : "Dependencies",hash : "#/home/dependencies" }
+                    { name : "Standalone samples",hash : "#/home/samples" },
+                    { name : "Dependencies",hash : "#/home/dependencies" }                    
         ]},
         
         menulinks = null;

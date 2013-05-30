@@ -25,6 +25,8 @@
         flyout.prototype.layout = function() {
             if (this.element ==  null) return;
             
+            $("html").addClass("js");
+            
             this.element.find(".st-flyout-toggle").on("click", function(event) {
                 $(this).closest(".st-flyout-container").toggleClass("active-menu");
                 event.stopPropagation();

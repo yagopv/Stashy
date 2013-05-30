@@ -35,6 +35,7 @@
     "stashy/Stashy.Flyout",
     "stashy/Stashy.FocalPoint",
     "stashy/Stashy.Loader",
+    "stashy/Stashy.min",
     "stashy/Stashy.OffCanvas",
     "stashy/Stashy.ShowMeMore",
     "stashy/Stashy.Toggle",

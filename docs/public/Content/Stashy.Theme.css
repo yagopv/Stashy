@@ -1,3 +1,7 @@
+body {
+    margin : 0;    
+}
+
 /* Flyout */
 
 .st-flyout .st-flyout-menu {
@@ -30,6 +34,10 @@
 
 .st-toggle a:hover {
     color : #FFF;
+}
+
+.st-toggle .st-toggle-navigation.active {
+    max-height: 25em;    
 }
 
 /* Offcanvas */

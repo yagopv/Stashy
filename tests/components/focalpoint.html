@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flyout</title>               
+
+        <!--Stashy.-->                
+        <link rel="stylesheet" href="../../css/Stashy.FocalPoint.css" type="text/css"/>    	
+        <meta name="viewport" content="width=device-width" />
+        <style>
+            img,h2 {
+                margin-top : 50px;
+            }
+        </style>
+    </head>
+    <body>		        
+        <h2>Focus on rock</h2>
+        <img id="image1" src="http://2.bp.blogspot.com/_j_1MHxnmkTc/TMoLXa7lsqI/AAAAAAAAABk/PZLGrEhRwhE/s1600/paisajes02.jpg"/>
+        <h2>Focus on boat</h2>
+        <img id="image2" src="http://1.bp.blogspot.com/_d_lqVWXDYG4/TB6WGVL7tSI/AAAAAAAAAkk/EixWNw15hik/s1600/fotos-de-paisajes.jpg" />
+        <h2>Focus on sun</h2>
+        <img id="image3" src="http://1.bp.blogspot.com/_197iJCcsVbw/TQphnskG6_I/AAAAAAAAABg/m1ON_zUbVZM/s1600/FONDOS-PAISAJES-1024.JPG" />        
+        <script type="text/javascript" src="../qunit/jquery.js"></script>
+		<script type="text/javascript" src="../../src/Stashy.FocalPoint.js"></script>
+		<script>
+			$(function() {
+				var focal1 = Stashy.FocalPoint("#image1").on("down-6","left-6");
+				var focal2 = Stashy.FocalPoint("#image2").on("down-6","right-6");
+				var focal3 = Stashy.FocalPoint("#image3").on("up-6","right-6");				
+			});
+		</script>
+    </body>
+</html>
