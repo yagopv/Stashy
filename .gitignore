@@ -213,3 +213,8 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#############
+## Cloud9 IDE
+#############
+.c9revisions

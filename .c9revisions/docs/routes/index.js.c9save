@@ -1,3 +1,0 @@
-{"ts":1369810702625,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"var express = require('express');\n\n/*\n * GET home page.\n */\nvar app = express();\n\nexports.index = function(req, res){        \n    res.render('index', { title: 'Stashy' });\n};\n\n"]],"start1":0,"start2":0,"length1":0,"length2":176}]],"length":176}
-{"contributors":[],"silentsave":false,"ts":1369810725807,"patch":[[{"diffs":[[0,"r('index"],[1,"-test"],[0,"', { tit"]],"start1":139,"start2":139,"length1":16,"length2":21}]],"length":181,"saved":false}
-{"contributors":[],"silentsave":false,"ts":1369908356661,"patch":[[{"diffs":[[0,"ndex"],[-1,"-test"],[0,"', {"]],"start1":143,"start2":143,"length1":13,"length2":8}]],"length":176,"saved":false}
