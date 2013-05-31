@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flyout</title>               
+
+        <!--Stashy.-->                
+        <link rel="stylesheet" href="../../css/Stashy.Sticky.css" type="text/css"/>        
+        <meta name="viewport" content="width=device-width" />
+        <style>
+        
+            body, h1 {
+                margin : 0;
+                padding : 0;
+            }
+            
+            footer {
+                padding:5px;
+                background : #ccc;                
+            }
+            
+            .st-sticky-wrap {
+                margin: 0 auto -50px; /* Change height. Can use px, ems or % */
+            }
+            
+            .st-sticky-push,
+            .st-sticky-footer {    
+                height: 50px; /* Change height. Can use px, ems or % */
+            }
+
+        </style>
+    </head>
+    <body>		        
+        <div class="st-sticky-wrap">
+            <div id="page">
+                <h1>Main Content wrapped with a box decorated with the ".st-sticky-wrap" class</h1>
+                <p>This is the main content of your page. Add a box with ".st-sticky-push" following your content.</p>
+                <p>Remember to update Stashy.Sticky.css or override the styles sections like is done in this page in order to provide your own footer height.</p>
+            </div>
+            <div class="st-sticky-push"></div>
+        </div>
+        <footer class="st-sticky-footer">
+            <p>Sticky footer. Always at bottom!!</p>
+        </footer>
+    </body>
+</html>
