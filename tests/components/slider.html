@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slider</title>               
+
+        <!--Stashy.-->                                		
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="../../css/Stashy.Slider.css" type="text/css"/> 
+        <style>
+            html, body {
+                min-height: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                position: relative;
+            }
+            .st-slider li h2 {
+                color: #fff;
+                font-size: 30px;
+                text-align: center;
+                position: absolute;
+                top: 40%;
+                left: 0;
+                width: 100%;
+                text-shadow: -1px -1px 0 rgba(0,0,0,.2);
+            }
+    
+            .st-slider li.pane1 { background: #42d692; }
+            .st-slider li.pane2 { background: #4986e7; }
+            .st-slider li.pane3 { background: #d06b64; }
+            .st-slider li.pane4 { background: #cd74e6; }
+            .st-slider li.pane5 { background: #9fe1e7; }            
+        </style>
+    </head>
+    <body>		
+        <div class="st-slider">
+            <ul>
+                <li class="pane1"><h2>Swipe...</h2></li>
+                <li class="pane2"><h2>...or drag...</h2></li>
+                <li class="pane3"><h2>...or swipe...</h2></li>
+                <li class="pane4"><h2>..or drag...</h2></li>
+                <li class="pane5"><h2>Dit is het einde!</h2></li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="../qunit/jquery.js"></script>
+        <script type="text/javascript" src="../../src/Stashy.Modernizr.js"></script>
+        <script type="text/javascript" src="../../src/Stashy.Hammer.js"></script>
+		<script type="text/javascript" src="../../src/Stashy.Slider.js"></script>
+		<script>
+			var sl;
+			$(function() {
+				sl = Stashy.Slider().on();
+			});
+		</script>
+    </body>
+</html>
