@@ -53,6 +53,26 @@
         }
     }
           
+    function showActiveIndicator(indicators, index) {
+		indicators.children().each(function() {
+			$(this).removeClass("active");
+		});
+		indicators.find("[data-pane='" + index + "']").addClass("active");
+	}
+	
+	function bindControls(slider) {
+		slider.element.find("[data-pane]").on("click", function(event) {
+			var pane = event.target.attributes["data-pane"].value;
+			if ( pane == "next") {
+				slider.next();
+			} else if (pane == "prev") {
+				slider.prev();
+			} else {
+				slider.showPane(parseInt(pane));
+			}
+		});
+	}
+	
     function handleHammer(ev) {
         var slider = ev.data.slider;
         console.log(ev);
@@ -113,11 +133,11 @@
             } 
             
             this.element = element;
-            this.container = $(">ul", element);
-            this.panes = $(">ul>li", element);
+            this.container = $(">.st-slider-panes", element);
+            this.panes = $(">.st-slider-panes>li", element);
             this.pane_width = 0;
             this.pane_count = this.panes.length;
-            this.current_pane = 0;
+            this.current_pane = 0;			
         }
         
         return slider;
@@ -130,16 +150,31 @@
 
         $(window).on("load resize orientationchange", function() {
             setPaneDimensions(self);
-        });
-        
-        this.element.hammer({ drag_lock_to_axis: true });  
-        this.element.on("release dragleft dragright swipeleft swiperight", { slider : this },handleHammer);
+        });        
+		
+		this.indicators = $("<ul class='st-slider-indicators'></ul>");
+		for(var i=0; i < this.panes.length; i++) {
+			this.indicators.append("<li data-pane='" + i + "'></li>");
+		}	
+		this.element.append(this.indicators);
+		this.controlleft = $("<a class='st-slider-control' data-pane='prev'></a>");
+		this.element.append(this.controlleft);
+		this.controlright = $("<a class='st-slider-control right' data-pane='next'></a>");
+		this.element.append(this.controlright);		
+		showActiveIndicator(this.indicators, this.current_pane);
+		if (typeof(Hammer) == 'function') {
+			this.element.hammer({ drag_lock_to_axis: true });  
+			this.element.on("release dragleft dragright swipeleft swiperight", { slider : this },handleHammer);
+		}
+		bindControls(this);
+		return this;
     }
         
     slider.prototype.showPane = function(index) {
         // between the bounds
         index = Math.max(0, Math.min(index, this.pane_count-1));
         this.current_pane = index;
+		showActiveIndicator(this.indicators, this.current_pane);		
         var offset = -((100/this.pane_count)*this.current_pane);
         setContainerOffset(this,offset, true);
     };    

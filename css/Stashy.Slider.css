@@ -1,6 +1,6 @@
-.st-slider, .st-slider ul, .st-slider li {
-    min-height: 100%;
+.st-slider, .st-slider-panes, .st-slider-panes li {
     height: 100%;
+    min-height : 100%;
     padding: 0;
     margin: 0;
     position: relative;
@@ -15,14 +15,14 @@
     -webkit-transform-style: preserve-3d;
 }
 
-.st-slider ul.animate {
+.st-slider-panes.animate {
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -o-transition: all .3s;
     transition: all .3s;
 }
 
-.st-slider ul {
+.st-slider .st-slider-panes {
     transform: translate3d(0%,0,0) scale3d(1,1,1);
     -o-transform: translate3d(0%,0,0) scale3d(1,1,1);
     -ms-transform: translate3d(0%,0,0) scale3d(1,1,1);
@@ -33,16 +33,101 @@
     -webkit-transform-style: preserve-3d;
 }
 
-.st-slider ul {
+.st-slider .st-slider-panes {
     -webkit-box-shadow: 0 0 20px rgba(0,0,0,.2);
     box-shadow: 0 0 20px rgba(0,0,0,.2);
     position: relative;
 }
 
-.st-slider li {
+.st-slider .st-slider-panes li {
     float: left;
     overflow: hidden;
     -webkit-transform-style: preserve-3d;
     -webkit-transform: translate3d(0,0,0);
 }
 
+.st-slider .st-slider-panes li img{	
+    width:100%;
+    max-width:100%;
+}
+
+.st-slider .st-slider-indicators {
+	position : absolute;
+	top : 15px;
+	right : 15px;
+	z-index : 999;
+	margin:0;
+	list-style : none;
+	padding:0;
+	display:block;
+}
+
+.st-slider .st-slider-indicators  li {
+	display:block;
+	float:left;
+	width: 10px;
+	height:10px;
+	margin-left:5px;
+	text-indent: -999px;
+	background-color : #ccc;
+	border-radius : 5px;
+	opacity : .5;
+}
+
+.st-slider .st-slider-indicators  li.active{
+	background-color : #FFF;
+	opacity : 1;
+}
+
+.st-slider-caption {
+	position : absolute;
+	right: 0;
+	bottom : 0;
+	left : 0;
+	padding : 15px;
+	background : rgba(0, 0, 0, 0.75);	
+}
+
+.st-slider-caption h1, 
+.st-slider-caption h2,
+.st-slider-caption h3, 
+.st-slider-caption h4,
+.st-slider-caption h5, 
+.st-slider-caption h6 {
+	margin : 0 0 5px;
+	line-height : 20px;
+	color : #FFF;
+}
+
+.st-slider-caption p {
+	margin-bottom : 0;
+	line-height : 20px;
+	color : #FFF;
+}
+
+.st-slider-control {
+	position: absolute;
+	top: 40%;
+	left: 15px;
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	font-size: 60px;
+	font-weight: 100;
+	background: #ccc;
+	-webkit-border-radius: 23px;
+	-moz-border-radius: 23px;
+	border-radius: 23px;
+	opacity: 0.2;	
+}
+
+.st-slider-control:hover {
+	background: #fff;
+	opacity : 1;
+	cursor : pointer;
+}
+
+.st-slider-control.right {
+	right : 15px;
+	left: auto;
+}
