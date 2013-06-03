@@ -7,7 +7,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Fly
     return {
         viewAttached : function() {
             var that = this;
-            fl = flyout("#flyout", { slideType : "reveal"})
+            fl = flyout("#flyout", { slideType : "reveal", enableTouch:true})
             pagelayout.flyoutLayout(fl);
             fladdvisible(true);
             prettyPrint();

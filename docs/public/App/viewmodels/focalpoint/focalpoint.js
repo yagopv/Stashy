@@ -55,7 +55,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Foc
     return {
         viewAttached : function() {
             var that = this;
-            oc= offcanvas("#focalpoint")
+            oc= offcanvas("#focalpoint", { enableTouch : true })
             pagelayout.offcanvasLayout(oc);
             prettyPrint();            
             focalpoint("#sample-1").on("top-3", "right-3");        

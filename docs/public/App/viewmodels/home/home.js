@@ -6,7 +6,7 @@ define(['durandal/app','lib/pagelayout', 'stashy/Stashy.OffCanvas','stashy/Stash
     return {
         viewAttached : function() {
             var that = this;
-            oc = offcanvas("#home");
+            oc = offcanvas("#home", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);
             utils.ScrollTo('#' + that.hash);
         },              

@@ -17,11 +17,31 @@
             this.enabled = false;
             this.options = {     
                 slideType : "push",
-                closeOnClickOutside : true 
+                closeOnClickOutside : true,
+                enableTouch : false
             };               
             $.extend(this.options || {}, useropt);
         }
 
+        var handleHammer = function(ev) {
+            var flyout = ev.data.flyout;
+    
+            // disable browser scrolling
+            ev.gesture.preventDefault();
+    
+            switch(ev.type) {
+                case 'swipeleft':                    
+                    flyout.close();
+                    ev.gesture.stopDetect();
+                    break;
+    
+                case 'swiperight':                    
+                    flyout.open();
+                    ev.gesture.stopDetect();
+                    break;
+            }
+        }
+                
         flyout.prototype.layout = function() {
             if (this.element ==  null) return;
             
@@ -46,6 +66,11 @@
                 });
             }
 
+            if (this.options.enableTouch && typeof(Hammer) == 'function') {
+                this.element.hammer({ drag_lock_to_axis: true });  
+                this.element.on("swipeleft swiperight", { flyout : this },handleHammer);
+		    }
+            
             this.enabled = true;
             return this;
         }

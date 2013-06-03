@@ -14,6 +14,7 @@ exports.optimizeProjectAssets = function() {
             'css/Stashy.Focalpoint.css',
             'css/Stashy.Loader.css',
             'css/Stashy.Sticky.css',
+            'css/Stashy.Slider.css',
             'css/Stashy.Theme.css'
         ],
         fileOut: 'css/Stashy.min.css',
@@ -29,12 +30,14 @@ exports.optimizeProjectAssets = function() {
         fileIn: [
             'src/Stashy.Events.js',
             'src/Stashy.Utils.js',
+            'src/Stashy.Modernizr.js',
             'src/Stashy.OffCanvas.js',
             'src/Stashy.Flyout.js',
             'src/Stashy.Toggle.js',
             'src/Stashy.FocalPoint.js',
             'src/Stashy.Loader.js',
-            'src/Stashy.ShowMeMore.js'            
+            'src/Stashy.ShowMeMore.js',
+            'src/Stashy.Slider.js'
         ],
         fileOut: 'src/Stashy.min.js',
         callback: function(err){
@@ -57,6 +60,7 @@ exports.optimizeDocsAssets = function() {
             'docs/public/Content/Stashy.Focalpoint.css',
             'docs/public/Content/Stashy.Loader.css',
             'docs/public/Content/Stashy.Sticky.css',
+            'docs/public/Content/Stashy.Slider.css',
             'docs/public/Content/bootstrap.css',
             'docs/public/Content/bootstrap-responsive.css',
             'docs/public/Content/font-awesome.css',
@@ -79,6 +83,7 @@ exports.optimizeDocsAssets = function() {
         type: 'gcc',
         fileIn: [
             'docs/public/Scripts/jquery.js',
+            'docs/public/Scripts/jquery.hammer.js',
             'docs/public/Scripts/knockout.js',
             'docs/public/Scripts/sammy.js'
         ],

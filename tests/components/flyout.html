@@ -34,11 +34,12 @@
                 </div>
             </div>                
         </div>
-        <script type="text/javascript" src="../qunit/jquery.js"></script>
+        <script type="text/javascript" src="../../src/jquery.js"></script>
+        <script type="text/javascript" src="../../src/jquery.hammer.js"></script>
 		<script type="text/javascript" src="../../src/Stashy.Flyout.js"></script>
 		<script>
 			$(function() {
-				var flyout1 = Stashy.Flyout("#flyout1", { slideType : "push" }).layout();
+				var flyout1 = Stashy.Flyout("#flyout1", { slideType : "push", enableTouch : true }).layout();
                 var flyout2 = Stashy.Flyout("#flyout2", { slideType : "reveal" }).layout();                
 			});
 		</script>

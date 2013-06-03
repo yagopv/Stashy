@@ -4,7 +4,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Off
 
     return {
         viewAttached : function() {
-            oc = offcanvas("#error");
+            oc = offcanvas("#error", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);            
         },
         activate: function (args) {        

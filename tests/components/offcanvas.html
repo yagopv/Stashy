@@ -59,12 +59,14 @@
 				<p>Additional</p>
 			</div>	                        
 		</div>	        
-        <script type="text/javascript" src="../qunit/jquery.js"></script>
+        <script type="text/javascript" src="../../src/jquery.js"></script>
+        <script type="text/javascript" src="../../src/jquery.hammer.js"></script>
+        <script type="text/javascript" src="../../src/Stashy.Utils.js"></script>
 		<script type="text/javascript" src="../../src/Stashy.OffCanvas.js"></script>
 		<script>
 			$(function() {
-				var stashy1 = Stashy.OffCanvas("#stashy1").layout();
-                var stashy2 = Stashy.OffCanvas("#stashy2").layout();
+				var stashy1 = Stashy.OffCanvas("#stashy1", { enableTouch : true }).layout();
+                var stashy2 = Stashy.OffCanvas("#stashy2", { enableTouch : true }).layout();
                 var stashy3 = Stashy.OffCanvas("#stashy3").layout();
 			});
 		</script>

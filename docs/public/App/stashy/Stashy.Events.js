@@ -1,4 +1,4 @@
-(function($) {
+(function(window,$,undefined) {
 
 var $event = $.event,
 	$special,
@@ -32,4 +32,4 @@ $special = $event.special.debouncedresize = {
 	threshold: 150
 };
 
-})(jQuery);
+})(window,jQuery);

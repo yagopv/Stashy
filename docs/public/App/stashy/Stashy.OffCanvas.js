@@ -24,7 +24,8 @@
                 onTabletLayout : $.noop,
                 onDesktopLayout : $.noop,
 				useTransitions : true,
-                closeOnClickOutside : true 
+                closeOnClickOutside : true,
+                enableTouch : false
             
             };
             $.extend(this.options || {}, useropt);			
@@ -44,7 +45,7 @@
             self.showadditionalselector.css("visibility","hidden");
             self.showmenuselector.css("visibility","hidden");
         }    
-            
+                        
         var bindResize = function(self) {
             var width = $(window).width();
             if (width < 768) {
@@ -59,6 +60,33 @@
             }
         };
 
+        var handleHammer = function(ev) {
+            var offcanvas = ev.data.offcanvas;
+    
+            // disable browser scrolling
+            ev.gesture.preventDefault();
+    
+            switch(ev.type) {
+                case 'swipeleft':                    
+                    if (offcanvas.element.hasClass("active-menu")) {
+                        offcanvas.element.removeClass("active-menu");
+                    } else {
+                        offcanvas.element.addClass("active-additional");
+                    }                                        
+                    ev.gesture.stopDetect();
+                    break;
+    
+                case 'swiperight':                    
+                    if (offcanvas.element.hasClass("active-additional")) {
+                        offcanvas.element.removeClass("active-additional");                        
+                    } else {
+                        offcanvas.element.addClass("active-menu");
+                    }                                        
+                    ev.gesture.stopDetect();
+                    break;
+            }
+        }
+                
         offcanvas.prototype.layout = function() {
             if (this.element ==  null) return;
             
@@ -101,6 +129,11 @@
 				this.element.addClass("active-transitions");
 			}
 			
+            if (this.options.enableTouch && typeof(Hammer) == 'function') {
+                this.element.hammer({ drag_lock_to_axis: true });  
+                this.element.on("swipeleft swiperight", { offcanvas : this },handleHammer);
+		    }
+            
             this.enabled = true;
             return this;
         }

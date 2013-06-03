@@ -40,7 +40,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Sho
     return {
         viewAttached : function() {
             var that = this;
-            oc = offcanvas("#showmemore");
+            oc = offcanvas("#showmemore", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);
             prettyPrint();   
             utils.ScrollTo('#' + that.hash);
