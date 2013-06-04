@@ -11,15 +11,15 @@ exports.optimizeProjectAssets = function() {
             'css/Stashy.OffCanvas.css',
             'css/Stashy.Flyout.css',
             'css/Stashy.Toggle.css',
-            'css/Stashy.Focalpoint.css',
+            'css/Stashy.FocalPoint.css',
             'css/Stashy.Loader.css',
             'css/Stashy.Sticky.css',
             'css/Stashy.Slider.css',
             'css/Stashy.Theme.css'
         ],
-        fileOut: 'css/Stashy.min.css',
+        fileOut: 'dist/css/Stashy.min.css',
         callback: function(err){
-            console.log('Project - CSS');
+            console.log('Stashy - CSS');
             if (err != null) console.log(err);            
         }
     });
@@ -39,12 +39,36 @@ exports.optimizeProjectAssets = function() {
             'src/Stashy.ShowMeMore.js',
             'src/Stashy.Slider.js'
         ],
-        fileOut: 'src/Stashy.min.js',
+        fileOut: 'dist/js/Stashy.min.js',
         callback: function(err){
-            console.log('Project - JS');
+            console.log('Stashy - JS');
             if (err != null) console.log(err);            
         }
     });
+    
+    new compressor.minify({
+        type: 'gcc',
+        fileIn: [
+            'src/jquery.hammer.js'
+        ],
+        fileOut: 'dist/js/jquery.hammer.min.js',
+        callback: function(err){
+            console.log('Hammer - JS');
+            if (err != null) console.log(err);            
+        }
+    });
+    
+    new compressor.minify({
+        type: 'gcc',
+        fileIn: [
+            'src/jquery.js'
+        ],
+        fileOut: 'dist/js/jquery.min.js',
+        callback: function(err){
+            console.log('jQuery - JS');
+            if (err != null) console.log(err);            
+        }
+    });    
 }
 
 exports.optimizeDocsAssets = function() {
@@ -57,7 +81,7 @@ exports.optimizeDocsAssets = function() {
             'docs/public/Content/Stashy.OffCanvas.css',
             'docs/public/Content/Stashy.Flyout.css',
             'docs/public/Content/Stashy.Toggle.css',
-            'docs/public/Content/Stashy.Focalpoint.css',
+            'docs/public/Content/Stashy.FocalPoint.css',
             'docs/public/Content/Stashy.Loader.css',
             'docs/public/Content/Stashy.Sticky.css',
             'docs/public/Content/Stashy.Slider.css',
