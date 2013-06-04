@@ -7,26 +7,35 @@ define(['durandal/app', 'durandal/system','lib/pagelayout','durandal/plugins/rou
         name : "Flyout",
         hash : "#/flyout"        
     },{
-        name : "Toggle",
-        hash : "#/toggle"    
-    },{
         name : "Sticky",
         hash : "#/sticky"    
     }],
+
+    navigation = [{
+        name : "FocalPoint",
+        hash : "#/focalpoint"        
+    }],
     
+    media = [{
+        name : "Toggle",
+        hash : "#/toggle"
+    }],
+
     utilities = [{
         name : "ShowMeMore",
         hash : "#/showmemore"    
     },{
-        name : "FocalPoint",
-        hash : "#/focalpoint"    
-    },{
         name : "Loader",
         hash : "#/loader"        
+    },{
+        name : "Slider",
+        hash : "#/slider"        
     }]
     
     return {
         layouts : layouts,
+        navigation : navigation,
+        media : media,
         utilities : utilities
     };
 });

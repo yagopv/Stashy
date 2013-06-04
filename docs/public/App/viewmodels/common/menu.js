@@ -39,7 +39,13 @@ define(['durandal/app','durandal/system','lib/pagelayout','durandal/plugins/rout
                     { name : "HTML",        hash : "#/sticky/html" },
                     { name : "JavaScript",  hash : "#/sticky/javascript" },
                     { name : "Dependencies",hash : "#/sticky/dependencies" }
-        ],                             
+        ],          
+        'slider' : [
+                    { name : "Description", hash : "#/slider/description" },
+                    { name : "HTML",        hash : "#/slider/html" },
+                    { name : "JavaScript",  hash : "#/slider/javascript" },
+                    { name : "Dependencies",hash : "#/slider/dependencies" }
+        ],                                     
         'home' :    [
                     { name : "What is this?", hash : "#/home/whatisthis" },
                     { name : "Components inside this library", hash : "#/home/components" },

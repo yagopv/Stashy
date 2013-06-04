@@ -35,7 +35,7 @@
 	}
 	
 	function bindControls(slider) {
-		slider.element.find("[data-pane]").on("click", function(event) {
+		slider.element.find("[data-pane]").on("click", function(event) {			
 			var pane = event.target.attributes["data-pane"].value;
 			if ( pane == "next") {
 				slider.next();
@@ -44,7 +44,7 @@
 			} else {
 				slider.showPane(parseInt(pane));
 			}
-			slider.options.autoSlide = false;
+			slider.options.autoSlide = false;			
 		});
 	}
 	
@@ -52,7 +52,8 @@
         var slider = ev.data.slider;
         // disable browser scrolling
         ev.gesture.preventDefault();
-
+        ev.gesture.stopPropagation();
+        slider.options.autoSlide = false;
         switch(ev.type) {
             case 'dragright':
             case 'dragleft':
@@ -113,9 +114,10 @@
             this.pane_count = this.panes.length;
             this.current_pane = 0;
             this.options = {
-                showControls : true,
-                showIndicators : true,
-                autoSlide : false,
+                enableControls : true,
+                enableIndicators : true,
+                showOnHover : true,
+                autoSlide : true,
                 enableTouch : false,
                 duration: 5000
             }
@@ -135,12 +137,14 @@
         
         setPaneDimensions(this);
 
-        $(window).on("load resize orientationchange", function() {
+        $(window).on("load debouncedresize orientationchange", function() {
+            self.element.hide();
             setPaneDimensions(self);
+            self.element.fadeIn(600);
         });        
 				
-		if (this.options.showIndicators) {
-            this.indicators = $("<ul class='st-slider-indicators'></ul>");
+		if (this.options.enableIndicators) {
+            this.indicators = $("<ul class='st-slider-indicators'></ul>");            
             for(var i=0; i < this.panes.length; i++) {
                 this.indicators.append("<li data-pane='" + i + "'></li>");
             }	        
@@ -148,7 +152,7 @@
             showActiveIndicator(this.indicators, this.current_pane);
         }
         
-		if (this.options.showControls) {
+		if (this.options.enableControls) {
             this.controlleft = $("<a class='st-slider-control' data-pane='prev'></a>");
             this.element.append(this.controlleft);
             this.controlright = $("<a class='st-slider-control right' data-pane='next'></a>");
@@ -165,11 +169,25 @@
             }, this.options.duration);
         }
         
+        if (this.options.showOnHover) {
+            this.element.addClass("controlsonhover");
+            this.element.hover(function() {
+                self.element.removeClass("controlsonhover");
+            }, function() {
+                self.element.addClass("controlsonhover");
+            });
+        }
+        
 		bindControls(this);
 		
 		if (this.options.enableTouch && typeof(Hammer) == 'function') {
 			this.element.hammer({ drag_lock_to_axis: true });  
 			this.element.on("release dragleft dragright swipeleft swiperight", { slider : this },handleHammer);
+			if (this.options.showOnHover) {
+                this.element.on("tap", function() {
+                    self.element.toggleClass("controlsonhover");
+                });            
+            }
 		}
 		
 		return this;
@@ -179,7 +197,7 @@
         // between the bounds
         index = Math.max(0, Math.min(index, this.pane_count-1));
         this.current_pane = index;
-        if (this.options.showIndicators) {
+        if (this.options.enableIndicators) {
 		  showActiveIndicator(this.indicators, this.current_pane);		
         }
         var offset = -((100/this.pane_count)*this.current_pane);

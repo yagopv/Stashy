@@ -13,7 +13,7 @@ p {
     line-height:1.5em;    
 }
 
-section p, section h1, section h2, section h4, section a, section .component, section pre, section table {
+section p, section h1, section h2, section h4, section a:not(.st-slider-control), section .component, section pre, section table {
     margin-top:1.5em !important;    
 }
 
@@ -114,13 +114,23 @@ section p, section h1, section h2, section h4, section a, section .component, se
     border-color:transparent;
 }
 
+.badge-sky, .badge-sky:hover {
+    background-color : #3bcbcb;
+    color : #FFF;
+    border-color:transparent;
+}
+
+.badge-sky-dark, .badge-sky-dark:hover {
+    background-color : #3dbebe;
+    color : #FFF;
+    border-color:transparent;
+}
+
 .badge-success-light, .badge-success-light:hover {
     background-color : rgb(93, 204, 57);
     color : #FFF;
     border-color:transparent;
 }
-
-
 
 .hero-unit a {
     width:100%;
@@ -258,6 +268,16 @@ footer a:hover {
     font-size: 5em;
     margin-top: 50px;
     color:#000;
+}
+
+#slider #sl2 ul li div h2 {
+    color : #FFF;   
+    margin-top : 0; 
+}
+
+#slider #sl2 ul li div p {
+    color : #FFF;   
+    margin-top : 0; 
 }
 
 @media (max-width: 400px) {

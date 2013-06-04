@@ -21,9 +21,11 @@ define(['durandal/plugins/router'], function (router) {
                 { url: 'showmemore', moduleId: 'viewmodels/showmemore/showmemore', name: 'ShowMeMore', visible: false , settings : { activemenu : 'showmemore' }},
                 { url: 'showmemore/:page', moduleId: 'viewmodels/showmemore/showmemore', name: 'ShowMeMore', visible: false , settings : { activemenu : 'showmemore' }},
                 { url: 'focalpoint', moduleId: 'viewmodels/focalpoint/focalpoint', name: 'FocalPoint', visible: false , settings : { activemenu : 'focalpoint' }},
-                { url: 'focalpoint/:page', moduleId: 'viewmodels/focalpoint/focalpoint', name: 'FocalPoint', visible: false , settings : { activemenu : 'focalpoint' }},                                                                
+                { url: 'focalpoint/:page', moduleId: 'viewmodels/focalpoint/focalpoint', name: 'FocalPoint', visible: false , settings : { activemenu : 'focalpoint' }},                  
                 { url: 'loader', moduleId: 'viewmodels/loader/loader', name: 'Loader', visible: false , settings : { activemenu : 'loader' }},
                 { url: 'loader/:page', moduleId: 'viewmodels/loader/loader', name: 'Loader', visible: false , settings : { activemenu : 'loader' }},
+                { url: 'slider', moduleId: 'viewmodels/slider/slider', name: 'Slider', visible: false , settings : { activemenu : 'slider' }},
+                { url: 'slider/:page', moduleId: 'viewmodels/slider/slider', name: 'Slider', visible: false , settings : { activemenu : 'slider' }},                
                 { url: 'sticky', moduleId: 'viewmodels/sticky/sticky', name: 'Sticky', visible: false , settings : { activemenu : 'sticky' }},
                 { url: 'sticky/:page', moduleId: 'viewmodels/sticky/sticky', name: 'Sticky', visible: false , settings : { activemenu : 'sticky' }},                
                 { url: 'error', moduleId: 'viewmodels/error/error', name: 'Error', visible: false }

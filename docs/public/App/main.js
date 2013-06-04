@@ -28,16 +28,22 @@ requirejs.config({
         'stashy/Stashy.FocalPoint': {
             exports: 'Stashy.FocalPoint'
         },
+        'stashy/Stashy.Slider': {
+            exports: 'Stashy.Slider'
+        },
+        'stashy/Stashy.Modernizr': {
+            exports: 'Modernizr'
+        },        
         'stashy/Stashy.Events': {			
-        },    
+        },
         'lib/prettify': {			
-        }            
+        }
     }
 });
 
 // Config application
-define(['durandal/app', 'durandal/system', 'durandal/viewLocator'],
-  function (app, system, viewLocator) {
+define(['durandal/app', 'durandal/system', 'durandal/viewLocator', 'stashy/Stashy.Modernizr'],
+  function (app, system, viewLocator, modernizr) {
     
     //>>excludeStart("build", true);
     system.debug(true);
