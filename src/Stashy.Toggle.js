@@ -19,7 +19,8 @@
             
             this.options = {
                 closeOnClickOutside : true,
-                closeOnClick : true
+                closeOnClick : true,
+                fixed : false
             };
             $.extend(this.options || {}, useropt);
         }
@@ -38,6 +39,10 @@
                 return false;
             });
 
+            if (this.options.fixed) {
+                self.element.addClass("st-toggle-fixed");
+            }
+            
             if (this.options.closeOnClickOutside) {
                 var self = this;
                 self.element.on("click", function(event) {
