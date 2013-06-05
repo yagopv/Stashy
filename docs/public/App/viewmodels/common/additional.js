@@ -22,14 +22,14 @@ define(['durandal/app', 'durandal/system','lib/pagelayout','durandal/plugins/rou
     }],
 
     utilities = [{
-        name : "ShowMeMore",
-        hash : "#/showmemore"    
+        name : "Slider",
+        hash : "#/slider"                
     },{
         name : "Loader",
         hash : "#/loader"        
     },{
-        name : "Slider",
-        hash : "#/slider"        
+        name : "ShowMeMore",
+        hash : "#/showmemore"    
     }]
     
     return {

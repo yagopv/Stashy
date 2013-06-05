@@ -13,6 +13,7 @@ In this early version i included some layouts and utilities:
 - **ShowMeMore** : Hide items ... and show a button for showing more of them
 - **FocalPoint** : Beautiful responsive images
 - **Loader** : Nice loader based in CSS3 transitions and animations
+- **Slider** : Touch enabled slider for creating sliding layouts, carousels, ...etc
 
 
 #Getting started
@@ -28,9 +29,6 @@ Created and developed by Yago Pérez Vázquez
 
 Licesed under [MIT public license](http://opensource.org/licenses/mit-license.php)
 
-#Changelog
 
-### v0.1.0
 
-Initial commit
 

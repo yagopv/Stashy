@@ -138,9 +138,7 @@
         setPaneDimensions(this);
 
         $(window).on("load debouncedresize orientationchange", function() {
-            self.element.hide();
             setPaneDimensions(self);
-            self.element.fadeIn(600);
         });        
 				
 		if (this.options.enableIndicators) {

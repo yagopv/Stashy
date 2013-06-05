@@ -65,13 +65,16 @@
     
             // disable browser scrolling
             ev.gesture.preventDefault();
-    
+            ev.stopPropagation();
+            
             switch(ev.type) {
                 case 'swipeleft':                    
                     if (offcanvas.element.hasClass("active-menu")) {
                         offcanvas.element.removeClass("active-menu");
                     } else {
-                        offcanvas.element.addClass("active-additional");
+                        if (offcanvas.additional.length > 0) {
+                            offcanvas.element.addClass("active-additional");
+                        }
                     }                                        
                     ev.gesture.stopDetect();
                     break;
@@ -80,7 +83,9 @@
                     if (offcanvas.element.hasClass("active-additional")) {
                         offcanvas.element.removeClass("active-additional");                        
                     } else {
-                        offcanvas.element.addClass("active-menu");
+                        if (offcanvas.menu.length > 0) {
+                            offcanvas.element.addClass("active-menu");
+                        }
                     }                                        
                     ev.gesture.stopDetect();
                     break;

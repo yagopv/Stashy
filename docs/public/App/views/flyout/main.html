@@ -87,6 +87,12 @@ Stashy.Flyout(selector, options)
                     <td>true</td>
                     <td>Close Flyout panel on click outside the toggle button (.st-flyout-toggle)</td>
                 </tr>                   
+                <tr>
+                    <td><strong>enableTouch</strong></td>
+                    <td>bool</td>
+                    <td>false</td>
+                    <td>If touch is enabled, then you can swipe to reveal the left menu. The touch behaviour is controlled by Hammer.js so you need to add a reference to jquery.hammer.js. Get it in the <a href="http://eightmedia.github.io/hammer.js/" target="_blank">project site</a> or in the <a href="https://github.com/yagopv/Stashy/tree/master/dist/js" target="_blank">dist folder</a> of the Stashy Github project</td>
+                </tr>                   
             </tbody>
         </table> 
         <h2>Methods</h2>
@@ -124,7 +130,9 @@ var flyout = new Stashy.Flyout().layout();</pre>
         <p class="lead">CSS</p>
         <span class="badge badge-info">Stashy.Flyout.css</span>
         <p class="lead">JS</p>
-        <span class="badge badge-info">jQuery.js</span> <span class="badge badge-info">Stashy.Flyout.js</span>
+        <span class="badge badge-info">jQuery.js</span> 
+        <span class="badge badge-info">jquery.hammer.js (if touch enabled)</span> 
+        <span class="badge badge-info">Stashy.Flyout.js</span>
     </section>																			
 </div>		                    
     

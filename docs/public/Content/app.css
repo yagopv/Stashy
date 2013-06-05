@@ -177,12 +177,26 @@ footer {
 	padding : 12px;
 }
 
+.h-center {
+    width:50%;
+    margin:0 auto;
+}
+
 .h-clear {
     clear:both;
 }
 
 .h-align-inline {
     text-align: center;
+}
+
+.h-vcenter-parent {
+    display: table;
+}
+
+.h-vcenter-child {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 td p {
@@ -274,6 +288,14 @@ footer a:hover {
     margin-top : 0 !important; 
 }
 
+#sl2 {
+    height : 25em;
+}
+
+#sl2 h2, #sl2 p {
+    color : #FFF;    
+}
+
 #sl3 {
     height : 6em;    
     margin-top:10% !important;
@@ -281,6 +303,10 @@ footer a:hover {
 
 #sl3 li {
     text-align:center;
+}
+
+#sl3 h3 {
+    color : #FFF;        
 }
 
 @media (max-width: 400px) {

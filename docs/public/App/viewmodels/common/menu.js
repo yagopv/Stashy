@@ -44,6 +44,7 @@ define(['durandal/app','durandal/system','lib/pagelayout','durandal/plugins/rout
                     { name : "Description", hash : "#/slider/description" },
                     { name : "HTML",        hash : "#/slider/html" },
                     { name : "JavaScript",  hash : "#/slider/javascript" },
+                    { name : "Playground",  hash : "#/slider/playground" },
                     { name : "Dependencies",hash : "#/slider/dependencies" }
         ],                                     
         'home' :    [

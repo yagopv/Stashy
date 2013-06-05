@@ -16,8 +16,8 @@
         <div class="page-header">
             <h1>Description</h1>
         </div>                        
-        <p>Carousels can be used in a lot of places in your website ... home pages, galleries, ... Here are the component you need from Stashy for allow creating this type of stuff.</p>
-        <p>The slider presented here can be touch enabled for improve user experience in mobile devices.</p>
+        <p>Sliders can be used in a lot of places in your website ... home pages, galleries, ... Here are the component you need from Stashy for  creating this type of stuff.</p>
+        <p>The slider presented here may be touch enabled for improve user experience in mobile devices.</p>
     </section>
     
     <section id="html">
@@ -28,13 +28,13 @@
 &ltdiv id="sl1" class="st-slider"&gt
     &ltul class="st-slider-panes"&gt
         &ltli&gt
-            Content here (images, paragraphs, etc...)            
+            Content here (images, paragraphs, etc...). Use optionally a box with  .st-slider-content class in order to add a little padding
+            You can optionally add a box with .st-slider-caption class. This is useful for showing info about the content.          
             &ltdiv class="st-slider-caption"&gt
                 &lth4&gtMy caption title&lt/h4&gt
                 &ltp&gtMy caption description&lt/p&gt
-            &lt/div&gt
+            &lt/div&gt            
         &lt/li&gt
-        ...
     &lt/ul&gt
 &lt/div&gt
 </pre>	
@@ -84,13 +84,13 @@ Stashy.Slider(selector, options)</pre>
                     <td><strong>enableControls</strong></td>
                     <td>bool</td>
                     <td>>true</td>
-                    <td>Show slider controls for sliding panes left or right</td>
+                    <td>Show the slider controls to permit slide panels left or right</td>
                 </tr>
                 <tr>
                     <td><strong>enableIndicators</strong></td>
                     <td>bool</td>
                     <td>true</td>
-                    <td>Show the pane you are in</td>
+                    <td>Show the panel you are in</td>
                 </tr>
                 <tr>
                     <td><strong>showOnHover</strong></td>
@@ -108,7 +108,7 @@ Stashy.Slider(selector, options)</pre>
                     <td><strong>enableTouch</strong></td>
                     <td>bool</td>
                     <td>false</td>
-                    <td>If touch is enabled, then you can swipe and drag over the panes. The touch behaviour is ruled by Hammer.js so you need to add a reference to jquery.hammer.js. Get it in the <a href="http://eightmedia.github.io/hammer.js/" target="_blank">project site</a> or in the <a href="https://github.com/yagopv/Stashy/tree/master/dist/js" target="_blank">dist folder</a> of the Stashy Github project</td>
+                    <td>If touch is enabled, then you can swipe and drag over the panels. The touch behaviour is controlled by Hammer.js so you need to add a reference to jquery.hammer.js. Get it in the <a href="http://eightmedia.github.io/hammer.js/" target="_blank">project site</a> or in the <a href="https://github.com/yagopv/Stashy/tree/master/dist/js" target="_blank">dist folder</a> of the Stashy Github project</td>
                 </tr> 
                 <tr>
                     <td><strong>duration</strong></td>
@@ -133,20 +133,20 @@ Stashy.Slider(selector, options)</pre>
                 </tr>
                 <tr>
                     <td><strong>showPane(index)</strong></td>
-                    <td>Show the pane you choose</td>
+                    <td>Show the panel you choose</td>
                 </tr>                
                 <tr>                                        
                     <td colspan="2">
-                        <p><em>index:</em>Choose pane to show starting from 0 to N</p>											
+                        <p><em>index:</em>Choose panel to show (from 0 to N)</p>
                     </td>
                 </tr>									
                 <tr>
                     <td><strong>next()</strong></td>
-                    <td>Show next pane</td>
+                    <td>Show next panel</td>
                 </tr>
                 <tr>
                     <td><strong>prev()</strong></td>
-                    <td>Show prev pane</td>
+                    <td>Show previous panel</td>
                 </tr>
             </tbody>
         </table>
@@ -158,8 +158,10 @@ sl2 = Stashy.Slider("#sl2",{showControls : false, showIndicators:false, enableTo
     <section id="playground">
         <div class="page-header">                        
            <h1>Playground</h1>    					
-        </div>		
-        <div id="sl1" class="st-slider">
+        </div>
+        <h3>Carousel</h3>
+        <p>The classic carousel for showing your images. In this sample all the options are enabled so you have controls showed on hover or tap, touch enabled for drag left and right ...etc.</p>
+        <div id="sl1" class="st-slider h-top-margin">
 		    <ul class="st-slider-panes">
 					<li>
 						<img src="http://stashy.blob.core.windows.net/static/Hot_car_wallpaper_2973_1024x768.jpg" />
@@ -190,47 +192,51 @@ sl2 = Stashy.Slider("#sl2",{showControls : false, showIndicators:false, enableTo
 						</div>						
 					</li>					
 				</ul>
-        </div>		
-			<div id="sl2" class="st-slider reset" style="margin-top: 10%;">
+        </div>	
+        <h3 class="h-top-margin">Information panel</h3>	
+        <p>Several information panels with auto slide options enabled and touch. You can drag left or right to change the panels. No controls available. Slide panels in the following widget :)</p>
+			<div id="sl2" class="st-slider reset h-top-margin">
 				<ul class="st-slider-panes">
-					<li class="badge-success">				        
-				        <div class="st-slider-content">
-                            <h2>Lorem ipsum</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius lacus nunc. Suspendisse sit amet aliquet mi. Aliquam blandit cursus elit, ac dictum erat condimentum vel. In elementum consectetur nisl, sit amet vestibulum lectus tempor vel. Integer tempus, erat non ullamcorper suscipit.</p>				            
-				        </div>
-					</li>				    				        
-					<li class="badge-info">												
-				        <div class="st-slider-content">
-                            <h2>Lorem ipsum</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius lacus nunc. Suspendisse sit amet aliquet mi. Aliquam blandit cursus elit, ac dictum erat condimentum vel. In elementum consectetur nisl, sit amet vestibulum lectus tempor vel. Integer tempus, erat non ullamcorper suscipit.</p>				            
+					<li class="badge-sky h-vcenter-parent">												
+				        <div class="st-slider-content h-vcenter-child">
+                            <h2>... Drag or swipe ...</h2>
+                            <p>add Hammer.js, enable touch and use gestures for drag or swipe panels  </p>                            		            
 				        </div>
 
 				    </li>
-					<li class="badge-danger">												
-				        <div class="st-slider-content">
-                            <h2>Lorem ipsum</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius lacus nunc. Suspendisse sit amet aliquet mi. Aliquam blandit cursus elit, ac dictum erat condimentum vel. In elementum consectetur nisl, sit amet vestibulum lectus tempor vel. Integer tempus, erat non ullamcorper suscipit.</p>				            
+					<li class="badge-orange h-vcenter-parent">												
+				        <div class="st-slider-content h-vcenter-child">
+                            <h2>... Full screen ...</h2>
+                            <p>This widget can be useful for a full screen sliding carousel in mobile devices</p>
+                            <p>For doing this, for example, you can add the slider like your main layout, add body height and min-height to 100% and disable viewport scaling</p>
+                            <p><strong>&ltmeta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"&gt</strong></p>
 				        </div>
 				    </li>
-					<li class="badge-banana">												
-				        <div class="st-slider-content">
-                            <h2>Lorem ipsum</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius lacus nunc. Suspendisse sit amet aliquet mi. Aliquam blandit cursus elit, ac dictum erat condimentum vel. In elementum consectetur nisl, sit amet vestibulum lectus tempor vel. Integer tempus, erat non ullamcorper suscipit.</p>				            
+					<li class="badge-info h-vcenter-parent">												
+				        <div class="st-slider-content h-vcenter-child">
+                            <h2>Height is important!!</h2>
+                            <p>Add images with the same size</p>
+                            <p>When using text, is important to set the height of your slider in the main container (.st-slider)</p>
+                            <p>For example, this widget is set to 25em</p>
 				        </div>
 				    </li>
-					<li class="badge-strawberry">												
-				        <div class="st-slider-content">
-                            <h2>Lorem ipsum</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus varius lacus nunc. Suspendisse sit amet aliquet mi. Aliquam blandit cursus elit, ac dictum erat condimentum vel. In elementum consectetur nisl, sit amet vestibulum lectus tempor vel. Integer tempus, erat non ullamcorper suscipit.</p>				            
+					<li class="badge-strawberry h-vcenter-parent">												
+				        <div class="st-slider-content h-vcenter-child">
+                            <h2>Hey!!</h2>
+                            <p>Of course, you are not limited by these designs, your imagination is the limit.</p>                            		                  
 				        </div>
 				    </li>
 				</ul>
 		</div>  
-			<div id="sl3" class="st-slider reset" style="margin-top: 10%; width:50%; margin: 0 auto">
+			<h3 class="h-top-margin">Revealing options widget</h3>
+			<p>Little widget with controls and auto slide disabled. For revealing options you can drag left the widget.</p>
+			<div class="row-fluid">
+			    <div class="offset3 span6">
+			<div id="sl3" class="st-slider reset h-top-margin">
 				<ul class="st-slider-panes">
-					<li class="badge-info">
+					<li class="badge-sky">
 				        <div class="st-slider-content">
-                            <h4><i class="icon-arrow-left"></i>Drag left for reveal options</h4>
+                            <h3><i class="icon-arrow-left"></i>Drag left</h3>
 				        </div>
 					</li>				    				        
 					<li>											
@@ -242,14 +248,21 @@ sl2 = Stashy.Slider("#sl2",{showControls : false, showIndicators:false, enableTo
 				        </div>
 				    </li>
 				</ul>
-		</div>               
+		    </div>               			        
+        </div>
+    </div>                        							    
     </section>
         
     <section id="dependencies">
         <div class="page-header">                        
            <h1>Dependencies</h1>						
         </div>				
+        <p class="lead">CSS</p>
+        <span class="badge badge-sky">Stashy.Slider.css</span>
         <p class="lead">JS</p>
-        <span class="badge badge-info">jQuery.js</span> <span class="badge badge-warning">Stashy.Showmemore.js</span>
+        <span class="badge badge-info">jQuery.js</span> 
+        <span class="badge badge-info">jquery.hammer.js (if touch enabled)</span> 
+        <span class="badge badge-sky">Stashy.Utils.js</span> <span class="badge badge-sky">Stashy.Events.js</span> 
+        <span class="badge badge-sky">Stashy.Slider.js</span>
     </section>										                            
 </div>
