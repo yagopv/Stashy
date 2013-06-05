@@ -52,7 +52,7 @@
         var slider = ev.data.slider;
         // disable browser scrolling
         ev.gesture.preventDefault();
-        ev.gesture.stopPropagation();
+        ev.stopPropagation();
         slider.options.autoSlide = false;
         switch(ev.type) {
             case 'dragright':

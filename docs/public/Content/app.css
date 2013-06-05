@@ -270,14 +270,17 @@ footer a:hover {
     color:#000;
 }
 
-#slider #sl2 ul li div h2 {
-    color : #FFF;   
-    margin-top : 0; 
+.reset h1, .reset h2, .reset h3, .reset h4,.reset h5,.reset h6, .reset p, .reset a.btn  {
+    margin-top : 0 !important; 
 }
 
-#slider #sl2 ul li div p {
-    color : #FFF;   
-    margin-top : 0; 
+#sl3 {
+    height : 6em;    
+    margin-top:10% !important;
+}
+
+#sl3 li {
+    text-align:center;
 }
 
 @media (max-width: 400px) {

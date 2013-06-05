@@ -11,6 +11,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Sli
             prettyPrint();    
             slider("#sl1",{enableTouch : true, autoSlide:true}).on();
             slider("#sl2",{enableControls : false, enableIndicators:false, enableTouch : true}).on();
+            slider("#sl3",{enableControls : false, enableIndicators:false, enableTouch : true, autoSlide : false}).on();
             utils.ScrollTo('#' + that.hash);
         },                    
         activePage : activePage,  

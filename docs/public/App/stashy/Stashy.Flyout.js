@@ -28,7 +28,7 @@
     
             // disable browser scrolling
             ev.gesture.preventDefault();
-    
+            ev.stopPropagation();
             switch(ev.type) {
                 case 'swipeleft':                    
                     flyout.close();
