@@ -58,6 +58,6 @@ define(['durandal/app', 'durandal/system', 'durandal/viewLocator', 'stashy/Stash
         //app.adaptToDevice();
         
         // set root to shell
-        app.setRoot('viewmodels/shell');
+        app.setRoot('viewmodels/shell','entrance');
     });
 });
