@@ -205,22 +205,22 @@
     slider.prototype.next = function() {
         var panetoshow;
         if (this.current_pane + 1 == this.pane_count) {
-            panetoshow = 0;       
+            panetoshow = this.current_pane;       
         } else {
             panetoshow = this.current_pane + 1;
         }
         return this.showPane(panetoshow, true); 
-    };
+    }
     
     slider.prototype.prev = function() {
         var panetoshow;
         if (this.current_pane - 1 < 0) {
-            panetoshow = this.pane_count;       
+            panetoshow = this.current_pane;       
         } else {
             panetoshow = this.current_pane - 1;
         }        
         return this.showPane(panetoshow, true); 
-    };
+    }
         
     Stashy.Slider = function(sltor, options) {
 	    return new slider(sltor, options);
