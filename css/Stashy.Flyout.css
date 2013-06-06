@@ -113,7 +113,7 @@
 	position:relative;
 	clear: both;
 	overflow: hidden;
-	z-index:999;
+	z-index:1;
 }
 
 .js .st-flyout-container .st-flyout-menu {
