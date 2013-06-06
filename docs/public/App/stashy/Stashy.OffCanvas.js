@@ -68,8 +68,7 @@
             ev.stopPropagation();
             
             switch(ev.type) {
-                case 'swipeleft':
-                case 'dragleft':    
+                case 'swipeleft':  
                     if (offcanvas.element.hasClass("active-menu")) {
                         offcanvas.element.removeClass("active-menu");
                     } else {
@@ -81,7 +80,6 @@
                     break;
     
                 case 'swiperight':  
-                case 'dragright':  
                     if (offcanvas.element.hasClass("active-additional")) {
                         offcanvas.element.removeClass("active-additional");                        
                     } else {
@@ -138,7 +136,7 @@
 			
             if (this.options.enableTouch && typeof(Hammer) == 'function') {
                 this.element.hammer({ drag_lock_to_axis: true });  
-                this.element.on("swipeleft swiperight dragleft dragright", { offcanvas : this },handleHammer);
+                this.element.on("swipeleft swiperight", { offcanvas : this },handleHammer);
 		    }
             
             this.enabled = true;

@@ -30,14 +30,12 @@
             ev.gesture.preventDefault();
             ev.stopPropagation();
             switch(ev.type) {
-                case 'swipeleft':   
-                case 'dragleft':    
+                case 'swipeleft':  
                     flyout.close();
                     ev.gesture.stopDetect();
                     break;
     
-                case 'swiperight': 
-                case 'dragright':                       
+                case 'swiperight':
                     flyout.open();
                     ev.gesture.stopDetect();
                     break;
@@ -73,7 +71,7 @@
 
             if (this.options.enableTouch && typeof(Hammer) == 'function') {
                 this.element.hammer({ drag_lock_to_axis: true });  
-                this.element.on("swipeleft swiperight dragleft dragright", { flyout : this },handleHammer);
+                this.element.on("swipeleft swiperight", { flyout : this },handleHammer);
 		    }
             
             this.enabled = true;
