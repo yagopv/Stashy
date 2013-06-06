@@ -7,7 +7,8 @@
 }
 
 .st-slider {
-    background: silver;
+    background: rgb(0, 0, 0);
+    background: rgb(0, 0, 0, 0.2);
     overflow: hidden;
     width:100%;
     -webkit-backface-visibility: hidden;

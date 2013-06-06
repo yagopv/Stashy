@@ -8,7 +8,17 @@
 	-webkit-box-sizing: border-box; 
 	box-sizing: border-box; 
 	padding: 0; 
-	margin: 0;     
+	margin: 0;   
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);	
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;		  
 }
 
 	.st-flyout-container .st-flyout-menu {
@@ -23,23 +33,42 @@
 		
 	.st-flyout-container.st-push {
 		 position: relative; 
-		 background: #FFF;
+		 background: #FFF;        	 
 		 -webkit-transition: all 0.2s ease-out;  
 		 -moz-transition: all 0.2s ease-out;
 		 -ms-transition: all 0.2s ease-out;
 		 -o-transition: all 0.2s ease-out;
-		 transition: all 0.2s ease-out;		       
+		 transition: all 0.2s ease-out;			        
 	}
 	
 		.st-flyout-container.st-push.active-menu {
-            left: 75%;            
+            left: 75%;                       
 		}	
 
+		.st-flyout-container.st-push.active-transforms.active-menu {
+            left: 0 !important;  
+            -webkit-transform: translate3d(75%, 0, 0);
+            -moz-transform: translate3d(75%, 0, 0);
+            -ms-transform: translate3d(75%, 0, 0);
+            -o-transform: translate3d(75%, 0, 0);
+            transform: translate3d(75%, 0, 0);	                     
+		}	
+			
 	.st-flyout-container.st-reveal {
 		 position: relative; 
 	}
 
 		.st-flyout-container.st-reveal .st-flyout-menu {
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);	
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;			    
 			 -webkit-transition: all 0.2s ease-out;  
 			 -moz-transition: all 0.2s ease-out;
 			 -ms-transition: all 0.2s ease-out;
@@ -48,6 +77,16 @@
 		}
 
 		.st-flyout-container.st-reveal .st-flyout-main {
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);	
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;			    
 			 -webkit-transition: all 0.2s ease-out;  
 			 -moz-transition: all 0.2s ease-out;
 			 -ms-transition: all 0.2s ease-out;
@@ -56,8 +95,17 @@
 		}
 
 		.st-flyout-container.st-reveal.active-menu .st-flyout-main {
-			  left: 75%;           
+			left: 75%;        						          
 		}
+		
+		.st-flyout-container.st-reveal.active-transforms.active-menu .st-flyout-main {
+            left: 0 !important;  
+            -webkit-transform: translate3d(75%, 0, 0);
+            -moz-transform: translate3d(75%, 0, 0);
+            -ms-transform: translate3d(75%, 0, 0);
+            -o-transform: translate3d(75%, 0, 0);
+            transform: translate3d(75%, 0, 0);	                     
+		}			
 
 
 	.st-flyout-container .st-flyout-main {
@@ -78,29 +126,66 @@
 	}
 	
 	.js .st-flyout-container.st-push .st-flyout-menu {
-		  left: -75%;
+		  left: -75%;	  
 	}
 
-	.js .st-flyout-container.st-reveal .st-flyout-menu {
-
-	}
-
+    .js .st-flyout-container.st-push.active-transforms .st-flyout-menu {
+            left:0 !important;
+            -webkit-transform: translate3d(-100%, 0, 0);
+            -moz-transform: translate3d(-100%, 0, 0);
+            -ms-transform: translate3d(-100%, 0, 0);
+            -o-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);	                     
+		}			
+			
 
 @media all and (min-width: 768px) {
     .st-flyout-container.st-push.active-menu {
 	  left: 40%;
     }
 	
+	.st-flyout-container.st-push.active-transforms.active-menu {
+        left: 0 !important;  
+        -webkit-transform: translate3d(40%, 0, 0);
+        -moz-transform: translate3d(40%, 0, 0);
+        -ms-transform: translate3d(40%, 0, 0);
+        -o-transform: translate3d(40%, 0, 0);
+        transform: translate3d(40%, 0, 0);	                     
+	}	
+        
     .js .st-flyout-container.st-push .st-flyout-menu {
 	  width: 40%;
-	  left: -40%;
+	  left: -40%; 
     }
 	
-    .st-flyout-container.st-reveal.active-menu .st-flyout-main {
-	  left: 40%;           
+    .js .st-flyout-container.st-push.active-transforms .st-flyout-menu {
+        left:0 !important;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        -moz-transform: translate3d(-100%, 0, 0);
+        -ms-transform: translate3d(-100%, 0, 0);
+        -o-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);	 
     }
+        
+    .st-flyout-container.st-reveal.active-menu .st-flyout-main {
+	  left: 40%;    
+          
+    }
+    
+		.st-flyout-container.st-reveal.active-transforms.active-menu .st-flyout-main {
+            left: 0 !important;  
+            -webkit-transform: translate3d(75%, 0, 0);
+            -moz-transform: translate3d(75%, 0, 0);
+            -ms-transform: translate3d(75%, 0, 0);
+            -o-transform: translate3d(75%, 0, 0);
+            transform: translate3d(75%, 0, 0);	                     
+		}	    
 
     .js .st-flyout-container.st-reveal .st-flyout-menu {
-	  width: 40%;
+	  width: 40%;    
     }	    
+    
+    .js .st-flyout-container.st-reveal.active-transforms .st-flyout-menu {
+	  width: 75%;    
+    }	      
 }

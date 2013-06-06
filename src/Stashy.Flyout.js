@@ -30,14 +30,14 @@
             ev.gesture.preventDefault();
             ev.stopPropagation();
             switch(ev.type) {
-                case 'swipeleft':  
-                case 'dragleft'
+                case 'swipeleft':   
+                case 'dragleft':    
                     flyout.close();
                     ev.gesture.stopDetect();
                     break;
     
-                case 'swiperight':                    
-                case 'dragright':
+                case 'swiperight': 
+                case 'dragright':                       
                     flyout.open();
                     ev.gesture.stopDetect();
                     break;
@@ -60,6 +60,9 @@
             else {
                 this.element.find(".st-flyout-container").addClass("st-push");
             }
+            if (Modernizr && Modernizr.csstransforms3d) {
+                this.element.find(".st-flyout-container").addClass("active-transforms");
+            }            
 
             if (this.options.closeOnClickOutside) {
                 var self = this;

@@ -30,12 +30,14 @@
             ev.gesture.preventDefault();
             ev.stopPropagation();
             switch(ev.type) {
-                case 'swipeleft':                    
+                case 'swipeleft':   
+                case 'dragleft':    
                     flyout.close();
                     ev.gesture.stopDetect();
                     break;
     
-                case 'swiperight':                    
+                case 'swiperight': 
+                case 'dragright':                       
                     flyout.open();
                     ev.gesture.stopDetect();
                     break;
@@ -58,6 +60,9 @@
             else {
                 this.element.find(".st-flyout-container").addClass("st-push");
             }
+            if (Modernizr && Modernizr.csstransforms3d) {
+                this.element.find(".st-flyout-container").addClass("active-transforms");
+            }            
 
             if (this.options.closeOnClickOutside) {
                 var self = this;
@@ -68,7 +73,7 @@
 
             if (this.options.enableTouch && typeof(Hammer) == 'function') {
                 this.element.hammer({ drag_lock_to_axis: true });  
-                this.element.on("swipeleft swiperight", { flyout : this },handleHammer);
+                this.element.on("swipeleft swiperight dragleft dragright", { flyout : this },handleHammer);
 		    }
             
             this.enabled = true;
