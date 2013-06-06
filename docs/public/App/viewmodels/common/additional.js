@@ -11,12 +11,12 @@ define(['durandal/app', 'durandal/system','lib/pagelayout','durandal/plugins/rou
         hash : "#/sticky"    
     }],
 
-    navigation = [{
+    media = [{
         name : "FocalPoint",
         hash : "#/focalpoint"        
     }],
     
-    media = [{
+    navigation = [{
         name : "Toggle",
         hash : "#/toggle"
     }],
