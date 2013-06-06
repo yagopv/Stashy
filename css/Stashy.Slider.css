@@ -7,8 +7,6 @@
 }
 
 .st-slider {
-    background: rgb(0, 0, 0);
-    background: rgb(0, 0, 0, 0.2);
     overflow: hidden;
     width:100%;
     -webkit-backface-visibility: hidden;
@@ -78,9 +76,9 @@
 	height:10px;
 	margin-left:5px;
 	text-indent: -999px;
-	background-color : #ccc;
+	background-color : #FFF;
 	border-radius : 5px;
-	opacity : .5;
+	opacity : .3;
 }
 
 .st-slider .st-slider-indicators  li.active{
