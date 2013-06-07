@@ -202,10 +202,15 @@
         setContainerOffset(this,offset, true);
     };    
     
-    slider.prototype.next = function() {
+     slider.prototype.next = function() {
         var panetoshow;
         if (this.current_pane + 1 == this.pane_count) {
-            panetoshow = this.current_pane;       
+            if (this.options.autoSlide) {
+                panetoshow = 0;
+            } else {
+                panetoshow = this.current_pane;       
+            }
+            
         } else {
             panetoshow = this.current_pane + 1;
         }
@@ -215,7 +220,11 @@
     slider.prototype.prev = function() {
         var panetoshow;
         if (this.current_pane - 1 < 0) {
-            panetoshow = this.current_pane;       
+            if (this.options.autoSlide) {
+                panetoshow = this.pane_count - 1;       
+            } else {
+                panetoshow = this.current_pane;       
+            }            
         } else {
             panetoshow = this.current_pane - 1;
         }        
