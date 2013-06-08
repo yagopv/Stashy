@@ -323,7 +323,14 @@ footer a:hover {
     
     #page {
         padding-top : 0px;    
-    }      
+    }
+    .splash .message {
+        font-size: 3em;
+    }
+    
+    .splash .icon-spinner {
+        font-size: 3em;
+    }              
 }
 
 @media (min-width: 979px) {
