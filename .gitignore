@@ -217,3 +217,9 @@ pip-log.txt
 ## Cloud9 IDE
 #############
 .c9revisions
+
+#############
+## Node
+#############
+
+node_modules/
