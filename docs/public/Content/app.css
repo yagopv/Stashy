@@ -327,7 +327,8 @@ footer a:hover {
 
 .st-refresh-pullrefresh {
     background: #ccc !important;
-    box-shadow: 0 -1px 1px #ccc inset !important;
+    box-shadow: none !important;
+    border: none;
 }
 
 @media (max-width: 400px) {

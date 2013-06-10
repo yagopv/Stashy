@@ -63,11 +63,11 @@ body {
 }
 
 .st-offcanvas .st-offcanvas-main:before {
-        box-shadow: 0px 0px 8px  #999 inset;
+        box-shadow: 0px -8px 8px  #999 inset;
 }
 
 .st-offcanvas .st-offcanvas-main:after {
-        box-shadow: 0px 0px 8px  #999 inset;
+        box-shadow: 0px -8px 8px  #999 inset;
 }
 
 /* Slider */
