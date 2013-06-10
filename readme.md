@@ -14,6 +14,7 @@ In this early version i included some layouts and utilities:
 - **FocalPoint** : Beautiful responsive images
 - **Loader** : Nice loader based in CSS3 transitions and animations
 - **Slider** : Touch enabled slider for creating sliding layouts, carousels, ...etc
+- **Refresh** : Touch enabled pull to refresh control
 
 
 #Getting started

@@ -1,0 +1,16 @@
+<div id="playground-refresh" class="st-refresh">    
+    <div class="st-refresh-pullrefresh">
+        <div class="message">
+            <div class="st-refresh-icon arrow arrow-down"></div>
+            <span data-pull="Pull to refresh !!" data-release="Release !!" data-loading="Loading..."></span>
+        </div>
+    </div>
+    <div>
+        <div id="refresh" class="st-offcanvas">
+            <div class="st-offcanvas-menu" data-bind="compose : 'viewmodels/common/menu'"></div>
+            <div class="st-offcanvas-main" id="content" data-bind="compose : 'refresh/main.html'"></div>
+            <div class="st-offcanvas-additional" data-bind="compose : 'viewmodels/common/additional'"></div>
+        </div>        
+    </div>
+</div>
+    

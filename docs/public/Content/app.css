@@ -126,6 +126,18 @@ section p, section h1, section h2, section h4, section a:not(.st-slider-control)
     border-color:transparent;
 }
 
+.badge-grass, .badge-grass:hover {
+    background-color : rgb(24, 128, 54);
+    color : #FFF;
+    border-color:transparent;
+}
+
+.badge-grass-dark, .badge-grass-dark:hover {
+    background-color : rgb(79, 182, 109);
+    color : #FFF;
+    border-color:transparent;
+}
+
 .badge-success-light, .badge-success-light:hover {
     background-color : rgb(93, 204, 57);
     color : #FFF;
@@ -307,6 +319,15 @@ footer a:hover {
 
 #sl3 h3 {
     color : #FFF;        
+}
+
+.st-refresh {
+    padding: 0px !important;   
+}
+
+.st-refresh-pullrefresh {
+    background: #ccc !important;
+    box-shadow: 0 -1px 1px #ccc inset !important;
 }
 
 @media (max-width: 400px) {

@@ -18,3 +18,8 @@ Touch support for OffCanvas and Flyout
 Added Slider
 Solved minor bugs in several components
 Added options to several components
+
+
+### v0.2.1
+
+Added Refresh

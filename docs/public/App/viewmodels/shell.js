@@ -28,6 +28,8 @@ define(['durandal/plugins/router'], function (router) {
                 { url: 'slider/:page', moduleId: 'viewmodels/slider/slider', name: 'Slider', visible: false , settings : { activemenu : 'slider' }},                
                 { url: 'sticky', moduleId: 'viewmodels/sticky/sticky', name: 'Sticky', visible: false , settings : { activemenu : 'sticky' }},
                 { url: 'sticky/:page', moduleId: 'viewmodels/sticky/sticky', name: 'Sticky', visible: false , settings : { activemenu : 'sticky' }},                
+                { url: 'refresh', moduleId: 'viewmodels/refresh/refresh', name: 'Refresh', visible: false , settings : { activemenu : 'refresh' }},
+                { url: 'refresh/:page', moduleId: 'viewmodels/refresh/refresh', name: 'Refresh', visible: false , settings : { activemenu : 'refresh' }},
                 { url: 'error', moduleId: 'viewmodels/error/error', name: 'Error', visible: false }
             ]);
             

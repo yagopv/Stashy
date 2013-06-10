@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Refresh</title>               
+
+        <!--Stashy.-->                
+        <link rel="stylesheet" href="../../css/Stashy.Refresh.css" type="text/css"/>    	
+        <link rel="stylesheet" href="../../css/Stashy.Theme.css" type="text/css"/>    	
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+		<style>
+			body {
+				margin:0;
+				padding:0;
+			}
+		</style>
+    </head>
+    <body>		
+		<div class="st-refresh">
+
+			<div class="st-refresh-pullrefresh">
+				<div class="message">
+					<div class="st-refresh-icon arrow arrow-down"></div>
+					<span data-pull="Pull to refresh !!" data-release="Release !!" data-loading="Loading..."></span>
+				</div>
+			</div>
+
+			<div>
+				<h4>Pull-to-Refresh an load <small>random images</small></h4>
+				<p>
+					<img id="random-image" src="http://lorempixel.com/800/600/">
+				</p>
+			</div>
+		</div>        
+                
+		<script type="text/javascript" src="../../src/jquery.js"></script>
+		<script type="text/javascript" src="../../src/jquery.hammer.js"></script>
+		<script type="text/javascript" src="../../src/Stashy.Utils.js"></script>
+		<script type="text/javascript" src="../../src/Stashy.Modernizr.js"></script>
+		<script type="text/javascript" src="../../src/Stashy.Refresh.js"></script>
+		<script>
+		    var refresh = Stashy.Refresh(null, { onRelease : function() {
+					var self = this;
+					// a small timeout to demo the loading state
+					setTimeout(function() {
+						var preload = new Image();
+						preload.onload = function() {
+							document.getElementById("random-image").src = this.src;
+							self.slideUp();
+						};
+						preload.src = 'http://lorempixel.com/800/600/?'+ (new Date().getTime());
+					}, 1000);
+				}
+			}).on();			
+		</script>		
+    </body>
+</html>

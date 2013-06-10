@@ -31,6 +31,9 @@ requirejs.config({
         'stashy/Stashy.Slider': {
             exports: 'Stashy.Slider'
         },
+        'stashy/Stashy.Refresh': {
+            exports: 'Stashy.Refresh'
+        },        
         'stashy/Stashy.Modernizr': {
             exports: 'Modernizr'
         },        

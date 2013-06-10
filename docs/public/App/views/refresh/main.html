@@ -1,0 +1,158 @@
+<div id="offcanvas-navigation">
+    <a href="#" class="showmenubutton btn badge-grass h-add-padding"><i class="icon-reorder icon-large no-ajaxy"></i></a>
+    <a href="#" class="showadditionalbutton btn badge-grass h-add-padding" style="float:right;"><i class="icon-reorder icon-large"></i></a>
+    <div class="h-clear"></div>
+</div>
+    
+<div>	
+    <div class="hero-unit badge-grass h-big-top-margin h-inverse-color">
+        <h1>Refresh</h1>
+        <p class="lead h-big-top-margin">Pull to refresh component aiming ajax loading of content</p>
+        <a class="btn btn-large badge-grass-dark h-top-margin" href="https://github.com/yagopv/Stashy/archive/master.zip"  target="_blank"><i class="icon-download icon-2x"></i>&nbsp; Download</a>							
+         <a class="btn btn-large badge-grass-dark h-top-margin" href="https://github.com/yagopv/Stashy"  target="_blank"><i class="icon-github icon-2x"></i>&nbsp; View project on Github</a>                                  
+    </div>
+    
+    <section id="description">
+        <div class="page-header">
+            <h1>Description</h1>
+        </div>                        
+        <p>This component is mainly focused on mobile devices. It works as well if you are using the mouse by dragging down the container.</p>
+        <p>Pull to refresh widgets are very useful in mobile apps because gives you the ability of quickly refresh any list, carousel or wathever with a well controlled gesture.</p>
+        <p>This page is wrapped with a Refresh control so you can pull down to refresh. When you release, the image in the playground will be refreshed.</p>
+        <p>The control only works if you has not scrolled the page because you´ll want the normal behaviour of scrolling down in your device.</p>
+        <p>So ... scroll to top and start dragging down ... :). </p>
+    </section>
+    
+    <section id="html">
+        <div class="page-header">
+            <h1>HTML</h1>                                             
+        </div>                                    
+<pre class="prettyprint linenums">
+&ltdiv class="st-refresh"&gt
+    &ltdiv class="st-refresh-pullrefresh"&gt
+        &ltdiv class="message"&gt
+            &ltdiv class="st-refresh-icon arrow arrow-down"&gt&lt/div&gt
+            &ltspan data-pull="Pull to refresh !!" 
+                    data-release="Release !!" 
+                    data-loading="Loading..."&gt
+            &lt/span&gt
+        &lt/div&gt
+    &lt/div&gt
+    &ltdiv&gt
+    ... Your content here ...
+    &lt/div&gt
+&lt/div&gt
+</pre>	
+    </section>
+
+   <section id="javascript">
+    <div class="page-header">                        
+       <h1>Javascript</h1>						
+    </div>			
+    <h2>Constructor</h2>
+<pre class="prettyprint linenums">
+Stashy.Refresh(selector, options)</pre>							
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Parameter</strong></th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>selector</strong></td>
+                    <td>string</td>
+                    <td>CSS selector. Select the Refresh container</td>
+                </tr>
+                <tr>
+                    <td><strong>options</strong></td>
+                    <td>object</td>
+                    <td>See options</td>
+                    <td>You can pass the options to the refresh instance</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 id="options">Options</h2>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Option</strong></th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>										
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>onRelease</strong></td>
+                    <td>function</td>
+                    <td><a href="http://api.jquery.com/jQuery.noop/" target="_blank">$.noop</a></td>
+                    <td>You need to use this function for doing something when release Refresh after dragging down. The common use is to do some ajax request and call slideUp() for hiding the Refresh control</td>
+                </tr>
+                <tr>
+                    <td><strong>breakpoint</strong></td>
+                    <td>int</td>
+                    <td>100</td>
+                    <td>Over this point (in px) when you release the control the onRelease() function will be called. When reaching this point as well, the text message with info in data-release will be changed. While this point is not reached, the data-pull text will be showed. Finally, after release, data-loading will be the text message in the control</td>
+                </tr>
+            </tbody>
+        </table>            
+        <h2>Methods</h2>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Name</strong></th>
+                    <th>Description</th>
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>on()</strong></td>
+                    <td>Initializes Refresh with the options you choose</td>
+                </tr>
+                <tr>
+                    <td><strong>slideUp()</strong></td>
+                    <td>Hide Refresh. You have to call slur callback in order to hide the Refresh control</td>
+                </tr>                
+            </tbody>
+        </table>
+        <h2>Sample</h2>
+<pre class="prettyprint linenums">
+var refresh = Stashy.Refresh("#myrefresh", { 
+    onRelease : function() {
+        var self = this;
+        $.getJSON("api/customers").done(function() {
+            self.slideUp();
+        });
+    }
+}).on();	
+</pre>
+    </section>    
+    <section id="playground">
+        <div class="page-header">                        
+           <h1>Playground</h1>    					
+        </div>
+        <h2>Pull to refresh</h2>
+        <p><a href="#" data-bind="click:scrollToBody">Scroll up</a> and start dragging down</p>
+		<p>
+			<img id="random-image" src="http://lorempixel.com/800/600/">
+		</p>		
+    </section>
+        
+    <section id="dependencies">
+        <div class="page-header">                        
+           <h1>Dependencies</h1>						
+        </div>				
+        <p>The dependency on Hammer is mandatory because this control is working with gestures or dragging down and you will need touch support.</p>
+        <p class="lead">CSS</p>
+        <span class="badge badge-grass">Stashy.Refresh.css</span>
+        <p class="lead">JS</p>
+        <span class="badge badge-info">jQuery.js</span> 
+        <span class="badge badge-info">jquery.hammer.js</span>
+        <span class="badge badge-grass">Stashy.Utils.js</span> 
+        <span class="badge badge-grass">Stashy.Modernizr.js</span> 
+        <span class="badge badge-grass">Stashy.Refresh.js</span>
+    </section>										                            
+</div>

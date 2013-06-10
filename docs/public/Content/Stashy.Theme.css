@@ -75,3 +75,20 @@ body {
     background: rgb(255, 255, 255);
     background: rgba(255, 255, 255, 1);
 }
+
+/* Refresh */
+
+.st-refresh {
+    padding: 20px;   
+}
+
+.st-refresh-pullrefresh {
+    background: #ccc;
+    box-shadow: 0 -5px 10px #bbb inset;
+}
+
+.st-refresh-pullrefresh .message {
+    color: #777;
+    text-shadow: 1px 1px 0 #dfdfdf;
+    font-weight: bold;
+}

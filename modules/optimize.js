@@ -15,7 +15,8 @@ exports.optimizeProjectAssets = function() {
             'css/Stashy.Loader.css',
             'css/Stashy.Sticky.css',
             'css/Stashy.Slider.css',
-            'css/Stashy.Theme.css'
+            'css/Stashy.Refresh.css',
+            'css/Stashy.Theme.css'            
         ],
         fileOut: 'dist/css/Stashy.min.css',
         callback: function(err){
@@ -37,7 +38,8 @@ exports.optimizeProjectAssets = function() {
             'src/Stashy.FocalPoint.js',
             'src/Stashy.Loader.js',
             'src/Stashy.ShowMeMore.js',
-            'src/Stashy.Slider.js'
+            'src/Stashy.Slider.js',
+            'src/Stashy.Refresh.js'
         ],
         fileOut: 'dist/js/Stashy.min.js',
         callback: function(err){
@@ -85,6 +87,7 @@ exports.optimizeDocsAssets = function() {
             'docs/public/Content/Stashy.Loader.css',
             'docs/public/Content/Stashy.Sticky.css',
             'docs/public/Content/Stashy.Slider.css',
+            'docs/public/Content/Stashy.Refresh.css',
             'docs/public/Content/bootstrap.css',
             'docs/public/Content/bootstrap-responsive.css',
             'docs/public/Content/font-awesome.css',

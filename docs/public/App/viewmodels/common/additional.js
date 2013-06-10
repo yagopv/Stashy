@@ -25,6 +25,9 @@ define(['durandal/app', 'durandal/system','lib/pagelayout','durandal/plugins/rou
         name : "Slider",
         hash : "#/slider"                
     },{
+        name : "Refresh",
+        hash : "#/refresh"        
+    },{
         name : "Loader",
         hash : "#/loader"        
     },{
