@@ -172,6 +172,20 @@ footer {
     color : #999;    
 }
 
+#scrollup {
+    position:fixed;
+    bottom : 3%;
+    right : 3%;
+    z-index : 999;
+    font-size : 4em;
+    cursor : pointer;  
+    color : rgb(146, 146, 146);  
+}
+
+#scrollup:hover {
+    color : rgb(109, 105, 105);
+}
+
 /* Helpers */
 .h-inverse-color {
 	color : #FFF;

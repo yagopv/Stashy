@@ -36,6 +36,9 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Ref
         },
         scrollToBody : function() {
             utils.ScrollTo("body");
+        },
+        scrollToPlayground : function() {
+            utils.ScrollTo("#playground");
         }
     };
 });

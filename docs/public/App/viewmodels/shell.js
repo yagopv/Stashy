@@ -1,10 +1,13 @@
-define(['durandal/plugins/router'], function (router) {
+define(['durandal/plugins/router', 'stashy/Stashy.Utils'], function (router,utils) {
     
     return {
         viewAttached : function() {
             setTimeout(function() {
                 $("footer").css("display","block");
             },1000);            
+        },
+        scrollup : function() {
+            utils.ScrollTo("body");
         },
         router: router,
         activate: function () {

@@ -24,7 +24,7 @@ app.set('views', __dirname + '/docs/views');
 app.set('view engine', 'html');
 
 // Set favicon
-app.use(express.favicon());
+app.use(express.favicon(__dirname + '/docs/public/favicon.ico'));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
