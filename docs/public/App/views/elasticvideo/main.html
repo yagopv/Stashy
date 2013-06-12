@@ -1,0 +1,178 @@
+<div id="offcanvas-navigation">
+    <a href="#" class="showmenubutton btn btn-danger h-add-padding"><i class="icon-reorder icon-large no-ajaxy"></i></a>
+    <a href="#" class="showadditionalbutton btn btn-danger h-add-padding" style="float:right;"><i class="icon-reorder icon-large"></i></a>
+    <div class="h-clear"></div>
+</div>
+
+<div>    
+    <div class="hero-unit badge-violet h-big-top-margin h-inverse-color">
+        <h1>OffCanvas</h1>
+        <p class="lead h-big-top-margin">Create responsive pages using this awesome layout</p>
+        <a class="btn badge-violet-dark btn-large h-top-margin" href="https://github.com/yagopv/Stashy/archive/master.zip"  target="_blank"><i class="icon-download icon-2x"></i>&nbsp; Download</a>							
+        <a class="btn badge-violet-dark btn-large h-top-margin" href="https://github.com/yagopv/Stashy"  target="_blank"><i class="icon-github icon-2x"></i>&nbsp; View project on Github</a>                                
+    </div>
+    
+    <section id="description">
+        <div class="page-header">
+            <h1>Description</h1>
+        </div>                        
+        <p>This component is focused in creating layouts adapting to several screen sizes. The Offcanvas layout has 3 panels aligned left, center and right.</p>
+        <p>Left panel or <span class="badge badge-important">st-offcanvas-menu</span>, is perfect for navigation and will be showed on desktop and tablet devices size.</p>
+        <p>Center panel or <span class="badge badge-important">st-offcanvas-main</span>, will hold page content.</p>
+        <p>Right panel or <span class="badge badge-important">st-offcanvas-additional</span>, can be used for showing some complementary stuff.</p>
+        <p>The menu and additional panels are optional, so you can simply don't write the markup for any of them and the <span class="badge badge-important">st-offcanvas-main</span> panel will take the remaining width.</p>                        
+        <p>The Offcanvas Stashy implementation is inspired in <a href="http://jasonweaver.name/lab/offcanvas/" target="_blank">this great article</a> from Jason Weaver.</p>
+    </section>
+    
+    <section id="html">
+        <div class="page-header">
+            <h1>HTML</h1>                        
+        </div>
+<pre class="prettyprint linenums">
+&ltdiv class="st-offcanvas"&gt
+    &ltdiv class="st-offcanvas-menu"&gt
+        ... left panel, supposed to be used for menus or something like that ...
+        ... this panel is optional so you can simply don´t write it in your code  ...
+    &lt/div&gt
+    &ltdiv class="st-offcanvas-main"&gt
+        &lta href="#" class="showmenubutton"&gt&lt/a&gt
+        &lta href="#" class="showadditionalbutton"&gt&lt/a&gt
+        ... Main content ...
+        ... You can wrap the show menus buttons with any tag or add more of them ...
+    &lt/div&gt		
+    &ltdiv  class="st-offcanvas-additional"&gt
+        ... another panel, to the right, for additional content ...
+        ... this panel is optional so you can simply don´t write it in your code  ...
+    &lt/div&gt	                        
+&lt/div&gt</pre>
+    </section>
+    
+    <section id="javascript">
+        <div class="page-header">                        
+           <h1>Javascript</h1>						
+        </div>			
+        <h2>Constructor</h2>
+<pre class="prettyprint linenums">
+Stashy.Offcanvas(selector,options)</pre>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Parameter</strong></th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>selector</strong></td>
+                    <td>string</td>
+                    <td>.st-offcanvas</td>
+                    <td>CSS selector for your OffCanvas</td>
+                </tr>
+                <tr>
+                    <td><strong>options</strong></td>
+                    <td>object</td>
+                    <td>See options</td>
+                    <td>You can pass the options to the offcanvas instance</td>
+                </tr>
+            </tbody>
+        </table>    
+        <h2 id="options">Options</h2>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Option</strong></th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>										
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>onMobileLayout</strong></td>
+                    <td>function</td>
+                    <td><a href="http://api.jquery.com/jQuery.noop/" target="_blank">$.noop</a></td>
+                    <td>Provide any function with the actions you want perform when screen size is smaller than 769px</td>
+                </tr>
+                <tr>
+                    <td><strong>onTabletLayout</strong></td>
+                    <td>function</td>
+                    <td><a href="http://api.jquery.com/jQuery.noop/" target="_blank">$.noop</a></td>
+                    <td>Provide any function with the actions you want perform when screen size is between 769px and 979px</td>
+                </tr>
+                <tr>
+                    <td><strong>onDesktopLayout</strong></td>
+                    <td>function</td>
+                    <td><a href="http://api.jquery.com/jQuery.noop/" target="_blank">$.noop</a></td>
+                    <td>Provide any function with the actions you want perform when screen size is greater than 769px</td>
+                </tr>                                
+                <tr>
+                    <td><strong>useTransitions</strong></td>
+                    <td>boolean</td>
+                    <td>true</td>
+                    <td>Use a CSS3 transition when opening and closing panels</td>
+                </tr> 
+                <tr>
+                    <td><strong>closeOnClickOutside</strong></td>
+                    <td>bool</td>
+                    <td>true</td>
+                    <td>Close OffCanvas on click outside the open and close buttons (.showmenubutton, .showadditionalbutton)</td>
+                </tr>                
+                <tr>
+                    <td><strong>enableTouch</strong></td>
+                    <td>bool</td>
+                    <td>false</td>
+                    <td>If touch is enabled, then you can swipe to push left and right panels. The touch behaviour is controlled by Hammer.js so you need to add a reference to jquery.hammer.js. Get it in the <a href="http://eightmedia.github.io/hammer.js/" target="_blank">project site</a> or in the <a href="https://github.com/yagopv/Stashy/tree/master/dist/js" target="_blank">dist folder</a> of the Stashy Github project</td>
+                </tr>                    
+            </tbody>
+        </table>     
+        <h2>Methods</h2>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Name</strong></th>                                            
+                    <th>Description</th>
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>layout()</strong></td>
+                    <td>Start the offcanvas layout</td>
+                </tr>
+                <tr>
+                    <td><strong>close()</strong></td>
+                    <td>Remove the active classes and close the panel if necessary</td>
+                </tr>                
+            </tbody>
+        </table> 							
+        <h2>Sample</h2>
+<pre class="prettyprint linenums">
+var offcanvas = new Stashy.Offcanvas("", { 
+    onMobileLayout : function() {
+    ... awesome actions in mobile screen sizes ...
+    },
+    onTabletLayout : function() {
+    ... awesome actions in tablet sizes ...
+    },                
+    onDesktopLayout : function() {
+    ... actions in desktop sizes ...
+    }
+}).layout();</pre>
+    </section>
+    
+    <section id="dependencies">
+        <div class="page-header">                        
+           <h1>Dependencies</h1>						
+        </div>
+        <p class="lead">CSS</p>
+        <span class="badge badge-important">Stashy.Offcanvas.css</span>
+        <p class="lead">JS</p>        
+        <div class="h-top-margin">
+            <span class="badge badge-info">jQuery.js</span>
+            <span class="badge badge-info">jquery.hammer.js (if touch enabled)</span>
+            <span class="badge badge-important">Stashy.Events.js</span>
+            <span class="badge badge-important">Stashy.Offcanvas.js</span>            
+        </div>	        
+    </section>										                            
+</div>

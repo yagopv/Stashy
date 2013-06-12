@@ -33,6 +33,10 @@ define(['durandal/plugins/router', 'stashy/Stashy.Utils'], function (router,util
                 { url: 'sticky/:page', moduleId: 'viewmodels/sticky/sticky', name: 'Sticky', visible: false , settings : { activemenu : 'sticky' }},                
                 { url: 'refresh', moduleId: 'viewmodels/refresh/refresh', name: 'Refresh', visible: false , settings : { activemenu : 'refresh' }},
                 { url: 'refresh/:page', moduleId: 'viewmodels/refresh/refresh', name: 'Refresh', visible: false , settings : { activemenu : 'refresh' }},
+                { url: 'elasticvideo', moduleId: 'viewmodels/elasticvideo/elasticvideo', name: 'ElasticVideo', visible: false , settings : { activemenu : 'elasticvideo' }},
+                { url: 'elasticvideo/:page', moduleId: 'viewmodels/elasticvideo/elasticvideo', name: 'ElasticVideo', visible: false , settings : { activemenu : 'elasticvideo' }},
+                { url: 'elastictext', moduleId: 'viewmodels/elastictext/elastictext', name: 'ElasticText', visible: false , settings : { activemenu : 'elastictext' }},
+                { url: 'elastictext/:page', moduleId: 'viewmodels/elastictext/elastictext', name: 'ElasticText', visible: false , settings : { activemenu : 'elastictext' }},                
                 { url: 'error', moduleId: 'viewmodels/error/error', name: 'Error', visible: false }
             ]);
             

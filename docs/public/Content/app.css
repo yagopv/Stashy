@@ -144,6 +144,30 @@ section p, section h1, section h2, section h4, section a:not(.st-slider-control)
     border-color:transparent;
 }
 
+.badge-violet, .badge-violet:hover {
+    background-color : rgb(73, 42, 173);
+    color : #FFF;
+    border-color:transparent;
+}
+
+.badge-violet-dark, .badge-violet-dark:hover {
+    background-color : rgb(133, 109, 211)
+    color : #FFF;
+    border-color:transparent;
+}
+
+.badge-pink, .badge-pink:hover {
+    background-color : rgb(223, 108, 233);
+    color : #FFF;
+    border-color:transparent;
+}
+
+.badge-pink-dark, .badge-pink-dark:hover {
+    background-color : rgb(221, 62, 235)
+    color : #FFF;
+    border-color:transparent;
+}
+
 .hero-unit a {
     width:100%;
 }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		
+        <title>ElasticText</title>		
+        <style>
+        	body {
+				margin:0;
+				padding:0;
+        	}
+        </style>		
+    </head>
+    <body>
+	
+	  <h1>Title h1</h1>
+	  <h2>Title h2</h2>
+	  <h3>Title h3</h3>
+	  <h4>Title h4</h4>
+	  <h5>Title h5</h5>
+	  <h6>Title h6</h6>
+	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies nulla ut diam molestie laoreet. Etiam sit amet ultricies nunc. Nunc iaculis leo aliquet turpis gravida, nec hendrerit tortor bibendum. Praesent mollis non leo rutrum pretium. Nam iaculis arcu eu metus sollicitudin, eget venenatis leo lacinia. Ut dapibus neque quis quam tristique, id sodales lorem fringilla. Praesent sit amet varius ante. Cras ac felis tristique, molestie purus non, tincidunt metus. Mauris arcu quam, fringilla non gravida quis, accumsan in leo. Vestibulum eu tempor arcu, sit amet aliquam magna.</p>
+	  <p>Vestibulum et faucibus purus. Aenean commodo volutpat enim a pulvinar. In nec arcu commodo, fermentum arcu quis, euismod magna. Etiam enim felis, ultricies eu porttitor eget, lacinia et neque. Duis tempor tellus eget orci sollicitudin, sagittis vestibulum nisl consectetur. Nullam sed sollicitudin massa, id ultricies sem. Sed eu tortor ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum dapibus congue metus, id pellentesque risus. Proin erat lorem, gravida sit amet malesuada et, blandit id arcu. Nam feugiat tincidunt risus ullamcorper mattis. Quisque auctor viverra lorem, at iaculis orci venenatis nec.</p>
+	  <p>Sed pellentesque elit lectus, vitae rutrum risus consequat non. Cras venenatis pharetra lacus, vitae mollis enim euismod a. Sed consectetur velit vel nisl tempor tincidunt. Vestibulum quis interdum mi, pharetra dignissim nisl. Aliquam pellentesque eros non tortor ornare sagittis vitae scelerisque mauris. Maecenas ut ultricies dolor, a pulvinar dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	         
+      <script src="../../src/jquery.js"></script>	  
+      <script src="../../src/Stashy.ElasticText.js"></script>
+      <script>
+		$(function() {
+			Stashy.ElasticText("h1").on(1);
+			Stashy.ElasticText("h2").on(1.1);
+			Stashy.ElasticText("h3").on(1.2);
+			Stashy.ElasticText("h4").on(1.3);
+			Stashy.ElasticText("h5").on(1.4);
+			Stashy.ElasticText("h6").on(1.5);
+			Stashy.ElasticText("p").on(2);
+		});
+		
+      </script>
+      </body>
+  </html>

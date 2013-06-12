@@ -14,6 +14,9 @@ define(['durandal/app', 'durandal/system','lib/pagelayout','durandal/plugins/rou
     media = [{
         name : "FocalPoint",
         hash : "#/focalpoint"        
+    },{
+        name : "ElasticVideo",
+        hash : "#/elasticvideo"        
     }],
     
     navigation = [{
@@ -33,6 +36,9 @@ define(['durandal/app', 'durandal/system','lib/pagelayout','durandal/plugins/rou
     },{
         name : "ShowMeMore",
         hash : "#/showmemore"    
+    },{
+        name : "ElasticText",
+        hash : "#/elastictext"        
     }]
     
     return {
