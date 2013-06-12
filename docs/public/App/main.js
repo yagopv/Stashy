@@ -34,6 +34,12 @@ requirejs.config({
         'stashy/Stashy.Refresh': {
             exports: 'Stashy.Refresh'
         },        
+        'stashy/Stashy.ElasticText': {
+            exports: 'Stashy.ElasticText'
+        },
+        'stashy/Stashy.ElasticVideo': {
+            exports: 'Stashy.ElasticVideo'
+        },        
         'stashy/Stashy.Modernizr': {
             exports: 'Modernizr'
         },        

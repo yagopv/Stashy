@@ -151,7 +151,7 @@ section p, section h1, section h2, section h4, section a:not(.st-slider-control)
 }
 
 .badge-violet-dark, .badge-violet-dark:hover {
-    background-color : rgb(133, 109, 211)
+    background-color : rgb(133, 109, 211);
     color : #FFF;
     border-color:transparent;
 }
@@ -163,7 +163,7 @@ section p, section h1, section h2, section h4, section a:not(.st-slider-control)
 }
 
 .badge-pink-dark, .badge-pink-dark:hover {
-    background-color : rgb(221, 62, 235)
+    background-color : rgb(221, 62, 235);
     color : #FFF;
     border-color:transparent;
 }
@@ -357,6 +357,10 @@ footer a:hover {
 
 #sl3 h3 {
     color : #FFF;        
+}
+
+#elasticvideo #playground h2 {
+    margin-bottom : 4%;    
 }
 
 .st-refresh {

@@ -18,7 +18,11 @@
 	  <iframe width="853" height="480" src="http://www.youtube.com/embed/jhyANGHDDH8" frameborder="0" allowfullscreen></iframe>
 
 	  <h2>Youtube old code => object video</h2>
-	  <object width="853" height="480"><param name="movie" value="http://www.youtube.com/v/MjaF26OYOps?hl=es_ES&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/MjaF26OYOps?hl=es_ES&amp;version=3" type="application/x-shockwave-flash" width="853" height="480" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+	  <object width="853" height="480">
+	      <param name="movie" value="http://www.youtube.com/v/MjaF26OYOps?hl=es_ES&amp;version=3"></param>
+	      <param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param>
+	      <embed src="http://www.youtube.com/v/MjaF26OYOps?hl=es_ES&amp;version=3" type="application/x-shockwave-flash" width="853" height="480" allowscriptaccess="always" allowfullscreen="true"></embed>
+	   </object>
 		
 	  <h2>Youtube HTML5 using &ltvideo&gt tag</h2>
 	  <p>Note that is no needed using Stashy.ElasticVideo.js with the video tag. Is enough with Stashy.ElasticVideo.css or even styling yourself using max-width:100% and height:auto;</p>
@@ -38,12 +42,12 @@
 		</video>
 		
 	  <h2>Vimeo iframe</h2>
-	  <iframe src="http://player.vimeo.com/video/34656502" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/34656502">
+	  <iframe src="http://player.vimeo.com/video/34656502" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 	  
 	   <h2>DailyMotion iframe</h2>
-	   <iframe frameborder="0" width="480" height="270" src="http://www.dailymotion.com/embed/video/xcr9r8"></iframe><br /><a href="http://www.dailymotion.com/video/xcr9r8_delorean-stay-close_music" target="_blank">DELOREAN - Stay close</a> <i>por <a href="http://www.dailymotion.com/mushroom_pillow" target="_blank">mushroom_pillow</a></i>
+	   <iframe frameborder="0" width="480" height="270" src="http://www.dailymotion.com/embed/video/xcr9r8"></iframe>
 	   
-      <script src="../../src/jquery.js"></script>
+      <script src="../../src/jquery.js"></script>      
       <script src="../../src/Stashy.ElasticVideo.js"></script>
       <script>
         Stashy.ElasticVideo("iframe,object,embed").on();

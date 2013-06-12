@@ -1,13 +1,13 @@
 <div id="offcanvas-navigation">
-    <a href="#" class="showmenubutton btn btn-danger h-add-padding"><i class="icon-reorder icon-large no-ajaxy"></i></a>
-    <a href="#" class="showadditionalbutton btn btn-danger h-add-padding" style="float:right;"><i class="icon-reorder icon-large"></i></a>
+    <a href="#" class="showmenubutton btn btn-violet h-add-padding"><i class="icon-reorder icon-large no-ajaxy"></i></a>
+    <a href="#" class="showadditionalbutton btn btn-violet h-add-padding" style="float:right;"><i class="icon-reorder icon-large"></i></a>
     <div class="h-clear"></div>
 </div>
 
 <div>    
     <div class="hero-unit badge-violet h-big-top-margin h-inverse-color">
-        <h1>OffCanvas</h1>
-        <p class="lead h-big-top-margin">Create responsive pages using this awesome layout</p>
+        <h1>ElasticVideo</h1>
+        <p class="lead h-big-top-margin">Adapt videos to any screen size</p>
         <a class="btn badge-violet-dark btn-large h-top-margin" href="https://github.com/yagopv/Stashy/archive/master.zip"  target="_blank"><i class="icon-download icon-2x"></i>&nbsp; Download</a>							
         <a class="btn badge-violet-dark btn-large h-top-margin" href="https://github.com/yagopv/Stashy"  target="_blank"><i class="icon-github icon-2x"></i>&nbsp; View project on Github</a>                                
     </div>
@@ -16,35 +16,9 @@
         <div class="page-header">
             <h1>Description</h1>
         </div>                        
-        <p>This component is focused in creating layouts adapting to several screen sizes. The Offcanvas layout has 3 panels aligned left, center and right.</p>
-        <p>Left panel or <span class="badge badge-important">st-offcanvas-menu</span>, is perfect for navigation and will be showed on desktop and tablet devices size.</p>
-        <p>Center panel or <span class="badge badge-important">st-offcanvas-main</span>, will hold page content.</p>
-        <p>Right panel or <span class="badge badge-important">st-offcanvas-additional</span>, can be used for showing some complementary stuff.</p>
-        <p>The menu and additional panels are optional, so you can simply don't write the markup for any of them and the <span class="badge badge-important">st-offcanvas-main</span> panel will take the remaining width.</p>                        
-        <p>The Offcanvas Stashy implementation is inspired in <a href="http://jasonweaver.name/lab/offcanvas/" target="_blank">this great article</a> from Jason Weaver.</p>
-    </section>
-    
-    <section id="html">
-        <div class="page-header">
-            <h1>HTML</h1>                        
-        </div>
-<pre class="prettyprint linenums">
-&ltdiv class="st-offcanvas"&gt
-    &ltdiv class="st-offcanvas-menu"&gt
-        ... left panel, supposed to be used for menus or something like that ...
-        ... this panel is optional so you can simply don´t write it in your code  ...
-    &lt/div&gt
-    &ltdiv class="st-offcanvas-main"&gt
-        &lta href="#" class="showmenubutton"&gt&lt/a&gt
-        &lta href="#" class="showadditionalbutton"&gt&lt/a&gt
-        ... Main content ...
-        ... You can wrap the show menus buttons with any tag or add more of them ...
-    &lt/div&gt		
-    &ltdiv  class="st-offcanvas-additional"&gt
-        ... another panel, to the right, for additional content ...
-        ... this panel is optional so you can simply don´t write it in your code  ...
-    &lt/div&gt	                        
-&lt/div&gt</pre>
+        <p>The new HTML5 &ltvideo&gt tag is very easy to make responsive. You only have to adjust its width to max-size : 100% and height : auto and you are done. But, did you ever try to do the same with iframes, objects, ... etc?. These type of tags are the ones we use to embed videos from external sites like Youtube, Vimeo, ... It´s difficult to style them.</p>
+        <p>This component try to help you making your videos responsive.</p>
+        <p>In the playground section you can check some samples.</p>
     </section>
     
     <section id="javascript">
@@ -53,7 +27,7 @@
         </div>			
         <h2>Constructor</h2>
 <pre class="prettyprint linenums">
-Stashy.Offcanvas(selector,options)</pre>
+Stashy.ElasticVideo(selector)</pre>
         <table class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
@@ -67,66 +41,11 @@ Stashy.Offcanvas(selector,options)</pre>
                 <tr>
                     <td><strong>selector</strong></td>
                     <td>string</td>
-                    <td>.st-offcanvas</td>
-                    <td>CSS selector for your OffCanvas</td>
-                </tr>
-                <tr>
-                    <td><strong>options</strong></td>
-                    <td>object</td>
-                    <td>See options</td>
-                    <td>You can pass the options to the offcanvas instance</td>
+                    <td>none</td>
+                    <td>CSS selector for your videos. Select the iframe, object or embed. In the Stashy.ElasticVideos.css stylesheet its included the proper styles for the &ltvideo&gt so you don´t need to call the constructor for this type of videos.</td>
                 </tr>
             </tbody>
         </table>    
-        <h2 id="options">Options</h2>
-        <table class="table table-bordered table-striped table-hover">
-            <thead>
-                <tr>
-                    <th><strong>Option</strong></th>
-                    <th>Type</th>
-                    <th>Default</th>
-                    <th>Description</th>										
-                </tr>                                
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>onMobileLayout</strong></td>
-                    <td>function</td>
-                    <td><a href="http://api.jquery.com/jQuery.noop/" target="_blank">$.noop</a></td>
-                    <td>Provide any function with the actions you want perform when screen size is smaller than 769px</td>
-                </tr>
-                <tr>
-                    <td><strong>onTabletLayout</strong></td>
-                    <td>function</td>
-                    <td><a href="http://api.jquery.com/jQuery.noop/" target="_blank">$.noop</a></td>
-                    <td>Provide any function with the actions you want perform when screen size is between 769px and 979px</td>
-                </tr>
-                <tr>
-                    <td><strong>onDesktopLayout</strong></td>
-                    <td>function</td>
-                    <td><a href="http://api.jquery.com/jQuery.noop/" target="_blank">$.noop</a></td>
-                    <td>Provide any function with the actions you want perform when screen size is greater than 769px</td>
-                </tr>                                
-                <tr>
-                    <td><strong>useTransitions</strong></td>
-                    <td>boolean</td>
-                    <td>true</td>
-                    <td>Use a CSS3 transition when opening and closing panels</td>
-                </tr> 
-                <tr>
-                    <td><strong>closeOnClickOutside</strong></td>
-                    <td>bool</td>
-                    <td>true</td>
-                    <td>Close OffCanvas on click outside the open and close buttons (.showmenubutton, .showadditionalbutton)</td>
-                </tr>                
-                <tr>
-                    <td><strong>enableTouch</strong></td>
-                    <td>bool</td>
-                    <td>false</td>
-                    <td>If touch is enabled, then you can swipe to push left and right panels. The touch behaviour is controlled by Hammer.js so you need to add a reference to jquery.hammer.js. Get it in the <a href="http://eightmedia.github.io/hammer.js/" target="_blank">project site</a> or in the <a href="https://github.com/yagopv/Stashy/tree/master/dist/js" target="_blank">dist folder</a> of the Stashy Github project</td>
-                </tr>                    
-            </tbody>
-        </table>     
         <h2>Methods</h2>
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -137,42 +56,64 @@ Stashy.Offcanvas(selector,options)</pre>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>layout()</strong></td>
-                    <td>Start the offcanvas layout</td>
+                    <td><strong>on()</strong></td>
+                    <td>Start making your video responsive</td>
                 </tr>
-                <tr>
-                    <td><strong>close()</strong></td>
-                    <td>Remove the active classes and close the panel if necessary</td>
-                </tr>                
             </tbody>
         </table> 							
         <h2>Sample</h2>
 <pre class="prettyprint linenums">
-var offcanvas = new Stashy.Offcanvas("", { 
-    onMobileLayout : function() {
-    ... awesome actions in mobile screen sizes ...
-    },
-    onTabletLayout : function() {
-    ... awesome actions in tablet sizes ...
-    },                
-    onDesktopLayout : function() {
-    ... actions in desktop sizes ...
-    }
-}).layout();</pre>
+Stashy.ElasticVideo("iframe,object,embed").on();</pre>
     </section>
-    
+    <section id="playground">
+        <div class="page-header">                        
+           <h1>Playground</h1>						
+        </div>
+        
+      <div class="alert badge-violet">
+          <h2>Shrink your browser window and see the videos adapting its size</h2>
+          <p>You can try with any type of video vendors but is possible the component don´t work wth all of them. Youtube, DailyMotion, Vimeo and HTML5 videos are supported like you can check in these samples.</p>
+      </div>
+      
+	  <h2>Youtube video with the new iframe code</h2>
+	  <iframe width="853" height="480" src="http://www.youtube.com/embed/jhyANGHDDH8" frameborder="0" allowfullscreen></iframe>
+
+	  <h2>Youtube video with the old object code</h2>
+<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/fnaojlfdUbs?hl=es_ES&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/fnaojlfdUbs?hl=es_ES&amp;version=3" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+		
+	  <h2>HTML5 using &ltvideo&gt tag</h2>
+	  <p>Note that is no needed using Stashy.ElasticVideo.js with the video tag. Is enough with Stashy.ElasticVideo.css or even styling yourself using max-width:100% and height:auto;</p>
+	   <video id='video'
+		  controls preload='none' 
+		  poster="http://media.w3.org/2010/05/sintel/poster.png">
+		  <source id='mp4'
+			src="http://media.w3.org/2010/05/sintel/trailer.mp4"
+			type='video/mp4'>
+		  <source id='webm'
+			src="http://media.w3.org/2010/05/sintel/trailer.webm"
+			type='video/webm'>
+		  <source id='ogv'
+			src="http://media.w3.org/2010/05/sintel/trailer.ogv"
+			type='video/ogg'>
+		  <p>Your user agent does not support the HTML5 Video element.</p>
+		</video>
+		
+	  <h2>Vimeo video using iframe</h2>
+	  <iframe src="http://player.vimeo.com/video/34656502" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+	  
+	   <h2>DailyMotion  video using iframe</h2>
+	   <iframe frameborder="0" width="480" height="270" src="http://www.dailymotion.com/embed/video/xcr9r8"></iframe>
+    </section>	   
     <section id="dependencies">
         <div class="page-header">                        
            <h1>Dependencies</h1>						
         </div>
         <p class="lead">CSS</p>
-        <span class="badge badge-important">Stashy.Offcanvas.css</span>
+        <span class="badge badge-violet">Stashy.ElasticVideo.css</span>
         <p class="lead">JS</p>        
         <div class="h-top-margin">
             <span class="badge badge-info">jQuery.js</span>
-            <span class="badge badge-info">jquery.hammer.js (if touch enabled)</span>
-            <span class="badge badge-important">Stashy.Events.js</span>
-            <span class="badge badge-important">Stashy.Offcanvas.js</span>            
+            <span class="badge badge-violet">Stashy.ElasticVideo.js</span>            
         </div>	        
     </section>										                            
 </div>

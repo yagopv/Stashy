@@ -15,6 +15,8 @@ In this early version i included some layouts and utilities:
 - **Loader** : Nice loader based in CSS3 transitions and animations
 - **Slider** : Touch enabled slider for creating sliding layouts, carousels, ...etc
 - **Refresh** : Touch enabled pull to refresh control
+- **ElasticVideo** : Adapt videos to any screen size
+- **ElasticText** : Adapt text to any screen size
 
 
 #Getting started

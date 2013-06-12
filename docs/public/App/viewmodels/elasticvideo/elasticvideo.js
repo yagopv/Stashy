@@ -10,6 +10,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Ela
             pagelayout.offcanvasLayout(oc);
             prettyPrint();    
             utils.ScrollTo('#' + that.hash);
+            video("iframe,object,embed").on();
         },                    
         activePage : activePage,  
         activate: function (args) {

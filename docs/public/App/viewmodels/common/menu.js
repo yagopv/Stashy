@@ -56,14 +56,12 @@ define(['durandal/app','durandal/system','lib/pagelayout','durandal/plugins/rout
         ],   
         'elasticvideo' : [
                     { name : "Description", hash : "#/elasticvideo/description" },
-                    { name : "HTML",        hash : "#/elasticvideo/html" },
                     { name : "JavaScript",  hash : "#/elasticvideo/javascript" },
                     { name : "Playground",  hash : "#/elasticvideo/playground" },
                     { name : "Dependencies",hash : "#/elasticvideo/dependencies" }
         ],   
         'elastictext' : [
                     { name : "Description", hash : "#/elastictext/description" },
-                    { name : "HTML",        hash : "#/elastictext/html" },
                     { name : "JavaScript",  hash : "#/elastictext/javascript" },
                     { name : "Playground",  hash : "#/elastictext/playground" },
                     { name : "Dependencies",hash : "#/elastictext/dependencies" }
