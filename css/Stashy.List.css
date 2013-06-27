@@ -4,12 +4,11 @@
 }
 
 .st-list.st-inset {
-    margin : 3%;
+    margin : 5%;
     border-radius : 5px;
 }
 
 .st-list li {  
-  border-bottom: 1px solid #ccc;
   display: table;
   border-collapse: collapse;
   width: 100%;
@@ -18,6 +17,7 @@
 .st-list li a {
   display: table-row;
   overflow: hidden;
+  text-decoration : none;
 }
 
 .st-list .st-list-img {
@@ -41,22 +41,47 @@
 }
 
 .st-list .st-list-title {
-  margin: 0;
+  margin : 0;
 }
+
 
 .st-list .st-list-summary {
   display: none;
-  margin: 0;
+  margin : 0;
 }
 
-.st-list .st-list-action {
-  margin: 0;
+
+.st-list.st-inset li:first-child img {
+    -webkit-border-top-left-radius: 10px;    
+    -moz-border-radius-topleft: 10px;    
+    border-top-left-radius: 10px;    
+}
+
+.st-list.st-inset li:last-child img {
+    -webkit-border-bottom-left-radius: 10px;    
+    -moz-border-radius-bottomleft: 10px;    
+    border-bottom-left-radius: 10px;    
+}
+
+.st-list.st-inset li:first-child {
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.st-list.st-inset li:last-child {
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 @media screen and (min-width: 40em) {
-  .st-list li {
-    background: none;
-  }
   
   .st-list .st-list-summary {
     display: block;
