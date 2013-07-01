@@ -40,6 +40,9 @@ requirejs.config({
         'stashy/Stashy.ElasticVideo': {
             exports: 'Stashy.ElasticVideo'
         },        
+        'stashy/Stashy.List': {
+            exports: 'Stashy.List'
+        },                
         'stashy/Stashy.Modernizr': {
             exports: 'Modernizr'
         },        
@@ -63,8 +66,6 @@ define(['durandal/app', 'durandal/system', 'durandal/viewLocator', 'stashy/Stash
         //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
         //Look for partial views in a 'views' folder in the root.
         viewLocator.useConvention();
-
-        //app.adaptToDevice();
         
         // set root to shell
         app.setRoot('viewmodels/shell','entrance');

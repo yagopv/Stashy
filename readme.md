@@ -17,6 +17,7 @@ In this early version i included some layouts and utilities:
 - **Refresh** : Touch enabled pull to refresh control
 - **ElasticVideo** : Adapt videos to any screen size
 - **ElasticText** : Adapt text to any screen size
+- **List** : Beautiful responsive List
 
 
 #Getting started

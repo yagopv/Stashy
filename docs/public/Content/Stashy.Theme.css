@@ -1,11 +1,12 @@
 body {
     margin : 0;    
+    padding: 0;
 }
 
 /* Flyout */
 
 .st-flyout .st-flyout-menu {
-	padding: 3% 2%;
+    padding: 3% 2%;
     background:rgb(194,194,194);
 }
 
@@ -21,7 +22,7 @@ body {
     padding: 0 3%;
 }
 
-/* Toggle default */
+/* Toggle */
 
 .st-toggle {
     background: #000;    
@@ -41,6 +42,7 @@ body {
 }
 
 /* Offcanvas */
+
 .st-offcanvas .st-offcanvas-menu a,
 .st-offcanvas .st-offcanvas-additional a {
 
@@ -59,7 +61,7 @@ body {
 
 .st-offcanvas .st-offcanvas-main:before,
 .st-offcanvas .st-offcanvas-main:after {
-    background-color: #cbcbcb;    
+    background-color: #ccc;    
 }
 
 .st-offcanvas .st-offcanvas-main:before {
@@ -71,6 +73,7 @@ body {
 }
 
 /* Slider */
+
 .st-slider {
     background: rgb(255, 255, 255);
     background: rgba(255, 255, 255, 1);
@@ -91,4 +94,28 @@ body {
     color: #777;
     text-shadow: 1px 1px 0 #dfdfdf;
     font-weight: bold;
+}
+
+/* List */
+
+.st-list  li {
+    background-color : #ccc;
+    border-bottom : 1px solid #D8D8D8;
+    -webkit-transition: .2s all ease;
+	-moz-transition: .2s all ease;
+	-o-transition: .2s all ease;		
+	-ms-transition: .2s all ease;
+	transition: .2s all ease;
+}
+
+.st-list  li:last-child {    
+    border-bottom : none;
+}
+
+.st-list  li:hover {
+    background-color : #ddd;
+}
+
+.st-list  li a {
+     color : #000;
 }

@@ -115,3 +115,7 @@ body {
 .st-list  li:hover {
     background-color : #ddd;
 }
+
+.st-list  li a {
+     color : #000;
+}

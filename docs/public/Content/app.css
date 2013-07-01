@@ -168,6 +168,18 @@ section p, section h1, section h2, section h4, section a:not(.st-slider-control)
     border-color:transparent;
 }
 
+.badge-list, .badge-list:hover {
+    background-color : rgb(106, 182, 142);
+    color : #fff;
+    border-color:transparent;
+}
+
+.badge-list-dark, .badge-list-dark:hover {
+    background-color : rgb(59, 129, 92);
+    color : #FFF;
+    border-color:transparent;
+}
+
 .hero-unit a {
     width:100%;
 }
@@ -334,7 +346,7 @@ footer a:hover {
     color:#000;
 }
 
-.reset h1, .reset h2, .reset h3, .reset h4,.reset h5,.reset h6, .reset p, .reset a.btn  {
+.reset  {
     margin-top : 0 !important; 
 }
 

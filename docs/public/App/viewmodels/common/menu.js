@@ -65,7 +65,13 @@ define(['durandal/app','durandal/system','lib/pagelayout','durandal/plugins/rout
                     { name : "JavaScript",  hash : "#/elastictext/javascript" },
                     { name : "Playground",  hash : "#/elastictext/playground" },
                     { name : "Dependencies",hash : "#/elastictext/dependencies" }
-        ],           
+        ],        
+        'list' : [
+                    { name : "Description", hash : "#/list/description" },
+                    { name : "HTML",        hash : "#/list/html" },                    
+                    { name : "Playground",  hash : "#/list/playground" },
+                    { name : "Dependencies",hash : "#/list/dependencies" }
+        ],                
         'home' :    [
                     { name : "What is this?", hash : "#/home/whatisthis" },
                     { name : "Components inside this library", hash : "#/home/components" },

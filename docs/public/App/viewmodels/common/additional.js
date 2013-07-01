@@ -39,6 +39,9 @@ define(['durandal/app', 'durandal/system','lib/pagelayout','durandal/plugins/rou
     },{
         name : "ElasticText",
         hash : "#/elastictext"        
+    },{
+        name : "List",
+        hash : "#/list"        
     }]
     
     return {

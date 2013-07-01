@@ -1,0 +1,88 @@
+<div id="offcanvas-navigation">
+    <a href="#" class="showmenubutton btn badge-list h-add-padding"><i class="icon-reorder icon-large no-ajaxy"></i></a>
+    <a href="#" class="showadditionalbutton btn badge-list h-add-padding" style="float:right;"><i class="icon-reorder icon-large"></i></a>
+    <div class="h-clear"></div>
+</div>
+    
+<div>    
+    <div class="hero-unit badge-list h-big-top-margin">
+        <h1>List</h1>
+        <p class="lead h-big-top-margin">Render beautiful responsive Lists</p>
+        <a class="btn badge-list-dark btn-large h-top-margin" href="https://github.com/yagopv/Stashy/archive/master.zip"  target="_blank"><i class="icon-download icon-2x"></i>&nbsp; Download</a>
+        <a class="btn badge-list-dark btn-large h-top-margin" href="https://github.com/yagopv/Stashy"  target="_blank"><i class="icon-github icon-2x"></i>&nbsp; View project on Github</a>          
+    </div>
+    
+    <section id="description">
+        <div class="page-header">
+            <h1>Description</h1>
+        </div>                        
+        <p>This component can render responsive Lists ready for adapt its container width.</p>
+        <p>You can render a full width list or add a little padding and rounded corners to it.</p>
+    </section>
+    
+    <section id="html">
+        <div class="page-header">
+            <h1>HTML</h1>                        
+        </div>
+<pre class="prettyprint linenums">
+&ltul class="st-list [st-inset]"&gt
+    &ltli&gt
+        &lta href="#"&gt
+            &ltdiv class="st-list-img"&gt
+                &ltimg src="imageSrc" alt="imageText" /&gt
+            &lt/div&gt
+            &ltdiv class="st-list-content"&gt
+                &lth4 class="st-list-title"&gtTitle&lt/h4&gt
+                &ltp class="st-list-summary"&gtDescription (Hidden on mobile)&lt/p&gt
+            &lt/div&gt
+        &lt/a&gt
+    &lt/li&gt
+    ... More list items ...
+&lt/ul&gt
+</pre>        
+    </section>
+    
+   <section id="playground">
+         <div class="page-header">
+           <h1>Playground</h1>
+        </div>
+        <h3>Full width List</h3>
+        <ul class="st-list" data-bind="foreach : sampleData">
+        	<li>
+    			<a href="#">
+    				<div class="st-list-img">
+    					<img data-bind="attr : {src : imgsrc, alt : imgalt}" />
+    				</div>
+    				<div class="st-list-content">
+		    			<h3 class="st-list-title reset" data-bind="text : title"></h3>
+				    	<p class="st-list-summary reset" data-bind="text : description"></p>
+    	    		</div>
+	    		</a>
+    		</li>
+        </ul>
+        <p>This List will render at full parent width</p>
+        <h3>Inset List</h3>
+        <p>If you add the st-inset class to the list then a little padding and rounded corners will be included.</p>
+        <ul class="st-list st-inset" data-bind="foreach : sampleData">
+            <li>
+    			<a href="#">
+    				<div class="st-list-img">
+    					<img data-bind="attr : {src : imgsrc, alt : imgalt}" />
+    				</div>
+    				<div class="st-list-content">
+		    			<h3 class="st-list-title reset" data-bind="text : title"></h3>
+				    	<p class="st-list-summary reset" data-bind="text : description"></p>
+    	    		</div>
+	    		</a>
+    		</li>
+        </ul>              
+   </section>
+    
+    <section id="dependencies">
+        <div class="page-header">                        
+           <h1>Dependencies</h1>						
+        </div>				
+        <p class="lead">CSS</p>
+        <span class="badge badge-list">Stashy.List.css</span>
+    </section>										                            
+</div>   
