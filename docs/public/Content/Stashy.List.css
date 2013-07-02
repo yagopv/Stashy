@@ -89,7 +89,7 @@
 }
 
 @media screen and (min-width: 60em) {
-  .st-list li {
+  .st-list.st-double li {
     float: left;
     width: 50%;
   }
