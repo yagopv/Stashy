@@ -18,6 +18,7 @@
         </div>                        
         <p>This component can render responsive Lists ready for adapt its container width.</p>
         <p>You can render a full width list or add a little padding and rounded corners to it.</p>
+        <p>You can choose as well to render the List in two columns for higher widths.</p>
     </section>
     
     <section id="html">
@@ -25,7 +26,7 @@
             <h1>HTML</h1>                        
         </div>
 <pre class="prettyprint linenums">
-&ltul class="st-list [st-inset]"&gt
+&ltul class="st-list [st-inset] [st-double]"&gt
     &ltli&gt
         &lta href="#"&gt
             &ltdiv class="st-list-img"&gt
@@ -46,8 +47,11 @@
          <div class="page-header">
            <h1>Playground</h1>
         </div>
-        <h3>Full width List</h3>
-        <ul class="st-list" data-bind="foreach : sampleData">
+        <p>Lists will be rendered filling the parents width.</p>
+        <p>If you add the st-inset class to the list then a little padding and rounded corners will be included.</p>
+        <p>When using st-double class, then a two-columns List will be rendered at higher widths.</p>        
+        <h3>Full width List. Two columns in higher widths.</h3>
+        <ul class="st-list st-double" data-bind="foreach : sampleData">
         	<li>
     			<a href="#">
     				<div class="st-list-img">
@@ -59,11 +63,9 @@
     	    		</div>
 	    		</a>
     		</li>
-        </ul>
-        <p>This List will render at full parent width</p>
-        <h3>Inset List</h3>
-        <p>If you add the st-inset class to the list then a little padding and rounded corners will be included.</p>
-        <ul class="st-list st-inset" data-bind="foreach : sampleData">
+        </ul>        
+        <h3>Inset width List. Two columns in higher widths.</h3>        
+        <ul class="st-list st-double st-inset" data-bind="foreach : sampleData">
             <li>
     			<a href="#">
     				<div class="st-list-img">
@@ -76,6 +78,34 @@
 	    		</a>
     		</li>
         </ul>              
+        <h3>One column, full width List.</h3>        
+        <ul class="st-list" data-bind="foreach : sampleData">
+            <li>
+        		<a href="#">
+    				<div class="st-list-img">
+    					<img data-bind="attr : {src : imgsrc, alt : imgalt}" />
+    				</div>
+    				<div class="st-list-content">
+		    			<h3 class="st-list-title reset" data-bind="text : title"></h3>
+				    	<p class="st-list-summary reset" data-bind="text : description"></p>
+    	    		</div>
+	    		</a>
+    		</li>
+        </ul>           
+        <h3>One column, inset List.</h3>        
+        <ul class="st-list st-inset" data-bind="foreach : sampleData">
+            <li>
+            	<a href="#">
+    				<div class="st-list-img">
+    					<img data-bind="attr : {src : imgsrc, alt : imgalt}" />
+    				</div>
+    				<div class="st-list-content">
+		    			<h3 class="st-list-title reset" data-bind="text : title"></h3>
+				    	<p class="st-list-summary reset" data-bind="text : description"></p>
+    	    		</div>
+	    		</a>
+    		</li>
+        </ul>          
    </section>
     
     <section id="dependencies">
