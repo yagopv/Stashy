@@ -17,6 +17,7 @@ exports.optimizeProjectAssets = function() {
             'css/Stashy.Slider.css',
             'css/Stashy.Refresh.css',
             'css/Stashy.ElasticVideo.css',
+            'css/Stashy.List.css',
             'css/Stashy.Theme.css'            
         ],
         fileOut: 'dist/css/Stashy.min.css',
@@ -93,6 +94,7 @@ exports.optimizeDocsAssets = function() {
             'docs/public/Content/Stashy.Slider.css',
             'docs/public/Content/Stashy.Refresh.css',
             'docs/public/Content/Stashy.ElasticVideo.css',
+            'docs/public/Content/Stashy.List.css',
             'docs/public/Content/bootstrap.css',
             'docs/public/Content/bootstrap-responsive.css',
             'docs/public/Content/font-awesome.css',
