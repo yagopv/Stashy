@@ -1,0 +1,100 @@
+body   {
+   font: 62.5%/1.3 Helvetica, sans-serif;
+}
+
+.st-table-container {
+   position: relative;
+   margin: 5em 5%;
+}
+.st-table-menu-container {
+   position: absolute;
+   top: -3em;
+   right: 0;
+}
+.st-table-menu {
+   position: absolute;
+   background-color: #fff;
+   padding: 10px;
+   border: 1px solid #ccc;
+   font-size: 1.2em;
+   width: 12em;
+   right: 0;
+   left: auto;
+}
+.st-table-menu-hidden {
+   left: -999em;
+   right: auto;
+}
+.st-table-menu-btn {
+   text-decoration: none;
+   color: #333;
+   font-size: 1.2em;
+   background: #eee url(../_img/icon-menu.png) no-repeat 5px center;
+   padding: .3em 10px .3em 20px;
+   border: 1px solid #ccc;
+}
+
+.st-table-menu ul {
+    margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.st-table-menu li {
+   padding: .3em 0;
+}
+
+/* Table styles */
+.st-table table {
+	width: 100%;
+	font-size: 1.2em;
+}
+.st-table thead th {
+	white-space: nowrap;
+	border-bottom: 1px solid #ccc;
+	color: #888;
+}
+.st-table th, td {
+   padding: .5em 1em;
+   background-color: #fff;
+   text-align: right;
+}
+
+.st-table th:first-child, 
+.st-table td:first-child {
+   text-align: left;
+}
+
+.st-table tbody th, td {
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.st-table .subtitle {
+   display: block;
+   font-size: .9em;
+   opacity: .4;
+}
+
+.js .st-table th,
+.js .st-table td {
+   display: none;
+}
+
+.js .st-table th.always, 
+.js .st-table td.always {
+   display: table-cell;
+}
+
+
+@media screen and (min-width: 768px) {
+	.js .st-table th.ontablet, 
+	.js .st-table td.ontablet {
+		display: table-cell;
+	}
+}
+
+@media screen and (min-width: 978px) {
+   .js .st-table th.ondesktop, 
+   .js .st-table td.ondesktop {
+      display: table-cell;
+   }
+}

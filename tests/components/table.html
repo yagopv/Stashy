@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		 
+		<title>responsive table patterns</title>
+		<meta name="description" content="Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus." />
+		
+		<link rel="stylesheet" href="../../css/Stashy.Table.css" />				
+</head>
+
+<body>
+	<div class="st-table-container">
+		<table cellspacing="0" class="st-table" id="companies">
+		   <thead>
+			  <tr>
+				 <th class="not-selectable always">Company</th>
+				 <th class="always">Skills</th>
+				 <th class="ontablet">Created Date</th>
+				 <th class="ontablet">People</th>
+				 <th class="always">City</th>
+				 <th class="ondesktop">Id</th>
+				 <th class="ondesktop">Telephone</th>
+			  </tr>
+		   </thead>
+		   <tbody>
+			  <tr>
+				 <th>GOOG <span class="subtitle">Google Inc.</span></th>
+				 <td>Tech</td>
+				 <td>01/01/1990</td>
+				 <td>50.000</td>
+				 <td>San Francisco</td>
+				 <td>X33489JJ993</td>
+				 <td>77889966552</td>
+			  </tr>      
+			  <tr>
+				 <th>AAPL <span class="subtitle">Apple Inc.</span></th>
+				 <td>Tech</td>
+				 <td>01/01/1998</td>
+				 <td>30.000</td>
+				 <td>San Francisco</td>
+				 <td>A3FF89JJ993</td>
+				 <td>12289966552</td>
+			  </tr>      
+			  <tr>
+				 <th>AMZN <span class="subtitle">Amazon.com Inc.</span></th>
+				 <td>Tech</td>
+				 <td>01/01/1995</td>
+				 <td>25.000</td>
+				 <td>Atlanta</td>
+				 <td>X33489JJ993</td>
+				 <td>67884345552</td>
+			  </tr>       
+			  <tr>
+				 <th>ORCL <span class="subtitle">Oracle Corporation</span></th>
+				 <td>Tech</td>
+				 <td>01/01/1990</td>
+				 <td>50.000</td>
+				 <td>San Francisco</td>
+				 <td>X33489JJ993</td>
+				 <td>77889966552</td>
+			  </tr>      
+			  <tr>
+				 <th>MSFT <span class="subtitle">Microsoft Corporation</span></th>
+				 <td>Tech</td>
+				 <td>01/01/1990</td>
+				 <td>50.000</td>
+				 <td>San Francisco</td>
+				 <td>X33489JJ993</td>
+				 <td>77889966552</td>  
+			  </tr>
+			  <tr>
+				 <th>CSCO <span class="subtitle">Cisco Systems, Inc.</span></th>
+				 <td>Tech</td>
+				 <td>01/01/1990</td>
+				 <td>50.000</td>
+				 <td>San Francisco</td>
+				 <td>X33489JJ993</td>
+				 <td>77889966552</td>
+			  </tr>      
+			  <tr>
+				 <th>YHOO <span class="subtitle">Yahoo! Inc.</span></th>
+				 <td>Tech</td>
+				 <td>01/01/1990</td>
+				 <td>50.000</td>
+				 <td>San Francisco</td>
+				 <td>X33489JJ993</td>
+				 <td>77889966552</td>
+			  </tr>
+		   </tbody>
+		</table>
+	</div>
+	
+	<div class="st-table-container">
+		<table cellspacing="0" class="st-table" id="persons">
+		   <thead>
+			  <tr>
+				 <th class="not-selectable always">Name</th>
+				 <th class="ondesktop">Surname</th>
+				 <th class="always">Email</th>
+				 <th class="always">Birth date</th>
+				 <th class="ontablet">Job</th>
+				 <th class="ondesktop">Salary</th>
+				 <th class="ondesktop">City</th>
+				 <th class="ondesktop">Country</th>
+				 <th class="ondesktop">Gender</th>
+				 <th class="ondesktop">Comments</th>
+			  </tr>
+		   </thead>
+		   <tbody>
+			  <tr>
+				 <th>Yago</th>
+				 <td>Pérez Vázquez</td>
+				 <td>yagoperez@outlook.com</td>
+				 <td>01.01.1900 :)</td>
+				 <td>Developer</td>
+				 <td>8.000.000 per month</td>
+				 <td>La Coruña</td>
+				 <td>Spain</td>
+				 <td>M</td>
+				 <td>Excellent employee, i think he should earn more money</td>
+			  </tr>      
+			  <tr>
+				 <th>Yago</th>
+				 <td>Pérez Vázquez</td>
+				 <td>yagoperez@outlook.com</td>
+				 <td>01.01.1900 :)</td>
+				 <td>Developer</td>
+				 <td>8.000.000 per month</td>
+				 <td>La Coruña</td>
+				 <td>Spain</td>
+				 <td>M</td>
+				 <td>Excellent employee, i think he should earn more money</td>
+			  </tr>   
+		   </tbody>
+		</table>
+	</div>
+	
+	</body>
+    <script src="../../src/jquery.js"></script>
+	<script src="../../src/Stashy.Table.js"></script>	    
+	<script type="text/javascript">
+	   var table1 = Stashy.Table("#companies",{
+		  idprefix: "co-",
+		  notSelectable: "not-selectable"
+	   }).on();	
+	   var table1 = Stashy.Table("#persons",{
+		  idprefix: "pe-",
+		  notSelectable: "not-selectable"
+	   }).on();	   
+	</script>
+</html>
