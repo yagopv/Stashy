@@ -21,7 +21,8 @@
             this.options = {     
 				idprefix: null,   // specify a prefix for the id/headers values
 				notSelectable: null, // specify a class assigned to column headers (th) that should always be present; the script not create a checkbox for these columns
-				checkContainer: null // container element where the hide/show checkboxes will be inserted; if none specified, the script creates a menu     
+				checkContainer: null, // container element where the hide/show checkboxes will be inserted; if none specified, the script creates a menu     
+                menuClass : null // Specify the menu classes you want to add
             };
             $.extend(this.options || {}, useropt);
         }
@@ -33,26 +34,23 @@
 
 			$("html").addClass("js");
 		  
-		    this.hdrCols.each(function(i){
+		    this.hdrCols.each(function (i) {
 				var th = $(this),
 				    id = th.attr("id"), 
 				    classes = th.attr("class");
-			 
-				// assign an id to each header, if none is in the markup
+			 				
 				if (!id) {
 					id = ( self.options.idprefix ? self.options.idprefix : "col-" ) + i;
 					th.attr("id", id);
 				};
-			 
-				// assign matching "headers" attributes to the associated cells
-				// TEMP - needs to be edited to accommodate colspans
+                
 				self.bodyRows.each(function(){
 					var cell = $(this).find("th, td").eq(i);
 					cell.attr("headers", id);
 					if (classes) { cell.addClass(classes); };
 				});     
 			 
-				// create the hide/show toggles
+				
 				if ( !th.is("." + self.options.notSelectable) ) {
 					var toggle = $('<li><input type="checkbox" name="toggle-cols" id="toggle-col-'+i+'" value="'+id+'" /> <label for="toggle-col-'+i+'">'+th.text()+'</label></li>');
 				 
@@ -78,33 +76,36 @@
 						.trigger("updateCheck");  
 				};          
 				   
-		  }); // end hdrCols loop 
+		    });
 		  
-		  // update the inputs' checked status
-		  $(window).bind("orientationchange resize", function(){
-			 self.container.find("input").trigger("updateCheck");
-		  });      
-				
-		  // if no container specified for the checkboxes, create a "Display" menu      
-		  if (!self.options.checkContainer) {
-			 var menuContainer = $('<div class="st-table-menu-container" />'),
-				   menuBtn = $('<a href="#" class="st-table-menu-btn">Display</a>');
+		    
+		    $(window).bind("orientationchange resize", function(){
+			     self.container.find("input").trigger("updateCheck");
+		    });      
+						  
+		    if (!self.options.checkContainer) {
+			    var menuContainer = $('<div class="st-table-menu-container" />'),
+				    menuBtn = $('<a href="#" class="st-table-menu-btn">Display</a>');                    
 				   
-			 menuBtn.click(function(){
-				self.container.toggleClass("st-table-menu-hidden");            
-				return false;
-			 });
-				   
-			 menuContainer.append(menuBtn).append(self.container);
-			 self.element.before(menuContainer);
+			    menuBtn.click(function(){
+			        self.container.toggleClass("st-table-menu-hidden");            
+			        return false;
+			    });
+
+                if (self.options.menuClass) {
+                   menuBtn.addClass(self.options.menuClass); 
+                }
+                
+			    menuContainer.append(menuBtn).append(self.container);
+			    self.element.before(menuContainer);
 			 
-			 // assign click-to-close event
-				$(document).click(function(e){								
-					if ( !$(e.target).is( self.container ) && !$(e.target).is( self.container.find("*") ) ) {			
-						self.container.addClass("st-table-menu-hidden");
-					}				
-				});
-		  };   			
+			    
+			    $(document).click(function(e){								
+				    if ( !$(e.target).is( self.container ) && !$(e.target).is( self.container.find("*") ) ) {			
+					    self.container.addClass("st-table-menu-hidden");
+				    }				
+			    });
+		    };   			
             
             this.enabled = true;
             return this;

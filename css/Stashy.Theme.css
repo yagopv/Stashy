@@ -100,7 +100,7 @@ body {
 
 .st-list  li {
     background-color : #ccc;
-    border-bottom : 1px solid #D8D8D8;
+    border-bottom : 1px solid #ccc;
     -webkit-transition: .2s all ease;
 	-moz-transition: .2s all ease;
 	-o-transition: .2s all ease;		
@@ -116,6 +116,51 @@ body {
     background-color : #ddd;
 }
 
-.st-list  li a {
-     color : #000;
+.st-list li a {
+     color : #888;
+}
+
+
+/* Table */
+
+.st-table-menu {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 10em;
+}
+
+.st-table-menu-btn {
+    color: #888;
+    background: #ccc;
+    border: 1px solid #ccc;
+}
+
+.st-table table {
+    width: 100%;
+	font-size: 1.2em;
+}
+.st-table thead th {
+    white-space: nowrap;
+    border-bottom: 1px solid #ccc;
+	color: #888;
+}
+.st-table th, td {
+    padding: .5em 1em;
+    background-color: #fff;
+    text-align: right;
+}
+
+.st-table th:first-child, 
+.st-table td:first-child {
+    text-align: left;
+}
+
+.st-table tbody th, td {
+	border-bottom: 1px solid #ccc;
+}
+
+.st-table .subtitle {
+    display: block;
+    font-size: .9em;
+    opacity: .4;
 }
