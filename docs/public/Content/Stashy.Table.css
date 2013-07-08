@@ -1,0 +1,68 @@
+.st-table-container {
+    position: relative;
+    margin: 5em 5%;
+}
+.st-table-menu-container {
+    position: absolute;
+    top: -3em;
+    right: 0;
+}
+
+.st-table-menu {
+    position: absolute;
+    padding: 10px;
+    font-size: 1.2em;    
+    right: 0;
+    left: auto;
+}
+
+.st-table-menu-btn {
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: .3em 10px .3em 10px;
+}
+
+.st-table-menu-hidden {
+    left: -999em;
+    right: auto;
+}
+
+.st-table-menu ul {
+    margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.st-table-menu li {
+    padding: .3em 0;
+}
+
+.st-table-menu li label {
+    display : inline;
+    vertical-align: middle;
+}
+
+.js .st-table th,
+.js .st-table td {
+    display: none;
+}
+
+.js .st-table th.always, 
+.js .st-table td.always {
+    display: table-cell;
+}
+
+
+@media screen and (min-width: 768px) {
+	.js .st-table th.ontablet, 
+	.js .st-table td.ontablet {
+	    display: table-cell;
+	}
+}
+
+@media screen and (min-width: 978px) {
+   .js .st-table th.ondesktop, 
+   .js .st-table td.ondesktop {
+        display: table-cell;
+    }
+}

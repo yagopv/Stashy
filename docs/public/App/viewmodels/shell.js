@@ -38,7 +38,9 @@ define(['durandal/plugins/router', 'stashy/Stashy.Utils'], function (router,util
                 { url: 'elastictext', moduleId: 'viewmodels/elastictext/elastictext', name: 'ElasticText', visible: false , settings : { activemenu : 'elastictext' }},
                 { url: 'elastictext/:page', moduleId: 'viewmodels/elastictext/elastictext', name: 'ElasticText', visible: false , settings : { activemenu : 'elastictext' }},
                 { url: 'list', moduleId: 'viewmodels/list/list', name: 'List', visible: false , settings : { activemenu : 'list' }},
-                { url: 'list/:page', moduleId: 'viewmodels/list/list', name: 'List', visible: false , settings : { activemenu : 'list' }},                                
+                { url: 'list/:page', moduleId: 'viewmodels/list/list', name: 'List', visible: false , settings : { activemenu : 'list' }},
+                { url: 'table', moduleId: 'viewmodels/table/table', name: 'Table', visible: false , settings : { activemenu : 'table' }},
+                { url: 'table/:page', moduleId: 'viewmodels/table/table', name: 'Table', visible: false , settings : { activemenu : 'table' }},                                                
                 { url: 'error', moduleId: 'viewmodels/error/error', name: 'Error', visible: false }
             ]);
             

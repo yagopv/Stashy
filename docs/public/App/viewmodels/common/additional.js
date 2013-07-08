@@ -42,6 +42,9 @@ define(['durandal/app', 'durandal/system','lib/pagelayout','durandal/plugins/rou
     },{
         name : "List",
         hash : "#/list"        
+    },{
+        name : "Table",
+        hash : "#/table"        
     }]
     
     return {
