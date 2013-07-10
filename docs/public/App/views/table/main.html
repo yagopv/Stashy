@@ -1,35 +1,51 @@
 <div>
-    <div class="hero-unit badge-info h-inverse-color" style="margin-top:30px;">
-        <h1>Flyout</h1>
-        <p class="lead h-big-top-margin">Hide your navigation options or wathever you want in a nice left panel</p>
-        <a class="btn badge-info-light btn-large h-top-margin" href="https://github.com/yagopv/Stashy/archive/master.zip"  target="_blank"><i class="icon-download icon-2x"></i>&nbsp; Download</a>			<a class="btn badge-info-light btn-large h-top-margin" href="https://github.com/yagopv/Stashy"  target="_blank"><i class="icon-github icon-2x"></i>&nbsp; View project on Github</a>  	
+    <div class="hero-unit badge-table h-inverse-color" style="margin-top:30px;">
+        <h1>Table</h1>
+        <p class="lead h-big-top-margin">Work with responsive tables enhanced with priority columns</p>
+        <a class="btn badge-table-dark btn-large h-top-margin" href="https://github.com/yagopv/Stashy/archive/master.zip"  target="_blank"><i class="icon-download icon-2x"></i>&nbsp; Download</a>
+        <a class="btn badge-table-dark btn-large h-top-margin" href="https://github.com/yagopv/Stashy"  target="_blank"><i class="icon-github icon-2x"></i>&nbsp; View project on Github</a>  	
     </div>
     
     <section id="description">
         <div class="page-header">
             <h1>Description</h1>
         </div>
-        <p>This component renders a left side menu like the one we can see in a lot of mobile applications.</p>
-        <p>In this page we can see the behaviour of the layout clicking in the button at the top left corner close to the navigation options.</p>                   </section>
+        <p>Lot of times our table size is too much bigger for display columns in the right way.</p>
+        <p>Using this component you can <span class="badge-table">make your table responsive</span> and <span class="badge-table">show only the columns you want to.</span></p>
     
     <section id="html">
         <div class="page-header">
             <h1>HTML</h1>                        
         </div>
 <pre class="prettyprint linenums">
-&ltdiv class="st-flyout"&gt
-    &ltdiv class="st-flyout-container"&gt
-        &ltdiv class="st-flyout-menu"&gt
-            ... Menu content ...
-        &lt/div&gt
-        &ltdiv class="st-flyout-main"&gt
-            ... Content ...
-            &lta href="#" class="st-flyout-toggle"&gt&lt/a&gt
-            ... Place the toggle button wherever you want ...
-            ... More content ...
-        &lt/div&gt
-    &lt/div&gt
-&lt/div&gt</pre>
+&lttable cellspacing="0" class="st-table" id="tbl-id"&gt
+    &ltthead&gt
+	  &lttr&gt
+		 &ltth class="not-selectable always"&gtColumn header 1&lt/th&gt
+		 &ltth class="always"&gtColumn header 2&lt/th&gt
+		 &ltth class="ontablet"&gtColumn header 3&lt/th&gt
+		 &ltth class="ondesktop"&gtColumn header 4&lt/th&gt
+         ... More headers ...
+	  &lt/tr&gt
+   &lt/thead&gt
+   &lttbody&gt
+	  &lttr&gt
+		 &ltth&gtTitle &ltspan class="subtitle"&gtSubtitle&lt/span&gt&lt/th&gt
+		 &lttd&gtLorem ipsum&lt/td&gt
+		 &lttd&gt01.01.2013&lt/td&gt
+		 &lttd&gt20$&lt/td&gt
+         ... More columns ...
+	  &lt/tr&gt      
+	  &lttr&gt
+		 &ltth&gtAAPL &ltspan class="subtitle"&gtSubtitle&lt/span&gt&lt/th&gt
+		 &lttd&gtLorem ipsum&lt/td&gt
+		 &lttd&gt01.01.2012&lt/td&gt
+		 &lttd&gt50$&lt/td&gt
+         ... More columns ...
+	  &lt/tr&gt
+      .... More rows ...
+   &lt/tbody&gt
+&lt/table&gt</pre>
     </section>
     
     <section id="javascript">
@@ -128,11 +144,10 @@ var flyout = new Stashy.Flyout().layout();</pre>
            <h1>Dependencies</h1>						
         </div>				
         <p class="lead">CSS</p>
-        <span class="badge badge-info">Stashy.Flyout.css</span>
+        <span class="badge badge-table">Stashy.Table.css</span>
         <p class="lead">JS</p>
-        <span class="badge badge-info">jQuery.js</span> 
-        <span class="badge badge-info">jquery.hammer.js (if touch enabled)</span> 
-        <span class="badge badge-info">Stashy.Flyout.js</span>
+        <span class="badge badge-info">jQuery.js</span>         
+        <span class="badge badge-table">Stashy.Table.js</span>
     </section>																			
 </div>		                    
     

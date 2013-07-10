@@ -180,6 +180,18 @@ section p, section h1, section h2, section h4, section a:not(.st-slider-control)
     border-color:transparent;
 }
 
+.badge-table, .badge-table:hover {
+    background-color : rgb(137, 178, 194);
+    color : #fff;
+    border-color:transparent;
+}
+
+.badge-table-dark, .badge-table-dark:hover {
+    background-color : rgb(61, 119, 146);
+    color : #FFF;
+    border-color:transparent;
+}
+
 .hero-unit a {
     width:100%;
 }
