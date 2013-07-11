@@ -6,6 +6,7 @@
     position: absolute;
     top: -3em;
     right: 0;
+    z-index : 999;
 }
 
 .st-table-menu {
@@ -19,7 +20,7 @@
 .st-table-menu-btn {
     text-decoration: none;
     font-size: 1.2em;
-    padding: .3em 10px .3em 10px;
+    padding: .3em 10px .3em 10px;    
 }
 
 .st-table-menu-hidden {

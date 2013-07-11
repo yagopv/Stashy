@@ -20,7 +20,7 @@
             this.enabled = false;
             this.options = {     
 				idprefix: null,   // specify a prefix for the id/headers values
-				notSelectable: null, // specify a class assigned to column headers (th) that should always be present; the script not create a checkbox for these columns
+				notSelectable: "not-selectable", // specify a class assigned to column headers (th) that should always be present; the script not create a checkbox for these columns
 				checkContainer: null, // container element where the hide/show checkboxes will be inserted; if none specified, the script creates a menu     
                 menuClass : null // Specify the menu classes you want to add
             };

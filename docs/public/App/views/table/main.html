@@ -46,6 +46,14 @@
       .... More rows ...
    &lt/tbody&gt
 &lt/table&gt</pre>
+        <div>
+            <p>The required HTML has a couple of classes helping you to build the responsive table.</p>
+            <p><span class="bagde badge-table">.not-selectable</span> When you apply this class the column won´t be selectable in the dropdown menu. In another words, the column will be always visible and can´t be removed by the user.</p>
+            <p><span class="bagde badge-table">.always</span> The same as .not-selectable but a checkbox will be showed in the dropdown allowing the user to unselect the column.</p>
+            <p><span class="bagde badge-table">.onmobile</span> The column will be displayed only on mobile device sizes (< 768px).</p>
+            <p><span class="bagde badge-table">.ontablet</span> The column will be displayed only on tablet device sizes (>= 768px and < 978px).</p>
+            <p><span class="bagde badge-table">.ondesktop</span> The column will be displayed only on desktop sizes (>= 978px).</p>
+        </div>
     </section>
     
     <section id="javascript">
@@ -54,7 +62,7 @@
         </div>			
         <h2>Constructor</h2>
 <pre class="prettyprint linenums">
-Stashy.Flyout(selector, options)
+Stashy.Table(selector, options)
 </pre>
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -69,14 +77,14 @@ Stashy.Flyout(selector, options)
                 <tr>
                     <td><strong>selector</strong></td>
                     <td>string</td>
-                    <td>.st-flyout</td>
-                    <td>CSS selector for your flyout</td>
+                    <td>.st-table</td>
+                    <td>CSS selector for your table</td>
                 </tr>
                 <tr>
                     <td><strong>options</strong></td>
                     <td>object</td>
                     <td>See options</td>
-                    <td>You can pass the options to the offcanvas instance</td>
+                    <td>You can pass the options to the table instance</td>
                 </tr>										
             </tbody>
         </table>    
@@ -92,22 +100,28 @@ Stashy.Flyout(selector, options)
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>slideType</strong></td>
+                    <td><strong>idpreffix</strong></td>
                     <td>string</td>
-                    <td>push</td>
-                    <td>You can choose between "push" or "reveal" in order to show the panel</td>
+                    <td>null</td>
+                    <td>Prefix for the id/headers values</td>
                 </tr> 
                 <tr>
-                    <td><strong>closeOnClickOutside</strong></td>
-                    <td>bool</td>
-                    <td>true</td>
-                    <td>Close Flyout panel on click outside the toggle button (.st-flyout-toggle)</td>
-                </tr>                   
+                    <td><strong>notSelectable</strong></td>
+                    <td>string</td>
+                    <td>not-selectable</td>
+                    <td>Class assigned to column headers (th) that should always be present; the script not create a checkbox for these columns</td>
+                </tr>  
                 <tr>
-                    <td><strong>enableTouch</strong></td>
-                    <td>bool</td>
-                    <td>false</td>
-                    <td>If touch is enabled, then you can swipe to reveal the left menu. The touch behaviour is controlled by Hammer.js so you need to add a reference to jquery.hammer.js. Get it in the <a href="http://eightmedia.github.io/hammer.js/" target="_blank">project site</a> or in the <a href="https://github.com/yagopv/Stashy/tree/master/dist/js" target="_blank">dist folder</a> of the Stashy Github project</td>
+                    <td><strong>checkContainer</strong></td>
+                    <td>string</td>
+                    <td>null</td>
+                    <td>Container element where the hide/show checkboxes will be inserted; if none specified, the script creates a menu</td>
+                </tr>                  
+                <tr>
+                    <td><strong>menuClass</strong></td>
+                    <td>string</td>
+                    <td>null</td>
+                    <td>Specify the menu classes you want to add to style the menu button</td>
                 </tr>                   
             </tbody>
         </table> 
@@ -121,22 +135,255 @@ Stashy.Flyout(selector, options)
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>layout()</strong></td>
-                    <td>Starts flyout layout</td>
+                    <td><strong>on()</strong></td>
+                    <td>Starts table styling and event binding</td>
                 </tr>
-                <tr>
-                    <td><strong>open()</strong></td>
-                    <td>Reveal or push menu panel</td>
-                </tr>
-                <tr>
-                    <td><strong>close()</strong></td>
-                    <td>Close menu panel</td>
-                </tr>                                
             </tbody>
         </table> 								
         <h2>Sample</h2>
 <pre class="prettyprint linenums">
-var flyout = new Stashy.Flyout().layout();</pre>		
+var table1 = new Stashy.Table("#id1",{
+    	        idprefix: "prforid2",
+		        notSelectable: "forbidden",
+                menuClass : "btn btn-primary"
+	        }).on();           
+var table2 = new Stashy.Table("#id2",{
+		        idprefix: "prforid2-",
+                checkContainer: "mymenu"
+	        }).on();            
+</pre>		
+    </section>
+    
+    <section id="playground">
+        <div class="page-header">
+            <h1>Playground</h1>
+        </div>
+        <h3>Responsive table styled with bootstrap</h3>
+        <div class="st-table-container">
+    		<table cellspacing="0" class="st-table table table-striped" id="laptops-styled">
+    		   <thead>
+    			  <tr>
+        			 <th class="not-selectable always">Laptop</th>
+    				 <th class="always">Procesor</th>
+    				 <th class="always">Speed</th>
+    				 <th class="ontablet">Graphics card</th>
+    				 <th class="ontablet">Resolution</th>
+    				 <th class="always">Screen Size</th>
+    				 <th class="ontablet">Memory</th>
+                     <th class="ontablet">Storage</th>
+                     <th class="ondesktop">Battery lifez</th>
+                     <th class="ondesktop">Warranty</th>
+                     <th class="ondesktop">Price</th>                  
+    			  </tr>
+    		   </thead>
+    		   <tbody>
+    			  <tr>
+    				 <td>Portege<span class="subtitle">Toshiba</span></td>
+    				 <td>i5</td>
+    				 <td>1.6 Mhz</td>
+    				 <td>Intel HD-4000</td>
+    				 <td>1600x900</td>
+    				 <td>14''</td>
+    				 <td>4Gb</td>
+                     <td>128 SSD</td>
+                     <td>6h</td>
+                     <td>1 year</td>
+                     <td>1500 $</td>
+    			  </tr>      
+    			  <tr>
+        			 <td>X1<span class="subtitle">Lenovo</span></td>
+    				 <td>i7</td>
+    				 <td>2.1 Mhz</td>
+    				 <td>NVIDIA 635</td>
+    				 <td>1980x1080</td>
+    				 <td>13.3''</td>
+    				 <td>8Gb</td>
+                     <td>256 SSD</td>
+                     <td>7h</td>
+                     <td>2 year</td>
+                     <td>1799 $</td>
+    			  </tr>      
+    			  <tr>
+        			 <td>Vaio Pro<span class="subtitle">Sony</span></td>
+    				 <td>i5</td>
+    				 <td>1.7 Mhz</td>
+    				 <td>Intel HD-4000</td>
+    				 <td>1366x780</td>
+    				 <td>13.3''</td>
+    				 <td>4Gb</td>
+                     <td>500 Gb</td>
+                     <td>6.5h</td>
+                     <td>2 year</td>
+                     <td>1250 $</td>
+    			  </tr>       
+    			  <tr>
+        			 <td>MacBook Air<span class="subtitle">Apple</span></td>
+    				 <td>i7</td>
+    				 <td>1.8 Mhz</td>
+    				 <td>Intel HD-4000</td>
+    				 <td>2048x1536</td>
+    				 <td>13.1''</td>
+    				 <td>4Gb</td>
+                     <td>128 SSD</td>
+                     <td>6h</td>
+                     <td>1 year</td>
+                     <td>1600 $</td>
+    			  </tr>      
+    			  <tr>
+        			 <td>Zenbook U32VD<span class="subtitle">Asus</span></td>
+    				 <td>i3</td>
+    				 <td>1.5 Mhz</td>
+    				 <td>NVIDIA 650</td>
+    				 <td>1366x768</td>
+    				 <td>14''</td>
+    				 <td>4Gb</td>
+                     <td>400 Gb</td>
+                     <td>4h</td>
+                     <td>2 year</td>
+                     <td>800 $</td>
+    			  </tr>
+    			  <tr>
+        			 <td>Spectre XT<span class="subtitle">HP</span></td>
+    				 <td>i5</td>
+    				 <td>1.6 Mhz</td>
+    				 <td>Intel HD-4000</td>
+    				 <td>1600x900</td>
+    				 <td>15''</td>
+    				 <td>8Gb</td>
+                     <td>128 SSD</td>
+                     <td>6h</td>
+                     <td>1 year</td>
+                     <td>1300 $</td>
+    			  </tr>      
+    			  <tr>
+        			 <td>U500VZ<span class="subtitle">Asus</span></td>
+    				 <td>i7</td>
+    				 <td>3.3 Mhz</td>
+    				 <td>NVIDIA 735M</td>
+    				 <td>1980x1080</td>
+    				 <td>15.6''</td>
+    				 <td>8Gb</td>
+                     <td>512 SSD</td>
+                     <td>5h</td>
+                     <td>2 year</td>
+                     <td>1999 $</td>
+    			  </tr>
+    		   </tbody>
+    		</table>
+    	</div>
+    	
+        <h3>Responsive table styled with Stashy default theme</h3>
+        <div class="st-table-container">
+    		<table cellspacing="0" class="st-table" id="laptops-default">
+    		   <thead>
+    			  <tr>
+        			 <th class="not-selectable always">Laptop</th>
+    				 <th class="always">Procesor</th>
+    				 <th class="always">Speed</th>
+    				 <th class="ontablet">Graphics card</th>
+    				 <th class="ontablet">Resolution</th>
+    				 <th class="always">Screen Size</th>
+    				 <th class="ontablet">Memory</th>
+                     <th class="ontablet">Storage</th>
+                     <th class="ondesktop">Battery life</th>
+                     <th class="ondesktop">Warranty</th>
+                     <th class="ondesktop">Price</th>    			  </tr>
+    		   </thead>
+    		   <tbody>
+    			  <tr>
+    				 <td>Portege<span class="subtitle">Toshiba</span></td>
+    				 <td>i5</td>
+    				 <td>1.6 Mhz</td>
+    				 <td>Intel HD-4000</td>
+    				 <td>1600x900</td>
+    				 <td>14''</td>
+    				 <td>4Gb</td>
+                     <td>128 SSD</td>
+                     <td>6h</td>
+                     <td>1 year</td>
+                     <td>1500 $</td>
+    			  </tr>      
+    			  <tr>
+        			 <td>X1<span class="subtitle">Lenovo</span></td>
+    				 <td>i7</td>
+    				 <td>2.1 Mhz</td>
+    				 <td>NVIDIA 635</td>
+    				 <td>1980x1080</td>
+    				 <td>13.3''</td>
+    				 <td>8Gb</td>
+                     <td>256 SSD</td>
+                     <td>7h</td>
+                     <td>2 year</td>
+                     <td>1799 $</td>
+    			  </tr>      
+    			  <tr>
+        			 <td>Vaio Pro<span class="subtitle">Sony</span></td>
+    				 <td>i5</td>
+    				 <td>1.7 Mhz</td>
+    				 <td>Intel HD-4000</td>
+    				 <td>1366x780</td>
+    				 <td>13.3''</td>
+    				 <td>4Gb</td>
+                     <td>500 Gb</td>
+                     <td>6.5h</td>
+                     <td>2 year</td>
+                     <td>1250 $</td>
+    			  </tr>       
+    			  <tr>
+        			 <td>MacBook Air<span class="subtitle">Apple</span></th>
+    				 <td>i7</td>
+    				 <td>1.8 Mhz</td>
+    				 <td>Intel HD-4000</td>
+    				 <td>2048x1536</td>
+    				 <td>13.1''</td>
+    				 <td>4Gb</td>
+                     <td>128 SSD</td>
+                     <td>6h</td>
+                     <td>1 year</td>
+                     <td>1600 $</td>
+    			  </tr>      
+    			  <tr>
+        			 <td>Zenbook U32VD<span class="subtitle">Asus</span></td>
+    				 <td>i3</td>
+    				 <td>1.5 Mhz</td>
+    				 <td>NVIDIA 650</td>
+    				 <td>1366x768</td>
+    				 <td>14''</td>
+    				 <td>4Gb</td>
+                     <td>400 Gb</td>
+                     <td>4h</td>
+                     <td>2 year</td>
+                     <td>800 $</td>
+    			  </tr>
+    			  <tr>
+        			 <td>Spectre XT<span class="subtitle">HP</span></td>
+    				 <td>i5</td>
+    				 <td>1.6 Mhz</td>
+    				 <td>Intel HD-4000</td>
+    				 <td>1600x900</td>
+    				 <td>15''</td>
+    				 <td>8Gb</td>
+                     <td>128 SSD</td>
+                     <td>6h</td>
+                     <td>1 year</td>
+                     <td>1300 $</td>
+    			  </tr>      
+    			  <tr>
+        			 <td>U500VZ<span class="subtitle">Asus</span></td>
+    				 <td>i7</td>
+    				 <td>3.3 Mhz</td>
+    				 <td>NVIDIA 735M</td>
+    				 <td>1980x1080</td>
+    				 <td>15.6''</td>
+    				 <td>8Gb</td>
+                     <td>512 SSD</td>
+                     <td>5h</td>
+                     <td>2 year</td>
+                     <td>1999 $</td>
+    			  </tr>
+    		   </tbody>
+    		</table>
+    	</div>        
     </section>
     
     <section id="dependencies">
