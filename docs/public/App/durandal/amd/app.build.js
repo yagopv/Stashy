@@ -7,8 +7,8 @@
   "paths": {
     "text": "durandal/amd/text"
   },
-  "baseUrl": "D:\\Proyectos .NET\\Stashy\\docs\\public\\App",
-  "mainConfigFile": "D:\\Proyectos .NET\\Stashy\\docs\\public\\App\\main.js",
+  "baseUrl": "D:\\Proyectos\\Stashy\\docs\\public\\App",
+  "mainConfigFile": "D:\\Proyectos\\Stashy\\docs\\public\\App\\main.js",
   "include": [
     "main-built",
     "main",
@@ -42,6 +42,7 @@
     "stashy/Stashy.Refresh",
     "stashy/Stashy.ShowMeMore",
     "stashy/Stashy.Slider",
+    "stashy/Stashy.Table",
     "stashy/Stashy.Toggle",
     "stashy/Stashy.Utils",
     "viewmodels/header",
@@ -62,6 +63,7 @@
     "viewmodels/showmemore/showmemore",
     "viewmodels/slider/slider",
     "viewmodels/sticky/sticky",
+    "viewmodels/table/table",
     "viewmodels/toggle/toggle",
     "text!views/header.html",
     "text!views/shell.html",
@@ -95,13 +97,16 @@
     "text!views/slider/slider.html",
     "text!views/sticky/main.html",
     "text!views/sticky/sticky.html",
+    "text!views/table/main.html",
+    "text!views/table/menu.html",
+    "text!views/table/table.html",
     "text!views/toggle/main.html",
     "text!views/toggle/toggle.html"
   ],
   "exclude": [],
   "keepBuildDir": true,
   "optimize": "uglify2",
-  "out": "D:\\Proyectos .NET\\Stashy\\docs\\public\\App\\main-built.js",
+  "out": "D:\\Proyectos\\Stashy\\docs\\public\\App\\main-built.js",
   "pragmas": {
     "build": true
   },

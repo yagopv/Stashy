@@ -13,7 +13,7 @@ p {
     line-height:1.5em;    
 }
 
-section p, section h1, section h2, section h4, section a:not(.st-slider-control), section .component, section pre, section table {
+section p, section h1, section h2, section h4, section .component, section pre, section table {
     margin-top:1.5em !important;    
 }
 
@@ -358,7 +358,7 @@ footer a:hover {
     color:#000;
 }
 
-.reset  {
+.reset, .reset *  {
     margin-top : 0 !important; 
 }
 

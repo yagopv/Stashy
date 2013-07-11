@@ -18,6 +18,7 @@ In this early version i included some layouts and utilities:
 - **ElasticVideo** : Adapt videos to any screen size
 - **ElasticText** : Adapt text to any screen size
 - **List** : Beautiful responsive List
+- **Table** : Nice responsive table with priority columns
 
 
 #Getting started
