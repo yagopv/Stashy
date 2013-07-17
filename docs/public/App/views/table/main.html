@@ -18,34 +18,36 @@
             <h1>HTML</h1>                        
         </div>
 <pre class="prettyprint linenums">
-&lttable cellspacing="0" class="st-table" id="tbl-id"&gt
-    &ltthead&gt
-	  &lttr&gt
-		 &ltth class="not-selectable always"&gtColumn header 1&lt/th&gt
-		 &ltth class="always"&gtColumn header 2&lt/th&gt
-		 &ltth class="ontablet"&gtColumn header 3&lt/th&gt
-		 &ltth class="ondesktop"&gtColumn header 4&lt/th&gt
-         ... More headers ...
-	  &lt/tr&gt
-   &lt/thead&gt
-   &lttbody&gt
-	  &lttr&gt
-		 &ltth&gtTitle &ltspan class="subtitle"&gtSubtitle&lt/span&gt&lt/th&gt
-		 &lttd&gtLorem ipsum&lt/td&gt
-		 &lttd&gt01.01.2013&lt/td&gt
-		 &lttd&gt20$&lt/td&gt
-         ... More columns ...
-	  &lt/tr&gt      
-	  &lttr&gt
-		 &ltth&gtAAPL &ltspan class="subtitle"&gtSubtitle&lt/span&gt&lt/th&gt
-		 &lttd&gtLorem ipsum&lt/td&gt
-		 &lttd&gt01.01.2012&lt/td&gt
-		 &lttd&gt50$&lt/td&gt
-         ... More columns ...
-	  &lt/tr&gt
-      .... More rows ...
-   &lt/tbody&gt
-&lt/table&gt</pre>
+&ltdiv class="st-table-container"&gt
+    &lttable cellspacing="0" class="st-table" id="tbl-id"&gt
+        &ltthead&gt
+          &lttr&gt
+             &ltth class="not-selectable always"&gtColumn header 1&lt/th&gt
+             &ltth class="always"&gtColumn header 2&lt/th&gt
+             &ltth class="ontablet"&gtColumn header 3&lt/th&gt
+             &ltth class="ondesktop"&gtColumn header 4&lt/th&gt
+             ... More headers ...
+          &lt/tr&gt
+       &lt/thead&gt
+       &lttbody&gt
+          &lttr&gt
+             &ltth&gtTitle &ltspan class="subtitle"&gtSubtitle&lt/span&gt&lt/th&gt
+             &lttd&gtLorem ipsum&lt/td&gt
+             &lttd&gt01.01.2013&lt/td&gt
+             &lttd&gt20$&lt/td&gt
+             ... More columns ...
+          &lt/tr&gt      
+          &lttr&gt
+             &ltth&gtAAPL &ltspan class="subtitle"&gtSubtitle&lt/span&gt&lt/th&gt
+             &lttd&gtLorem ipsum&lt/td&gt
+             &lttd&gt01.01.2012&lt/td&gt
+             &lttd&gt50$&lt/td&gt
+             ... More columns ...
+          &lt/tr&gt
+          .... More rows ...
+       &lt/tbody&gt
+    &lt/table&gt
+&lt/div&gt</pre>
         <div>
             <p>The required HTML has a couple of classes helping you to build the responsive table.</p>
             <p><span class="bagde badge-table">.not-selectable</span> When you apply this class the column won´t be selectable in the dropdown menu. In another words, the column will be always visible and can´t be removed by the user.</p>
