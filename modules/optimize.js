@@ -6,6 +6,29 @@ exports.optimizeProjectAssets = function() {
     
     //CSS
     new compressor.minify({
+        type: 'no-compress',
+        fileIn: [
+            'css/Stashy.OffCanvas.css',
+            'css/Stashy.Flyout.css',
+            'css/Stashy.Toggle.css',
+            'css/Stashy.FocalPoint.css',
+            'css/Stashy.Loader.css',
+            'css/Stashy.Sticky.css',
+            'css/Stashy.Slider.css',
+            'css/Stashy.Refresh.css',
+            'css/Stashy.ElasticVideo.css',
+            'css/Stashy.List.css',
+            'css/Stashy.Table.css',
+            'css/Stashy.Theme.css'            
+        ],
+        fileOut: 'dist/css/Stashy.css',
+        callback: function(err){
+            console.log('Stashy - CSS debug');
+            if (err != null) console.log(err);            
+        }
+    });
+    
+    new compressor.minify({
         type: 'yui',
         fileIn: [
             'css/Stashy.OffCanvas.css',
@@ -23,12 +46,38 @@ exports.optimizeProjectAssets = function() {
         ],
         fileOut: 'dist/css/Stashy.min.css',
         callback: function(err){
-            console.log('Stashy - CSS');
+            console.log('Stashy - CSS min');
+            if (err != null) console.log(err);            
+        }
+    });
+   
+    //JS
+    new compressor.minify({
+        type: 'no-compress',
+        fileIn: [
+            'src/Stashy.Events.js',
+            'src/Stashy.Utils.js',
+            'src/Stashy.Modernizr.js',
+            'src/Stashy.OffCanvas.js',
+            'src/Stashy.Flyout.js',
+            'src/Stashy.Toggle.js',
+            'src/Stashy.FocalPoint.js',
+            'src/Stashy.Loader.js',
+            'src/Stashy.ShowMeMore.js',
+            'src/Stashy.Slider.js',            
+            'src/Stashy.Refresh.js',
+            'src/Stashy.ElasticVideo.js',
+            'src/Stashy.ElasticText.js',
+            'src/Stashy.Table.js'
+            
+        ],
+        fileOut: 'dist/js/Stashy.js',
+        callback: function(err){
+            console.log('Stashy - JS debug');
             if (err != null) console.log(err);            
         }
     });
     
-    //JS
     new compressor.minify({
         type: 'gcc',
         fileIn: [
@@ -50,7 +99,7 @@ exports.optimizeProjectAssets = function() {
         ],
         fileOut: 'dist/js/Stashy.min.js',
         callback: function(err){
-            console.log('Stashy - JS');
+            console.log('Stashy - JS min');
             if (err != null) console.log(err);            
         }
     });
