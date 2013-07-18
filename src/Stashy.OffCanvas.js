@@ -134,7 +134,7 @@
 				this.element.addClass("active-transitions");
 			}
 			
-            if (this.options.enableTouch && typeof(Hammer) == 'function') {
+            if (this.options.enableTouch && typeof(Hammer) == 'function' && Modernizr.touch) {
                 this.element.hammer({ drag_lock_to_axis: true });  
                 this.element.on("swipeleft swiperight", { offcanvas : this },handleHammer);
 		    }
