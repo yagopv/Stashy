@@ -48,4 +48,4 @@
 	    return new video(sltor);
 	}
 
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);

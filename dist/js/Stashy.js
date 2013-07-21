@@ -82,7 +82,7 @@ $special = $event.special.debouncedresize = {
         }        
     }
     
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);
 /* Modernizr 2.6.2 (Custom Build) | MIT & BSD
  * Build: http://modernizr.com/download/#-csstransforms-csstransforms3d-teststyles-testprop-testallprops-prefixes-domprefixes
  */
@@ -534,7 +534,7 @@ window.Modernizr = (function( window, document, undefined ) {
 	    return new offcanvas(sltor, options);
 	}
     
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);
 
 (function (Stashy, $, undefined) {    
 
@@ -634,7 +634,7 @@ window.Modernizr = (function( window, document, undefined ) {
 	    return new flyout(sltor, options);
 	}
 
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);
 (function (Stashy, $, undefined) {
     'use strict';
     var toggle = (function () {
@@ -714,7 +714,7 @@ window.Modernizr = (function( window, document, undefined ) {
 	    return new toggle(sltor, options);
 	}
 
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);
 (function (Stashy, $, undefined) {    
 
     var focalpoint = (function () {        
@@ -761,7 +761,7 @@ window.Modernizr = (function( window, document, undefined ) {
 	    return new focalpoint(sltor, options);
 	}
 
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);
 (function (Stashy, $, undefined) {    
 
     var loader = (function () {        
@@ -815,7 +815,7 @@ window.Modernizr = (function( window, document, undefined ) {
 	    return new loader(sltor, options);
 	}
 
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);
 
 (function (Stashy, $, undefined) {    
 
@@ -883,7 +883,7 @@ window.Modernizr = (function( window, document, undefined ) {
 	    return new showmemore(sltor, options);
 	}
 
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);
 (function (Stashy, $, undefined) {
 
     function setPaneDimensions(slider) {
@@ -1121,7 +1121,7 @@ window.Modernizr = (function( window, document, undefined ) {
 	    return new slider(sltor, options);
 	}
 
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);
 
 (function (Stashy, $, undefined) {   
 
@@ -1281,7 +1281,7 @@ window.Modernizr = (function( window, document, undefined ) {
 	    return new refresh(sltor, options);
 	}
 
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);
 (function (Stashy, $, undefined) {    
 
     var video = (function () {        
@@ -1332,7 +1332,7 @@ window.Modernizr = (function( window, document, undefined ) {
 	    return new video(sltor);
 	}
 
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);
 (function (Stashy, $, undefined) {    
 
     var text = (function () {        
@@ -1384,7 +1384,7 @@ window.Modernizr = (function( window, document, undefined ) {
 	    return new text(sltor);
 	}
 
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);
 
 (function (Stashy, $, undefined) {
     "use strict";    
@@ -1507,4 +1507,4 @@ window.Modernizr = (function( window, document, undefined ) {
 	    return new table(sltor, options);
 	}
     
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);

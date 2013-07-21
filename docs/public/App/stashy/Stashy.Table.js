@@ -119,4 +119,4 @@
 	    return new table(sltor, options);
 	}
     
-})(window.Stashy || (window.Stashy = {}), jQuery)
+})(window.Stashy || (window.Stashy = {}), jQuery);
