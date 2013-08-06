@@ -1,0 +1,123 @@
+.st-toast-container  * {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.st-toast-container {
+	position:fixed;
+	width : 40%;
+}
+
+.st-toast-container .st-notify {
+	margin : 2% !important;
+}
+
+.st-bar-container {
+	position:fixed;
+	width : 100%;
+}
+
+.st-notify {   
+   padding : 2%;
+   line-height : 2em;
+   opacity : .9;
+}
+
+.st-notify  h1,
+.st-notify  h2,
+.st-notify  h3,
+.st-notify  h4,
+.st-notify  h5,
+.st-notify  h6 {   
+	margin : 0;
+}
+
+.st-notify-content {
+    display : none;
+}
+
+.st-notify.radius {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.st-notify:hover {
+    opacity: .7;	
+}
+
+/* Toast */
+
+.st-notify {
+	width : 100%;	
+}
+
+.st-toast-container.top {
+    top : 2%;
+}
+
+.st-toast-container.left {
+    left : 2%;
+}
+
+.st-toast-container.right {
+    right : 2%;
+}
+
+.st-toast-container.bottom {
+    bottom : 2%;
+}
+
+/* Bar */
+
+.st-bar-container.top {
+    top : 0;
+}
+
+.st-bar-container.bottom {
+    bottom : 0;
+}
+
+/* Panel left */
+
+.st-notify.panel {
+	width: 40%;
+	height : 100%;
+	position : fixed;
+    top : 0;
+}
+
+.st-notify.panel.left {
+    left : 0;   
+}
+
+/* Panel right */
+.st-notify.panel.right {
+    right : 0;
+}
+
+/* Close button */
+.st-notify-close {
+	position: relative;
+	color: inherit;
+	padding: 0;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	-webkit-appearance: none;	
+	float: right;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 1;
+	text-shadow: 0 1px 0 #ffffff;
+	opacity: 0.5;	
+}
+
+.st-notify-close:hover {
+	opacity: 1;	
+}
+
+.st-bar-container .st-notify .st-notify-close {
+    left : -20px;
+}
