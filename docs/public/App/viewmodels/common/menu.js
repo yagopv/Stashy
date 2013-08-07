@@ -71,7 +71,13 @@ define(['durandal/app','durandal/system','lib/pagelayout','durandal/plugins/rout
                     { name : "HTML",        hash : "#/list/html" },                    
                     { name : "Playground",  hash : "#/list/playground" },
                     { name : "Dependencies",hash : "#/list/dependencies" }
-        ],                
+        ],
+        'notify' : [
+                    { name : "Description", hash : "#/notify/description" },
+                    { name : "JavaScript",  hash : "#/notify/javascript" },
+                    { name : "Playground",  hash : "#/notify/playground" },
+                    { name : "Dependencies",hash : "#/notify/dependencies" }
+        ],
         'home' :    [
                     { name : "What is this?", hash : "#/home/whatisthis" },
                     { name : "Components inside this library", hash : "#/home/components" },

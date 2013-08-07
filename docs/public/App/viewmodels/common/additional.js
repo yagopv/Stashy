@@ -24,7 +24,7 @@ define(['durandal/app', 'durandal/system','lib/pagelayout','durandal/plugins/rou
         hash : "#/toggle"
     }],
 
-    utilities = [{
+    misc = [{
         name : "Slider",
         hash : "#/slider"                
     },{
@@ -45,12 +45,15 @@ define(['durandal/app', 'durandal/system','lib/pagelayout','durandal/plugins/rou
     },{
         name : "Table",
         hash : "#/table"        
+    },{
+        name : "Notify",
+        hash : "#/notify"
     }]
     
     return {
         layouts : layouts,
         navigation : navigation,
         media : media,
-        utilities : utilities
+        misc : misc
     };
 });

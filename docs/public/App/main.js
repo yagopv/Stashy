@@ -43,6 +43,9 @@ requirejs.config({
         'stashy/Stashy.List': {
             exports: 'Stashy.List'
         },
+        'stashy/Stashy.Notify': {
+            exports: 'Stashy.Notify'
+        },
         'stashy/Stashy.Table': {
             exports: 'Stashy.Table'
         },                        

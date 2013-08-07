@@ -164,3 +164,54 @@ body {
     font-size: .9em;
     opacity: .4;
 }
+
+/* Notify */
+.st-notify {
+    cursor:pointer;
+    color : #FFF;
+}
+
+.st-notify.default {
+    border : #000 1px solid;
+    background: #000;
+}
+
+.st-notify.default * {
+    color : #DAD4D4;
+}
+
+.st-notify.error {
+    border : #D52A2A 1px solid;
+	background: #D52A2A;
+}
+
+.st-notify.error * {
+    color : #F3CDCD;
+}
+
+.st-notify.info {
+    border : #2092F3 1px solid;
+	background: #2092F3;
+}
+
+.st-notify.info * {
+    color : #CFE4FF;
+}
+
+.st-notify.warning {
+    border : #f29444 1px solid;
+	background: #f29444;
+}
+
+.st-notify.warning * {
+    color : #F8DCD1;
+}
+
+.st-notify.success {
+    border : #2CD386 1px solid;
+	background: #2CD386;
+}
+
+.st-notify.success * {
+    color : #E0FCDF;
+}

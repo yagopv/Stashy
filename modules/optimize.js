@@ -19,7 +19,9 @@ exports.optimizeProjectAssets = function() {
             'css/Stashy.ElasticVideo.css',
             'css/Stashy.List.css',
             'css/Stashy.Table.css',
-            'css/Stashy.Theme.css'            
+            'css/Stashy.Notify.css',
+            'css/Stashy.Animate.css',
+            'css/Stashy.Theme.css'
         ],
         fileOut: 'dist/css/Stashy.css',
         callback: function(err){
@@ -42,6 +44,8 @@ exports.optimizeProjectAssets = function() {
             'css/Stashy.ElasticVideo.css',
             'css/Stashy.List.css',
             'css/Stashy.Table.css',
+            'css/Stashy.Notify.css',
+            'css/Stashy.Animate.css',            
             'css/Stashy.Theme.css'            
         ],
         fileOut: 'dist/css/Stashy.min.css',
@@ -68,7 +72,8 @@ exports.optimizeProjectAssets = function() {
             'src/Stashy.Refresh.js',
             'src/Stashy.ElasticVideo.js',
             'src/Stashy.ElasticText.js',
-            'src/Stashy.Table.js'
+            'src/Stashy.Table.js',
+            'src/Stashy.Notify.js'
             
         ],
         fileOut: 'dist/js/Stashy.js',
@@ -94,7 +99,8 @@ exports.optimizeProjectAssets = function() {
             'src/Stashy.Refresh.js',
             'src/Stashy.ElasticVideo.js',
             'src/Stashy.ElasticText.js',
-            'src/Stashy.Table.js'
+            'src/Stashy.Table.js',
+            'src/Stashy.Notify.js'
             
         ],
         fileOut: 'dist/js/Stashy.min.js',
@@ -147,6 +153,8 @@ exports.optimizeDocsAssets = function() {
             'docs/public/Content/Stashy.ElasticVideo.css',
             'docs/public/Content/Stashy.List.css',
             'docs/public/Content/Stashy.Table.css',
+            'docs/public/Content/Stashy.Notify.css',
+            'docs/public/Content/Stashy.Animate.css',            
             'docs/public/Content/bootstrap.css',
             'docs/public/Content/bootstrap-responsive.css',
             'docs/public/Content/font-awesome.css',

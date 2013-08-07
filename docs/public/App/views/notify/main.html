@@ -1,0 +1,322 @@
+<div id="offcanvas-navigation">
+    <a href="#" class="showmenubutton btn badge-notify h-add-padding"><i class="icon-reorder icon-large no-ajaxy"></i></a>
+    <a href="#" class="showadditionalbutton btn badge-notify h-add-padding" style="float:right;"><i class="icon-reorder icon-large"></i></a>
+    <div class="h-clear"></div>
+</div>
+    
+<div>	
+    <div class="hero-unit badge-notify h-big-top-margin">
+        <h1>Notify</h1>
+        <p class="lead h-big-top-margin">Notications using toast, bars and panels styles</p>
+        <a class="btn badge-notify-dark btn-large h-top-margin" href="https://github.com/yagopv/Stashy/archive/master.zip"  target="_blank"><i class="icon-download icon-2x"></i>&nbsp; Download</a>
+        <a class="btn badge-notify-dark btn-large h-top-margin" href="https://github.com/yagopv/Stashy"  target="_blank"><i class="icon-github icon-2x"></i>&nbsp; View project on Github</a>          
+    </div>
+    
+    <section id="description">
+        <div class="page-header">
+            <h1>Description</h1>
+        </div>                        
+        <p>Most applications needs to communicate info to the end user. With Notify you can do it in a unobstrusive and responsive way.</p>
+        <p>There are three types of notifications included:</p>
+        <p><span class="badge badge-notify">toast</span>  Opened in the corner you choose and 40% width.</p>
+        <p><span class="badge badge-notify">bar</span>  Opened top or bottom and full width.</p>
+        <p><span class="badge badge-notify">panel</span>  Opened left or right and full height.</p>
+    </section>    
+    
+    <section id="javascript">
+        <div class="page-header">                        
+           <h1>Javascript</h1>						
+        </div>			
+        <h2>Constructor</h2>
+<pre class="prettyprint linenums">
+Stashy.Notify(userOptions)</pre>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Parameter</strong></th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>userOptions</strong></td>
+                    <td>object</td>
+                    <td>The initialization options for each instance. Take a look to the following table and explore the available options</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>The userOptions object</h2>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Option</strong></th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>    									
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>target</strong></td>
+                    <td>string</td>
+                    <td>body</td>
+                    <td>The element target container</td>
+                </tr>
+                <tr>
+                    <td><strong>title</strong></td>
+                    <td>string</td>
+                    <td>empty string</td>
+                    <td>The element title</td>
+                </tr>
+                <tr>
+                    <td><strong>titleSize</strong></td>
+                    <td>int</td>
+                    <td>3</td>
+                    <td>You can enter wathever value in the 1..6 range.The title will be a HTML heading. This number will provide the heading size (h<strong>1</string>, h<strong>2</string>, h<strong>3</string>, ...)</td>
+                </tr>                                
+                <tr>
+                    <td><strong>contentType</strong></td>
+                    <td>string</td>
+                    <td>text</td>
+                    <td>
+                        <p>Can be "text" or "html".</p>
+                        <p>If you select text, then the content property should be simple text.</p>
+                        <p>On the other side, if you select "html", you can provide inline html or a CSS selector to choose what to include in the notification.</p>
+                        <p>If you option is "html" and providing a selector remember to add the <span class="badge badge-notify">st-notify-content</span> class to the content you are going to include in the notification in order to hide it.</p>
+                    </td>
+                </tr> 
+                <tr>
+                    <td><strong>content</strong></td>
+                    <td>string</td>
+                    <td>empty string</td>
+                    <td>You can add simple text, inline html or a CSS selector</td>
+                </tr>                
+                <tr>
+                    <td><strong>style</strong></td>
+                    <td>string</td>
+                    <td>default</td>
+                    <td>It change the color of the notification. The allowed styles are "default", "error", "info", "success" and "warning"</td>
+                </tr>
+                <tr>
+                    <td><strong>animDuration</strong></td>
+                    <td>string</td>
+                    <td>fast</td>
+                    <td>"fast" or "slow" for a 1 sec or 2 sec animation</td>
+                </tr>    
+                <tr>
+                    <td><strong>closeArea</strong></td>
+                    <td>string</td>
+                    <td>button</td>
+                    <td>
+                        <p>If you select "button" then a button will be added to close the panel.</p>
+                        <p>If you choose "element" then the element will be clickable for closing it.</p>
+                    </td>
+                </tr>                  
+            </tbody>
+        </table>           
+        <h2>Methods</h2>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th><strong>Name</strong></th>                                            
+                    <th>Description</th>
+                </tr>                                
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>toast(positionX, positionY,radius</strong></td>                    
+                    <td>Create a <span class="badge badge-notify">toast</span> style notification</td>
+                </tr>
+                <tr>
+                    <td colspan=2>                        
+                        <p>
+                            <strong>positionX:</strong> Can choose "right" or "left"
+                        </p>                        
+                        <p>
+                            <strong>positionY:</strong> "top" or "bottom"
+                        </p>
+                        <p>
+                            <strong>radius:</strong> Select <em>true</em> if you like rounded corners
+                        </p>
+                    </td>    
+                </tr>
+                <tr>
+                    <td><strong>bar(positionY)</strong></td>
+                    <td>Creates a <span class="badge badge-notify">bar</span> style notification</td>
+                </tr>
+                <tr>
+                    <td colspan=2>
+                        <p>
+                            <strong>positionY:</strong> "top" or "bottom"
+                        </p>                      
+                    </td>                     
+                </tr>                                        
+                <tr>
+                    <td><strong>panel(positionX)</strong></td>
+                    <td>Creates a <span class="badge badge-notify">panel</span> style notification</td>
+                </tr>
+                <tr>
+                    <td colspan=2>                        
+                        <p>
+                            <strong>positionX:</strong> Can choose "right" or "left"
+                        </p>                        
+                    </td>                     
+                </tr>                                                        
+            </tbody>
+        </table> 							
+        <h2>Sample</h2>
+<pre class="prettyprint linenums">
+Stashy.Notify({
+    title : "My toast",
+    content : "Toast style notification",
+    titleSize : 4,
+    style : "success",
+    contentType : "text",
+    animDuration : "fast",
+    closeArea : "element"
+}).toast("right", "bottom", true);
+
+Stashy.Notify({
+    title : "My bar",
+    content : "<em>Bar style notification</em>",
+    titleSize : 1,
+    style : "info",
+    contentType : "html",
+    animDuration : "slow",
+    closeArea : "button"
+}).bar("top");
+
+Stashy.Notify({
+    title : "My panel",
+    content : "#wathever-element-in-the-page",
+    titleSize : 2,
+    style : "default",
+    contentType : "html",
+    animDuration : "fast",
+    closeArea : "button" 
+}).panel("right");
+</pre>
+    </section>
+   <section id="playground">
+         <div class="page-header">
+           <h1>Playground</h1>
+        </div>
+    <p>Choose options and start displaying beautiful notifications</p>    
+    <form class="well form-horizontal h-top-margin" data-bind="with : options, submit : showNotification">
+        <div class="control-group">
+            <label class="control-label" for="title">Title</label>
+            <div class="controls">
+                <input type="text" name="title" value="" placeholder="title" data-bind="value : title" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="content">Content</label>
+            <div class="controls">
+                <textarea name="content" placeholder="content" data-bind="value : content"></textarea>
+            </div>
+        </div>  
+        <div class="control-group">
+            <label class="control-label" for="titleSize">Title size</label>
+            <div class="controls">
+                <select id="titleSize" data-bind="value : titleSize">
+                    <option value="3" selected="selected">Select the title size</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>                                    
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="contentType">Content type</label>
+            <div class="controls">
+                <select id="contentType" data-bind="value : contentType">
+                    <option value="text" selected="selected">Select the content type</option>
+                    <option value="text">text</option>
+                    <option value="html">html</option>                    
+                </select>                                    
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="style">Style</label>
+            <div class="controls">
+                <select id="style" data-bind="value : style">
+                    <option value="default" selected="selected">Select style</option>
+                    <option value="default">default</option>
+                    <option value="error">error</option>
+                    <option value="info">info</option>                    
+                    <option value="warning">warning</option>                    
+                    <option value="success">success</option>                                        
+                </select>                                    
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="animDuration">Animation duration</label>
+            <div class="controls">
+                <select id="animDuration" data-bind="value : animDuration">
+                    <option value="fast" selected="selected">animation duration</option>
+                    <option value="slow">slow</option>
+                    <option value="fast">fast</option>                                                    
+                </select>                                    
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="closeArea">Close area</label>
+            <div class="controls">
+                <select id="closeArea" data-bind="value : closeArea">
+                    <option value="button" selected="selected">close area</option>
+                    <option value="button">button</option>
+                    <option value="element">element</option>                          
+                </select>                                    
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="positionX">Close area</label>
+            <div class="controls">
+                <select id="positionX" data-bind="value : positionX">
+                    <option value="right" selected="selected">positionX</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>                          
+                </select>                                    
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="positionY">Position Y</label>
+            <div class="controls">
+                <select id="positionY" data-bind="value : positionY">
+                    <option value="top" selected="selected">positionY</option>
+                    <option value="top">top</option>
+                    <option value="bottom">bottom</option>                          
+                </select>                                    
+            </div>
+        </div>        
+        <div class="control-group">            
+            <div class="controls">
+                <input type="checkbox" name="radius" value="true" data-bind="checked : radius" /> <span>add radius?</span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="component">Component</label>
+            <div class="controls">
+                <input type="radio" name="component" value="toast" data-bind="checked : component" /> <span>Toast</span>
+                <input type="radio" name="component" value="bar" data-bind="checked : component" /> <span>Bar</span>
+                <input type="radio" name="component" value="panel" data-bind="checked : component" /> <span>Panel</span>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Show notification!!</button>
+    </form>    
+   </section>
+    
+    <section id="dependencies">
+        <div class="page-header">                        
+           <h1>Dependencies</h1>						
+        </div>				
+        <p class="lead">CSS</p>
+        <span class="badge badge-info">Stashy.Animate.css</span> <span class="badge badge-notify">Stashy.Notify.css</span>
+        <p class="lead">JS</p>
+        <span class="badge badge-info">jQuery.js</span> <span class="badge badge-notify">Stashy.Notify.js</span>
+    </section>										                            
+</div>   

@@ -192,6 +192,18 @@ section p, section h1, section h2, section h4, section .component, section pre, 
     border-color:transparent;
 }
 
+.badge-notify, .badge-notify:hover {
+    background-color : rgba(245, 95, 95, 0.67);
+    color : #fff;
+    border-color:transparent;
+}
+
+.badge-notify-dark, .badge-notify-dark:hover {
+    background-color : rgba(245, 95, 95, 1);
+    color : #FFF;
+    border-color:transparent;
+}
+
 .hero-unit a {
     width:100%;
 }

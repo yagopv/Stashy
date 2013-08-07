@@ -40,7 +40,9 @@ define(['durandal/plugins/router', 'stashy/Stashy.Utils'], function (router,util
                 { url: 'list', moduleId: 'viewmodels/list/list', name: 'List', visible: false , settings : { activemenu : 'list' }},
                 { url: 'list/:page', moduleId: 'viewmodels/list/list', name: 'List', visible: false , settings : { activemenu : 'list' }},
                 { url: 'table', moduleId: 'viewmodels/table/table', name: 'Table', visible: false , settings : { activemenu : 'table' }},
-                { url: 'table/:page', moduleId: 'viewmodels/table/table', name: 'Table', visible: false , settings : { activemenu : 'table' }},                                                
+                { url: 'table/:page', moduleId: 'viewmodels/table/table', name: 'Table', visible: false , settings : { activemenu : 'table' }},
+                { url: 'notify', moduleId: 'viewmodels/notify/notify', name: 'Notify', visible: false , settings : { activemenu : 'notify' }},
+                { url: 'notify/:page', moduleId: 'viewmodels/notify/notify', name: 'Notify', visible: false , settings : { activemenu : 'notify' }},                                                                
                 { url: 'error', moduleId: 'viewmodels/error/error', name: 'Error', visible: false }
             ]);
             
