@@ -21,7 +21,10 @@
 .st-notify {   
    padding : 2%;
    line-height : 2em;
-   opacity : .9;
+   opacity : .8;
+    -moz-box-shadow: 0 0 12px #999999;
+    -webkit-box-shadow: 0 0 12px #999999;
+    box-shadow: 0 0 12px #999999;
 }
 
 .st-notify  h1,
@@ -44,7 +47,10 @@
 }
 
 .st-notify:hover {
-    opacity: .7;	
+    -moz-box-shadow: 0 0 12px #000000;
+    -webkit-box-shadow: 0 0 12px #000000;
+    box-shadow: 0 0 12px #000000;    
+    opacity: 1;	
 }
 
 /* Toast */

@@ -175,29 +175,44 @@ body {
 .st-notify.default {
     border : #000 1px solid;
     background: #000;
-	color : #DAD4D4;
+}
+
+.st-notify.default * {
+    color : #DAD4D4;
 }
 
 .st-notify.error {
     border : #D52A2A 1px solid;
 	background: #D52A2A;
-	color : #F3CDCD;
+}
+
+.st-notify.error * {
+    color : #F3CDCD;
 }
 
 .st-notify.info {
     border : #2092F3 1px solid;
 	background: #2092F3;
-	color : #CFE4FF;
+}
+
+.st-notify.info * {
+    color : #CFE4FF;
 }
 
 .st-notify.warning {
     border : #f29444 1px solid;
 	background: #f29444;
-	color : #F8DCD1;
+}
+
+.st-notify.warning * {
+    color : #F8DCD1;
 }
 
 .st-notify.success {
     border : #2CD386 1px solid;
 	background: #2CD386;
-	color : #E0FCDF;
+}
+
+.st-notify.success * {
+    color : #E0FCDF;
 }

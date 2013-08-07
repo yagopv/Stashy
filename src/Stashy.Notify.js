@@ -10,6 +10,7 @@
         function notify(useropt) {
 
             this.options = {
+                target : "body",
                 title : "",             // tile of the notify
                 titleSize : 3,            // h* Size
                 contentType : "text",     // text or html
@@ -63,20 +64,20 @@
             return this;
         }
 
-		function toastContainer(posX,posY) {
+		function toastContainer(target,posX,posY) {
 			var toastC = $(".st-toast-container" + "." + posX + "." + posY);
 			if (toastC.length == 0) {
 				toastC = $("<div class='st-toast-container " + posX + " " + posY + "'>" + "</div>");				
-				$("body").append(toastC);				
+				$(target).append(toastC);				
 			}
 			return toastC;
 		}
 		
-		function barContainer(posY) {
+		function barContainer(target,posY) {
 			var barC = $(".st-bar-container" + "." + posY);
 			if (barC.length == 0) {
 				barC = $("<div class='st-bar-container " + posY + "'>" + "</div>");							
-				$("body").append(barC);				
+				$(target).append(barC);				
 			}
 			return barC;
 		}
@@ -90,7 +91,7 @@
         */
         notify.prototype.toast = function(positionX, positionY, radius) {
 			var self = this,
-			    toastC = toastContainer(positionX, positionY);			
+			    toastC = toastContainer(this.options.target,positionX, positionY);			
 			this.element.addClass((radius ? "radius" : " ") + " " + "fadeIn");
 			toastC.append(this.element);
 			this.closeElement.on("click", function() {
@@ -112,7 +113,7 @@
         */
         notify.prototype.bar = function(positionY) {
 			var self = this,
-			    barC = barContainer(positionY);
+			    barC = barContainer(this.options.target,positionY);
 			this.element.addClass(positionY == "top" ? "fadeInDown" : "fadeInUp");
 			barC.append(this.element);
 			this.closeElement.on("click", function() {
@@ -136,7 +137,7 @@
 			var self = this;
 			this.element.addClass("panel " + positionX)
 			this.element.addClass(positionX == "left" ? "fadeInLeft" : "fadeInRight");
-			$("body").append(this.element);
+			$(this.options.target).append(this.element);
 			this.closeElement.on("click", function() {
 				self.element.addClass(positionX == "left" ? "fadeOutLeft" : "fadeOutRight");
 				setTimeout(function() {
