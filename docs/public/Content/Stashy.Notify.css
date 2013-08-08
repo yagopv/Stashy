@@ -20,8 +20,7 @@
     z-index : 99999;
 }
 
-.st-notify {   
-   padding : 2%;
+.st-notify {      
    line-height : 2em;
    opacity : .8;
     -moz-box-shadow: 0 0 12px #999999;

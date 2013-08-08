@@ -169,6 +169,7 @@ body {
 .st-notify {
     cursor:pointer;
     color : #FFF;
+    padding : 5%;
 }
 
 .st-notify.default {

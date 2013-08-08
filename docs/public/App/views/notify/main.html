@@ -7,7 +7,7 @@
 <div>	
     <div class="hero-unit badge-notify h-big-top-margin">
         <h1>Notify</h1>
-        <p class="lead h-big-top-margin">Notications using toast, bars and panels styles</p>
+        <p class="lead h-big-top-margin">Notications using toasts, bars and panels</p>
         <a class="btn badge-notify-dark btn-large h-top-margin" href="https://github.com/yagopv/Stashy/archive/master.zip"  target="_blank"><i class="icon-download icon-2x"></i>&nbsp; Download</a>
         <a class="btn badge-notify-dark btn-large h-top-margin" href="https://github.com/yagopv/Stashy"  target="_blank"><i class="icon-github icon-2x"></i>&nbsp; View project on Github</a>          
     </div>
@@ -16,8 +16,8 @@
         <div class="page-header">
             <h1>Description</h1>
         </div>                        
-        <p>Most applications needs to communicate info to the end user. With Notify you can do it in a unobstrusive and responsive way.</p>
-        <p>There are three types of notifications included:</p>
+        <p>Most applications need to communicate info (errors, warnings, ...)  to the end user. With Notify you can do it in a unobstrusive and responsive way.</p>
+        <p>There are three type of notifications included with this component:</p>
         <p><span class="badge badge-notify">toast</span>  Opened in the corner you choose and 40% width.</p>
         <p><span class="badge badge-notify">bar</span>  Opened top or bottom and full width.</p>
         <p><span class="badge badge-notify">panel</span>  Opened left or right and full height.</p>
@@ -42,7 +42,7 @@ Stashy.Notify(userOptions)</pre>
                 <tr>
                     <td><strong>userOptions</strong></td>
                     <td>object</td>
-                    <td>The initialization options for each instance. Take a look to the following table and explore the available options</td>
+                    <td>The init  options for each instance of Notify. Take a look to the userOptions table and explore the available stuff</td>
                 </tr>
             </tbody>
         </table>
@@ -61,7 +61,7 @@ Stashy.Notify(userOptions)</pre>
                     <td><strong>target</strong></td>
                     <td>string</td>
                     <td>body</td>
-                    <td>The element target container</td>
+                    <td>The element target container, by default the "body" of the page</td>
                 </tr>
                 <tr>
                     <td><strong>title</strong></td>
@@ -73,44 +73,44 @@ Stashy.Notify(userOptions)</pre>
                     <td><strong>titleSize</strong></td>
                     <td>int</td>
                     <td>3</td>
-                    <td>You can enter wathever value in the 1..6 range.The title will be a HTML heading. This number will provide the heading size (h<strong>1</string>, h<strong>2</string>, h<strong>3</string>, ...)</td>
+                    <td>Enter wathever value in the range 1..6.The title will be an HTML heading. This number will provide the heading size (h<span class="badge badge-notify">1</span>, h<span class="badge badge-notify">2</span>, h<span class="badge badge-notify">3</span>, ...)</td>
                 </tr>                                
                 <tr>
                     <td><strong>contentType</strong></td>
                     <td>string</td>
                     <td>text</td>
                     <td>
-                        <p>Can be "text" or "html".</p>
-                        <p>If you select text, then the content property should be simple text.</p>
-                        <p>On the other side, if you select "html", you can provide inline html or a CSS selector to choose what to include in the notification.</p>
-                        <p>If you option is "html" and providing a selector remember to add the <span class="badge badge-notify">st-notify-content</span> class to the content you are going to include in the notification in order to hide it.</p>
+                        <p class="reset">It can be "text" or "html".</p>
+                        <p>If you select "text", then the content property should be simple text.</p>
+                        <p>On the other side, if you select "html", you can provide inline HTML or any CSS selector to choose what to include in the notification.</p>
+                        <p>If your option is "html" and providing a selector, remember to add the <span class="badge badge-notify">st-notify-content</span> class to the content box you are going to include in the notification in order to hide it.</p>
                     </td>
                 </tr> 
                 <tr>
                     <td><strong>content</strong></td>
                     <td>string</td>
                     <td>empty string</td>
-                    <td>You can add simple text, inline html or a CSS selector</td>
+                    <td>Simple text, inline html or a CSS selector</td>
                 </tr>                
                 <tr>
                     <td><strong>style</strong></td>
                     <td>string</td>
                     <td>default</td>
-                    <td>It change the color of the notification. The allowed styles are "default", "error", "info", "success" and "warning"</td>
+                    <td>Changes the color of the notification. The allowed styles are "default", "error", "info", "success" and "warning"</td>
                 </tr>
                 <tr>
                     <td><strong>animDuration</strong></td>
                     <td>string</td>
                     <td>fast</td>
-                    <td>"fast" or "slow" for a 1 sec or 2 sec animation</td>
+                    <td>"fast" or "slow" for a 1 sec or 2 sec animations</td>
                 </tr>    
                 <tr>
                     <td><strong>closeArea</strong></td>
                     <td>string</td>
                     <td>button</td>
                     <td>
-                        <p>If you select "button" then a button will be added to close the panel.</p>
-                        <p>If you choose "element" then the element will be clickable for closing it.</p>
+                        <p class="reset">If you select "button" then a close button will be added to notification.</p>
+                        <p>If you choose "element" then the element itself will be clickable to closing it.</p>
                     </td>
                 </tr>                  
             </tbody>
@@ -125,13 +125,13 @@ Stashy.Notify(userOptions)</pre>
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>toast(positionX, positionY,radius</strong></td>                    
+                    <td><strong>toast(positionX, positionY,radius)</strong></td>                    
                     <td>Create a <span class="badge badge-notify">toast</span> style notification</td>
                 </tr>
                 <tr>
                     <td colspan=2>                        
                         <p>
-                            <strong>positionX:</strong> Can choose "right" or "left"
+                            <strong>positionX:</strong> "right" or "left"
                         </p>                        
                         <p>
                             <strong>positionY:</strong> "top" or "bottom"
@@ -159,7 +159,7 @@ Stashy.Notify(userOptions)</pre>
                 <tr>
                     <td colspan=2>                        
                         <p>
-                            <strong>positionX:</strong> Can choose "right" or "left"
+                            <strong>positionX:</strong> "right" or "left"
                         </p>                        
                     </td>                     
                 </tr>                                                        
@@ -202,7 +202,7 @@ Stashy.Notify({
          <div class="page-header">
            <h1>Playground</h1>
         </div>
-    <p>Choose options and start displaying beautiful notifications</p>    
+    <p>Ok, let´s go with the important part, so start choosing your options ans see what Notify can do for you :)</p>    
     <form class="well form-horizontal h-top-margin" data-bind="with : options, submit : showNotification">
         <div class="control-group">
             <label class="control-label" for="title">Title</label>
@@ -315,7 +315,7 @@ Stashy.Notify({
            <h1>Dependencies</h1>						
         </div>				
         <p class="lead">CSS</p>
-        <span class="badge badge-info">Stashy.Animate.css</span> <span class="badge badge-notify">Stashy.Notify.css</span>
+        <span class="badge badge-notify">Stashy.Animate.css</span> <span class="badge badge-notify">Stashy.Notify.css</span> <span class="badge badge-notify">Stashy.Theme.css</span>
         <p class="lead">JS</p>
         <span class="badge badge-info">jQuery.js</span> <span class="badge badge-notify">Stashy.Notify.js</span>
     </section>										                            
