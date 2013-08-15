@@ -6,7 +6,7 @@
 
 .st-toast-container {
 	position:fixed;
-	width : 40%;
+	width : 70%;
     z-index : 99999;
 }
 
@@ -20,7 +20,7 @@
     z-index : 99999;
 }
 
-.st-notify {
+.st-notify {      
    line-height : 2em;
    opacity : .8;
     -moz-box-shadow: 0 0 12px #999999;
@@ -90,7 +90,7 @@
 /* Panel left */
 
 .st-notify.panel {
-	width: 40%;
+	width: 60%;
 	height : 100%;
 	position : fixed;
     top : 0;
@@ -128,4 +128,20 @@
 
 .st-bar-container .st-notify .st-notify-close {
     left : -20px;
+}
+
+@media all and (min-width: 768px) {
+    .st-notify.panel {
+        width: 50%;
+    }       
+                    
+    .st-toast-container {
+	   width : 40%;    
+    }                    
+}
+
+@media all and (min-width: 978px) {
+    .st-notify.panel {
+        width: 30%;
+    }                                    
 }

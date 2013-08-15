@@ -19,6 +19,7 @@ In this early version i included some layouts and utilities:
 - **ElasticText** : Adapt text to any screen size
 - **List** : Beautiful responsive List
 - **Table** : Nice responsive table with priority columns
+- **Notify** : Notications using toasts, bars and panels
 
 
 #Getting started

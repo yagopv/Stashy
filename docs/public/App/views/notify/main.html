@@ -80,10 +80,10 @@ Stashy.Notify(userOptions)</pre>
                     <td>string</td>
                     <td>text</td>
                     <td>
-                        <p class="reset">It can be "text" or "html".</p>
-                        <p>If you select "text", then the content property should be simple text.</p>
-                        <p>On the other side, if you select "html", you can provide inline HTML or any CSS selector to choose what to include in the notification.</p>
-                        <p>If your option is "html" and providing a selector, remember to add the <span class="badge badge-notify">st-notify-content</span> class to the content box you are going to include in the notification in order to hide it.</p>
+                        <p class="reset">It can be "inline" or "selector".</p>
+                        <p>If you select "inline", then the content property should be simple text or inline html</p>
+                        <p>On the other side, if you select "selector", you can provide any CSS selector to choose what to include in the notification.</p>
+                        <p>If your option is "selector" remember you can add the <span class="badge badge-notify">st-notify-content</span> class to the content box you are going to include in the notification in order to hide it.</p>
                     </td>
                 </tr> 
                 <tr>
@@ -234,9 +234,9 @@ Stashy.Notify({
             <label class="control-label" for="contentType">Content type</label>
             <div class="controls">
                 <select id="contentType" data-bind="value : contentType">
-                    <option value="text" selected="selected">Select the content type</option>
-                    <option value="text">text</option>
-                    <option value="html">html</option>                    
+                    <option value="inline" selected="selected">Select the content type</option>
+                    <option value="inline">inline</option>
+                    <option value="selector">selector</option>                    
                 </select>                                    
             </div>
         </div>

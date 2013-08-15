@@ -11,10 +11,10 @@
 
             this.options = {
                 target : "body",
-                title : "",             // tile of the notify
+                title : "",               // tile of the notify
                 titleSize : 3,            // h* Size
-                contentType : "text",     // text or html
-                content : "",           // if contentType is text then a string, else the CSS selector of the content to be showed
+                contentType : "inline",   // 'inline' or 'selector'
+                content : "",             // if contentType is text then a string, else the CSS selector of the content to be showed
 				style : "default",        // the notification style 'default', 'error', 'success', 'info'
 				animDuration : "fast",    // 'fast' or 'slow'
 				closeArea : "button" 	  // 'button' or 'element'
@@ -46,16 +46,10 @@
             }
 
             if (this.options.content) {
-                if (this.options.contentType == "html") {
-					if (this.options.content.indexOf("<") != -1) {
-						// is content
-						this.element.append($(this.options.content));
-					} else {
-						// is CSS selector
-						this.element.append($(this.options.content).html());
-					}                    
-                } else {
-                    this.element.append(this.options.content);
+                if (this.options.contentType == "inline") {
+				    this.element.append(this.options.content);
+                } else {                    
+                    this.element.append($(this.options.content).html());
                 }
             }     
 
