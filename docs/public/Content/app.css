@@ -227,6 +227,10 @@ section p, section h1, section h2, section h4, section .component, section pre, 
 	transition: .2s all ease;    
 } 
 
+#home .component a.btn {
+    margin-top:3%;
+}
+
 footer {
     background-color:#000;
     color : #999;    
