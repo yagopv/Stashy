@@ -4,7 +4,7 @@ Stashy is a library containing web components for doing responsive things.
 
 # What´s included ?
 
-In this early version i included some layouts and utilities:
+You will find several layouts and utilities inside Stashy:
 
 - **OffCanvas** : Create responsive pages using this awesome layout
 - **Flyout** : Hide your navigation options or wathever you want in a nice left panel
