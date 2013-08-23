@@ -439,14 +439,18 @@ window.Modernizr = (function( window, document, undefined ) {
 
         var handleHammer = function(ev) {
             var offcanvas = ev.data.offcanvas;
-    
+
+            // only horizontal swipe
+            if (Hammer.utils.isVertical(ev.gesture.direction)) {
+                   return;
+            }
+            
             // disable browser scrolling
             ev.gesture.preventDefault();
             ev.stopPropagation();
             
             switch(ev.type) {
                 case 'swipeleft':  
-                case 'dragleft':  
                     if (offcanvas.element.hasClass("active-menu")) {
                         offcanvas.element.removeClass("active-menu");
                     } else {
@@ -458,7 +462,6 @@ window.Modernizr = (function( window, document, undefined ) {
                     break;
     
                 case 'swiperight':
-                case 'dragright':  
                     if (offcanvas.element.hasClass("active-additional")) {
                         offcanvas.element.removeClass("active-additional");                        
                     } else {
@@ -514,8 +517,8 @@ window.Modernizr = (function( window, document, undefined ) {
 			}
 			
             if (this.options.enableTouch && typeof(Hammer) == 'function' && Modernizr.touch) {
-                this.element.hammer({ drag_lock_to_axis: true, drag_block_vertical:true });  
-                this.element.on("swipeleft swiperight dragleft dragright", { offcanvas : this },handleHammer);
+                this.element.hammer({ drag_lock_to_axis: true });  
+                this.element.on("swipeleft swiperight", { offcanvas : this },handleHammer);
 		    }
             
             this.enabled = true;
@@ -566,18 +569,21 @@ window.Modernizr = (function( window, document, undefined ) {
         var handleHammer = function(ev) {
             var flyout = ev.data.flyout;
     
+            // only horizontal swipe
+            if (Hammer.utils.isVertical(ev.gesture.direction)) {
+                   return;
+            }
+
             // disable browser scrolling
             ev.gesture.preventDefault();
             ev.stopPropagation();
             switch(ev.type) {
                 case 'swipeleft':  
-                case 'dragleft':
                     flyout.close();
                     ev.gesture.stopDetect();
                     break;
     
                 case 'swiperight':
-                case 'dragright':
                     flyout.open();
                     ev.gesture.stopDetect();
                     break;
@@ -612,8 +618,8 @@ window.Modernizr = (function( window, document, undefined ) {
             }
 
             if (this.options.enableTouch && typeof(Hammer) == 'function' && Modernizr.touch) {
-                this.element.hammer({ drag_lock_to_axis: true, drag_block_vertical:true });  
-                this.element.on("swipeleft swiperight dragleft dragright", { flyout : this },handleHammer);
+                this.element.hammer({ drag_lock_to_axis: true });  
+                this.element.on("swipeleft swiperight", { flyout : this },handleHammer);
 		    }
             
             this.enabled = true;
