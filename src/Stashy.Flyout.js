@@ -72,7 +72,7 @@
             }
 
             if (this.options.enableTouch && typeof(Hammer) == 'function' && Modernizr.touch) {
-                this.element.hammer({ drag_lock_to_axis: true });  
+                this.element.hammer({ drag_lock_to_axis: true, drag_block_vertical:true });  
                 this.element.on("swipeleft swiperight dragleft dragright", { flyout : this },handleHammer);
 		    }
             
