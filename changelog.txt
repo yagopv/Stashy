@@ -23,3 +23,23 @@ Added options to several components
 ### v0.2.1
 
 Added Refresh
+
+### v0.2.2
+
+Added ElasticVideo and ElasticText
+
+### v0.2.3
+
+Added List
+
+### v0.2.4
+
+Added Table
+
+### v0.2.4
+
+Added Notify
+
+### v0.3
+
+Minor bugs
