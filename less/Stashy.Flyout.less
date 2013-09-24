@@ -1,0 +1,135 @@
+.st-flyout {
+	overflow: hidden;
+	width : 100%;
+}
+
+.st-flyout-container {
+    * {
+        padding: 0; 
+	    margin: 0;
+        .box-sizing(border-box);
+	    .translate3d(0,0,0);
+	    .backface-visibility(hidden);
+    }
+    
+    .st-flyout-menu {
+    	clear: both;
+    	overflow: hidden;
+    	z-index:0;  
+    	
+    	a {
+    	    clear: both;
+    	}
+    }
+    
+    .st-flyout-main {
+    	background : #FFF;
+    	position:relative;
+    	clear: both;
+    	overflow: hidden;
+    	z-index:1;        
+    }
+    
+    &.st-push {
+    	 position: relative; 
+    	 background: #FFF;        	 
+    	 .transition(all 0.2s ease-out);
+    	 
+    	 &.active-menu {
+    	    left: 75%; 
+    	     
+            @media all and (min-width: 768px) {
+                left: 40%;
+            }
+    	 }
+    	 
+    	 &.active-transforms {
+    	     &.active-menu {
+    	         left: 0 !important;  
+    	         .translate3d(75%,0,0);
+    	         @media all and (min-width: 768px) {
+                    left: 0 !important;  
+                    .translate3d(40%, 0, 0);
+    	         }
+    	     }
+    	 }
+    }
+    
+    &.st-reveal {
+        position: relative; 
+        .st-flyout-menu, .st-flyout-main {
+            .translate3d(0,0,0);
+            .backface-visibility(hidden);
+            .transition(all 0.2s ease-out);
+        }
+        
+        &.active-menu {
+            .st-flyout-main {
+                left: 75%;
+                
+                @media all and (min-width: 768px) {
+                    left : 40%;
+                }
+            }
+        }
+        
+        &.active-transforms {
+            &.active-menu {
+                .st-flyout-main {
+                    left: 0 !important;  
+                    .translate3d(75%,0,0);
+                }
+            }
+        }
+    }
+}
+
+.js {
+    .st-flyout-container {
+        .st-flyout-menu {
+            position:relative;
+            width: 75%;
+            height: 100%;
+            position: absolute;
+            top: 0;            
+        }
+        
+        &.st-push {
+            .st-flyout-menu {
+                left: -75%;
+                @media all and (min-width: 768px) {
+            	    width: 40%;
+            	    left: -40%;                     
+                }
+            }
+            
+            &.active-transforms {
+                .st-flyout-menu {
+                    left:0 !important;
+                    .translate3d(-100%,0,0);
+                    
+                    @media all and (min-width: 768px) {
+                        left:0 !important;
+                        .translate3d(-100%, 0, 0);
+                    }
+                }
+            }
+        }
+        
+        &.st-reveal {
+            .st-flyout-menu {
+                @media all and (min-width: 768px) {
+                    width : 40%;
+                }
+            }
+            
+            &.active-transforms {
+                .st-flyout-menu {
+                    @media all and (min-width: 768px) {
+                        width: 40%;   
+                    }
+                }
+            }
+        }
+    }   
+}

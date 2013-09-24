@@ -1,0 +1,90 @@
+/* Togglemenu styles */
+
+.st-toggle {
+    width : 100%;
+    min-height: 50px;
+    z-index : 999;
+}
+
+.st-toggle .st-toggle-menu-link {
+  	float: right;
+	display: block;	
+    padding: 1em;    
+}
+
+.st-toggle .st-toggle-brand {
+  	float: left; 
+    display: table;	
+    width: 150px;
+    height : 50px;
+}
+
+.st-toggle .st-toggle-brand a {
+    display: table-cell;
+    vertical-align:middle;
+    font-size: 2em;
+    padding-left : 0.5em;
+}
+
+.st-toggle .st-toggle-navigation {
+	clear: both;
+	visibility:collapse;
+	-webkit-transition: all 0.3s ease-out;  
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+.js .st-toggle .st-toggle-navigation {
+	overflow: hidden;
+	max-height: 0;
+}
+
+.st-toggle .st-toggle-navigation.active {
+	max-height: 15em;	
+    visibility:visible;
+}
+
+.st-toggle .st-toggle-navigation ul {
+    margin:0;
+    padding:0;        
+}
+
+.st-toggle .st-toggle-navigation li a {
+    display:block;
+    padding: 1em;    
+}
+
+.st-toggle .st-toggle-navigation a {
+	display: block;
+}
+
+.st-toggle.st-toggle-fixed {    
+    position : relative;        
+}
+
+@media screen and (min-width: 768px) {
+	.st-toggle .st-toggle-menu-link {
+	   visibility: collapse;
+	}
+
+	.st-toggle.st-toggle-fixed {    
+        position : fixed;        
+    }
+	
+	.js .st-toggle .st-toggle-navigation {
+		max-height: none;		
+		visibility: visible;
+		display: inline-block;
+	}				
+
+    .st-toggle .st-toggle-navigation ul {
+        margin: 0 0 0 -0.25em;        
+    }
+    
+    .st-toggle .st-toggle-navigation ul li {
+        margin: 0 0.25em;        
+        display:inline-block;
+    }        
+}
