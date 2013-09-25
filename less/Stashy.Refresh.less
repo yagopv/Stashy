@@ -1,20 +1,19 @@
 .st-refresh {
     position: relative;
-    -webkit-transition: -webkit-transform 0ms;
-    transform: translate3d(0,0,0) scale3d(1,1,1);
-    -o-transform: translate3d(0,0,0) scale3d(1,1,1);
-    -ms-transform: translate3d(0,0,0) scale3d(1,1,1);
-    -moz-transform: translate3d(0,0,0) scale3d(1,1,1);
-    -webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
-    -webkit-backface-visibility: hidden;
-}
-
-.st-refresh.pullrefresh-slideup,
-.st-refresh.pullrefresh-loading {
-    -o-transition: -o-transform .3s;
-    -ms-transition: -ms-transform .3s;
-    -moz-transition: -moz-transform .3s;
-    -webkit-transition: -webkit-transform .3s;
+    .transition-transform(0ms);
+    .translate3d(0,0,0);
+    .scale3d(1,1,1);
+    .backface-visibility(hidden);
+    
+    &.pullrefresh-slideup {
+        .transition-transform(0.3s);
+    }
+    
+    &.pullrefresh-loading {
+        .transition-transform(0.3s);
+    }    
+    
+    
 }
 
 .st-refresh-pullrefresh {
@@ -25,79 +24,64 @@
     left: 0;
     width: 100%;
     height: 490px;
+    
+    .message {
+        position: absolute;
+        left: 0;
+        bottom: 20px;
+        right: 0;
+        text-align: center;    
+        
+        span {
+            &:after {
+                content : attr(data-pull); 
+                font-size : 1.2em;
+            }
+            
+            .pullrefresh-breakpoint & {
+                content : attr(data-release); 
+                font-size : 1.2em;                
+            }
+            
+            .pullrefresh-loading & {
+                content : attr(data-loading); 
+                font-size : 1.2em;                
+            }
+        }
+    }
+    
+    .st-refresh-icon {
+        position: absolute;
+        left: 20px; 
+        
+        &.arrow {
+            background: url(images/arrow.png) no-repeat;
+            width: 71px;
+            height: 28px;
+            bottom: 10px;
+            .rotate(90deg);
+            .transition-transform(0.3s);
+            .backface-visibility(hidden);
+            &.arrow-up {
+                .rotate(-90deg);
+            }
+        }
+        
+        &.loading {
+            background: url(images/spinner.png) no-repeat;
+            width: 19px;
+            height: 19px;
+            background-size: 100%;
+            bottom: 0;
+            .animation(rotate 1s linear infinite);
+        }
+    }
 }
 
-.st-refresh-pullrefresh .message {
-    position: absolute;
-    left: 0;
-    bottom: 20px;
-    right: 0;
-    text-align: center;
-}
 
-.st-refresh-pullrefresh .message span:after { 
-    content : attr(data-pull); 
-    font-size : 1.2em;
-}
-
-.pullrefresh-breakpoint .st-refresh-pullrefresh .message span:after { 
-    content : attr(data-release); 
-    font-size : 1.2em;
-}
-
-.pullrefresh-loading .st-refresh-pullrefresh .message span:after { 
-    content : attr(data-loading); 
-    font-size : 1.2em;
-}
-
-.st-refresh-pullrefresh .st-refresh-icon {
-    position: absolute;
-    left: 20px;
-}
-
-.st-refresh-pullrefresh .st-refresh-icon.arrow {
-    background: url(images/arrow.png) no-repeat;
-    width: 71px;
-    height: 28px;
-    bottom: 10px;
-
-    transform: rotate(90deg);
-    transition: transform .3s;
-    -o-transform: rotate(90deg);
-    -o-transition: -o-transform .3s;
-    -ms-transform: rotate(90deg);
-    -ms-transition: -ms-transform .3s;
-    -moz-transform: rotate(90deg);
-    -moz-transition: -moz-transform .3s;
-    -webkit-transform: rotate(90deg);
-    -webkit-transition: -webkit-transform .3s;
-    -webkit-backface-visibility: hidden;
-}
-
-.st-refresh-pullrefresh .st-refresh-icon.arrow.arrow-up {
-    transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-}
-
-@keyframes rotate{ 0%{ transform: rotate(0deg); } 100%{ transform: rotate(360deg); } }
+@keyframes rotate { 0% { transform: rotate(0deg); } 100%{ transform: rotate(360deg); } }
 @-o-keyframes rotate{ 0%{ -o-transform: rotate(0deg); } 100%{ -o-transform: rotate(360deg); } }
 @-ms-keyframes rotate{ 0%{ -ms-transform: rotate(0deg); } 100%{ -ms-transform: rotate(360deg); } }
 @-moz-keyframes rotate{ 0%{ -moz-transform: rotate(0deg); } 100%{ -moz-transform: rotate(360deg); } }
 @-webkit-keyframes rotate{ 0%{ -webkit-transform: rotate(0deg); } 100%{ -webkit-transform: rotate(360deg); } }
 
-.st-refresh-pullrefresh .st-refresh-icon.loading {
-    background: url(images/spinner.png) no-repeat;
-    width: 19px;
-    height: 19px;
-    background-size: 100%;
-    bottom: 0;
-
-    animation: rotate 1s linear infinite;
-    -o-animation: rotate 1s linear infinite;
-    -ms-animation: rotate 1s linear infinite;
-    -moz-animation: rotate 1s linear infinite;
-    -webkit-animation: rotate 1s linear infinite;
-}

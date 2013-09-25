@@ -7,21 +7,17 @@ html, body {
     height: auto !important;
     height: 100%;
     margin: 0 auto -20em; /* Change height. Can use px, ems or % */
+    
+    @media (min-width: 768px) {
+         margin: 0 auto -10em; /* Change height. Can use px, ems or % */
+    }
 }
 
 .st-sticky-push,
 .st-sticky-footer {    
     height: 20em; /* Change height. Can use px, ems or % */
-}
-
-
-@media (min-width: 768px) {
-    .st-sticky-wrap {
-            margin: 0 auto -10em; /* Change height. Can use px, ems or % */
-    }
     
-    .st-sticky-push,
-    .st-sticky-footer {    
+    @media (min-width: 768px) {
         height: 10em; /* Change height. Can use px, ems or % */
-    }    
+    }
 }
