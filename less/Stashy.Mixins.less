@@ -2,6 +2,27 @@
 // --------------------------------------------------
 
 //Animations
+.animation(@parameters) {
+    -webkit-animation: @parameters;
+    -moz-animation: @parameters;
+    -ms-animation: @parameters;
+    animation: @parameters;
+}
+
+.animation-timing-function(@func) {
+    -webkit-animation-timing-function: @func;    
+    -moz-animation-timing-function: @func;    
+    -ms-animation-timing-function: @func;    
+    animation-timing-function: @func;    
+}
+
+.animation-fill-mode(@fillmode) {
+      -webkit-animation-fill-mode: @fillmode;
+      -moz-animation-fill-mode: @fillmode;
+      -ms-animation-fill-mode: @fillmode;
+      animation-fill-mode: @fillmode;       
+}
+
 .animation-duration(@duration) {
 	-webkit-animation-duration: @duration;
 	-moz-animation-duration: @duration;
@@ -14,6 +35,13 @@
 	-moz-animation-name: @name;
 	-o-animation-name: @name;
 	animation-name: @name;
+}
+
+.animation-delay(@delay) {
+	-webkit-animation-delay: @delay;
+	-moz-animation-delay: @delay;
+	-o-animation-delay: @delay;
+	animation-delay: @delay;
 }
 
 // Single side border-radius

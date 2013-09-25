@@ -2,27 +2,37 @@
     width: 100%;
     height: auto;
     overflow: hidden;
+    
+    img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        -ms-interpolation-mode: bicubic;        
+    }
+    
+    div {
+        position: relative; 
+        max-width: none; 
+        height: auto;   
+        
+        // 4x3 Landscape Shape (Default)
+        @media all and (max-width: 767px) {
+            margin: -3em -4em;
+        }
+    }
+    
+    &.portrait {
+        div {
+            // 3x4 portrait shape
+            @media all and (max-width: 767px) {
+                margin: -4em -3em;                
+            }
+        }
+    }
 }
 
-.st-image img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    -ms-interpolation-mode: bicubic;
-}
-
-.st-image div {
-    position: relative; 
-    max-width: none; 
-    height: auto;
-}
 
 @media all and (max-width: 767px) {
-
-    /* 4x3 Landscape Shape (Default) */
-    .st-image div {
-        margin: -3em -4em;
-    }
 
     /* Landscape down (Total 6em) */
     .down-1 div {
@@ -128,11 +138,6 @@
         margin-right: -8em;
     }
 
-
-    /* 3x4 Portrait Shape */
-    .st-image.portrait div {
-        margin: -4em -3em;
-    }
 
     /* Portrait down (Total 8em) */
     .portrait.down-1 div {
