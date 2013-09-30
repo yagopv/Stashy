@@ -104,9 +104,9 @@
           transform: scale(@ratio);
 }
 .scale3d(@x; @y; @z) {
-  -webkit-transform: scale(@x; @y; @z);
-      -ms-transform: scale(@x; @y; @z); // IE9+
-          transform: scale(@x; @y; @z);
+  -webkit-transform: scale(@x, @y, @z);
+      -ms-transform: scale(@x, @y, @z); // IE9+
+          transform: scale(@x, @y, @z);
 }
 .translate(@x; @y) {
   -webkit-transform: translate(@x, @y);
