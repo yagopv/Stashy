@@ -16,6 +16,9 @@
             text-decoration: none;
             font-size: 1.2em;
             padding: .3em 10px .3em 10px;    
+            color: @table-fontcolor;
+            background: @table-menubtn-background;
+            border: @table-border; 
         }        
         
         .st-table-menu {
@@ -24,6 +27,9 @@
             font-size: 1.2em;    
             right: 0;
             left: auto;
+            background : @table-background;
+            border : @table-border;
+            width : 10em;
             
             ul {
                 margin: 0;
@@ -48,6 +54,24 @@
     }
     
     .st-table {
+    
+        table {
+            width: 100%;
+    	    font-size: 1.2em;
+        }
+    
+        thead  th {
+            white-space: nowrap;
+            border-bottom: @table-border;
+        	color: @table-fontcolor;
+        }
+        
+        tbody {
+            th,td {
+                border-bottom: @table-border;
+            }
+        }
+        
         th {
             
             &.always {
@@ -90,6 +114,22 @@
             .js & {
                 display: none;
             }
-        }        
+        }
+        
+        th,td {
+            padding: .5em 1em;
+            background-color: @table-background;
+            text-align: right; 
+            
+            &:first-child {
+                text-align: left;
+            }
+        }
+        
+        .subtitle {
+            display: block;
+            font-size: .9em;
+            opacity: .4;            
+        }
     }
 }

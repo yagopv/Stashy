@@ -20,23 +20,33 @@
     	clear: both;
     	overflow: hidden;
     	z-index:0;  
-    	
+    	padding: @flyout-menu-padding;
+        background: @flyout-menu-background;
+        
     	a {
     	    clear: both;
     	}
     }
     
     .st-flyout-main {
-    	background : #FFF;
+    	background : @flyout-main-background;
     	position:relative;
     	clear: both;
     	overflow: hidden;
-    	z-index:1;        
+    	z-index:1;   
+    	box-shadow: @flyout-boxshadow;
+    	
+    	.st-flyout-maincontent {
+    	    padding : @flyout-main-padding;
+    	}
+    }
+    
+    .st-flyout-toggle {
+        font-size : @fontsize-base + 0.3em;
     }
     
     &.st-push {
     	 position: relative; 
-    	 background: #FFF;        	 
     	 .transition(all 0.2s ease-out);
     	 
     	 &.active-menu {

@@ -52,15 +52,27 @@
       display: table;
       border-collapse: collapse;
       width: 100%;    
+      background : @list-item-background;
+      .transition(.2s all ease);
+      border-bottom : @list-item-border-bottom;
       
       a {
           display: table-row;
           overflow: hidden;
           text-decoration : none;   
+          color : @list-link-color
           
           @media screen and (min-width: 60em) {
               padding-right: 1em;
           }
+      }
+      
+      &:last-child {
+          border-bottom : none;
+      }
+      
+      &:hover {
+          background-color : @list-item-hover-color;
       }
     }
     

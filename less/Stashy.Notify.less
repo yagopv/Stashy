@@ -2,6 +2,14 @@
 // - Toast, Bar and Paneled notifications
 // --------------------------------------------------
 
+.notify-theme(@color, @border) {
+    border : @color @border solid;
+    background: @color;
+    * {
+        color : lighten(@color,20%);    
+    }
+}
+
 .st-toast-container {
     position:fixed;
 	width : 70%;
@@ -66,7 +74,11 @@
     .box-shadow(0 0 12px #999999);
     z-index : 99999;        
     width : 100%;
-        
+    cursor:pointer;
+    color : @notify-font-color;
+    padding : @notify-padding;
+    overflow-y:auto;
+    
     h1,h2,h3,h4,h5,h6 {
         margin : 0;
     }
@@ -119,11 +131,31 @@
     	font-size: 20px;
     	font-weight: bold;
     	line-height: 1;
-    	text-shadow: 0 1px 0 #ffffff;
+    	text-shadow: 0 1px 0 @white;
     	opacity: 0.5;	 
     	
     	&:hover {
     	    .opacity(1);
     	}
+    }
+    
+    .default {
+        .notify-theme(@notify-default-color, @notify-border);
+    }
+    
+    .error {
+        .notify-theme(@notify-error-color, @notify-border);
+    }
+    
+    .info {
+        .notify-theme(@notify-info-color, @notify-border);        
+    }
+    
+    .warning {
+        .notify-theme(@notify-warning-color, @notify-border);
+    }
+    
+    .success {
+        .notify-theme(@notify-success-color, @notify-border);
     }
 }   

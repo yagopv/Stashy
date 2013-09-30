@@ -1,9 +1,70 @@
-// Colors
+// Color Palette
 //-------------------------------------------
-@grey: #C2C2C2;
+@white : #fff;
+@black : #000;
+@grey : #ccc;
+@red : #d52a2a;
+@green : #2cd386;
+@blue : #2092f3;
+@orange : #f29444;
 
-
-
-// Layout
+// Common
 //-------------------------------------------
-@flyoutPadding : 3% 2%;
+@fontsize-base :  1em;
+@padding-base  : 3%;
+
+// OffCanvas Layout
+//-------------------------------------------
+@offcanvas-padding : @padding-base;
+@offcanvas-menu-boxshadow : 0px -8px 8px darken(@grey,20%) inset;
+@offcanvas-additional-boxshadow : 0px -8px 8px  darken(@grey,20%) inset; 
+
+// Flyout Layout
+//-------------------------------------------
+@flyout-menu-background : @grey;
+@flyout-main-background : @white;
+@flyout-menu-padding : @padding-base;
+@flyout-main-padding : 0 3%;
+@flyout-boxshadow : 0px 0px 8px darken(@grey,20%);
+
+// Toggle Layout
+//-------------------------------------------
+@toggle-background : @black;
+@toggle-link-color : darken(@grey,20%);
+@toggle-link-color-hover : @white;
+@toggle-maxheight : 25em;
+
+// List
+//-------------------------------------------
+@list-item-background : @grey;
+@list-item-border-bottom : 1px solid @grey;
+@list-item-hover-color : lighten(@grey,20%);
+@list-link-color : darken(@grey,20%);
+
+// Notify Layout
+//-------------------------------------------
+@notify-font-color : @white;
+@notify-padding : 1em;
+@notify-border : 1px;
+@notify-default-color : @black;
+@notify-error-color : @red;
+@notify-info-color : @blue;
+@notify-warning-color : @orange;
+@notify-success-color : @green;
+
+// Refresh
+//-------------------------------------------
+@refresh-padding : 20px;
+@refresh-pull-background : @grey;
+@refresh-pull-boxshadow : 0 -5px 10px darken(@grey,20%) inset;
+@refresh-pullmessage-fontcolor : darken(@grey,20%);
+@refresh-pullmessage-textshadow : 1px 1px 0 darken(@grey,20%);
+
+// Table
+//-------------------------------------------
+@table-fontcolor : darken(@grey,20%);
+@table-border : 1px solid @grey;
+@table-background : @white;
+@table-menubtn-background : @grey;
+@table-menubtn-border : 1px solid @grey;            
+

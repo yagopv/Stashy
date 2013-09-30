@@ -6,6 +6,15 @@
     width : 100%;
     min-height: 50px;
     z-index : 999;
+    background : @toggle-background;
+    
+    a {
+        color : @toggle-link-color;
+        text-decoration:none; 
+        &:hover {
+            color : @toggle-link-color-hover;
+        }
+    }
     
     .st-toggle-menu-link {
       	float: right;
@@ -75,7 +84,8 @@
     	&.active {
     	    .js & {
             	max-height: 15em;	
-                visibility:visible;    	        
+                visibility:visible;  
+                max-height : @toggle-maxheight;
     	    }
     	}
     }
