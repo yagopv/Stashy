@@ -1,6 +1,6 @@
-(function (Stashy, $, undefined) {    
+(function (Stashy, $, undefined) {   
 
-    var flyout = (function () {        
+    var flyout = (function () {      
 
         function flyout(sltor, useropt) {                            
             
@@ -35,7 +35,7 @@
             ev.gesture.preventDefault();
             ev.stopPropagation();
             switch(ev.type) {
-                case 'swipeleft':  
+                case 'swipeleft':
                     flyout.close();
                     ev.gesture.stopDetect();
                     break;

@@ -1,9 +1,9 @@
-define(['durandal/plugins/router','lib/pagelayout','stashy/Stashy.Toggle'], function (router, pagelayout, toggle) {                
+define(['durandal/plugins/router','lib/pagelayout'], function (router, pagelayout) {                
     var tg;
     
     return {
         viewAttached : function() {      
-            tg = toggle(null,{fixed:true});      
+            tg = Stashy.Toggle(null,{fixed:true});      
             pagelayout.togglelayout(tg);
         },
         router : router

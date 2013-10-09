@@ -1,4 +1,4 @@
-define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Flyout','stashy/Stashy.Table','lib/prettify'], function (app, pagelayout, utils, flyout,table, prettify) {
+define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayout, prettify) {
     var activePage = ko.observable(),    
     hash = "",
     fladdvisible = ko.observable(false),
@@ -7,17 +7,17 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Fly
     return {
         viewAttached : function() {
             var that = this;
-            fl = flyout("#table", { slideType : "reveal", enableTouch:true})
+            fl = Stashy.Flyout("#table", { slideType : "reveal", enableTouch:true})
             pagelayout.flyoutLayout(fl);
             fladdvisible(true);
             prettyPrint();
-            utils.ScrollTo('#' + that.hash);
-            table("#laptops-styled",{
+            Stashy.Utils.ScrollTo('#' + that.hash);
+            Stashy.Table("#laptops-styled",{
 		        idprefix: "sp1-",
 		        notSelectable: "not-selectable",
                 menuClass : "btn btn-primary"
 	        }).on();	
-	        table("#laptops-default",{
+	        Stashy.Table("#laptops-default",{
 		        idprefix: "sp2-",
 		        notSelectable: "not-selectable"
 	        }).on();
@@ -30,7 +30,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Fly
             
             if (args.page != undefined) {                
                 that.hash = args.page;            
-                utils.ScrollTo('#table #' + that.hash);                
+                Stashy.Utils.ScrollTo('#table #' + that.hash);                
             }
             ga('send', 'pageview');
         },

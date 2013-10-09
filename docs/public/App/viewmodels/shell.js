@@ -1,4 +1,4 @@
-define(['durandal/plugins/router', 'stashy/Stashy.Utils'], function (router,utils) {
+define(['durandal/plugins/router'], function (router) {
     
     return {
         viewAttached : function() {
@@ -7,7 +7,7 @@ define(['durandal/plugins/router', 'stashy/Stashy.Utils'], function (router,util
             },1000);            
         },
         scrollup : function() {
-            utils.ScrollTo("body");
+             Stashy.Utils.ScrollTo("body");
         },
         router: router,
         activate: function () {

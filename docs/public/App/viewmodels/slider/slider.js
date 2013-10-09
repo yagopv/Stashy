@@ -1,4 +1,4 @@
-define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Slider', 'stashy/Stashy.OffCanvas','lib/prettify'], function (app, pagelayout, utils, slider, offcanvas, prettify) {
+define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayout, prettify) {
     var activePage = ko.observable(),
     hash = "",
     oc;
@@ -6,13 +6,13 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Sli
     return {
         viewAttached : function() {
             var that = this;
-            oc= offcanvas("#slider", { enableTouch : true })
+            oc= Stashy.OffCanvas("#slider", { enableTouch : true })
             pagelayout.offcanvasLayout(oc);
             prettyPrint();    
-            slider("#sl1",{enableTouch : true, autoSlide:true}).on();
-            slider("#sl2",{enableControls : false, enableIndicators:false, enableTouch : true}).on();
-            slider("#sl3",{enableControls : false, enableIndicators:false, enableTouch : true, autoSlide : false}).on();
-            utils.ScrollTo('#' + that.hash);
+            Stashy.Slider("#sl1",{enableTouch : true, autoSlide:true}).on();
+            Stashy.Slider("#sl2",{enableControls : false, enableIndicators:false, enableTouch : true}).on();
+            Stashy.Slider("#sl3",{enableControls : false, enableIndicators:false, enableTouch : true, autoSlide : false}).on();
+            Stashy.Utils.ScrollTo('#' + that.hash);
         },                    
         activePage : activePage,  
         activate: function (args) {
@@ -20,7 +20,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Sli
             
             if (args.page != undefined) {                
                 that.hash = args.page;            
-                utils.ScrollTo('#slider #' + that.hash);
+                Stashy.Utils.ScrollTo('#slider #' + that.hash);
             }
             ga('send', 'pageview');
         }

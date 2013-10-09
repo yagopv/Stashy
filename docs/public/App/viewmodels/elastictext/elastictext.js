@@ -1,4 +1,4 @@
-define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Events','stashy/Stashy.ElasticText', 'stashy/Stashy.OffCanvas','lib/prettify'], function (app, pagelayout, utils, events, text, offcanvas, prettify) {
+define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayout, prettify) {
     var activePage = ko.observable(),
     hash = "",
     oc;
@@ -27,16 +27,16 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Eve
             min   = data.minsize == '' ? null : data.minsize,
             max   = data.maxsize == '' ? null : data.maxsize
         
-        text("#samplep").on(ratio,min,max);
+        Stashy.ElasticText("#samplep").on(ratio,min,max);
     }
                     
     return {
         viewAttached : function() {
             var that = this;
-            oc= offcanvas("#elastictext", { enableTouch : true });
+            oc= Stashy.OffCanvas("#elastictext", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);
             prettyPrint();    
-            utils.ScrollTo('#' + that.hash);
+            Stashy.Utils.ScrollTo('#' + that.hash);
         },                    
         activePage : activePage,  
         activate: function (args) {
@@ -44,12 +44,12 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Eve
             
             if (args.page != undefined) {                
                 that.hash = args.page;            
-                utils.ScrollTo('#elastictext #' + that.hash);
+                Stashy.Utils.ScrollTo('#elastictext #' + that.hash);
             }
             ga('send', 'pageview');
         },
         adaptHeader : function() {
-            text(".hero-unit h1").on(0.6,"40px");
+            Stashy.ElasticText(".hero-unit h1").on(0.6,"40px");
         },
         availableSizes : availableSizes,
         availableRatios : availableRatios,

@@ -1,4 +1,4 @@
-define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.ShowMeMore','stashy/Stashy.OffCanvas','lib/prettify'], function (app, pagelayout, utils, showmemore, offcanvas, prettify) {
+define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayout, prettify) {
     var activePage = ko.observable(),    
     hash = "",
     oc,
@@ -20,7 +20,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Sho
     var showmemoreOn = function(data, event) {            
             var issections = event.target.attributes["data-target"].value.indexOf("sections-sample") != -1;                        
             
-            showmemore(event.target.attributes["data-target"].value, {
+            Stashy.ShowMeMore(event.target.attributes["data-target"].value, {
                 linkClass : "btn btn-inverse",
                 linkText : "Show more ...",
                 howMany : issections ? parseInt(sectionhowmany()) : parseInt(listhowmany())
@@ -34,16 +34,16 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Sho
     }
     
     var showmemoreOff = function(data, event) {
-        showmemore(event.target.attributes["data-target"].value).off();				
+        Stashy.ShowMeMore(event.target.attributes["data-target"].value).off();				
     }    
     
     return {
         viewAttached : function() {
             var that = this;
-            oc = offcanvas("#showmemore", { enableTouch : true });
+            oc = Stashy.OffCanvas("#showmemore", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);
             prettyPrint();   
-            utils.ScrollTo('#' + that.hash);
+            Stashy.Utils.ScrollTo('#' + that.hash);
         },                     
         activePage : activePage,  
         activate: function (args) {
@@ -51,7 +51,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Sho
             
             if (args.page != undefined) {                
                 that.hash = args.page;            
-                utils.ScrollTo('#showmemore #' + that.hash);                
+                Stashy.Utils.ScrollTo('#showmemore #' + that.hash);                
             }
             ga('send', 'pageview');
         },   

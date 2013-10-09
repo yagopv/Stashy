@@ -35,7 +35,7 @@
     	overflow: hidden;
     	z-index:1;   
     	box-shadow: @flyout-boxshadow;
-    	
+
     	.st-flyout-maincontent {
     	    padding : @flyout-main-padding;
     	}
@@ -92,6 +92,9 @@
                 .st-flyout-main {
                     left: 0 !important;  
                     .translate3d(75%,0,0);
+                    @media all and (min-width: 768px) {
+                        .translate3d(40%,0,0);
+                    }                    
                 }
             }
         }
@@ -120,8 +123,7 @@
             &.active-transforms {
                 .st-flyout-menu {
                     left:0 !important;
-                    .translate3d(-100%,0,0);
-                    
+                    .translate3d(-100%,0,0);                    
                     @media all and (min-width: 768px) {
                         left:0 !important;
                         .translate3d(-100%, 0, 0);

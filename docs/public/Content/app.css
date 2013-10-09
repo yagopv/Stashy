@@ -403,6 +403,10 @@ footer a:hover {
     margin-bottom : 4%;    
 }
 
+.st-flyout #content {
+    padding: 0 3%;
+}
+
 .st-refresh {
     padding: 0px !important;   
 }

@@ -1,4 +1,4 @@
-define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils', 'stashy/Stashy.Notify', 'stashy/Stashy.OffCanvas','lib/prettify'], function (app, pagelayout, utils, notify, offcanvas, prettify) {
+define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayout, prettify) {
     var activePage = ko.observable(),
     hash = "",
     oc; 
@@ -20,10 +20,10 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils', 'stashy/Stashy.No
     return {
         viewAttached : function() {
             var that = this;
-            oc = offcanvas("#notify", { enableTouch : true });
+            oc = Stashy.OffCanvas("#notify", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);
             prettyPrint();        
-            utils.ScrollTo('#' + that.hash);
+            Stashy.Utils.ScrollTo('#' + that.hash);
         },                 
         activePage : activePage,
         activate: function (args) {
@@ -31,7 +31,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils', 'stashy/Stashy.No
             
             if (args.page != undefined) {                
                 that.hash = args.page;            
-                utils.ScrollTo('#notify #' + that.hash);                
+                Stashy.Utils.ScrollTo('#notify #' + that.hash);                
             }
             ga('send', 'pageview');
         },

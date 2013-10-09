@@ -1,4 +1,4 @@
-define(['durandal/app','durandal/system','lib/pagelayout','durandal/plugins/router'], function (app, system,offcanvas,router) {            
+define(['durandal/app','durandal/system','durandal/plugins/router'], function (app, system,router) {            
     var alllinks = 
         {
         'focalpoint' : [

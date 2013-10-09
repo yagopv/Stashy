@@ -1,10 +1,10 @@
-define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.OffCanvas'], function (app, pagelayout, utils, offcanvas) {
+define(['durandal/app','lib/pagelayout'], function (app, pagelayout) {
     var hash = "",
     oc;
 
     return {
         viewAttached : function() {
-            oc = offcanvas("#error", { enableTouch : true });
+            oc = Stashy.OffCanvas("#error", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);            
         },
         activate: function (args) {        

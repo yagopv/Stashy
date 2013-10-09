@@ -1,4 +1,4 @@
-define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.FocalPoint', 'stashy/Stashy.OffCanvas','lib/prettify'], function (app, pagelayout, utils, focalpoint, offcanvas, prettify) {
+define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayout, prettify) {
     var activePage = ko.observable(),    
     hash = "",
     oc;
@@ -36,31 +36,31 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Foc
     });
         
     var sampleOn  = function(data, event) {
-        focalpoint(data.image).on(data.pointA,data.pointB);
+        Stashy.FocalPoint(data.image).on(data.pointA,data.pointB);
     }
     
     var sampleOff  = function(data, event) {
-        focalpoint(data.image).off();
+        Stashy.FocalPoint(data.image).off();
     }
     
     var sampleUpdate  = function(data, event) {
-        focalpoint(data.image).update(data.pointA, data.pointB);
+        Stashy.FocalPoint(data.image).update(data.pointA, data.pointB);
     }
      
     var samplesOff = function() {
-        focalpoint("#sample-1").off();
-        focalpoint("#sample-2").off();        
+        Stashy.Focalpoint("#sample-1").off();
+        Stashy.Focalpoint("#sample-2").off();        
     }
     
     return {
         viewAttached : function() {
             var that = this;
-            oc= offcanvas("#focalpoint", { enableTouch : true })
+            oc= Stashy.OffCanvas("#focalpoint", { enableTouch : true })
             pagelayout.offcanvasLayout(oc);
             prettyPrint();            
-            focalpoint("#sample-1").on("top-3", "right-3");        
-            focalpoint("#sample-2").on("top-2", "right-2");            
-            utils.ScrollTo('#' + that.hash);
+            Stashy.FocalPoint("#sample-1").on("top-3", "right-3");        
+            Stashy.FocalPoint("#sample-2").on("top-2", "right-2");            
+            Stashy.Utils.ScrollTo('#' + that.hash);
         },                    
         activePage : activePage,  
         activate: function (args) {
@@ -68,7 +68,7 @@ define(['durandal/app','lib/pagelayout','stashy/Stashy.Utils','stashy/Stashy.Foc
             
             if (args.page != undefined) {                
                 that.hash = args.page;            
-                utils.ScrollTo('#focalpoint #' + that.hash);                
+                Stashy.Utils.ScrollTo('#focalpoint #' + that.hash);                
             }
             ga('send', 'pageview');
         },
