@@ -3,7 +3,6 @@
  * Copyright 2013 Yago Pérez Vázquez
  * Licensed under http://http://opensource.org/licenses/MIT
  */
-if (typeof jQuery === "undefined") { throw new Error("Stashy requires jQuery") }
 
 (function(window,$,undefined) {
 
