@@ -9,15 +9,13 @@ module.exports = function(grunt) {
               ' * Licensed under <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
               ' */\n',
 
-    jqueryCheck: 'if (typeof jQuery === "undefined") { throw new Error("Stashy requires jQuery") }\n\n', 
-
     clean: {
       dist: ['dist']
     },
 
     concat: {
       options: {
-        banner: '<%= banner %><%= jqueryCheck %>',
+        banner: '<%= banner %>',
         stripBanners: false
       },
       stashyDist: {
@@ -37,9 +35,7 @@ module.exports = function(grunt) {
             'src/Stashy.ElasticText.js',
             'src/Stashy.Table.js',
             'src/Stashy.Notify.js'
-        ],
-        dest: 'dist/js/<%= pkg.name %>.js'
-      }
+        ]
     }, 
 
     copy: {
@@ -100,7 +96,22 @@ module.exports = function(grunt) {
           files: {
             'dist/js/<%= pkg.name %>.min.js': 'dist/js/Stashy.js'
           }
-        }        
+        },
+        site : {
+          files: {
+            'docs/public/Scripts/vendor.js': [
+                'docs/public/Scripts/jquery.js',
+                'docs/public/Scripts/knockout.js',
+                'docs/public/Scripts/sammy.js',
+                'docs/public/Scripts/Stashy.js',
+                'docs/public/Scripts/jquery.hammer.js',
+                'docs/public/Scripts/html5shiv.js',
+                'docs/public/Scripts/analytics.min.js',
+                'docs/public/Scripts/bootstrap.min.js',
+                'docs/public/Scripts/respond.js'
+            ]
+          }        
+        }
     },
 
     watch: {
@@ -120,7 +131,24 @@ module.exports = function(grunt) {
           nospawn: true
         }
       }        
-    }   
+    },
+    
+    cssmin : {
+        site: {
+            files : {
+                'docs/public/Content/styles.css': [
+                'docs/public/Content/bootstrap.css', 
+                'docs/public/Content/bootstrap-responsive.css', 
+                'docs/public/Content/durandal.css', 
+                'docs/public/Content/font-awesome.css',
+                'docs/public/Content/font-awesome-ie7.css', 
+                'docs/public/Content/prettify.css', 
+                'docs/public/Content/Stashy.css', 
+                'docs/public/Content/app.css' 
+                ]
+            }
+        }
+    }
 
   });
  
@@ -130,6 +158,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   
   // Clean
   grunt.registerTask('cleandir', ['clean']);  
@@ -141,8 +170,11 @@ module.exports = function(grunt) {
   grunt.registerTask('copyfiles', ['copy']);
 
   // CSS and JS dist
-  grunt.registerTask('uglifyfiles', ['uglify']);
+  grunt.registerTask('uglifyfiles', ['uglify:stashyDeps','uglify:stashy']);
+  
+  // Site optimizer
+  grunt.registerTask('optimizesiteassets', ['uglify:site','cssmin:site']);
     
   // Watch
-  grunt.registerTask('default', ['cleandir','distribute','copyfiles','uglifyfiles']);
+  grunt.registerTask('default', ['cleandir','distribute','copyfiles','uglifyfiles','optimizesiteassets']);
 };

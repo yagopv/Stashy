@@ -1689,7 +1689,7 @@ video {
   border-bottom: none;
 }
 .st-list li:hover {
-  background-color: #ffffff;
+  background-color: #e6e6e6;
 }
 .st-list .st-list-img {
   display: table-cell;

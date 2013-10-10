@@ -28,10 +28,13 @@ app.use(express.favicon(__dirname + '/docs/public/favicon.ico'));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(app.router);
 
 // Static files configuration (js, css ...)
 app.use(express.static(path.join(__dirname, 'docs/public')));
+
+// Router set
+app.use(app.router);
+
 
 //************************************//
 //Settings for development environment//
@@ -46,6 +49,7 @@ if ('development' == app.get('env')) {
 //*********//
 
 app.get('/', routes.index);
+app.get('*', routes.notfound);
 
 //***************//
 // Create server //
