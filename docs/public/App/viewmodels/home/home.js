@@ -4,7 +4,7 @@ define(['durandal/app','lib/pagelayout'], function (app, pagelayout) {
     oc;
     
     return {
-        viewAttached : function() {
+        attached : function() {
             var that = this;
             oc = Stashy.OffCanvas("#home", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);

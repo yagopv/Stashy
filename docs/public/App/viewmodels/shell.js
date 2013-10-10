@@ -1,7 +1,7 @@
-define(['durandal/plugins/router'], function (router) {
+define(['plugins/router'], function (router) {
     
     return {
-        viewAttached : function() {
+        attached : function() {
             setTimeout(function() {
                 $("footer").css("display","block");
             },1000);            
@@ -12,45 +12,45 @@ define(['durandal/plugins/router'], function (router) {
         router: router,
         activate: function () {
             router.map([
-                { url: 'home', moduleId: 'viewmodels/home/home', name: 'Home', visible: true, settings : { activemenu : 'home' } },
-                { url: 'home/:page', moduleId: 'viewmodels/home/home', name: 'Home', settings : { activemenu : 'home' } },                
-                { url: 'about', moduleId: 'viewmodels/about/about', name: 'About', visible: true },
-                { url: 'offcanvas', moduleId: 'viewmodels/offcanvas/offcanvas', name: 'OffCanvas', visible: false, settings : { activemenu : 'offcanvas' } },
-                { url: 'offcanvas/:page', moduleId: 'viewmodels/offcanvas/offcanvas', name: 'OffCanvas', visible: false, settings : { activemenu : 'offcanvas' } },
-                { url: 'flyout', moduleId: 'viewmodels/flyout/flyout', name: 'Flyout', visible: false, settings : { activemenu : 'flyout' } },
-                { url: 'flyout/:page', moduleId: 'viewmodels/flyout/flyout', name: 'Flyout', visible: false , settings : { activemenu : 'flyout' }},
-                { url: 'toggle', moduleId: 'viewmodels/toggle/toggle', name: 'Toggle', visible: false , settings : { activemenu : 'toggle' }},
-                { url: 'toggle/:page', moduleId: 'viewmodels/toggle/toggle', name: 'Toggle', visible: false , settings : { activemenu : 'toggle' }},
-                { url: 'showmemore', moduleId: 'viewmodels/showmemore/showmemore', name: 'ShowMeMore', visible: false , settings : { activemenu : 'showmemore' }},
-                { url: 'showmemore/:page', moduleId: 'viewmodels/showmemore/showmemore', name: 'ShowMeMore', visible: false , settings : { activemenu : 'showmemore' }},
-                { url: 'focalpoint', moduleId: 'viewmodels/focalpoint/focalpoint', name: 'FocalPoint', visible: false , settings : { activemenu : 'focalpoint' }},
-                { url: 'focalpoint/:page', moduleId: 'viewmodels/focalpoint/focalpoint', name: 'FocalPoint', visible: false , settings : { activemenu : 'focalpoint' }},                  
-                { url: 'loader', moduleId: 'viewmodels/loader/loader', name: 'Loader', visible: false , settings : { activemenu : 'loader' }},
-                { url: 'loader/:page', moduleId: 'viewmodels/loader/loader', name: 'Loader', visible: false , settings : { activemenu : 'loader' }},
-                { url: 'slider', moduleId: 'viewmodels/slider/slider', name: 'Slider', visible: false , settings : { activemenu : 'slider' }},
-                { url: 'slider/:page', moduleId: 'viewmodels/slider/slider', name: 'Slider', visible: false , settings : { activemenu : 'slider' }},                
-                { url: 'sticky', moduleId: 'viewmodels/sticky/sticky', name: 'Sticky', visible: false , settings : { activemenu : 'sticky' }},
-                { url: 'sticky/:page', moduleId: 'viewmodels/sticky/sticky', name: 'Sticky', visible: false , settings : { activemenu : 'sticky' }},                
-                { url: 'refresh', moduleId: 'viewmodels/refresh/refresh', name: 'Refresh', visible: false , settings : { activemenu : 'refresh' }},
-                { url: 'refresh/:page', moduleId: 'viewmodels/refresh/refresh', name: 'Refresh', visible: false , settings : { activemenu : 'refresh' }},
-                { url: 'elasticvideo', moduleId: 'viewmodels/elasticvideo/elasticvideo', name: 'ElasticVideo', visible: false , settings : { activemenu : 'elasticvideo' }},
-                { url: 'elasticvideo/:page', moduleId: 'viewmodels/elasticvideo/elasticvideo', name: 'ElasticVideo', visible: false , settings : { activemenu : 'elasticvideo' }},
-                { url: 'elastictext', moduleId: 'viewmodels/elastictext/elastictext', name: 'ElasticText', visible: false , settings : { activemenu : 'elastictext' }},
-                { url: 'elastictext/:page', moduleId: 'viewmodels/elastictext/elastictext', name: 'ElasticText', visible: false , settings : { activemenu : 'elastictext' }},
-                { url: 'list', moduleId: 'viewmodels/list/list', name: 'List', visible: false , settings : { activemenu : 'list' }},
-                { url: 'list/:page', moduleId: 'viewmodels/list/list', name: 'List', visible: false , settings : { activemenu : 'list' }},
-                { url: 'table', moduleId: 'viewmodels/table/table', name: 'Table', visible: false , settings : { activemenu : 'table' }},
-                { url: 'table/:page', moduleId: 'viewmodels/table/table', name: 'Table', visible: false , settings : { activemenu : 'table' }},
-                { url: 'notify', moduleId: 'viewmodels/notify/notify', name: 'Notify', visible: false , settings : { activemenu : 'notify' }},
-                { url: 'notify/:page', moduleId: 'viewmodels/notify/notify', name: 'Notify', visible: false , settings : { activemenu : 'notify' }},                                                                
-                { url: 'error', moduleId: 'viewmodels/error/error', name: 'Error', visible: false }
+                { route: 'home', moduleId: 'viewmodels/home/home', title: 'Home', nav: true, settings : { activemenu : 'home' } },
+                { route: 'home/:page', moduleId: 'viewmodels/home/home', title: 'Home', settings : { activemenu : 'home' } },                
+                { route: 'about', moduleId: 'viewmodels/about/about', title: 'About', nav: true },
+                { route: 'offcanvas', moduleId: 'viewmodels/offcanvas/offcanvas', title: 'OffCanvas', nav: false, settings : { activemenu : 'offcanvas' } },
+                { route: 'offcanvas/:page', moduleId: 'viewmodels/offcanvas/offcanvas', title: 'OffCanvas', nav: false, settings : { activemenu : 'offcanvas' } },
+                { route: 'flyout', moduleId: 'viewmodels/flyout/flyout', title: 'Flyout', nav: false, settings : { activemenu : 'flyout' } },
+                { route: 'flyout/:page', moduleId: 'viewmodels/flyout/flyout', title: 'Flyout', nav: false , settings : { activemenu : 'flyout' }},
+                { route: 'toggle', moduleId: 'viewmodels/toggle/toggle', title: 'Toggle', nav: false , settings : { activemenu : 'toggle' }},
+                { route: 'toggle/:page', moduleId: 'viewmodels/toggle/toggle', title: 'Toggle', nav: false , settings : { activemenu : 'toggle' }},
+                { route: 'showmemore', moduleId: 'viewmodels/showmemore/showmemore', title: 'ShowMeMore', nav: false , settings : { activemenu : 'showmemore' }},
+                { route: 'showmemore/:page', moduleId: 'viewmodels/showmemore/showmemore', title: 'ShowMeMore', nav: false , settings : { activemenu : 'showmemore' }},
+                { route: 'focalpoint', moduleId: 'viewmodels/focalpoint/focalpoint', title: 'FocalPoint', nav: false , settings : { activemenu : 'focalpoint' }},
+                { route: 'focalpoint/:page', moduleId: 'viewmodels/focalpoint/focalpoint', title: 'FocalPoint', nav: false , settings : { activemenu : 'focalpoint' }},                  
+                { route: 'loader', moduleId: 'viewmodels/loader/loader', title: 'Loader', nav: false , settings : { activemenu : 'loader' }},
+                { route: 'loader/:page', moduleId: 'viewmodels/loader/loader', title: 'Loader', nav: false , settings : { activemenu : 'loader' }},
+                { route: 'slider', moduleId: 'viewmodels/slider/slider', title: 'Slider', nav: false , settings : { activemenu : 'slider' }},
+                { route: 'slider/:page', moduleId: 'viewmodels/slider/slider', title: 'Slider', nav: false , settings : { activemenu : 'slider' }},                
+                { route: 'sticky', moduleId: 'viewmodels/sticky/sticky', title: 'Sticky', nav: false , settings : { activemenu : 'sticky' }},
+                { route: 'sticky/:page', moduleId: 'viewmodels/sticky/sticky', title: 'Sticky', nav: false , settings : { activemenu : 'sticky' }},                
+                { route: 'refresh', moduleId: 'viewmodels/refresh/refresh', title: 'Refresh', nav: false , settings : { activemenu : 'refresh' }},
+                { route: 'refresh/:page', moduleId: 'viewmodels/refresh/refresh', title: 'Refresh', nav: false , settings : { activemenu : 'refresh' }},
+                { route: 'elasticvideo', moduleId: 'viewmodels/elasticvideo/elasticvideo', title: 'ElasticVideo', nav: false , settings : { activemenu : 'elasticvideo' }},
+                { route: 'elasticvideo/:page', moduleId: 'viewmodels/elasticvideo/elasticvideo', title: 'ElasticVideo', nav: false , settings : { activemenu : 'elasticvideo' }},
+                { route: 'elastictext', moduleId: 'viewmodels/elastictext/elastictext', title: 'ElasticText', nav: false , settings : { activemenu : 'elastictext' }},
+                { route: 'elastictext/:page', moduleId: 'viewmodels/elastictext/elastictext', title: 'ElasticText', nav: false , settings : { activemenu : 'elastictext' }},
+                { route: 'list', moduleId: 'viewmodels/list/list', title: 'List', nav: false , settings : { activemenu : 'list' }},
+                { route: 'list/:page', moduleId: 'viewmodels/list/list', title: 'List', nav: false , settings : { activemenu : 'list' }},
+                { route: 'table', moduleId: 'viewmodels/table/table', title: 'Table', nav: false , settings : { activemenu : 'table' }},
+                { route: 'table/:page', moduleId: 'viewmodels/table/table', title: 'Table', nav: false , settings : { activemenu : 'table' }},
+                { route: 'notify', moduleId: 'viewmodels/notify/notify', title: 'Notify', nav: false , settings : { activemenu : 'notify' }},
+                { route: 'notify/:page', moduleId: 'viewmodels/notify/notify', title: 'Notify', nav: false , settings : { activemenu : 'notify' }},                                                                
+                { url: 'error', moduleId: 'viewmodels/error/error', title: 'Error', nav: false }
             ]);
             
-            router.handleInvalidRoute = function (route, params) {
-                router.navigateTo("#/error");
-            };
+            router.buildNavigationModel();
+            
+            router.mapUnknownRoutes('error', 'not-found');
 
-            return router.activate('home');                        
+            return router.activate();
         }
     };
 });

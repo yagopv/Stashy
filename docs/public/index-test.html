@@ -3,11 +3,18 @@
     <head>
         <title>Stashy</title>
 
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
         
-        <link rel="apple-touch-startup-image" href="Content/images/ios-startup-image-landscape.png" media="(orientation:landscape)" />
-        <link rel="apple-touch-startup-image" href="Content/images/ios-startup-image-portrait.png" media="(orientation:portrait)" />
-        <link rel="apple-touch-icon" href="Content/images/icon.png"/>
+        <link rel="apple-touch-startup-image" href="lib/durandal/img/ios-startup-image-landscape.png" media="(orientation:landscape)" />
+        <link rel="apple-touch-startup-image" href="lib/durandal/img/ios-startup-image-portrait.png" media="(orientation:portrait)" />
+        <link rel="apple-touch-icon" href="lib/durandal/img/icon.png"/>
 
         <!--Stashy.-->                
         <link rel="stylesheet" href="Content/Stashy.css" type="text/css"/>
@@ -21,23 +28,29 @@
         <!--Make the code pretty.-->
         <link rel="stylesheet" href="Content/prettify.css" type="text/css"/>
         
+        <link rel="stylesheet" href="Content/ie10mobile.css" type="text/css"/>
+        
         <!--The css in this file makes the modal dialogs work right.-->
-        <link rel="stylesheet" href="Content/durandal.css" type="text/css"/>
+        <link rel="stylesheet" href="Scripts/durandal/css/durandal.css" type="text/css"/>
 
         <!--Site Css.-->
         <link rel="stylesheet" href="Content/app.css" type="text/css"/>
 
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta name="format-detection" content="telephone=no"/>
-
-        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-
+        <script type="text/javascript">
+            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                var msViewportStyle = document.createElement("style");
+                var mq = "@@-ms-viewport{width:auto!important}";
+                msViewportStyle.appendChild(document.createTextNode(mq));
+                document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+            }
+        </script>
+        
 		<!-- IE Explorer -->
 		<!--[if lt IE 9]>
 		<script src="Scripts/html5shiv.js"></script>
 		<script src="Scripts/respond.min.js"></script>
-		<![endif]-->	
+		<![endif]-->
+        
         <script type="text/javascript" src="Scripts/analytics.min.js"></script>
     </head>
     <body>
@@ -78,9 +91,8 @@
 		
         <script type="text/javascript" src="Scripts/jquery.js"></script>
         <script type="text/javascript" src="Scripts/jquery.hammer.js"></script>
-        <script type="text/javascript" src="Scripts/knockout.js"></script>                  
-        <script type="text/javascript" src="Scripts/sammy.js"></script>
+        <script type="text/javascript" src="Scripts/knockout.js"></script>
         <script type="text/javascript" src="Scripts/Stashy.js"></script>
-        <script type="text/javascript" src="App/durandal/amd/require.js" data-main="App/main"></script>                
+        <script type="text/javascript" src="Scripts/require.js" data-main="App/main"></script>                
     </body>
 </html>

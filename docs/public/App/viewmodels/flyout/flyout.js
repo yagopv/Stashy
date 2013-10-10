@@ -5,7 +5,7 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
     fl;
     
     return {
-        viewAttached : function() {
+        attached : function() {
             var that = this;
             fl = Stashy.Flyout("#flyout", { slideType : "reveal", enableTouch:true})
             pagelayout.flyoutLayout(fl);

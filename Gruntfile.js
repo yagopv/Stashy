@@ -106,10 +106,8 @@ module.exports = function (grunt) {
                     'docs/public/Scripts/sammy.js',
                     'docs/public/Scripts/Stashy.js',
                     'docs/public/Scripts/jquery.hammer.js',
-                    'docs/public/Scripts/html5shiv.js',
                     'docs/public/Scripts/analytics.min.js',
-                    'docs/public/Scripts/bootstrap.min.js',
-                    'docs/public/Scripts/respond.js'
+                    'docs/public/Scripts/bootstrap.min.js'
                 ]
               }        
             }
@@ -144,6 +142,8 @@ module.exports = function (grunt) {
                     'docs/public/Content/font-awesome.css',
                     'docs/public/Content/font-awesome-ie7.css', 
                     'docs/public/Content/prettify.css', 
+                    'docs/public/Content/ie10mobile.css', 
+                    'docs/public/Scripts/durandal/css/durandal.css', 
                     'docs/public/Content/Stashy.css', 
                     'docs/public/Content/app.css' 
                     ]

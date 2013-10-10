@@ -1,4 +1,4 @@
-define(['durandal/app','durandal/system','durandal/plugins/router'], function (app, system,router) {            
+define(['durandal/app','durandal/system','plugins/router'], function (app, system,router) {            
     var alllinks = 
         {
         'focalpoint' : [
@@ -88,8 +88,8 @@ define(['durandal/app','durandal/system','durandal/plugins/router'], function (a
         menulinks = null;
         
     return {
-        beforeBind : function(element, view, settings) {
-            this.menulinks = alllinks[router.activeRoute().settings.activemenu];            
+        binding : function(element, view, settings) {
+            this.menulinks = alllinks[router.activeRoute().config.settings.activemenu];            
         },
         menulinks : menulinks  
     };

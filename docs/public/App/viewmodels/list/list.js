@@ -14,7 +14,7 @@ define(['durandal/app','lib/pagelayout', 'lib/prettify'], function (app, pagelay
     }
     
     return {
-        viewAttached : function() {
+        attached : function() {
             var that = this;
             oc = Stashy.OffCanvas("#list", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);

@@ -3,7 +3,7 @@ define(['durandal/app','lib/pagelayout'], function (app, pagelayout) {
     oc;
 
     return {
-        viewAttached : function() {
+        attached : function() {
             oc = Stashy.OffCanvas("#error", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);            
         },
