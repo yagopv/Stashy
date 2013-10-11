@@ -1,3 +1,5 @@
+var shell = require('shelljs');
+
 module.exports = function (grunt) {
   grunt.initConfig ({     
 
@@ -162,8 +164,17 @@ module.exports = function (grunt) {
                     src: [ 'dist/css/Stashy.css', 'dist/css/Stashy.min.css', 'dist/js/Stashy.js', 'dist/js/Stashy.min.js'   ]
                 }
             }
-        }              
-
+        },
+      
+        shell: {
+            optimizeDurandal: {
+                command: [
+                    'cd docs/public/',
+                    'weyland build',
+                    'cd ../../'
+                ].join(';')
+            }
+        }      
   });
  
   grunt.loadNpmTasks('grunt-contrib-less');
@@ -191,9 +202,14 @@ module.exports = function (grunt) {
   grunt.registerTask('banners', ['usebanner']);
                                  
   // Site optimizer
-  grunt.registerTask('optimizesiteassets', ['uglify:site','cssmin:site']);    
+  grunt.registerTask('optimizesiteassets', ['uglify:site','cssmin:site']);        
     
-  // Watch
-  grunt.registerTask('default', ['cleandir','distribute','copyfiles','uglifyfiles', 'banners', 'optimizesiteassets']);
+  // Build Durandal site
+  grunt.registerTask('executecommands', "Build Durandal site", function() {
+      shell.exec('weyland build');
+  });    
+    
+  // Default. Excute task in order
+  grunt.registerTask('default', ['cleandir','distribute','copyfiles','uglifyfiles', 'banners', 'optimizesiteassets','executecommands']);
 
 };

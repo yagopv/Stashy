@@ -1,20 +1,20 @@
 exports.config = function(weyland) {
     weyland.build('main')
         .task.jshint({
-            include:'App/**/*.js'
+            include:'docs/public/App/**/*.js'
         })
         .task.uglifyjs({
-            include:['App/**/*.js', 'Scripts/durandal/**/*.js']
+            include:['docs/public/App/**/*.js', 'docs/public/Scripts/durandal/**/*.js']
         })
         .task.rjs({
-            include:['App/**/*.{js,html}', 'Scripts/durandal/**/*.js'],
+            include:['docs/public/App/**/*.{js,html}', 'docs/public/Scripts/durandal/**/*.js'],
             loaderPluginExtensionMaps:{
                 '.html':'text'
             },
             rjs:{
                 name:'../Scripts/require/almond-custom', //to deploy with require.js, use the build's name here instead
                 insertRequire:['main'], //not needed for require
-                baseUrl : 'App',
+                baseUrl : 'docs/public/App',
                 wrap:true, //not needed for require
                 paths : {
                     'text': '../Scripts/require/text',
@@ -32,7 +32,7 @@ exports.config = function(weyland) {
                 },
                 stubModules : ['text'],
                 keepBuildDir: true,
-                out:'App/main-built.js'
+                out:'docs/public/App/main-built.js'
             }
         });
 }

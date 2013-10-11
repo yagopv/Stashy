@@ -204,8 +204,13 @@ section p, section h1, section h2, section h4, section .component, section pre, 
     border-color:transparent;
 }
 
+.hero-unit {
+    padding : 60px;
+}
+
 .hero-unit a {
     width:100%;
+    padding : 20px;
 }
 
 .hero-unit a:hover {
