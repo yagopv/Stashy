@@ -4,7 +4,7 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
     oc;
     
     return {
-        attached : function() {
+        compositionComplete : function() {
             var that = this;
             oc= Stashy.OffCanvas("#elasticvideo", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);
@@ -13,11 +13,11 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
             Stashy.ElasticVideo("iframe,object,embed").on();
         },                    
         activePage : activePage,  
-        activate: function (args) {
+        activate: function (page) {
             var that = this;
             
-            if (args.page != undefined) {                
-                that.hash = args.page;            
+            if (page != undefined) {                
+                that.hash = page;            
                 Stashy.Utils.ScrollTo('#elasticvideo #' + that.hash);
             }
             ga('send', 'pageview');

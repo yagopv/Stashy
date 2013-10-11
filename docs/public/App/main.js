@@ -1,7 +1,8 @@
 // Config require paths
 requirejs.config({
+    baseUrl : './App',
     paths: {
-        'text': '../Scripts/require',
+        'text': '../Scripts/require/text',
         'durandal': '../Scripts/durandal/js',
         'plugins': '../Scripts/durandal/js/plugins',
         'transitions': '../Scripts/durandal/js/transitions',
@@ -41,6 +42,6 @@ define(['durandal/app', 'durandal/system', 'durandal/viewLocator'],
         viewLocator.useConvention();
         
         // set root to shell
-        app.setRoot('viewmodels/shell');
+        app.setRoot('viewmodels/shell', 'entrance');
     });
 });

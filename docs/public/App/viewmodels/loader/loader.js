@@ -20,7 +20,7 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
     }    
     
     return {
-        attached : function() {
+        compositionComplete : function() {
             var that = this;
             oc = Stashy.OffCanvas("#loader", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);
@@ -28,11 +28,11 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
             Stashy.Utils.ScrollTo('#' + that.hash);
         },                 
         activePage : activePage,  
-        activate: function (args) {
+        activate: function (page) {
             var that = this;
             
-            if (args.page != undefined) {                
-                that.hash = args.page;            
+            if (page != undefined) {                
+                that.hash = page;            
                 Stashy.Utils.ScrollTo('#loader #' + that.hash);                
             }
             ga('send', 'pageview');

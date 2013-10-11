@@ -14,7 +14,7 @@ define(['durandal/app','lib/pagelayout', 'lib/prettify'], function (app, pagelay
     }
     
     return {
-        attached : function() {
+        compositionComplete : function() {
             var that = this;
             oc = Stashy.OffCanvas("#list", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);
@@ -22,11 +22,11 @@ define(['durandal/app','lib/pagelayout', 'lib/prettify'], function (app, pagelay
             Stashy.Utils.ScrollTo('#' + that.hash);
         },                  
         activePage : activePage,
-        activate: function (args) {
+        activate: function (page) {
             var that = this;
             
-            if (args.page != undefined) {                
-                that.hash = args.page;            
+            if (page != undefined) {                
+                that.hash = page;            
                 Stashy.Utils.ScrollTo('#list #' + that.hash);                               
             }
             ga('send', 'pageview');

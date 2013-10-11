@@ -1,24 +1,25 @@
-define(['durandal/app','lib/pagelayout'], function (app, pagelayout) {
+define(['durandal/app','lib/pagelayout','plugins/router'], function (app, pagelayout,router) {
     var activePage = ko.observable(),    
     hash = "",
     oc;
     
     return {
-        attached : function() {
+        compositionComplete : function() {
             var that = this;
             oc = Stashy.OffCanvas("#home", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);
             Stashy.Utils.ScrollTo('#' + that.hash);
-        },              
+        },
         activePage : activePage,  
-        activate: function (args) {
+        activate: function (page) {
             var that = this;
             
-            if (args.page != undefined) {                
-                that.hash = args.page;            
+            if (page != undefined) {                
+                that.hash = page;            
                 Stashy.Utils.ScrollTo('#home #' + that.hash);                
             }
             ga('send', 'pageview');
-        }        
+        },
+        router : router
     };
 });

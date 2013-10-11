@@ -3,11 +3,11 @@ define(['durandal/app','lib/pagelayout'], function (app, pagelayout) {
     oc;
 
     return {
-        attached : function() {
-            oc = Stashy.OffCanvas("#error", { enableTouch : true });
+        compositionComplete : function() {
+            oc = Stashy.OffCanvas("#notfound", { enableTouch : true });
             pagelayout.offcanvasLayout(oc);            
         },
-        activate: function (args) {        
+        activate: function () {        
             ga('send', 'pageview');
         }
     };

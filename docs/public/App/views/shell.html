@@ -1,15 +1,9 @@
 <div>
     <header data-bind="compose : { model :'viewmodels/header'}"></header>
-        
-    <div id="page" class="page-host">
-        <!--ko compose: { 
-            model: router.activeItem, //wiring the router
-            afterCompose: router.afterCompose, //wiring the router
-            transition:'entrance', //use the 'entrance' transition when switching views
-            cacheViews:true, //telling composition to keep views in the dom, and reuse them (only a good idea with singleton view models)
-            
-        }--><!--/ko-->
+    
+    <div id="page" class="page-host" data-bind="router: { transition:'entrance', cacheViews:true }">
     </div> 
+    
     <i id="scrollup" data-bind="click : scrollup" class="icon-circle-arrow-up"></i>
 </div>
 

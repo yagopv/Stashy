@@ -4,7 +4,7 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
     oc;
     
     return {
-        attached : function() {
+        compositionComplete : function() {
             var that = this;
             oc= Stashy.OffCanvas("#refresh", { enableTouch : false });
             pagelayout.offcanvasLayout(oc);
@@ -25,11 +25,11 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
 			}).on();	            
         },                    
         activePage : activePage,  
-        activate: function (args) {
+        activate: function (page) {
             var that = this;
             
-            if (args.page != undefined) {                
-                that.hash = args.page;            
+            if (page != undefined) {                
+                that.hash = page;            
                 utils.ScrollTo('#refresh #' + that.hash);
             }
             ga('send', 'pageview');

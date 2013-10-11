@@ -2,95 +2,96 @@ define(['durandal/app','durandal/system','plugins/router'], function (app, syste
     var alllinks = 
         {
         'focalpoint' : [
-                    { name : "Description", hash : "#/focalpoint/description" },
-                    { name : "HTML",        hash : "#/focalpoint/html" },
-                    { name : "JavaScript",  hash : "#/focalpoint/javascript" },
-                    { name : "Playground"  ,hash : "#/focalpoint/playground" },                    
-                    { name : "Dependencies",hash : "#/focalpoint/dependencies" }
+                    { name : "Description", route : "/focalpoint/description" },
+                    { name : "HTML",        route : "/focalpoint/html" },
+                    { name : "JavaScript",  route : "/focalpoint/javascript" },
+                    { name : "Playground"  ,route : "/focalpoint/playground" },                    
+                    { name : "Dependencies",route : "/focalpoint/dependencies" }
         ],
         'offcanvas' : [
-                    { name : "Description", hash : "#/offcanvas/description" },
-                    { name : "HTML",        hash : "#/offcanvas/html" },
-                    { name : "JavaScript",  hash : "#/offcanvas/javascript" },
-                    { name : "Dependencies",hash : "#/offcanvas/dependencies" }
+                    { name : "Description", route : "/offcanvas/description" },
+                    { name : "HTML",        route : "/offcanvas/html" },
+                    { name : "JavaScript",  route : "/offcanvas/javascript" },
+                    { name : "Dependencies",route : "/offcanvas/dependencies" }
         ],                
         'toggle' : [
-                    { name : "Description", hash : "#/toggle/description" },
-                    { name : "HTML",        hash : "#/toggle/html" },
-                    { name : "JavaScript",  hash : "#/toggle/javascript" },
-                    { name : "Dependencies",hash : "#/toggle/dependencies" }
+                    { name : "Description", route : "/toggle/description" },
+                    { name : "HTML",        route : "/toggle/html" },
+                    { name : "JavaScript",  route : "/toggle/javascript" },
+                    { name : "Dependencies",route : "/toggle/dependencies" }
         ],  
         'loader' : [
-                    { name : "Description", hash : "#/loader/description" },
-                    { name : "HTML",        hash : "#/loader/html" },
-                    { name : "JavaScript",  hash : "#/loader/javascript" },  
-                    { name : "Playground"  ,hash : "#/loader/playground" },                                               
-                    { name : "Dependencies",hash : "#/loader/dependencies" }
+                    { name : "Description", route : "/loader/description" },
+                    { name : "HTML",        route : "/loader/html" },
+                    { name : "JavaScript",  route : "/loader/javascript" },  
+                    { name : "Playground"  ,route : "/loader/playground" },                                               
+                    { name : "Dependencies",route : "/loader/dependencies" }
         ],  
         'showmemore' : [
-                    { name : "Description", hash : "#/showmemore/description" },
-                    { name : "HTML",        hash : "#/showmemore/html" },
-                    { name : "JavaScript",  hash : "#/showmemore/javascript" },   
-                    { name : "Playground"  ,hash : "#/showmemore/playground" },                                              
-                    { name : "Dependencies",hash : "#/showmemore/dependencies" }
+                    { name : "Description", route : "/showmemore/description" },
+                    { name : "HTML",        route : "/showmemore/html" },
+                    { name : "JavaScript",  route : "/showmemore/javascript" },   
+                    { name : "Playground"  ,route : "/showmemore/playground" },                                              
+                    { name : "Dependencies",route : "/showmemore/dependencies" }
         ],       
         'sticky' : [
-                    { name : "Description", hash : "#/sticky/description" },
-                    { name : "HTML",        hash : "#/sticky/html" },
-                    { name : "JavaScript",  hash : "#/sticky/javascript" },
-                    { name : "Dependencies",hash : "#/sticky/dependencies" }
+                    { name : "Description", route : "/sticky/description" },
+                    { name : "HTML",        route : "/sticky/html" },
+                    { name : "JavaScript",  route : "/sticky/javascript" },
+                    { name : "Dependencies",route : "/sticky/dependencies" }
         ],          
         'slider' : [
-                    { name : "Description", hash : "#/slider/description" },
-                    { name : "HTML",        hash : "#/slider/html" },
-                    { name : "JavaScript",  hash : "#/slider/javascript" },
-                    { name : "Playground",  hash : "#/slider/playground" },
-                    { name : "Dependencies",hash : "#/slider/dependencies" }
+                    { name : "Description", route : "/slider/description" },
+                    { name : "HTML",        route : "/slider/html" },
+                    { name : "JavaScript",  route : "/slider/javascript" },
+                    { name : "Playground",  route : "/slider/playground" },
+                    { name : "Dependencies",route : "/slider/dependencies" }
         ],          
         'refresh' : [
-                    { name : "Description", hash : "#/refresh/description" },
-                    { name : "HTML",        hash : "#/refresh/html" },
-                    { name : "JavaScript",  hash : "#/refresh/javascript" },
-                    { name : "Playground",  hash : "#/refresh/playground" },
-                    { name : "Dependencies",hash : "#/refresh/dependencies" }
+                    { name : "Description", route : "/refresh/description" },
+                    { name : "HTML",        route : "/refresh/html" },
+                    { name : "JavaScript",  route : "/refresh/javascript" },
+                    { name : "Playground",  route : "/refresh/playground" },
+                    { name : "Dependencies",route : "/refresh/dependencies" }
         ],   
         'elasticvideo' : [
-                    { name : "Description", hash : "#/elasticvideo/description" },
-                    { name : "JavaScript",  hash : "#/elasticvideo/javascript" },
-                    { name : "Playground",  hash : "#/elasticvideo/playground" },
-                    { name : "Dependencies",hash : "#/elasticvideo/dependencies" }
+                    { name : "Description", route : "/elasticvideo/description" },
+                    { name : "JavaScript",  route : "/elasticvideo/javascript" },
+                    { name : "Playground",  route : "/elasticvideo/playground" },
+                    { name : "Dependencies",route : "/elasticvideo/dependencies" }
         ],   
         'elastictext' : [
-                    { name : "Description", hash : "#/elastictext/description" },
-                    { name : "JavaScript",  hash : "#/elastictext/javascript" },
-                    { name : "Playground",  hash : "#/elastictext/playground" },
-                    { name : "Dependencies",hash : "#/elastictext/dependencies" }
+                    { name : "Description", route : "/elastictext/description" },
+                    { name : "JavaScript",  route : "/elastictext/javascript" },
+                    { name : "Playground",  route : "/elastictext/playground" },
+                    { name : "Dependencies",route : "/elastictext/dependencies" }
         ],        
         'list' : [
-                    { name : "Description", hash : "#/list/description" },
-                    { name : "HTML",        hash : "#/list/html" },                    
-                    { name : "Playground",  hash : "#/list/playground" },
-                    { name : "Dependencies",hash : "#/list/dependencies" }
+                    { name : "Description", route : "/list/description" },
+                    { name : "HTML",        route : "/list/html" },                    
+                    { name : "Playground",  route : "/list/playground" },
+                    { name : "Dependencies",route : "/list/dependencies" }
         ],
         'notify' : [
-                    { name : "Description", hash : "#/notify/description" },
-                    { name : "JavaScript",  hash : "#/notify/javascript" },
-                    { name : "Playground",  hash : "#/notify/playground" },
-                    { name : "Dependencies",hash : "#/notify/dependencies" }
+                    { name : "Description", route : "/notify/description" },
+                    { name : "JavaScript",  route : "/notify/javascript" },
+                    { name : "Playground",  route : "/notify/playground" },
+                    { name : "Dependencies",route : "/notify/dependencies" }
         ],
         'home' :    [
-                    { name : "What is this?", hash : "#/home/whatisthis" },
-                    { name : "Components inside this library", hash : "#/home/components" },
-                    { name : "Standalone samples",hash : "#/home/samples" },
-                    { name : "Dependencies",hash : "#/home/dependencies" }                    
+                    { name : "What is this?", route : "/home/whatisthis" },
+                    { name : "Components inside this library", route : "/home/components" },
+                    { name : "Standalone samples",route : "/home/samples" },
+                    { name : "Dependencies",route : "/home/dependencies" }                    
         ]},
         
         menulinks = null;
         
     return {
-        binding : function(element, view, settings) {
-            this.menulinks = alllinks[router.activeRoute().config.settings.activemenu];            
+        binding : function(element) {
+            this.menulinks = alllinks[router.activeInstruction().config.settings.activemenu];            
         },
-        menulinks : menulinks  
+        menulinks : menulinks,
+        router : router
     };
 });

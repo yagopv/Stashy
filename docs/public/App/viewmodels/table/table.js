@@ -5,7 +5,7 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
     fl;
     
     return {
-        attached : function() {
+        compositionComplete : function() {
             var that = this;
             fl = Stashy.Flyout("#table", { slideType : "reveal", enableTouch:true})
             pagelayout.flyoutLayout(fl);
@@ -25,11 +25,11 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
             $("#laptops-styled thead tr th").css("text-align","left");
         },     
         activePage : activePage,  
-        activate: function (args) {
+        activate: function (page) {
             var that = this;
             
-            if (args.page != undefined) {                
-                that.hash = args.page;            
+            if (page != undefined) {                
+                that.hash = page;            
                 Stashy.Utils.ScrollTo('#table #' + that.hash);                
             }
             ga('send', 'pageview');

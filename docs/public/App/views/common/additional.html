@@ -1,27 +1,27 @@
 <h2>Layouts</h2>
 <div class="subnav">
     <ul class="nav nav-pills nav-stacked" data-bind="foreach : layouts">
-        <li><a data-bind="attr : { href : hash}, text : name"></a></li>
+        <li><a data-bind="attr : { href : $parent.router.convertRouteToHash(route) }, text : name"></a></li>
     </ul>
 </div>
 
 <h2>Navigation</h2>
 <div class="subnav">
     <ul class="nav nav-pills nav-stacked" data-bind="foreach : navigation">
-        <li><a data-bind="attr : { href : hash}, text : name"></a></li>
+        <li><a data-bind="attr : { href : $parent.router.convertRouteToHash(route)}, text : name"></a></li>
     </ul>
 </div>
 
 <h2>Media</h2>
 <div class="subnav">
     <ul class="nav nav-pills nav-stacked" data-bind="foreach : media">
-        <li><a data-bind="attr : { href : hash}, text : name"></a></li>
+        <li><a data-bind="attr : { href : $parent.router.convertRouteToHash(route)}, text : name"></a></li>
     </ul>
 </div>
 
 <h2>Miscellaneous</h2>
 <div class="subnav">
     <ul class="nav nav-pills nav-stacked" data-bind="foreach : misc">
-        <li><a data-bind="attr : { href : hash}, text : name"></a></li>
+        <li><a data-bind="attr : { href : $parent.router.convertRouteToHash(route)}, text : name"></a></li>
     </ul>
 </div>

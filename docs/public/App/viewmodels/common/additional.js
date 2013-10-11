@@ -1,59 +1,60 @@
-define(['durandal/app', 'durandal/system','lib/pagelayout','plugins/router'], function (app, system, router) {            
+define(['durandal/app', 'durandal/system','plugins/router'], function (app, system, router) {            
     
     var layouts = [{
         name : "OffCanvas",
-        hash : "#/offcanvas"
+        route : "/offcanvas"
     },{
         name : "Flyout",
-        hash : "#/flyout"        
+        route : "/flyout"        
     },{
         name : "Sticky",
-        hash : "#/sticky"    
+        route : "/sticky"    
     }],
 
     media = [{
         name : "FocalPoint",
-        hash : "#/focalpoint"        
+        route : "/focalpoint"        
     },{
         name : "ElasticVideo",
-        hash : "#/elasticvideo"        
+        route : "/elasticvideo"        
     }],
     
     navigation = [{
         name : "Toggle",
-        hash : "#/toggle"
+        route : "/toggle"
     }],
 
     misc = [{
         name : "Slider",
-        hash : "#/slider"                
+        route : "/slider"                
     },{
         name : "Refresh",
-        hash : "#/refresh"        
+        route : "/refresh"        
     },{
         name : "Loader",
-        hash : "#/loader"        
+        route : "/loader"        
     },{
         name : "ShowMeMore",
-        hash : "#/showmemore"    
+        route : "/showmemore"    
     },{
         name : "ElasticText",
-        hash : "#/elastictext"        
+        route : "/elastictext"        
     },{
         name : "List",
-        hash : "#/list"        
+        route : "/list"        
     },{
         name : "Table",
-        hash : "#/table"        
+        route : "/table"        
     },{
         name : "Notify",
-        hash : "#/notify"
+        route : "/notify"
     }]
     
     return {
         layouts : layouts,
         navigation : navigation,
         media : media,
-        misc : misc
+        misc : misc,
+        router : router
     };
 });
