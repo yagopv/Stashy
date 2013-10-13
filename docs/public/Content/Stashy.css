@@ -907,12 +907,7 @@
   max-height: 25em;
 }
 .st-toggle.st-toggle-fixed {
-  position: relative;
-}
-@media screen and (min-width: 768px) {
-  .st-toggle.st-toggle-fixed {
-    position: fixed;
-  }
+  position: fixed;
 }
 .st-image {
   width: 100%;
