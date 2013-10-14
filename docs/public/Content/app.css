@@ -433,6 +433,10 @@ footer a:hover {
     padding: 0 3%;
 }
 
+.st-flyout-menu h2:not(:first-child) {
+    margin-top : 5%;
+}
+
 .st-refresh {
     padding: 0px !important;   
 }

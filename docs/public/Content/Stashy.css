@@ -560,11 +560,11 @@
   border-left: 1px solid #ffffff;
 }
 .st-offcanvas .st-offcanvas-main:before {
-  box-shadow: 0px -8px 8px #999999 inset;
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.4) inset;
   background: #cccccc;
 }
 .st-offcanvas .st-offcanvas-main:after {
-  box-shadow: 0px -8px 8px #999999 inset;
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.4) inset;
   background: #cccccc;
   left: 100%;
 }
@@ -716,7 +716,7 @@
   clear: both;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 0px 0px 8px #999999;
+  box-shadow: 0 0 70px rgba(0, 0, 0, 0.4);
 }
 .st-flyout-container .st-flyout-toggle {
   font-size: 1.3em;
