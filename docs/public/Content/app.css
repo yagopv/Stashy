@@ -4,6 +4,10 @@ html, body {
 	height:100%;
 }
 
+h1,h2,h3,h4 {
+    font-weight:300;
+}
+
 #page {
     padding-top : 50px;    
 }  
@@ -11,6 +15,11 @@ html, body {
 p {
     font-size : 1.2em;
     line-height:1.5em;    
+    font-weight:400;
+}
+
+a {
+    font-weight : 400;    
 }
 
 section p, section h1, section h2, section h4, section .component, section pre, section table {
@@ -408,6 +417,18 @@ footer a:hover {
     margin-bottom : 4%;    
 }
 
+.st-toggle a {
+    font-weight : 400;    
+}
+
+.st-flyout-menu {
+    padding : 3%;
+}
+
+.st-flyout-menu a {
+    font-size : 1.3em;     
+}
+
 .st-flyout #content {
     padding: 0 3%;
 }
@@ -420,6 +441,19 @@ footer a:hover {
     background: #ccc !important;
     box-shadow: none !important;
     border: none;
+}
+
+.st-offcanvas-additional h2:not(:first-child) {
+    margin-top : 5%;
+}
+
+.st-offcanvas-menu a,
+.st-offcanvas-additional a {
+    font-size : 1.3em; 
+}
+
+.st-offcanvas-menu, .st-offcanvas-main, .st-offcanvas-additional {
+    padding : 3%;
 }
 
 @media (max-width: 400px) {
