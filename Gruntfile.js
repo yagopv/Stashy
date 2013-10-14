@@ -12,7 +12,7 @@ module.exports = function (grunt) {
                   ' */\n',
     
         clean: {
-          dist: ['dist']
+          dist: ['dist', 'docs/public/App/main-built.js', 'docs/public/Content/styles.css']
         },
     
         concat: {
@@ -205,11 +205,11 @@ module.exports = function (grunt) {
   grunt.registerTask('optimizesiteassets', ['uglify:site','cssmin:site']);        
     
   // Build Durandal site
-  grunt.registerTask('executecommands', "Build Durandal site", function() {
+  grunt.registerTask('builddurandalsite', "Build Durandal site", function() {
       shell.exec('weyland build');
   });    
     
   // Default. Excute task in order
-  grunt.registerTask('default', ['cleandir','distribute','copyfiles','uglifyfiles', 'banners', 'optimizesiteassets','executecommands']);
+  grunt.registerTask('default', ['cleandir','distribute','copyfiles','uglifyfiles', 'banners', 'optimizesiteassets','builddurandalsite']);
 
 };
