@@ -9,7 +9,6 @@
 
 .st-flyout-container {
     * {
-        padding: 0; 
 	    margin: 0;
         .box-sizing(border-box);
 	    .translate3d(0,0,0);
@@ -19,8 +18,7 @@
     .st-flyout-menu {
     	clear: both;
     	overflow: hidden;
-    	z-index:0;  
-    	padding: @flyout-menu-padding;
+    	z-index:0;
         background: @flyout-menu-background;
         
     	a {
@@ -35,10 +33,6 @@
     	overflow: hidden;
     	z-index:1;   
     	box-shadow: @flyout-boxshadow;
-
-    	.st-flyout-maincontent {
-    	    padding : @flyout-main-padding;
-    	}
     }
     
     .st-flyout-toggle {

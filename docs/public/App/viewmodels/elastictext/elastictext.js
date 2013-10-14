@@ -49,7 +49,7 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
             ga('send', 'pageview');
         },
         adaptHeader : function() {
-            text(".hero-unit h1").on(0.6,"40px");
+            Stashy.ElasticText(".hero-unit h1").on(0.6,"40px");
         },
         availableSizes : availableSizes,
         availableRatios : availableRatios,

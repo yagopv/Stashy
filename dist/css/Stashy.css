@@ -1,3 +1,9 @@
+/*!
+ * Stashy v1.1.0 by @yperezva
+ * Copyright 2013 Yago Pérez Vázquez
+ * Licensed under http://http://opensource.org/licenses/MIT
+ */
+
 .animated {
   -webkit-animation-duration: 1s;
   -moz-animation-duration: 1s;
@@ -574,12 +580,6 @@
   width: 100%;
   display: block;
   position: relative;
-  padding: 3%;
-}
-.st-offcanvas .st-offcanvas-menu a,
-.st-offcanvas .st-offcanvas-main a,
-.st-offcanvas .st-offcanvas-additional a {
-  font-size: 1.3em;
 }
 .st-offcanvas.active-transitions .st-offcanvas-menu,
 .st-offcanvas.active-transitions .st-offcanvas-main,
@@ -697,7 +697,6 @@
   width: 100%;
 }
 .st-flyout-container * {
-  padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -712,7 +711,6 @@
   clear: both;
   overflow: hidden;
   z-index: 0;
-  padding: 3%;
   background: #cccccc;
 }
 .st-flyout-container .st-flyout-menu a {
@@ -725,9 +723,6 @@
   overflow: hidden;
   z-index: 1;
   box-shadow: 0px 0px 8px #999999;
-}
-.st-flyout-container .st-flyout-main .st-flyout-maincontent {
-  padding: 0 3%;
 }
 .st-flyout-container .st-flyout-toggle {
   font-size: 1.3em;
