@@ -8,7 +8,7 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
             var that = this;
             oc= Stashy.OffCanvas("#refresh", { enableTouch : false });
             pagelayout.offcanvasLayout(oc);
-            prettyPrint();    
+            prettyPrint();
             Stashy.Utils.ScrollTo('#' + that.hash);
 		    Stashy.Refresh("#playground-refresh", { breakpoint : 80, onRelease : function() {
 					var self = this;
@@ -30,7 +30,7 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
             
             if (page != undefined) {                
                 that.hash = page;            
-                utils.ScrollTo('#refresh #' + that.hash);
+                Stashy.Utils.ScrollTo('#refresh #' + that.hash);
             }
             ga('send', 'pageview');
         },
