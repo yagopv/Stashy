@@ -13,6 +13,8 @@
         .box-sizing(border-box);
     }
     
+    .translate3d(0,0,0); 
+    
     .st-flyout-menu {
     	clear: both;
     	overflow: hidden;
@@ -42,7 +44,7 @@
     
     &.st-push {
     	 position: relative; 
-    	 .transition(all 0.2s ease-out);
+    	 .transition(all 0.1s ease-out);
     	 
     	 &.active-menu {
     	    left: 75%; 
@@ -69,7 +71,7 @@
         .st-flyout-menu, .st-flyout-main {
             .translate3d(0,0,0);
             .backface-visibility(hidden);
-            .transition(all 0.2s ease-out);
+            .transition(all 0.1s ease-out);
         }
         
         &.active-menu {
