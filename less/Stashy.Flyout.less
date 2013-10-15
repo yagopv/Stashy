@@ -11,8 +11,6 @@
     * {
 	    margin: 0;
         .box-sizing(border-box);
-	    .translate3d(0,0,0);
-	    .backface-visibility(hidden);
     }
     
     .st-flyout-menu {
@@ -20,7 +18,8 @@
     	overflow: hidden;
     	z-index:0;
         background: @flyout-menu-background;
-        
+	    .translate3d(0,0,0);
+	    .backface-visibility(hidden);                
     	a {
     	    clear: both;
     	}
@@ -33,6 +32,8 @@
     	overflow: hidden;
     	z-index:1;   
     	box-shadow: @flyout-boxshadow;
+	    .translate3d(0,0,0);
+	    .backface-visibility(hidden);        
     }
     
     .st-flyout-toggle {
