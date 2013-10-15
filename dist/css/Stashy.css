@@ -545,6 +545,9 @@
   width: 100%;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .st-offcanvas * {
   -webkit-box-sizing: border-box;
@@ -591,8 +594,8 @@
 .st-offcanvas.active-transitions .st-offcanvas-menu,
 .st-offcanvas.active-transitions .st-offcanvas-main,
 .st-offcanvas.active-transitions .st-offcanvas-additional {
-  -webkit-transition: 0.1s all ease;
-  transition: 0.1s all ease;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
 .js .st-offcanvas .st-offcanvas-menu {
   margin-left: -100%;
@@ -706,6 +709,9 @@
 .st-flyout-container {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .st-flyout-container * {
   margin: 0;
@@ -745,8 +751,8 @@
 }
 .st-flyout-container.st-push {
   position: relative;
-  -webkit-transition: all 0.1s ease-out;
-  transition: all 0.1s ease-out;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
 .st-flyout-container.st-push.active-menu {
   left: 75%;
@@ -773,13 +779,8 @@
 }
 .st-flyout-container.st-reveal .st-flyout-menu,
 .st-flyout-container.st-reveal .st-flyout-main {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: all 0.1s ease-out;
-  transition: all 0.1s ease-out;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
 .st-flyout-container.st-reveal.active-menu .st-flyout-main {
   left: 75%;
@@ -802,7 +803,7 @@
 }
 .js .st-flyout-container .st-flyout-menu {
   position: relative;
-  width: 75%;
+  width: 100%;
   height: 100%;
   position: absolute;
   top: 0;

@@ -6,6 +6,7 @@
     overflow: hidden;
 	width : 100%;
 	.translate3d(0,0,0);
+    .backface-visibility(hidden);  
     
     * {
         .box-sizing(border-box);
@@ -53,7 +54,7 @@
         .st-offcanvas-menu, 
         .st-offcanvas-main, 
         .st-offcanvas-additional {
-            .transition(0.1s all ease);
+            .transition(@offcanvas-transition);
         }
     }
     
