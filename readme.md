@@ -26,6 +26,35 @@ You will find several layouts and utilities inside Stashy:
 
 Check the project site [here](http://stashy.azurewebsites.net)
 
+In order to work with this repo you have to install the required node dependencies
+
+```
+npm install
+```
+
+Install also the Durandal optimizer
+
+```
+npm install -g weyland
+```
+
+Use the grunt file (Gruntfile.js) for building the repo. If you type the command ...
+
+```
+grunt
+```
+
+... the "dist" folder will be regenerated and the public Stashy site will be built and optimized.
+
+When you are just developing and changing some styles you can use:
+
+```
+grunt watch
+```
+
+The "watch" task will spy inside the "less" and "src" directory for changes. When you save any file contained in those directories, the Stashy.css and Stahy.js files will be regenerated.
+
+Enjoy!!
 
 #Further notes
 
