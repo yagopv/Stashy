@@ -13,16 +13,12 @@
         .box-sizing(border-box);
     }
     
-    .translate3d(0,0,0);
-	.backface-visibility(hidden);                
-    
     .st-flyout-menu {
     	clear: both;
     	overflow: hidden;
     	z-index:0;
-        background: @flyout-menu-background;
-	    .translate3d(0,0,0);
-	    .backface-visibility(hidden);                
+        background: @flyout-menu-background;        
+        
     	a {
     	    clear: both;
     	}
@@ -35,15 +31,20 @@
     	overflow: hidden;
     	z-index:1;   
     	box-shadow: @flyout-boxshadow;
-	    .translate3d(0,0,0);
-	    .backface-visibility(hidden);
+    }
+    
+    &.active-transforms {
+        .st-flyout-menu, .st-flyout-main {
+            .translate3d(0,0,0);
+            .backface-visibility(hidden);            
+        }
     }
     
     .st-flyout-toggle {
         font-size : @fontsize-base + 0.3em;
     }
     
-    &.st-push {
+    &.st-push {        
     	 position: relative; 
     	 .transition(@flyout-transition);
     	 

@@ -543,11 +543,6 @@
 .st-offcanvas {
   overflow: hidden;
   width: 100%;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 .st-offcanvas * {
   -webkit-box-sizing: border-box;
@@ -585,11 +580,6 @@
   width: 100%;
   display: block;
   position: relative;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 .st-offcanvas.active-transitions .st-offcanvas-menu,
 .st-offcanvas.active-transitions .st-offcanvas-main,
@@ -706,13 +696,6 @@
   overflow: hidden;
   width: 100%;
 }
-.st-flyout-container {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
 .st-flyout-container * {
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -724,11 +707,6 @@
   overflow: hidden;
   z-index: 0;
   background: #cccccc;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 .st-flyout-container .st-flyout-menu a {
   clear: both;
@@ -740,6 +718,9 @@
   overflow: hidden;
   z-index: 1;
   box-shadow: 0 0 70px rgba(0, 0, 0, 0.4);
+}
+.st-flyout-container.active-transforms .st-flyout-menu,
+.st-flyout-container.active-transforms .st-flyout-main {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;

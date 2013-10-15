@@ -590,6 +590,11 @@ window.Modernizr = (function( window, document, undefined ) {
             }
         }
                 
+        var isAndroidStockBrowser = function() {
+            var nua = navigator.userAgent;
+            return ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1));
+        }
+        
         flyout.prototype.layout = function() {
             if (this.element ==  null) return;
             
@@ -606,7 +611,7 @@ window.Modernizr = (function( window, document, undefined ) {
             else {
                 this.element.find(".st-flyout-container").addClass("st-push");
             }
-            if (Modernizr && Modernizr.csstransforms3d) {
+            if (Modernizr && Modernizr.csstransforms3d && !isAndroidStockBrowser()) {
                 this.element.find(".st-flyout-container").addClass("active-transforms");
             }            
 
