@@ -48,8 +48,8 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
     }
      
     var samplesOff = function() {
-        Stashy.Focalpoint("#sample-1").off();
-        Stashy.Focalpoint("#sample-2").off();        
+        Stashy.FocalPoint("#sample-1").off();
+        Stashy.FocalPoint("#sample-2").off();        
     }
     
     return {
