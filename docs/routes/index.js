@@ -10,8 +10,8 @@ var app = express();
 exports.index = function(req, res){        
 
     // Check if the request comes from a bot
-    if ("_escaped_fragment_" in req.query) {
-        
+    if ("_escaped_fragment_" in req.query) {        
+                
         // Check if the requiered environment variables are defined
         if (process.env.CrawlerServiceApiId &&
             process.env.CrawlerServiceEndPoint &&
@@ -20,15 +20,23 @@ exports.index = function(req, res){
                 var default_headers = {
                   'content-type' : 'application/json'
                 };
-
+                
+                var date = new Date();
+                var numberOfDaysToAdd = 3;
+                date.setDate(date.getDate() + numberOfDaysToAdd); 
+                var dd = date.getDate();
+                var mm = date.getMonth() + 1;
+                var y = date.getFullYear();
+            
                 var crawlerObject = { 
                       ApiId : process.env.CrawlerServiceApiId,
                       Application : process.env.CrawlerServiceApplication,
                       Url : req.protocol + "://" + req.get('host') + req.url.replace("?_escaped_fragment_=",""),
                       Store : true,
-                      UserAgent : req.headers['user-agent']
-                };
-
+                      UserAgent : req.headers['user-agent'],
+                      ExpirationDate : date.toISOString()
+                };            
+            
                 // Send request to Crawler
                 request({
                   url: process.env.CrawlerServiceEndPoint,
@@ -36,7 +44,6 @@ exports.index = function(req, res){
                   method: 'POST',
                   body: JSON.stringify(crawlerObject)
                 }, function (err, response, body) {
-                
                     // If no error write snapshot
                     // If error render normal view
                     if (!err && response.statusCode == 200) {
