@@ -1,0 +1,3 @@
+User-agent: *
+Allow: *
+Sitemap: http://stashy.azurewebsites.net/sitemap.xml
