@@ -10,10 +10,8 @@ var app = express();
 exports.index = function(req, res){        
 
     // Check if the request comes from a bot
-    if ("_escaped_fragment_" in req.query) {        
-                
-        console.log(process.env.CrawlerServiceApiId);
-        
+    if ("_escaped_fragment_" in req.query) {                        
+
         // Check if the requiered environment variables are defined
         if (process.env.CrawlerServiceApiId &&
             process.env.CrawlerServiceEndPoint &&
@@ -53,10 +51,13 @@ exports.index = function(req, res){
                     if (!err && response.statusCode == 200) {
                         console.log(err);
                         console.log(response.statusCode);
+
                         if (body.indexOf("Page not found") != -1) {
                             res.status(404).send('404.Not found');                           
                         }
-                        res.write(body);
+
+                        res.set('Content-Type', 'text/html');
+                        res.send(new Buffer(body));                        
                     } else {
                         res.render('index', { title: 'Stashy' });
                     }
