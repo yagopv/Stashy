@@ -12,6 +12,8 @@ exports.index = function(req, res){
     // Check if the request comes from a bot
     if ("_escaped_fragment_" in req.query) {        
                 
+        console.log(process.env.CrawlerServiceApiId);
+        
         // Check if the requiered environment variables are defined
         if (process.env.CrawlerServiceApiId &&
             process.env.CrawlerServiceEndPoint &&
@@ -35,8 +37,10 @@ exports.index = function(req, res){
                       Store : true,
                       UserAgent : req.headers['user-agent'],
                       ExpirationDate : date.toISOString()
-                };            
+                };           
             
+                console.log(crawlerObject);
+
                 // Send request to Crawler
                 request({
                   url: process.env.CrawlerServiceEndPoint,
@@ -47,6 +51,8 @@ exports.index = function(req, res){
                     // If no error write snapshot
                     // If error render normal view
                     if (!err && response.statusCode == 200) {
+                        console.log(err);
+                        console.log(response.statusCode);
                         if (body.indexOf("Page not found") != -1) {
                             res.status(404).send('404.Not found');                           
                         }
