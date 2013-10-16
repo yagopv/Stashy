@@ -1,8 +1,7 @@
 <div id="menu" class="st-toggle"> 
     <div class="st-toggle-brand">
-        <a data-bind="attr: { href: router.convertRouteToHash('/' + router.navigationModel()[0].route) }">
+        <a href="#" data-bind="click : navigate ,attr: { href: router.convertRouteToHash('/' + router.navigationModel()[0].route) }, text : 'Stashy'">
             <i class="icon-home"></i>
-            <span>Stashy</span>                
         </a>
     </div>                
     <a href="#" class="st-toggle-menu-link">
@@ -11,7 +10,7 @@
     <nav class="st-toggle-navigation">
         <ul data-bind="foreach: router.navigationModel()">
             <li>
-                <a data-bind="attr: { href: $parent.router.convertRouteToHash('/' + route) }, html: title"></a>
+                <a data-bind="click : $parent.navigate, attr: { href: $parent.router.convertRouteToHash('/' + route) }, text: title"></a>
             </li>            
         </ul>
     </nav>
