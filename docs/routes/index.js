@@ -22,8 +22,8 @@ exports.index = function(req, res){
                 };
 
                 var crawlerObject = { 
-                      ApiId : "845c93c0-875d-40ae-93f3-911a71667ad8",
-                      Application : "stashy",
+                      ApiId : process.env.CrawlerServiceApiId,
+                      Application : process.env.CrawlerServiceApplication,
                       Url : req.protocol + "://" + req.get('host') + req.url.replace("?_escaped_fragment_=",""),
                       Store : true,
                       UserAgent : req.headers['user-agent']
@@ -31,7 +31,7 @@ exports.index = function(req, res){
 
                 // Send request to Crawler
                 request({
-                  url: "http://azurecrawler.cloudapp.net/api/snapshot",
+                  url: process.env.CrawlerServiceEndPoint,
                   headers: default_headers,
                   method: 'POST',
                   body: JSON.stringify(crawlerObject)
