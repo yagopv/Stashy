@@ -1,4 +1,4 @@
-define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayout, prettify) {
+define(['durandal/app','lib/pagelayout','lib/prettify', 'plugins/router'], function (app, pagelayout, prettify, router) {
     var activePage = ko.observable(),    
     hash = "",
     fladdvisible = ko.observable(false),
@@ -34,6 +34,7 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
             }
             ga('send', 'pageview');
         },
-        fladdvisible : fladdvisible
+        fladdvisible : fladdvisible,
+        router : router
     };
 });
