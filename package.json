@@ -16,7 +16,9 @@
     "express": "3.x",
     "ejs": "~0.7.1",
     "node-minify" : "~0.7.4",
-    "less" : "1.4.2"      
+    "less" : "1.4.2",
+    "azure" : "~0.7.16",
+    "request" : "~2.27.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

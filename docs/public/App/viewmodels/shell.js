@@ -35,7 +35,7 @@ define(['plugins/router'], function (router) {
             
             router.mapUnknownRoutes('viewmodels/notfound/notfound', 'notfound');
 
-            return router.activate({ pushState : false});
+            return router.activate({ pushState : true});
         }
     };
 });

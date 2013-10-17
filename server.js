@@ -48,8 +48,7 @@ if ('development' == app.get('env')) {
 // Routing //
 //*********//
 
-app.get('/', routes.index);
-app.get('*', routes.notfound);
+app.get('*', routes.index);
 
 //***************//
 // Create server //
