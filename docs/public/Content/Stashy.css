@@ -574,11 +574,6 @@
   width: 100%;
   display: block;
   position: relative;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 .st-offcanvas.active-transitions .st-offcanvas-menu,
 .st-offcanvas.active-transitions .st-offcanvas-main,
