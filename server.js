@@ -48,7 +48,11 @@ if ('development' == app.get('env')) {
 // Routing //
 //*********//
 
-app.get('*', routes.index);
+/*if ('development' == app.get('env')) {
+    app.get('*', routes.test);   
+} else {*/
+    app.get('*', routes.index);       
+//}
 
 //***************//
 // Create server //

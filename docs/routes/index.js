@@ -7,6 +7,10 @@ var request = require('request');
  
 var app = express();
 
+exports.test = function(req, res){        
+    res.render('test', { title: 'Stashy' });   
+}
+
 exports.index = function(req, res){        
 
     // Check if the request comes from a bot

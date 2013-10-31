@@ -1,6 +1,6 @@
 // Config require paths
 requirejs.config({
-    baseUrl : './App',
+    baseUrl : '../App',
     paths: {
         'text': '../Scripts/require/text',
         'durandal': '../Scripts/durandal/js',
