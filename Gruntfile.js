@@ -35,7 +35,8 @@ module.exports = function (grunt) {
                 'src/Stashy.ElasticVideo.js',
                 'src/Stashy.ElasticText.js',
                 'src/Stashy.Table.js',
-                'src/Stashy.Notify.js'
+                'src/Stashy.Notify.js',
+                'src/Stashy.Menu.js'                
             ],
             dest : 'dist/js/Stashy.js'
           }
