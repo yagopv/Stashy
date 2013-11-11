@@ -1,11 +1,26 @@
+/**
+ * Responsive images based in the focal point technique
+ * @class Stashy.FocalPoint
+*/
 (function (Stashy, $, undefined) {    
 
     var focalpoint = (function () {        
 
+        /**
+         * FocalPoint constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         */          
         function focalpoint(sltor) {
             this.selector = sltor || "img";
         }
 
+        /**
+         * Find selected images and apply necessary HTML and CSS
+         * @public
+         * @param {string} pointA - X axis
+         * @param {string} pointB - Y axis
+         */           
         focalpoint.prototype.on = function(pointA, pointB) {			
 			pointA = pointA || "";
 			pointB = pointB || "";            		
@@ -17,6 +32,12 @@
 			});
         }
         
+        /**
+         * Update selected iamges
+         * @public
+         * @param {string} pointA - X axis
+         * @param {string} pointB - Y axis
+         */          
         focalpoint.prototype.update = function(pointA, pointB) {			
 			pointA = pointA || "";
 			pointB = pointB || "";
@@ -25,6 +46,10 @@
 			});			
         }
 		
+        /**
+         * Return image to the original state
+         * @public
+         */          
         focalpoint.prototype.off = function() {
 			$(this.selector).each(function() {		
 				if ($(this).parent().hasClass("st-image-container")) {
@@ -40,6 +65,11 @@
 
     })();
 
+    /**
+     * Build a new FocalPoint instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */         
     Stashy.FocalPoint = function(sltor, options) {
 	    return new focalpoint(sltor, options);
 	}

@@ -27,7 +27,8 @@ define(['plugins/router'], function (router) {
                 { route: 'elastictext(/:page)', moduleId: 'viewmodels/elastictext/elastictext', title: 'ElasticText', nav: false , settings : { activemenu : 'elastictext' }},
                 { route: 'list(/:page)', moduleId: 'viewmodels/list/list', title: 'List', nav: false , settings : { activemenu : 'list' }},
                 { route: 'table(/:page)', moduleId: 'viewmodels/table/table', title: 'Table', nav: false , settings : { activemenu : 'table' }},
-                { route: 'notify(/:page)', moduleId: 'viewmodels/notify/notify', title: 'Notify', nav: false , settings : { activemenu : 'notify' }},                                                                
+                { route: 'notify(/:page)', moduleId: 'viewmodels/notify/notify', title: 'Notify', nav: false , settings : { activemenu : 'notify' }},      
+                { route: 'menu(/:page)', moduleId: 'viewmodels/menu/menu', title: 'Menu', nav: false , settings : { activemenu : 'menu' }},                                                                                
                 { route: 'notfound', moduleId: 'viewmodels/notfound/notfound', title: 'Page not found', nav: false }
             ]);
             
@@ -35,7 +36,7 @@ define(['plugins/router'], function (router) {
             
             router.mapUnknownRoutes('viewmodels/notfound/notfound', 'notfound');
 
-            return router.activate({ pushState : true});
+            return router.activate({ pushState : false});
         }
     };
 });

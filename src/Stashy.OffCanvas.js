@@ -1,7 +1,17 @@
+/**
+ * OffCanvas layout with menu, additional and main
+ * @class Stashy.OffCanvas
+*/
 (function (Stashy, $, undefined) {
     "use strict";    
     var offcanvas = (function () {
 
+        /**
+         * OffCanvas constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         * param {object} useropt - User defined options
+         */          
         function offcanvas(sltor, useropt) {     
             
             var element = $(((sltor || "") + ".st-offcanvas") || ".st-offcanvas");
@@ -31,21 +41,45 @@
             $.extend(this.options || {}, useropt);			
         }
 
+        /**
+         * What to do when mobile size reached
+         * @function
+         * @private
+         * param {object} self - The target element
+         */
         var onmobilelayout = function(self) {
             self.showadditionalselector.css("visibility","visible");
             self.showmenuselector.css("visibility","visible");
         }
 
+        /**
+         * What to do when tablet size reached
+         * @function
+         * @private
+         * param {object} self - The target element
+         */        
         var ontabletlayout = function(self) {
             self.showadditionalselector.css("visibility","visible");
             self.showmenuselector.css("visibility","hidden");
         }            
 
+        /**
+         * What to do when desktop size reached
+         * @function
+         * @private
+         * param {object} self - The target element
+         */        
         var ondesktoplayout = function(self) {
             self.showadditionalselector.css("visibility","hidden");
             self.showmenuselector.css("visibility","hidden");
         }    
-                        
+                   
+        /**
+         * Bind sizes to resize functions
+         * @function
+         * @private
+         * param {object} self - The target element
+         */        
         var bindResize = function(self) {
             var width = $(window).width();
             if (width < 768) {
@@ -60,6 +94,12 @@
             }
         };
 
+        /**
+         * Handle touch events
+         * @function
+         * @private
+         * param {EventObject} ev - The event object
+         */        
         var handleHammer = function(ev) {
             var offcanvas = ev.data.offcanvas;
 
@@ -96,7 +136,13 @@
                     break;
             }
         }
-                
+              
+        /**
+         * Start OffCanvas layout
+         * Call always after creating new instance
+         * @method
+         * @public 
+         */        
         offcanvas.prototype.layout = function() {
             if (this.element ==  null) return;
             
@@ -148,6 +194,11 @@
             return this;
         }
 
+        /**
+         * Close open menu or additional
+         * @method
+         * @public 
+         */          
         offcanvas.prototype.close = function() {
             if (this.element ==  null) return;
             
@@ -158,6 +209,11 @@
 
     })();
     
+    /**
+     * Build a new OffCanvas instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
 	Stashy.OffCanvas = function(sltor, options) {
 	    return new offcanvas(sltor, options);
 	}

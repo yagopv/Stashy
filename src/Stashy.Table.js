@@ -1,7 +1,17 @@
+/**
+ * Responsive tables
+ * @class Stashy.Refresh
+*/
 (function (Stashy, $, undefined) {
     "use strict";    
     var table = (function () {
 
+       /**
+        * Table constructor
+        * @constructor
+        * param {string} sltor - CSS selector for choosing target elements
+        * param {object} useropt - User defined options
+        */            
         function table(sltor, useropt) {     
             
             var element = $(((sltor || "") + ".st-table") || ".st-table");
@@ -26,7 +36,12 @@
             };
             $.extend(this.options || {}, useropt);
         }
-                
+          
+        /**
+         * Start the Table layout
+         * Call always after creating a new instance
+         * @public
+         */            
         table.prototype.on = function() {
             if (this.element ==  null) return;
             
@@ -115,6 +130,11 @@
 
     })();
     
+    /**
+     * Build a new Table instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
 	Stashy.Table = function(sltor, options) {
 	    return new table(sltor, options);
 	}

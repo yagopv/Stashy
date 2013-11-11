@@ -1,9 +1,17 @@
+/**
+ * Defines Events used in this library
+ * @class Stashy.Events
+*/
 (function(window,$,undefined) {
 
 var $event = $.event,
 	$special,
 	resizeTimeout;
 
+/**
+ * Triggered when the window finish the resive.
+ * @event deboundedresize
+ */    
 $special = $event.special.debouncedresize = {
 	setup: function() {
 		$( this ).on( "resize", $special.handler );
@@ -33,14 +41,26 @@ $special = $event.special.debouncedresize = {
 };
 
 })(window,jQuery);
+/**
+ * Utilities for being used in this library
+ * @class Stashy.Utils
+*/
+
+/**
+ * Request Animation Frame
+ */
 (function() {
+    
     var lastTime = 0;
+    
     var vendors = ['ms', 'moz', 'webkit', 'o'];
+    
     for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
         window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
         window.cancelAnimationFrame =
                 window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
     }
+    
     if (!window.requestAnimationFrame)
         window.requestAnimationFrame = function(callback, element) {
             var currTime = new Date().getTime();
@@ -58,7 +78,14 @@ $special = $event.special.debouncedresize = {
 
 (function (Stashy, $, undefined) {    
     
-    Stashy.Utils = {        
+    Stashy.Utils = {     
+        /**
+         * Scroll to position using animation
+         * @param {string} goTo - CSS Selector
+         * @param {int} duration - Animation duration
+         * @param {easing} easing - Easing function to apply
+         * @param {function} oncomplete - callback function
+        */
         ScrollTo : function(goTo, duration, easing, oncomplete) {
             
             if ($(goTo).length == 0) return;
@@ -375,10 +402,20 @@ window.Modernizr = (function( window, document, undefined ) {
 
 })(this, this.document);
 ;
+/**
+ * OffCanvas layout with menu, additional and main
+ * @class Stashy.OffCanvas
+*/
 (function (Stashy, $, undefined) {
     "use strict";    
     var offcanvas = (function () {
 
+        /**
+         * OffCanvas constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         * param {object} useropt - User defined options
+         */          
         function offcanvas(sltor, useropt) {     
             
             var element = $(((sltor || "") + ".st-offcanvas") || ".st-offcanvas");
@@ -408,21 +445,45 @@ window.Modernizr = (function( window, document, undefined ) {
             $.extend(this.options || {}, useropt);			
         }
 
+        /**
+         * What to do when mobile size reached
+         * @function
+         * @private
+         * param {object} self - The target element
+         */
         var onmobilelayout = function(self) {
             self.showadditionalselector.css("visibility","visible");
             self.showmenuselector.css("visibility","visible");
         }
 
+        /**
+         * What to do when tablet size reached
+         * @function
+         * @private
+         * param {object} self - The target element
+         */        
         var ontabletlayout = function(self) {
             self.showadditionalselector.css("visibility","visible");
             self.showmenuselector.css("visibility","hidden");
         }            
 
+        /**
+         * What to do when desktop size reached
+         * @function
+         * @private
+         * param {object} self - The target element
+         */        
         var ondesktoplayout = function(self) {
             self.showadditionalselector.css("visibility","hidden");
             self.showmenuselector.css("visibility","hidden");
         }    
-                        
+                   
+        /**
+         * Bind sizes to resize functions
+         * @function
+         * @private
+         * param {object} self - The target element
+         */        
         var bindResize = function(self) {
             var width = $(window).width();
             if (width < 768) {
@@ -437,6 +498,12 @@ window.Modernizr = (function( window, document, undefined ) {
             }
         };
 
+        /**
+         * Handle touch events
+         * @function
+         * @private
+         * param {EventObject} ev - The event object
+         */        
         var handleHammer = function(ev) {
             var offcanvas = ev.data.offcanvas;
 
@@ -473,7 +540,13 @@ window.Modernizr = (function( window, document, undefined ) {
                     break;
             }
         }
-                
+              
+        /**
+         * Start OffCanvas layout
+         * Call always after creating new instance
+         * @method
+         * @public 
+         */        
         offcanvas.prototype.layout = function() {
             if (this.element ==  null) return;
             
@@ -525,6 +598,11 @@ window.Modernizr = (function( window, document, undefined ) {
             return this;
         }
 
+        /**
+         * Close open menu or additional
+         * @method
+         * @public 
+         */          
         offcanvas.prototype.close = function() {
             if (this.element ==  null) return;
             
@@ -535,16 +613,31 @@ window.Modernizr = (function( window, document, undefined ) {
 
     })();
     
+    /**
+     * Build a new OffCanvas instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
 	Stashy.OffCanvas = function(sltor, options) {
 	    return new offcanvas(sltor, options);
 	}
     
 })(window.Stashy || (window.Stashy = {}), jQuery);
 
+/**
+ * Layout with left hidden menu
+ * @class Stashy.Flyout
+*/
 (function (Stashy, $, undefined) {   
 
     var flyout = (function () {      
 
+        /**
+         * Flyout constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         * param {object} useropt - User defined options
+         */        
         function flyout(sltor, useropt) {                            
             
             var element = $(((sltor || "") + ".st-flyout") || ".st-flyout");
@@ -566,6 +659,11 @@ window.Modernizr = (function( window, document, undefined ) {
             $.extend(this.options || {}, useropt);
         }
 
+        /**
+         * Handle touch events
+         * @private
+         * param {EventObject} ev - event object
+         */         
         var handleHammer = function(ev) {
             var flyout = ev.data.flyout;
     
@@ -590,11 +688,20 @@ window.Modernizr = (function( window, document, undefined ) {
             }
         }
                 
+        /**
+         * Checks if the browser is the Android stock one
+         * @private
+         */           
         var isAndroidStockBrowser = function() {
             var nua = navigator.userAgent;
             return ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1));
         }
-        
+
+        /**
+         * Start the Flyout layout
+         * Call always after creating a new instance
+         * @public
+         */           
         flyout.prototype.layout = function() {
             if (this.element ==  null) return;
             
@@ -631,11 +738,19 @@ window.Modernizr = (function( window, document, undefined ) {
             return this;
         }
 
+        /**
+         * Open Flyout menu
+         * @public
+         */         
         flyout.prototype.open = function() {
             if (this.element ==  null) return;
             this.container.addClass("active-menu");
         }
 
+        /**
+         * Close Flyout menu
+         * @public
+         */         
         flyout.prototype.close = function() {
             if (this.element ==  null) return;
             this.container.removeClass("active-menu");
@@ -645,15 +760,30 @@ window.Modernizr = (function( window, document, undefined ) {
 
     })();
 
+    /**
+     * Build a new Flyout instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */      
     Stashy.Flyout = function(sltor, options) {
 	    return new flyout(sltor, options);
 	}
 
 })(window.Stashy || (window.Stashy = {}), jQuery);
+/**
+ * Main menu that can be fixed to top
+ * @class Stashy.Toggle
+*/
 (function (Stashy, $, undefined) {
     'use strict';
     var toggle = (function () {
 
+        /**
+        * Toggle constructor
+        * @constructor
+        * param {string} sltor - CSS selector for choosing target elements
+        * param {object} useropt - User defined options
+        */            
         function toggle(sltor, useropt) {
 
             var element = $(((sltor || "") + ".st-toggle") || ".st-toggle");
@@ -677,6 +807,11 @@ window.Modernizr = (function( window, document, undefined ) {
             $.extend(this.options || {}, useropt);
         }
 
+        /**
+         * Start the Toggle layout
+         * Call always after creating a new instance
+         * @public
+         */            
         toggle.prototype.layout = function () {
             var self = this;
             
@@ -717,6 +852,11 @@ window.Modernizr = (function( window, document, undefined ) {
             return this;
         }
 
+        /**
+         * Close Toggle menu
+         * @public
+         * @method
+         */            
         toggle.prototype.close = function() {
             this.menu.removeClass('active');
         }
@@ -725,19 +865,39 @@ window.Modernizr = (function( window, document, undefined ) {
 
     })();
 
+    /**
+     * Build a new Toggle instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
     Stashy.Toggle = function(sltor, options) {
 	    return new toggle(sltor, options);
 	}
 
 })(window.Stashy || (window.Stashy = {}), jQuery);
+/**
+ * Responsive images based in the focal point technique
+ * @class Stashy.FocalPoint
+*/
 (function (Stashy, $, undefined) {    
 
     var focalpoint = (function () {        
 
+        /**
+         * FocalPoint constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         */          
         function focalpoint(sltor) {
             this.selector = sltor || "img";
         }
 
+        /**
+         * Find selected images and apply necessary HTML and CSS
+         * @public
+         * @param {string} pointA - X axis
+         * @param {string} pointB - Y axis
+         */           
         focalpoint.prototype.on = function(pointA, pointB) {			
 			pointA = pointA || "";
 			pointB = pointB || "";            		
@@ -749,6 +909,12 @@ window.Modernizr = (function( window, document, undefined ) {
 			});
         }
         
+        /**
+         * Update selected iamges
+         * @public
+         * @param {string} pointA - X axis
+         * @param {string} pointB - Y axis
+         */          
         focalpoint.prototype.update = function(pointA, pointB) {			
 			pointA = pointA || "";
 			pointB = pointB || "";
@@ -757,6 +923,10 @@ window.Modernizr = (function( window, document, undefined ) {
 			});			
         }
 		
+        /**
+         * Return image to the original state
+         * @public
+         */          
         focalpoint.prototype.off = function() {
 			$(this.selector).each(function() {		
 				if ($(this).parent().hasClass("st-image-container")) {
@@ -772,20 +942,42 @@ window.Modernizr = (function( window, document, undefined ) {
 
     })();
 
+    /**
+     * Build a new FocalPoint instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */         
     Stashy.FocalPoint = function(sltor, options) {
 	    return new focalpoint(sltor, options);
 	}
 
 })(window.Stashy || (window.Stashy = {}), jQuery);
+/**
+ * Ajax Loader based to de windows Modern UI one
+ * @class Stashy.Loader
+*/
 (function (Stashy, $, undefined) {    
 
     var loader = (function () {        
 
+        /**
+         * Loader constructor
+         * @constructor
+         * param {string} target - CSS selector for choosing target elements
+         */          
         function loader(target) {                                 
            var self = this;
            this.target = target;
         }
 
+        /**
+         * Create and show the Loader         
+         * @public
+         * @param {string} position - CSS position
+         * @param {string} offset - Offset from position
+         * @param {string} color - Hexa color
+         * @param {string} insertiontype - append or prepend
+         */              
         loader.prototype.on = function(position, offset, color, insertiontype) {
             var self = this;            
             if (!self.target) { return; }
@@ -818,6 +1010,10 @@ window.Modernizr = (function( window, document, undefined ) {
 			
         }        
         
+        /**
+         * Destroy loader
+         * @public
+         */                
         loader.prototype.off = function() {
             $(".st-loader").remove();
         }
@@ -826,16 +1022,31 @@ window.Modernizr = (function( window, document, undefined ) {
 
     })();
 
+    /**
+     * Build a new Loader instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */         
     Stashy.Loader = function(sltor, options) {
 	    return new loader(sltor, options);
 	}
 
 })(window.Stashy || (window.Stashy = {}), jQuery);
 
+/**
+ * Show list items on click
+ * @class Stashy.ShowMeMore
+*/
 (function (Stashy, $, undefined) {    
 
     var showmemore = (function () {        
 
+        /**
+         * ShowMeMore constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         * param {object} useropt - User defined options
+         */          
         function showmemore(sltor, useropt) {  
                   
             if (!sltor) return false;
@@ -855,6 +1066,11 @@ window.Modernizr = (function( window, document, undefined ) {
             }             
         }
 
+        /**
+         * Start ShowMeMore
+         * @method
+         * @public
+         */           
         showmemore.prototype.on = function() {
             
             var self = this;
@@ -880,6 +1096,11 @@ window.Modernizr = (function( window, document, undefined ) {
                 return this;
         }
 		
+        /**
+         * Remove ShowMeMore layout
+         * @method
+         * @public
+         */           
         showmemore.prototype.off = function() {
             var self = this;
 			$(self.element + ":gt(" + (self.options.howMany - 1) + ")")
@@ -894,11 +1115,20 @@ window.Modernizr = (function( window, document, undefined ) {
 
     })();
 
+    /**
+     * Build a new ShowMeMore instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
     Stashy.ShowMeMore= function(sltor, options) {
 	    return new showmemore(sltor, options);
 	}
 
 })(window.Stashy || (window.Stashy = {}), jQuery);
+/**
+ * Slider control for carousels and more
+ * @class Stashy.Slider
+*/
 (function (Stashy, $, undefined) {
 
     function setPaneDimensions(slider) {
@@ -996,9 +1226,15 @@ window.Modernizr = (function( window, document, undefined ) {
                 break;
             }
         }
-                              
+              
     var slider = (function () {        
 
+        /**
+         * Slider constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         * param {object} useropt - User defined options
+         */            
         function slider(sltor, useropt) {                            
             var self = this;
             
@@ -1029,6 +1265,11 @@ window.Modernizr = (function( window, document, undefined ) {
 
     })();
 
+    /**
+     * Start Slider layout
+     * Call always after creating a new instance
+     * @public
+    */      
     slider.prototype.on = function() {
         var self = this;
         
@@ -1092,6 +1333,12 @@ window.Modernizr = (function( window, document, undefined ) {
 		return this;
     }
         
+    /**
+     * Show  selected pane
+     * @method     
+     * @public
+     * @param {int} index - The selected pane
+    */     
     slider.prototype.showPane = function(index) {   
         // between the bounds
         index = Math.max(0, Math.min(index, this.pane_count-1));
@@ -1103,6 +1350,11 @@ window.Modernizr = (function( window, document, undefined ) {
         setContainerOffset(this,offset, true);
     };    
     
+    /**
+     * Go to the next pane
+     * @method     
+     * @public
+    */       
      slider.prototype.next = function() {
         var panetoshow;
         if (this.current_pane + 1 == this.pane_count) {
@@ -1118,6 +1370,11 @@ window.Modernizr = (function( window, document, undefined ) {
         return this.showPane(panetoshow, true); 
     }
     
+    /**
+     * Go to the previous pane
+     * @method
+     * @public
+    */      
     slider.prototype.prev = function() {
         var panetoshow;
         if (this.current_pane - 1 < 0) {
@@ -1132,16 +1389,31 @@ window.Modernizr = (function( window, document, undefined ) {
         return this.showPane(panetoshow, true); 
     }
         
+    /**
+     * Build a new Slider instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
     Stashy.Slider = function(sltor, options) {
 	    return new slider(sltor, options);
 	}
 
 })(window.Stashy || (window.Stashy = {}), jQuery);
 
+/**
+ * Drag down and release, refresh control
+ * @class Stashy.Refresh
+*/
 (function (Stashy, $, undefined) {   
 
     var refresh = (function () {        
 
+        /**
+         * Handle touch events         
+         * @function
+         * @private
+         * @param {EventObject} ev - The event object
+         */          
         var handleHammer = function(ev) {
             var self = this;
 
@@ -1192,6 +1464,11 @@ window.Modernizr = (function( window, document, undefined ) {
             }
         }
                 
+        /**
+         * Hide refresh         
+         * @function
+         * @private
+         */          
         var hide = function() {
             this.element[0].className = 'st-refresh';
             this.slidedown_height = 0;
@@ -1201,6 +1478,12 @@ window.Modernizr = (function( window, document, undefined ) {
             this.dragged_down = false;
         }
 		
+        /**
+         * Set refresh height 
+         * @function
+         * @private
+         * @param {int} height - The height
+         */           
 		var setHeight = function(height) {
 			if(Modernizr.csstransforms3d) {
 				this.element[0].style.transform = 'translate3d(0,'+height+'px,0) ';
@@ -1221,6 +1504,11 @@ window.Modernizr = (function( window, document, undefined ) {
 				}
 		}	
 		
+        /**
+         * Update refresh height 
+         * @function
+         * @private
+         */            
         var updateHeight = function() {
             var self = this;
 
@@ -1242,6 +1530,12 @@ window.Modernizr = (function( window, document, undefined ) {
             });
         }
 		
+        /**
+         * Refresh constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         * param {object} useropt - User defined options
+         */          
         function refresh(sltor, useropt) {                            
             
             var element = $(((sltor || "") + ".st-refresh") || ".st-refresh");
@@ -1265,6 +1559,11 @@ window.Modernizr = (function( window, document, undefined ) {
             $.extend(this.options || {}, useropt);
         }
 
+        /**
+         * Start refresh layout
+         * @method
+         * @public
+         */            
 		refresh.prototype.on = function() {
 			var self = this;
 			$(this.element).hammer();
@@ -1274,6 +1573,11 @@ window.Modernizr = (function( window, document, undefined ) {
 			return this;
 		}	
 
+        /**
+         * Slide up the refresh control
+         * @method
+         * @public
+         */           
         refresh.prototype.slideUp = function() {
             var self = this;
             cancelAnimationFrame(this.anim);
@@ -1292,15 +1596,29 @@ window.Modernizr = (function( window, document, undefined ) {
 		
     })();
     
+    /**
+     * Build a new Refresh instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
     Stashy.Refresh = function(sltor, options) {
 	    return new refresh(sltor, options);
 	}
 
 })(window.Stashy || (window.Stashy = {}), jQuery);
+/**
+ * Responsive videos
+ * @class Stashy.Video
+*/
 (function (Stashy, $, undefined) {    
 
     var video = (function () {        
 
+        /**
+         * ElasticVideo constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         */        
         function video(sltor) {
 
             var videos = $(sltor);
@@ -1312,7 +1630,12 @@ window.Modernizr = (function( window, document, undefined ) {
             this.videos = videos;
         }
 
-                
+              
+        /**
+         * Activate ElasticVideo
+         * @method
+         * @public
+         */        
         video.prototype.on = function() {
 			 this.videos.each(function(){
 			 
@@ -1343,15 +1666,28 @@ window.Modernizr = (function( window, document, undefined ) {
 
     })();
 
-    Stashy.ElasticVideo = function(sltor, options) {
+    /**
+     * Build a new ElasticVideo instance
+     * @param {string} sltor - CSS selector for choosing target elements
+    */    
+    Stashy.ElasticVideo = function(sltor) {
 	    return new video(sltor);
 	}
 
 })(window.Stashy || (window.Stashy = {}), jQuery);
+/**
+ * Responsive text blocks
+ * @class Stashy.ElasticText
+*/
 (function (Stashy, $, undefined) {    
 
     var text = (function () {        
 
+        /**
+         * ElasticText constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         */
         function text(sltor) {
 
             var elements = $(sltor);
@@ -1363,6 +1699,14 @@ window.Modernizr = (function( window, document, undefined ) {
             this.elements = elements;
         }
 
+        /**
+         * Recalculate size of the element
+         * @method
+         * @private
+         * param {float} ratio - The ratio multiplier between 0 - 2
+         * param {float} min - Min. font size
+         * param {float} max - Max font size
+         */        
         var recalculateSize = function(ratio,min,max) {
 			this.elements.each(function() {
 				var element = $(this);
@@ -1374,6 +1718,14 @@ window.Modernizr = (function( window, document, undefined ) {
 			});
 		}
 		
+        /**
+         * Activate ElasticText
+         * @method
+         * @public
+         * param {float} ratio - The ratio multiplier between 0 - 2
+         * param {float} min - Min. font size
+         * param {float} max - Max font size
+         */
         text.prototype.on = function(ratio, minfontsize, maxfontsize) {
 			var ratio = ratio || 1,
 			    min = minfontsize || Number.NEGATIVE_INFINITY,
@@ -1395,16 +1747,30 @@ window.Modernizr = (function( window, document, undefined ) {
 
     })();
 
-    Stashy.ElasticText = function(sltor, options) {
+    /**
+     * Build a new ElasticText instance
+     * @param {string} sltor - CSS selector for choosing target elements
+    */
+    Stashy.ElasticText = function(sltor) {
 	    return new text(sltor);
 	}
 
 })(window.Stashy || (window.Stashy = {}), jQuery);
 
+/**
+ * Responsive tables
+ * @class Stashy.Refresh
+*/
 (function (Stashy, $, undefined) {
     "use strict";    
     var table = (function () {
 
+       /**
+        * Table constructor
+        * @constructor
+        * param {string} sltor - CSS selector for choosing target elements
+        * param {object} useropt - User defined options
+        */            
         function table(sltor, useropt) {     
             
             var element = $(((sltor || "") + ".st-table") || ".st-table");
@@ -1429,7 +1795,12 @@ window.Modernizr = (function( window, document, undefined ) {
             };
             $.extend(this.options || {}, useropt);
         }
-                
+          
+        /**
+         * Start the Table layout
+         * Call always after creating a new instance
+         * @public
+         */            
         table.prototype.on = function() {
             if (this.element ==  null) return;
             
@@ -1518,17 +1889,26 @@ window.Modernizr = (function( window, document, undefined ) {
 
     })();
     
+    /**
+     * Build a new Table instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
 	Stashy.Table = function(sltor, options) {
 	    return new table(sltor, options);
 	}
     
 })(window.Stashy || (window.Stashy = {}), jQuery);
+/**
+ * Notification toasts, bars and panels
+ * @class Stashy.Notify
+*/
 (function (Stashy, $, undefined) {
 
     var notify = (function () {
 
 		/**
-		 * Construct the Notify object
+		 * Build the Notify object
 		 * @constructor
 		 * @param {object} useropt - The user options
 		*/
@@ -1583,6 +1963,14 @@ window.Modernizr = (function( window, document, undefined ) {
             return this;
         }
 
+		/**
+		 * Create a toast container box
+		 * @private
+         * @function
+		 * @param {string} target - CSS selector
+         * @param {string} posX - top,bottom
+         * @param {string} posY - left,right
+		*/        
 		function toastContainer(target,posX,posY) {
 			var toastC = $(".st-toast-container" + "." + posX + "." + posY);
 			if (toastC.length == 0) {
@@ -1592,6 +1980,13 @@ window.Modernizr = (function( window, document, undefined ) {
 			return toastC;
 		}
 		
+		/**
+		 * Create a bar container box
+		 * @private
+         * @function
+		 * @param {string} target - CSS selector
+         * @param {string} posY - left,right
+		*/           
 		function barContainer(target,posY) {
 			var barC = $(".st-bar-container" + "." + posY);
 			if (barC.length == 0) {
@@ -1603,6 +1998,7 @@ window.Modernizr = (function( window, document, undefined ) {
 		
         /**
          * Create a new toast style Notify element and show it
+         * @public
          * @method
          * @param {string} positionX - 'right' or 'left'
 		 * @param {string} positionX - 'top' or 'bottom'
@@ -1627,6 +2023,7 @@ window.Modernizr = (function( window, document, undefined ) {
 
 		/**
          * Create a new bar style Notify element and show it
+         * @public
          * @method
 		 * @param {string} positionX - 'top' or 'bottom'
         */
@@ -1649,6 +2046,7 @@ window.Modernizr = (function( window, document, undefined ) {
 		
 		/**
          * Create a new panel style Notify element and show it
+         * @public
          * @method
          * @param {string} positionX - 'right' or 'left'
         */
@@ -1670,8 +2068,162 @@ window.Modernizr = (function( window, document, undefined ) {
 
     })();
 
+    /**
+     * Build a new Notify instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
 	Stashy.Notify = function(sltor, options) {
 	    return new notify(sltor, options);
 	}
 
+})(window.Stashy || (window.Stashy = {}), jQuery);
+/**
+ * Hidden menu
+ * @class Stashy.Menu
+*/
+(function (Stashy, $, undefined) {
+
+    var menu = (function () {
+
+        /**
+		 * Constructor
+		 * @constructor
+         * @param {string} selector - Menu selector
+		 * @param {object} useropt - The user options
+		*/
+        function menu(sltor, useropt) {     
+            
+            if (!sltor || sltor == "") {
+                throw new Error("Stashy.Menu:You need to provide a selector");
+            }
+            
+            if (Modernizr && !Modernizr.csstransforms && !Modernizr.csstransforms3d) {
+                throw new Error("Stashy.Menu:Your browser is not supported");
+            }
+            
+            var element = $(sltor);
+            
+            if (element[0] == undefined) {
+                throw new Error("Stashy.Menu:The element you tried to select is not valid or not exists");
+            }
+            
+            this.element = element;
+
+            this.options = {
+                enableTouch : false,
+                closeOnClick : false,
+                closeOnClickOutside : false
+            };
+            
+            $.extend(this.options || {}, useropt);			
+        }
+
+        /**
+		 * Handle touch events
+		 * @private
+         * @function
+         * @param {event} ev - Hammer Event
+		*/
+        var handleHammer = function(ev) {
+            var menu = ev.data.menu;
+            
+            // disable browser scrolling
+            ev.gesture.preventDefault();
+            ev.stopPropagation();
+            
+            if ((menu.hasClass("left") && ev.type == "dragleft") ||
+                (menu.hasClass("right") && ev.type == "dragright") ||
+                (menu.hasClass("top") && ev.type == "dragup") ||
+                (menu.hasClass("bottom") && ev.type == "dragbottom")) {
+                 menu.removeClass("active"); 
+            } else {
+                 menu.addClass("active");     
+            }        
+            
+            ev.gesture.stopDetect();
+        }
+
+        /**
+		 * Initialize Menu
+		 * @public
+         * @method
+		*/        
+        menu.prototype.on = function() {
+            var self = this;                        
+            
+            this.element.find(".st-menu-toggle")
+                .on("click", function() {
+                    self.element.toggleClass("active");
+                    return false;
+                });
+            
+            this.element.find(".st-menu-toggle-sublist")
+                .on("click", function(event) {
+                    $(this).children(".st-menu-sublist").toggleClass("active");
+                    return false;
+                }); 
+            
+            if (self.options.closeOnClick) {
+                self.element.find("a").not(".st-menu-toggle")
+                    .on("click", function() {
+                    self.close();    
+                    return false;
+                });                
+            }
+
+            if (self.options.closeOnClickOutside) {
+                self.element.on("click", function(event) {
+                    event.stopPropagation();
+                    return false;
+                });
+                $("html").on("click", function() {
+                    self.close();
+                    return false;                    
+                });            
+            }
+
+            if (self.options.enableTouch && typeof(Hammer) == 'function' && Modernizr.touch) {
+                self.element.hammer({ drag_lock_to_axis: true });
+                if (self.element.hasClass("left") || self.element.hasClass("right")) {
+                    self.element.on("dragleft dragright", { menu : self.element }, handleHammer);
+                } else {
+                    self.element.on("dragup dragdown", { menu : self.element }, handleHammer);
+                }
+		    }
+            
+            return this;
+        }
+
+        /**
+		 * Open menu
+		 * @public
+         * @method
+		*/        
+        menu.prototype.open = function() {
+            this.element.addClass("active");
+        }
+
+        /**
+		 * Close menu
+		 * @public
+         * @method
+		*/        
+        menu.prototype.close = function() {
+            this.element.removeClass("active");
+        }
+
+        return menu;
+
+    })();
+    
+    /**
+     * Build a new Menu instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
+	Stashy.Menu = function(sltor, options) {
+	    return new menu(sltor, options);
+	}
+    
 })(window.Stashy || (window.Stashy = {}), jQuery);

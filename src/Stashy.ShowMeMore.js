@@ -1,7 +1,17 @@
+/**
+ * Show list items on click
+ * @class Stashy.ShowMeMore
+*/
 (function (Stashy, $, undefined) {    
 
     var showmemore = (function () {        
 
+        /**
+         * ShowMeMore constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         * param {object} useropt - User defined options
+         */          
         function showmemore(sltor, useropt) {  
                   
             if (!sltor) return false;
@@ -21,6 +31,11 @@
             }             
         }
 
+        /**
+         * Start ShowMeMore
+         * @method
+         * @public
+         */           
         showmemore.prototype.on = function() {
             
             var self = this;
@@ -46,6 +61,11 @@
                 return this;
         }
 		
+        /**
+         * Remove ShowMeMore layout
+         * @method
+         * @public
+         */           
         showmemore.prototype.off = function() {
             var self = this;
 			$(self.element + ":gt(" + (self.options.howMany - 1) + ")")
@@ -60,6 +80,11 @@
 
     })();
 
+    /**
+     * Build a new ShowMeMore instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
     Stashy.ShowMeMore= function(sltor, options) {
 	    return new showmemore(sltor, options);
 	}

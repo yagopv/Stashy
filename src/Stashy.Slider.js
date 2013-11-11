@@ -1,3 +1,7 @@
+/**
+ * Slider control for carousels and more
+ * @class Stashy.Slider
+*/
 (function (Stashy, $, undefined) {
 
     function setPaneDimensions(slider) {
@@ -95,9 +99,15 @@
                 break;
             }
         }
-                              
+              
     var slider = (function () {        
 
+        /**
+         * Slider constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         * param {object} useropt - User defined options
+         */            
         function slider(sltor, useropt) {                            
             var self = this;
             
@@ -128,6 +138,11 @@
 
     })();
 
+    /**
+     * Start Slider layout
+     * Call always after creating a new instance
+     * @public
+    */      
     slider.prototype.on = function() {
         var self = this;
         
@@ -191,6 +206,12 @@
 		return this;
     }
         
+    /**
+     * Show  selected pane
+     * @method     
+     * @public
+     * @param {int} index - The selected pane
+    */     
     slider.prototype.showPane = function(index) {   
         // between the bounds
         index = Math.max(0, Math.min(index, this.pane_count-1));
@@ -202,6 +223,11 @@
         setContainerOffset(this,offset, true);
     };    
     
+    /**
+     * Go to the next pane
+     * @method     
+     * @public
+    */       
      slider.prototype.next = function() {
         var panetoshow;
         if (this.current_pane + 1 == this.pane_count) {
@@ -217,6 +243,11 @@
         return this.showPane(panetoshow, true); 
     }
     
+    /**
+     * Go to the previous pane
+     * @method
+     * @public
+    */      
     slider.prototype.prev = function() {
         var panetoshow;
         if (this.current_pane - 1 < 0) {
@@ -231,6 +262,11 @@
         return this.showPane(panetoshow, true); 
     }
         
+    /**
+     * Build a new Slider instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
     Stashy.Slider = function(sltor, options) {
 	    return new slider(sltor, options);
 	}

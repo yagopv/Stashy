@@ -1,9 +1,17 @@
+/**
+ * Defines Events used in this library
+ * @class Stashy.Events
+*/
 (function(window,$,undefined) {
 
 var $event = $.event,
 	$special,
 	resizeTimeout;
 
+/**
+ * Triggered when the window finish the resive.
+ * @event deboundedresize
+ */    
 $special = $event.special.debouncedresize = {
 	setup: function() {
 		$( this ).on( "resize", $special.handler );

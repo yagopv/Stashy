@@ -213,6 +213,18 @@ section p, section h1, section h2, section h4, section .component, section pre, 
     border-color:transparent;
 }
 
+.badge-menu, .badge-menu:hover {
+    background-color : rgba(95, 107, 245, 0.67);
+    color : #fff;
+    border-color:transparent;
+}
+
+.badge-menu-dark, .badge-menu-dark:hover {
+    background-color : rgba(83, 87, 185, 1);
+    color : #FFF;
+    border-color:transparent;
+}
+
 .hero-unit {
     padding : 60px;
 }

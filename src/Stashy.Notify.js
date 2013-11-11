@@ -1,9 +1,13 @@
+/**
+ * Notification toasts, bars and panels
+ * @class Stashy.Notify
+*/
 (function (Stashy, $, undefined) {
 
     var notify = (function () {
 
 		/**
-		 * Construct the Notify object
+		 * Build the Notify object
 		 * @constructor
 		 * @param {object} useropt - The user options
 		*/
@@ -58,6 +62,14 @@
             return this;
         }
 
+		/**
+		 * Create a toast container box
+		 * @private
+         * @function
+		 * @param {string} target - CSS selector
+         * @param {string} posX - top,bottom
+         * @param {string} posY - left,right
+		*/        
 		function toastContainer(target,posX,posY) {
 			var toastC = $(".st-toast-container" + "." + posX + "." + posY);
 			if (toastC.length == 0) {
@@ -67,6 +79,13 @@
 			return toastC;
 		}
 		
+		/**
+		 * Create a bar container box
+		 * @private
+         * @function
+		 * @param {string} target - CSS selector
+         * @param {string} posY - left,right
+		*/           
 		function barContainer(target,posY) {
 			var barC = $(".st-bar-container" + "." + posY);
 			if (barC.length == 0) {
@@ -78,6 +97,7 @@
 		
         /**
          * Create a new toast style Notify element and show it
+         * @public
          * @method
          * @param {string} positionX - 'right' or 'left'
 		 * @param {string} positionX - 'top' or 'bottom'
@@ -102,6 +122,7 @@
 
 		/**
          * Create a new bar style Notify element and show it
+         * @public
          * @method
 		 * @param {string} positionX - 'top' or 'bottom'
         */
@@ -124,6 +145,7 @@
 		
 		/**
          * Create a new panel style Notify element and show it
+         * @public
          * @method
          * @param {string} positionX - 'right' or 'left'
         */
@@ -145,6 +167,11 @@
 
     })();
 
+    /**
+     * Build a new Notify instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
 	Stashy.Notify = function(sltor, options) {
 	    return new notify(sltor, options);
 	}

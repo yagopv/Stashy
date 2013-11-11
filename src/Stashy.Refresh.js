@@ -1,7 +1,17 @@
+/**
+ * Drag down and release, refresh control
+ * @class Stashy.Refresh
+*/
 (function (Stashy, $, undefined) {   
 
     var refresh = (function () {        
 
+        /**
+         * Handle touch events         
+         * @function
+         * @private
+         * @param {EventObject} ev - The event object
+         */          
         var handleHammer = function(ev) {
             var self = this;
 
@@ -52,6 +62,11 @@
             }
         }
                 
+        /**
+         * Hide refresh         
+         * @function
+         * @private
+         */          
         var hide = function() {
             this.element[0].className = 'st-refresh';
             this.slidedown_height = 0;
@@ -61,6 +76,12 @@
             this.dragged_down = false;
         }
 		
+        /**
+         * Set refresh height 
+         * @function
+         * @private
+         * @param {int} height - The height
+         */           
 		var setHeight = function(height) {
 			if(Modernizr.csstransforms3d) {
 				this.element[0].style.transform = 'translate3d(0,'+height+'px,0) ';
@@ -81,6 +102,11 @@
 				}
 		}	
 		
+        /**
+         * Update refresh height 
+         * @function
+         * @private
+         */            
         var updateHeight = function() {
             var self = this;
 
@@ -102,6 +128,12 @@
             });
         }
 		
+        /**
+         * Refresh constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         * param {object} useropt - User defined options
+         */          
         function refresh(sltor, useropt) {                            
             
             var element = $(((sltor || "") + ".st-refresh") || ".st-refresh");
@@ -125,6 +157,11 @@
             $.extend(this.options || {}, useropt);
         }
 
+        /**
+         * Start refresh layout
+         * @method
+         * @public
+         */            
 		refresh.prototype.on = function() {
 			var self = this;
 			$(this.element).hammer();
@@ -134,6 +171,11 @@
 			return this;
 		}	
 
+        /**
+         * Slide up the refresh control
+         * @method
+         * @public
+         */           
         refresh.prototype.slideUp = function() {
             var self = this;
             cancelAnimationFrame(this.anim);
@@ -152,6 +194,11 @@
 		
     })();
     
+    /**
+     * Build a new Refresh instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
     Stashy.Refresh = function(sltor, options) {
 	    return new refresh(sltor, options);
 	}

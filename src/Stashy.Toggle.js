@@ -1,7 +1,17 @@
+/**
+ * Main menu that can be fixed to top
+ * @class Stashy.Toggle
+*/
 (function (Stashy, $, undefined) {
     'use strict';
     var toggle = (function () {
 
+        /**
+        * Toggle constructor
+        * @constructor
+        * param {string} sltor - CSS selector for choosing target elements
+        * param {object} useropt - User defined options
+        */            
         function toggle(sltor, useropt) {
 
             var element = $(((sltor || "") + ".st-toggle") || ".st-toggle");
@@ -25,6 +35,11 @@
             $.extend(this.options || {}, useropt);
         }
 
+        /**
+         * Start the Toggle layout
+         * Call always after creating a new instance
+         * @public
+         */            
         toggle.prototype.layout = function () {
             var self = this;
             
@@ -65,6 +80,11 @@
             return this;
         }
 
+        /**
+         * Close Toggle menu
+         * @public
+         * @method
+         */            
         toggle.prototype.close = function() {
             this.menu.removeClass('active');
         }
@@ -73,6 +93,11 @@
 
     })();
 
+    /**
+     * Build a new Toggle instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
     Stashy.Toggle = function(sltor, options) {
 	    return new toggle(sltor, options);
 	}

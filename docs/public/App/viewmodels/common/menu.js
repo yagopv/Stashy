@@ -78,6 +78,13 @@ define(['durandal/app','durandal/system','plugins/router'], function (app, syste
                     { name : "Playground",  route : "/notify/playground" },
                     { name : "Dependencies",route : "/notify/dependencies" }
         ],
+        'menu' : [
+                    { name : "Description", route : "/menu/description" },
+                    { name : "HTML",        route : "/menu/html" },
+                    { name : "JavaScript",  route : "/menu/javascript" },
+                    { name : "Playground",  route : "/menu/playground" },
+                    { name : "Dependencies",route : "/menu/dependencies" }
+        ],            
         'home' :    [
                     { name : "What is this?", route : "/home/whatisthis" },
                     { name : "Components inside this library", route : "/home/components" },

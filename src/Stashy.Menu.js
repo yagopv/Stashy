@@ -1,3 +1,7 @@
+/**
+ * Hidden menu
+ * @class Stashy.Menu
+*/
 (function (Stashy, $, undefined) {
 
     var menu = (function () {
@@ -36,8 +40,9 @@
         }
 
         /**
-		 * function
+		 * Handle touch events
 		 * @private
+         * @function
          * @param {event} ev - Hammer Event
 		*/
         var handleHammer = function(ev) {
@@ -60,8 +65,9 @@
         }
 
         /**
-		 * function
-		 * @prototype method
+		 * Initialize Menu
+		 * @public
+         * @method
 		*/        
         menu.prototype.on = function() {
             var self = this;                        
@@ -82,15 +88,18 @@
                 self.element.find("a").not(".st-menu-toggle")
                     .on("click", function() {
                     self.close();    
+                    return false;
                 });                
             }
 
             if (self.options.closeOnClickOutside) {
                 self.element.on("click", function(event) {
                     event.stopPropagation();
+                    return false;
                 });
                 $("html").on("click", function() {
-                    self.close();                    
+                    self.close();
+                    return false;                    
                 });            
             }
 
@@ -106,10 +115,20 @@
             return this;
         }
 
+        /**
+		 * Open menu
+		 * @public
+         * @method
+		*/        
         menu.prototype.open = function() {
             this.element.addClass("active");
         }
 
+        /**
+		 * Close menu
+		 * @public
+         * @method
+		*/        
         menu.prototype.close = function() {
             this.element.removeClass("active");
         }
@@ -118,6 +137,11 @@
 
     })();
     
+    /**
+     * Build a new Menu instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */     
 	Stashy.Menu = function(sltor, options) {
 	    return new menu(sltor, options);
 	}

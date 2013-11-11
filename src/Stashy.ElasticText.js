@@ -1,7 +1,16 @@
+/**
+ * Responsive text blocks
+ * @class Stashy.ElasticText
+*/
 (function (Stashy, $, undefined) {    
 
     var text = (function () {        
 
+        /**
+         * ElasticText constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         */
         function text(sltor) {
 
             var elements = $(sltor);
@@ -13,6 +22,14 @@
             this.elements = elements;
         }
 
+        /**
+         * Recalculate size of the element
+         * @method
+         * @private
+         * param {float} ratio - The ratio multiplier between 0 - 2
+         * param {float} min - Min. font size
+         * param {float} max - Max font size
+         */        
         var recalculateSize = function(ratio,min,max) {
 			this.elements.each(function() {
 				var element = $(this);
@@ -24,6 +41,14 @@
 			});
 		}
 		
+        /**
+         * Activate ElasticText
+         * @method
+         * @public
+         * param {float} ratio - The ratio multiplier between 0 - 2
+         * param {float} min - Min. font size
+         * param {float} max - Max font size
+         */
         text.prototype.on = function(ratio, minfontsize, maxfontsize) {
 			var ratio = ratio || 1,
 			    min = minfontsize || Number.NEGATIVE_INFINITY,
@@ -45,7 +70,11 @@
 
     })();
 
-    Stashy.ElasticText = function(sltor, options) {
+    /**
+     * Build a new ElasticText instance
+     * @param {string} sltor - CSS selector for choosing target elements
+    */
+    Stashy.ElasticText = function(sltor) {
 	    return new text(sltor);
 	}
 

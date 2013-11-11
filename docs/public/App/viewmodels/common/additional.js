@@ -22,6 +22,9 @@ define(['durandal/app', 'durandal/system','plugins/router'], function (app, syst
     navigation = [{
         name : "Toggle",
         route : "/toggle"
+    }, {
+        name : "Menu",
+        route : "/menu"        
     }],
 
     misc = [{

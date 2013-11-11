@@ -1,7 +1,17 @@
+/**
+ * Layout with left hidden menu
+ * @class Stashy.Flyout
+*/
 (function (Stashy, $, undefined) {   
 
     var flyout = (function () {      
 
+        /**
+         * Flyout constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         * param {object} useropt - User defined options
+         */        
         function flyout(sltor, useropt) {                            
             
             var element = $(((sltor || "") + ".st-flyout") || ".st-flyout");
@@ -23,6 +33,11 @@
             $.extend(this.options || {}, useropt);
         }
 
+        /**
+         * Handle touch events
+         * @private
+         * param {EventObject} ev - event object
+         */         
         var handleHammer = function(ev) {
             var flyout = ev.data.flyout;
     
@@ -47,11 +62,20 @@
             }
         }
                 
+        /**
+         * Checks if the browser is the Android stock one
+         * @private
+         */           
         var isAndroidStockBrowser = function() {
             var nua = navigator.userAgent;
             return ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1));
         }
-        
+
+        /**
+         * Start the Flyout layout
+         * Call always after creating a new instance
+         * @public
+         */           
         flyout.prototype.layout = function() {
             if (this.element ==  null) return;
             
@@ -88,11 +112,19 @@
             return this;
         }
 
+        /**
+         * Open Flyout menu
+         * @public
+         */         
         flyout.prototype.open = function() {
             if (this.element ==  null) return;
             this.container.addClass("active-menu");
         }
 
+        /**
+         * Close Flyout menu
+         * @public
+         */         
         flyout.prototype.close = function() {
             if (this.element ==  null) return;
             this.container.removeClass("active-menu");
@@ -102,6 +134,11 @@
 
     })();
 
+    /**
+     * Build a new Flyout instance
+     * @param {string} sltor - CSS selector for choosing target elements
+     * @param {object} options - User options for the new instance
+    */      
     Stashy.Flyout = function(sltor, options) {
 	    return new flyout(sltor, options);
 	}

@@ -1,7 +1,16 @@
+/**
+ * Responsive videos
+ * @class Stashy.Video
+*/
 (function (Stashy, $, undefined) {    
 
     var video = (function () {        
 
+        /**
+         * ElasticVideo constructor
+         * @constructor
+         * param {string} sltor - CSS selector for choosing target elements
+         */        
         function video(sltor) {
 
             var videos = $(sltor);
@@ -13,7 +22,12 @@
             this.videos = videos;
         }
 
-                
+              
+        /**
+         * Activate ElasticVideo
+         * @method
+         * @public
+         */        
         video.prototype.on = function() {
 			 this.videos.each(function(){
 			 
@@ -44,7 +58,11 @@
 
     })();
 
-    Stashy.ElasticVideo = function(sltor, options) {
+    /**
+     * Build a new ElasticVideo instance
+     * @param {string} sltor - CSS selector for choosing target elements
+    */    
+    Stashy.ElasticVideo = function(sltor) {
 	    return new video(sltor);
 	}
 
