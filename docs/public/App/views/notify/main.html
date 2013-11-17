@@ -73,7 +73,7 @@ Stashy.Notify(userOptions)</pre>
                     <td><strong>titleSize</strong></td>
                     <td>int</td>
                     <td>3</td>
-                    <td>Enter wathever value in the range 1..6.The title will be an HTML heading. This number will provide the heading size (h<span class="badge badge-notify">1</span>, h<span class="badge badge-notify">2</span>, h<span class="badge badge-notify">3</span>, ...)</td>
+                    <td>Enter whatever value in the range 1..6.The title will be an HTML heading. This number will provide the heading size (h<span class="badge badge-notify">1</span>, h<span class="badge badge-notify">2</span>, h<span class="badge badge-notify">3</span>, ...)</td>
                 </tr>                                
                 <tr>
                     <td><strong>contentType</strong></td>
@@ -113,6 +113,12 @@ Stashy.Notify(userOptions)</pre>
                         <p>If you choose "element" then the element itself will be clickable to closing it.</p>
                     </td>
                 </tr>                  
+                <tr>
+                    <td><strong>activeDuration</strong></td>
+                    <td>int</td>
+                    <td>0</td>
+                    <td>How long to display the notification for in milliseconds, zero will leave the notification displayed until the user closes manually.</td>
+                </tr>
             </tbody>
         </table>           
         <h2>Methods</h2>
@@ -189,12 +195,13 @@ Stashy.Notify({
 
 Stashy.Notify({
     title : "My panel",
-    content : "#wathever-element-in-the-page",
+    content : "#whatever-element-in-the-page",
     titleSize : 2,
     style : "default",
     contentType : "html",
     animDuration : "fast",
-    closeArea : "button" 
+    closeArea : "button",
+    activeDuration : 5000
 }).panel("right");
 </pre>
     </section>
@@ -291,6 +298,12 @@ Stashy.Notify({
                     <option value="top">top</option>
                     <option value="bottom">bottom</option>                          
                 </select>                                    
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="activeDuration">Active duration</label>
+            <div class="controls">
+                <input type="text" name="activeDuration" value="" placeholder="active duration" data-bind="value : activeDuration" />
             </div>
         </div>        
         <div class="control-group">            
