@@ -1,7 +1,8 @@
 define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayout, prettify) {
     var activePage = ko.observable(),    
     hash = "",
-    oc;
+    oc,
+    menu;
     
     return {
         compositionComplete : function() {
@@ -11,7 +12,13 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
             prettyPrint();
             Stashy.Utils.ScrollTo('#' + that.hash);
         },
-        activePage : activePage,  
+        
+        activePage : activePage,
+        
+        attached : function(view) {
+            menu = Stashy.Menu(".st-menu");
+        },
+        
         activate: function (page) {
             var that = this;
             
@@ -19,7 +26,10 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
                 that.hash = page;            
                 Stashy.Utils.ScrollTo('#menu #' + that.hash);
             }
-            ga('send', 'pageview');
+            ga('send', 'pageview');            
+        },
+        startMenuLayout : function() {
+            menu.on();
         }
     };
 });
