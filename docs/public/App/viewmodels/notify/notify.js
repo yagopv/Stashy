@@ -14,7 +14,8 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
         radius : ko.observable(true),
         positionX : ko.observable(),
         positionY : ko.observable(),
-        component : ko.observable("toast")
+        component : ko.observable("toast"),
+        activeDuration : ko.observable()
     }
     
     return {
@@ -46,7 +47,8 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
                     style : this.options.style(),
                     contentType : this.options.contentType(),
                     animDuration : this.options.animDuration(),
-                    closeArea : this.options.closeArea()                        
+                    closeArea : this.options.closeArea(),
+                    activeDuration : this.options.activeDuration()
                 }).toast(this.options.positionX(), this.options.positionY(), this.options.radius() ? true : false);
             } else {
                 if (this.options.component() == "bar")   {
@@ -57,7 +59,8 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
                         style : this.options.style(),
                         contentType : this.options.contentType(),
                         animDuration : this.options.animDuration(),
-                        closeArea : this.options.closeArea()                            
+                        closeArea : this.options.closeArea(),
+                        activeDuration : this.options.activeDuration()                        
                     }).bar(this.options.positionY());
                 } else {
                     Stashy.Notify({
@@ -67,7 +70,8 @@ define(['durandal/app','lib/pagelayout','lib/prettify'], function (app, pagelayo
                         style : this.options.style(),
                         contentType : this.options.contentType(),
                         animDuration : this.options.animDuration(),
-                        closeArea : this.options.closeArea()                            
+                        closeArea : this.options.closeArea(),
+                        activeDuration : this.options.activeDuration()
                     }).panel(this.options.positionX());
                 }
             }
