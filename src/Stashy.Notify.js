@@ -17,7 +17,8 @@
                 content : "",             // if contentType is text then a string, else the CSS selector of the content to be showed
 				style : "default",        // the notification style 'default', 'error', 'success', 'info'
 				animDuration : "fast",    // 'fast' or 'slow'
-				closeArea : "button" 	  // 'button' or 'element'
+				closeArea : "button", 	  // 'button' or 'element'
+                activeDuration : 0 // how long to show notification
             };
 
             $.extend(this.options || {}, useropt);			
@@ -85,19 +86,25 @@
         */
         notify.prototype.toast = function(positionX, positionY, radius) {
 			var self = this,
-			    toastC = toastContainer(this.options.target,positionX, positionY);			
+			    toastC = toastContainer(this.options.target,positionX, positionY),
+                hide = function() {
+                    self.element.addClass("fadeOut");
+                    setTimeout(function() {
+                        self.element.remove();
+                        if (toastC.children().length == 0) {
+                            toastC.remove();					
+                        }				
+                        self = null;				
+                    }, self.options.animDuration == "fast" ? 1000 : 2000);
+                };
 			this.element.addClass((radius ? "radius" : " ") + " " + "fadeIn");
 			toastC.append(this.element);
-			this.closeElement.on("click", function() {
-				self.element.addClass("fadeOut");
-				setTimeout(function() {
-					self.element.remove();
-					if (toastC.children().length == 0) {
-						toastC.remove();					
-					}				
-					self = null;				
-				}, self.options.animDuration == "fast" ? 1000 : 2000);
-			});
+            
+            if (self.options.activeDuration > 0) {
+                setTimeout(hide, self.options.activeDuration);
+            }
+            
+			this.closeElement.on("click", hide);
         }
 
 		/**
@@ -107,19 +114,25 @@
         */
         notify.prototype.bar = function(positionY) {
 			var self = this,
-			    barC = barContainer(this.options.target,positionY);
+			    barC = barContainer(this.options.target,positionY),
+                hide = function() {
+                    self.element.addClass(positionY == "top" ? "fadeOutUp" : "fadeOutDown");
+                    setTimeout(function() {
+                        self.element.remove();
+                        if (barC.children().length == 0) {
+                            barC.remove();					
+                        }				
+                        self = null;
+                    }, self.options.animDuration == "fast" ? 1000 : 2000);
+                };
 			this.element.addClass(positionY == "top" ? "fadeInDown" : "fadeInUp");
 			barC.append(this.element);
-			this.closeElement.on("click", function() {
-				self.element.addClass(positionY == "top" ? "fadeOutUp" : "fadeOutDown");
-				setTimeout(function() {
-					self.element.remove();
-					if (barC.children().length == 0) {
-						barC.remove();					
-					}				
-					self = null;
-				}, self.options.animDuration == "fast" ? 1000 : 2000);
-			});			
+            
+            if (self.options.activeDuration > 0) {
+                setTimeout(hide, self.options.activeDuration);
+            }
+            
+			this.closeElement.on("click", hide);			
         }
 		
 		/**
@@ -128,17 +141,23 @@
          * @param {string} positionX - 'right' or 'left'
         */
         notify.prototype.panel = function(positionX) {
-			var self = this;
+			var self = this,
+                hide = function() {
+                    self.element.addClass(positionX == "left" ? "fadeOutLeft" : "fadeOutRight");
+                    setTimeout(function() {
+                        self.element.remove();
+                        self = null;
+                    }, self.options.animDuration == "fast" ? 1000 : 2000);
+                };
 			this.element.addClass("panel " + positionX)
 			this.element.addClass(positionX == "left" ? "fadeInLeft" : "fadeInRight");
 			$(this.options.target).append(this.element);
-			this.closeElement.on("click", function() {
-				self.element.addClass(positionX == "left" ? "fadeOutLeft" : "fadeOutRight");
-				setTimeout(function() {
-					self.element.remove();
-					self = null;
-				}, self.options.animDuration == "fast" ? 1000 : 2000);
-			});				
+            
+            if (self.options.activeDuration > 0) {
+                setTimeout(hide, self.options.activeDuration);
+            }
+            
+			this.closeElement.on("click", hide);				
         }
 				
         return notify;
