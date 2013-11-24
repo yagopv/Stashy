@@ -1,5 +1,5 @@
 /*!
- * Stashy v1.1.0 by @yperezva
+ * Stashy v1.1.1 by @yperezva
  * Copyright 2013 Yago Pérez Vázquez
  * Licensed under http://http://opensource.org/licenses/MIT
  */
