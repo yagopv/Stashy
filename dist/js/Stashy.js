@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 /**
  * Defines Events used in this library
  * @class Stashy.Events
 */
+=======
+/*!
+ * Stashy v1.1.1 by @yperezva
+ * Copyright 2013 Yago Pérez Vázquez
+ * Licensed under http://http://opensource.org/licenses/MIT
+ */
+
+>>>>>>> origin/master
 (function(window,$,undefined) {
 
 var $event = $.event,
