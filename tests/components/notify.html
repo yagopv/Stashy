@@ -76,6 +76,7 @@
                     <input type="radio" name="component" value="bar" /> <span>Bar</span>
                     <input type="radio" name="component" value="panel" /> <span>Panel</span>                    
                 </div>
+                <input type="text" name="activeDuration" value="" placeholder="Enter active duration" />
             </form>
             <button type="button">Show!!</button>
         </div>
@@ -102,7 +103,8 @@
                             style : c.style,
                             contentType : c.contentType,
                             animDuration : c.animDuration,
-                            closeArea : c.closeArea                        
+                            closeArea : c.closeArea,
+                            activeDuration : parseInt(c.activeDuration)
                         }).toast(c.positionX, c.positionY, c.radius ? true : false);
                     } else {
                         if (c.component == "bar")   {
@@ -113,7 +115,8 @@
                                 style : c.style,
                                 contentType : c.contentType,
                                 animDuration : c.animDuration,
-                                closeArea : c.closeArea                            
+                                closeArea : c.closeArea, 
+                                activeDuration : parseInt(c.activeDuration)
                             }).bar(c.positionY);
                         } else {
                             Stashy.Notify({
@@ -123,7 +126,8 @@
                                 style : c.style,
                                 contentType : c.contentType,
                                 animDuration : c.animDuration,
-                                closeArea : c.closeArea                            
+                                closeArea : c.closeArea,
+                                activeDuration : parseInt(c.activeDuration)
                             }).panel(c.positionX);
                         }
                     }                    

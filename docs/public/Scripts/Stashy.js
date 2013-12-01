@@ -1615,11 +1615,15 @@ window.Modernizr = (function( window, document, undefined ) {
                 hide = function() {
                     self.element.addClass("fadeOut");
                     setTimeout(function() {
-                        self.element.remove();
+                        //Check for self because activeDurantion can be enabled
+                        if (self) {
+                            self.element.remove();
+                            self = null;
+                        }
                         if (toastC.children().length == 0) {
                             toastC.remove();					
                         }				
-                        self = null;				
+                        
                     }, self.options.animDuration == "fast" ? 1000 : 2000);
                 };
 			this.element.addClass((radius ? "radius" : " ") + " " + "fadeIn");
@@ -1643,11 +1647,14 @@ window.Modernizr = (function( window, document, undefined ) {
                 hide = function() {
                     self.element.addClass(positionY == "top" ? "fadeOutUp" : "fadeOutDown");
                     setTimeout(function() {
-                        self.element.remove();
+                        //Check for self because activeDurantion can be enabled
+                        if (self) {
+                            self.element.remove();
+                            self = null;
+                        }
                         if (barC.children().length == 0) {
                             barC.remove();					
                         }				
-                        self = null;
                     }, self.options.animDuration == "fast" ? 1000 : 2000);
                 };
 			this.element.addClass(positionY == "top" ? "fadeInDown" : "fadeInUp");
@@ -1670,8 +1677,11 @@ window.Modernizr = (function( window, document, undefined ) {
                 hide = function() {
                     self.element.addClass(positionX == "left" ? "fadeOutLeft" : "fadeOutRight");
                     setTimeout(function() {
-                        self.element.remove();
-                        self = null;
+                        //Check for self because activeDurantion can be enabled
+                        if (self) {
+                            self.element.remove();
+                            self = null;
+                        }
                     }, self.options.animDuration == "fast" ? 1000 : 2000);
                 };
 			this.element.addClass("panel " + positionX)
