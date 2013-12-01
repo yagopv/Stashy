@@ -110,11 +110,8 @@
                 hide = function() {
                     self.element.addClass("fadeOut");
                     setTimeout(function() {
-                        //Check for self because activeDurantion can be enabled
-                        if (self) {
-                            self.element.remove();
-                            self = null;
-                        }
+                        self.element.remove();
+                        self = null;                        
                         if (toastC.children().length == 0) {
                             toastC.remove();					
                         }				
@@ -125,7 +122,11 @@
 			toastC.append(this.element);
             
             if (self.options.activeDuration > 0) {
-                setTimeout(hide, self.options.activeDuration);
+                setTimeout(function() { 
+                    if (self) { 
+                        hide();
+                    } 
+                }, self.options.activeDuration);
             }
             
 			this.closeElement.on("click", hide);
@@ -143,11 +144,8 @@
                 hide = function() {
                     self.element.addClass(positionY == "top" ? "fadeOutUp" : "fadeOutDown");
                     setTimeout(function() {
-                        //Check for self because activeDurantion can be enabled
-                        if (self) {
-                            self.element.remove();
-                            self = null;
-                        }
+                        self.element.remove();
+                        self = null;                        
                         if (barC.children().length == 0) {
                             barC.remove();					
                         }				
@@ -157,7 +155,11 @@
 			barC.append(this.element);
             
             if (self.options.activeDuration > 0) {
-                setTimeout(hide, self.options.activeDuration);
+                setTimeout(function() { 
+                    if (self) { 
+                        hide();
+                    } 
+                }, self.options.activeDuration);
             }
             
 			this.closeElement.on("click", hide);			
@@ -174,11 +176,8 @@
                 hide = function() {
                     self.element.addClass(positionX == "left" ? "fadeOutLeft" : "fadeOutRight");
                     setTimeout(function() {
-                        //Check for self because activeDurantion can be enabled
-                        if (self) {
-                            self.element.remove();
-                            self = null;
-                        }
+                        self.element.remove();
+                        self = null;                        
                     }, self.options.animDuration == "fast" ? 1000 : 2000);
                 };
 			this.element.addClass("panel " + positionX)
@@ -186,7 +185,11 @@
 			$(this.options.target).append(this.element);
             
             if (self.options.activeDuration > 0) {
-                setTimeout(hide, self.options.activeDuration);
+                setTimeout(function() { 
+                    if (self) { 
+                        hide();
+                    } 
+                }, self.options.activeDuration);
             }
             
 			this.closeElement.on("click", hide);				
